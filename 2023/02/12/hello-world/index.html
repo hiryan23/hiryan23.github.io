@@ -42,6 +42,8 @@
 
   
   
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css">
+  
   
   
 <meta name="generator" content="Hexo 6.3.0"></head>
@@ -58,7 +60,7 @@
           <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
         </a>
         <h2 id="name" class="hidden-xs hidden-sm">Ruiyang He</h2>
-        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Student</h3>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">上海交通大学 本科生</h3>
         <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
       </div>
       
@@ -309,7 +311,7 @@
         </a>
       </div>
       <div class="media-body">
-        <h3 class="media-heading"><a href="" target="_blank"><span class="text-dark">Ruiyang He</span><small class="ml-1x">Student</small></a></h3>
+        <h3 class="media-heading"><a href="" target="_blank"><span class="text-dark">Ruiyang He</span><small class="ml-1x">上海交通大学 本科生</small></a></h3>
         <div>生活不止眼前的苟且。</div>
       </div>
     </figure>
@@ -323,6 +325,8 @@
     
   <section id="comments">
   	
+
+    
   </section>
 
 
@@ -405,6 +409,26 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
    
+    
+<script src="//cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js"></script>
+<script>
+var gitment = new Gitment({
+  // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
+  // https://github.com/imsun/gitment/issues/55
+  // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
+  id: 'Hello World', 
+  owner: 'hiryan23', // 可以是你的GitHub用户名，也可以是github id
+  repo: 'hiryan23.github.io',
+  oauth: {
+    client_id: '005c09ab1230fe1c12fc',
+    client_secret: 'c63d3bc63ff8dc34664eb55d614c22c97ac3cc53',
+  }
+})
+gitment.render('comments')
+</script>
+
+
+
 
 
 
