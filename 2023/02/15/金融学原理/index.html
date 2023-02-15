@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>金融学原理 | Hiryan的世界</title>
+  <meta name="description" content="傻瓜难聚财。——古谚  第一讲 金融学与金融决策什么是金融学对金融学进行界定金融学是研究人们怎样进行稀缺资源跨期配置的学科  金融学配置的稀缺资源是资金或钱 金融决策的收益和成本是跨期的 金融决策的收益和成本是不确定的 风险是资源跨期配置必须考虑的重要因素 风险即收益和成本的不确定性，产生损失的可能性    金融学教会我们评估和权衡资源跨期配置的收益和风险，以便做出明智的金融决策 金融决策与金融">
+<meta property="og:type" content="article">
+<meta property="og:title" content="金融学原理">
+<meta property="og:url" content="http://hiryan23.github.io/2023/02/15/%E9%87%91%E8%9E%8D%E5%AD%A6%E5%8E%9F%E7%90%86/index.html">
+<meta property="og:site_name" content="Hiryan的世界">
+<meta property="og:description" content="傻瓜难聚财。——古谚  第一讲 金融学与金融决策什么是金融学对金融学进行界定金融学是研究人们怎样进行稀缺资源跨期配置的学科  金融学配置的稀缺资源是资金或钱 金融决策的收益和成本是跨期的 金融决策的收益和成本是不确定的 风险是资源跨期配置必须考虑的重要因素 风险即收益和成本的不确定性，产生损失的可能性    金融学教会我们评估和权衡资源跨期配置的收益和风险，以便做出明智的金融决策 金融决策与金融">
+<meta property="og:locale">
+<meta property="og:image" content="http://hiryan23.github.io/ff1915b445201690c7293dd5db6a919.png">
+<meta property="article:published_time" content="2023-02-15T00:29:42.226Z">
+<meta property="article:modified_time" content="2023-02-15T12:01:07.462Z">
+<meta property="article:author" content="Ruiyang He">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="金融学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://hiryan23.github.io/ff1915b445201690c7293dd5db6a919.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://hiryan23.github.io/2023/02/15/%E9%87%91%E8%9E%8D%E5%AD%A6%E5%8E%9F%E7%90%86/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hiryan的世界" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Ruiyang He</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">上海交通大学 本科生</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/hiryan23" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>你永远不该评判自己不了解的事物。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">课程笔记</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%8F%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" rel="tag">宏观金融学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" rel="tag">微观金融学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%91%E8%9E%8D%E5%AD%A6/" rel="tag">金融学</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/%E5%AE%8F%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" style="font-size: 13px;">宏观金融学</a> <a href="/tags/%E5%BE%AE%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" style="font-size: 13px;">微观金融学</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 14px;">笔记</a> <a href="/tags/%E9%87%91%E8%9E%8D%E5%AD%A6/" style="font-size: 13px;">金融学</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">课程笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/02/15/%E9%87%91%E8%9E%8D%E5%AD%A6%E5%8E%9F%E7%90%86/" class="title">金融学原理</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-02-15T00:29:42.226Z" itemprop="datePublished">2023-02-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">课程笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/02/14/%E8%B4%A7%E5%B8%81%E9%87%91%E8%9E%8D%E5%AD%A6/" class="title">货币金融学</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-02-13T23:52:31.728Z" itemprop="datePublished">2023-02-14</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">课程笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/02/13/%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86/" class="title">财务管理</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-02-13T14:57:18.467Z" itemprop="datePublished">2023-02-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2023/02/12/hello-world/" class="title">Hello World</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-02-12T07:59:14.738Z" itemprop="datePublished">2023-02-12</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-金融学原理" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      金融学原理
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2023/02/15/%E9%87%91%E8%9E%8D%E5%AD%A6%E5%8E%9F%E7%90%86/" class="article-date">
+	  <time datetime="2023-02-15T00:29:42.226Z" itemprop="datePublished">2023-02-15</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">课程笔记</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a>, <a class="article-tag-link-link" href="/tags/%E9%87%91%E8%9E%8D%E5%AD%A6/" rel="tag">金融学</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/02/15/%E9%87%91%E8%9E%8D%E5%AD%A6%E5%8E%9F%E7%90%86/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>傻瓜难聚财。——古谚</p>
+</blockquote>
+<h2 id="第一讲-金融学与金融决策"><a href="#第一讲-金融学与金融决策" class="headerlink" title="第一讲 金融学与金融决策"></a>第一讲 金融学与金融决策</h2><h3 id="什么是金融学"><a href="#什么是金融学" class="headerlink" title="什么是金融学"></a>什么是金融学</h3><h4 id="对金融学进行界定"><a href="#对金融学进行界定" class="headerlink" title="对金融学进行界定"></a>对金融学进行界定</h4><p>金融学是研究人们怎样进行稀缺资源<u>跨期</u>配置的学科</p>
+<ul>
+<li>金融学配置的稀缺资源是资金或钱</li>
+<li>金融决策的收益和成本是跨期的</li>
+<li>金融决策的收益和成本是不确定的</li>
+<li>风险是资源跨期配置必须考虑的重要因素<ul>
+<li>风险即收益和成本的不确定性，产生损失的可能性</li>
+</ul>
+</li>
+</ul>
+<p>金融学教会我们评估和权衡<strong>资源跨期配置的收益和风险</strong>，以便做出明智的<strong>金融决策</strong></p>
+<h5 id="金融决策与金融体系"><a href="#金融决策与金融体系" class="headerlink" title="金融决策与金融体系"></a>金融决策与金融体系</h5><p>每一项金融决策在金融体系中完成</p>
+<p>金融体系由金融市场，金融机构以及金融工具构成</p>
+<h5 id="金融体系构成要素"><a href="#金融体系构成要素" class="headerlink" title="金融体系构成要素"></a>金融体系构成要素</h5><p>金融工具</p>
+<ol>
+<li>保险合同</li>
+<li>银行贷款</li>
+<li>股票</li>
+<li>债券</li>
+<li>基金、FOF</li>
+<li>金融衍生品：远期、期货、期权、互换、套期保值</li>
+</ol>
+<p>金融机构</p>
+<ol>
+<li>保险公司</li>
+<li>商业银行</li>
+<li>投资银行（证券公司）</li>
+<li>基金（公募基金、私募基金、一&#x2F;二级市场）</li>
+<li>金融服务机构（会计师事务所、律师事务所、评级机构、资讯机构等）</li>
+<li>监管机构（证监会、银保监会等）</li>
+</ol>
+<p>金融市场：交易金融工具的场所</p>
+<ol>
+<li>股票市场</li>
+<li>债券市场</li>
+<li>期货等金融衍生品市场</li>
+<li>银行间借贷市场</li>
+</ol>
+<h5 id="金融决策的理论基础"><a href="#金融决策的理论基础" class="headerlink" title="金融决策的理论基础"></a>金融决策的理论基础</h5><p>金融理论由一系列概念和模型构成</p>
+<ul>
+<li>包括：如有效市场理论、价值评估理论、风险管理理论、资本资产定价理论、资本结构理论、股利分配理论、融资啄序理论等</li>
+</ul>
+<h5 id="金融学的实践性"><a href="#金融学的实践性" class="headerlink" title="金融学的实践性"></a>金融学的实践性</h5><p><strong>作为一门学科，金融学有很强的实践性</strong></p>
+<h5 id="金融的本质"><a href="#金融的本质" class="headerlink" title="金融的本质"></a>金融的本质</h5><p>尽管金融学是对如何进行跨期稀缺资源的配置进行研究，但是金融最终是<u>服务于消费群体</u></p>
+<p>金融学的主旨：金融体系的终极功能在于满足人们的消费偏好。</p>
+<p>金融服务实体经济，产业发展，最终也是服务人们的消费</p>
+<blockquote>
+<p>赚钱是为了花钱</p>
+</blockquote>
+<h4 id="居民户（家庭或个人）的金融决策"><a href="#居民户（家庭或个人）的金融决策" class="headerlink" title="居民户（家庭或个人）的金融决策"></a>居民户（家庭或个人）的金融决策</h4><p>消费决策和储蓄决策</p>
+<blockquote>
+<p>把资金分为消费和非消费两部分</p>
+</blockquote>
+<p>投资决策</p>
+<p>融资决策</p>
+<p>风险管理决策</p>
+<ul>
+<li>一般情况：厌恶风险</li>
+<li>资产组合</li>
+</ul>
+<h4 id="企业的金融决策"><a href="#企业的金融决策" class="headerlink" title="企业的金融决策"></a>企业的金融决策</h4><p>战略规划（如确定进入何种行业）</p>
+<ul>
+<li>战略规划涉及到对分布在不同时期的成本和收益进行评估，所以很大程度上是一项金融决策</li>
+</ul>
+<p>资本预算管理（投资决策）</p>
+<p>资本结构管理（融资决策）</p>
+<ul>
+<li>公司的资本结构决定了谁将得到公司未来现金流的何种份额</li>
+<li>资本结构部分地决定了谁将有机会控制该公司</li>
+</ul>
+<p>日常运营资本管理</p>
+<h3 id="为什么学习金融学？"><a href="#为什么学习金融学？" class="headerlink" title="为什么学习金融学？"></a>为什么学习金融学？</h3><ul>
+<li>金融的职业从根本上分为：投资、融资</li>
+</ul>
+<blockquote>
+<p><strong>为了让金融更好地服务社会经济从而更好地服务于人民</strong></p>
+</blockquote>
+<h2 id="企业的组织形式"><a href="#企业的组织形式" class="headerlink" title="企业的组织形式"></a>企业的组织形式</h2><h3 id="企业的组织形式-1"><a href="#企业的组织形式-1" class="headerlink" title="企业的组织形式"></a>企业的组织形式</h3><h4 id="独资企业"><a href="#独资企业" class="headerlink" title="独资企业"></a>独资企业</h4><p>指由个人或家庭所拥有的企业，资产和负债是出资人（业主）的个人资产和负债</p>
+<p>特点：</p>
+<ol>
+<li>管理成本低</li>
+<li>无重复纳税（只需缴纳个人所得税）</li>
+<li>无限责任</li>
+</ol>
+<p><em>由个人所有的公司不是独资企业，为什么？</em><br><em>公司区别于独资企业，体现在法人，有限责任，双重纳税等。</em></p>
+<h4 id="合伙人企业"><a href="#合伙人企业" class="headerlink" title="合伙人企业"></a>合伙人企业</h4><p>指拥有两个或两个以上所有者的企业</p>
+<p>合伙协议通常规定了如何进行决策，以及怎样分享盈利和分担亏损</p>
+<ul>
+<li>普通合伙人 General Partners &gt;0（企业的日常决策，无限责任，实际控制人）</li>
+<li>有限责任合伙人  Limited Partner （出资，不参与企业的日常决策）</li>
+</ul>
+<p>所有权的变化涉及解散旧的合伙关系，形成新的合伙关系</p>
+<h4 id="公司"><a href="#公司" class="headerlink" title="公司"></a>公司</h4><ul>
+<li>公司是区别于其所有者的法律主体（法人）</li>
+<li>双重税收</li>
+<li>有限责任</li>
+<li>公众公司（listed company）和私人公司（private company）</li>
+</ul>
+<p>代理问题（agency problems）</p>
+<h3 id="所有权和管理权的分离"><a href="#所有权和管理权的分离" class="headerlink" title="所有权和管理权的分离"></a>所有权和管理权的分离</h3><p>理由：</p>
+<ul>
+<li>职业经理人的管理能力更胜一筹</li>
+<li>现代企业有无数股东，股东集体决策可能是无效率的</li>
+<li>所有者希望在众多企业之间分散风险。<br>  要是管理所投资的企业就不存在在企业间分散风险的任何途径。</li>
+<li>分离型结构考虑到了信息搜索成本的节省<br>  管理企业需要搜索最精确的信息，但是所有者仅需相对较少的信息。</li>
+<li>存在支持分离型结构的“学习曲线”或”持续经营效应。<br>  假设所有者希望出售技术，如果所有者也是管理者，那么新的所有者必须从前任那里了解它。如果所有者不是管理者，那么管理者还能继续在位并且为新的所有者工作。</li>
+</ul>
+<p>公司形式可以在不影响企业运作的条件下，通过股份转让使所有者相对频繁的变化成为可能。</p>
+<h3 id="公司治理结构"><a href="#公司治理结构" class="headerlink" title="公司治理结构"></a>公司治理结构</h3><p>所有权和管理权的分离导致代理问题：代理人损害委托人利益</p>
+<p>公司治理结构：减少代理问题的组织设计<br><img src="/ff1915b445201690c7293dd5db6a919.png" alt="公司治理结构"></p>
+<h4 id="公司治理机制"><a href="#公司治理机制" class="headerlink" title="公司治理机制"></a>公司治理机制</h4><p>来自公司内部的治理机制</p>
+<ul>
+<li>激励机制<ul>
+<li>职业经理人的薪酬</li>
+<li>员工持股</li>
+<li>合伙人制度</li>
+</ul>
+</li>
+<li>监督机制<ul>
+<li>股东大会对董事会</li>
+<li>董事会对CEO<br>来自市场的监管</li>
+</ul>
+</li>
+<li>敌意监管</li>
+<li>信息披露监管</li>
+</ul>
+<h4 id="敌意收购"><a href="#敌意收购" class="headerlink" title="敌意收购"></a>敌意收购</h4><p>客户、供应商、竞争对手或是专业猎手发现了一家经营不善的公司，购买此公司的股票，实施新的管理措施，使股票价格上升，出售股票获利</p>
+<h3 id="管理的目标"><a href="#管理的目标" class="headerlink" title="管理的目标"></a>管理的目标</h3><p>最大化股东财富</p>
+<p>股东财富最大化原则取决于公司的生产技术、市场利率、市场的风险溢价和证券的价格，（应当）与股东的风险偏好无关（因为该原则应当与所有者是谁无关）</p>
+<p><em>股东财富最大化原则为什么是合理的原则？</em><br><em>如果管理者所遵循的原则可以引导管理者做出与每位单个所有者自己做决策时相同的投融资决策，那么这项原则就是最恰当的原则。而股东财富最大化原则就是符合条件的原则。<br>例如，假设管理者要在高风险高收益和低风险低收益的项目之间进行一次投资抉择。从股东财富最大化的原则出发，管理者应该选择高风险高收益的项目。<br>低风险低收益的选择并不能体现股东收益最大化。因为在运转良好的资本市场中，股东可以通过出售该管理者所管理公司的一些股票购置安全资产来降低个人资产组合的风险。这意味着接受更有风险的项目会使股东的最终境况变得更好。</em></p>
+<h3 id="金融学五大原理"><a href="#金融学五大原理" class="headerlink" title="金融学五大原理"></a>金融学五大原理</h3><h4 id="原理一：现金流是重要的"><a href="#原理一：现金流是重要的" class="headerlink" title="原理一：现金流是重要的"></a>原理一：现金流是重要的</h4><p>会计利润（指盈利能力）不等同于现金流。一个企业可能有很强的盈利能力，但没有现金流。</p>
+<blockquote>
+<p>应收账款</p>
+</blockquote>
+<p>当我们进行金融决策时，必须确定增量现金流</p>
+<p>现金流的意义：维持企业持续经营</p>
+<h4 id="原理二：货币具有时间价值"><a href="#原理二：货币具有时间价值" class="headerlink" title="原理二：货币具有时间价值"></a>原理二：货币具有时间价值</h4><p>今天的1美元比将来的1美元有更大价值</p>
+<p>由于我们可以把钱存入银行赚取利息，因此早获得钱比晚获得钱更好。</p>
+<h4 id="原理三：承担风险需要相应的回报（William-F-Shape）"><a href="#原理三：承担风险需要相应的回报（William-F-Shape）" class="headerlink" title="原理三：承担风险需要相应的回报（William F. Shape）"></a>原理三：承担风险需要相应的回报（William F. Shape）</h4><p>我们不愿意承担额外的风险，除非我们可以获得超额收益。</p>
+<h4 id="原理四：市场价格通常是正确的（EMH-by-Eugene-Fama）"><a href="#原理四：市场价格通常是正确的（EMH-by-Eugene-Fama）" class="headerlink" title="原理四：市场价格通常是正确的（EMH by Eugene Fama）"></a>原理四：市场价格通常是正确的（EMH by Eugene Fama）</h4><p>有效市场理论。</p>
+<ul>
+<li>在有效市场中，资产（例如股票和债券）的价格反映了所有可以获得的决定此资产价值的信息，因此股票的价格反映了公司价值的有用指标</li>
+<li>EMH的两个启示<ul>
+<li>因为信息立刻反映在价格里，投资者应该只能获得正常的收益（获得超额收益不现实）</li>
+<li>因为信息立刻反映在价格里，公司出售证券应该预期得到公允价值（不存在愚弄投资者而获得有价值的融资机会）</li>
+</ul>
+</li>
+<li><strong>注意，市场不总是有效的。</strong> 市场中的摩擦，会导致价格扭曲（Robert J. Shiller）</li>
+<li>行为经济学</li>
+</ul>
+<h4 id="原理五：利益冲突导致代理问题（Michael-C-Jensen）"><a href="#原理五：利益冲突导致代理问题（Michael-C-Jensen）" class="headerlink" title="原理五：利益冲突导致代理问题（Michael C. Jensen）"></a>原理五：利益冲突导致代理问题（Michael C. Jensen）</h4><p>公司所有权和管理权的分离导致了代理问题。公司管理者可能并不按照“股东财富最大化”的原则进行决策。</p>
+<p>解决方法：</p>
+<ol>
+<li>监管</li>
+<li>薪酬激励</li>
+<li>市场激励</li>
+<li>……</li>
+</ol>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://hiryan23.github.io/2023/02/15/%E9%87%91%E8%9E%8D%E5%AD%A6%E5%8E%9F%E7%90%86/" title="金融学原理" target="_blank" rel="external">http://hiryan23.github.io/2023/02/15/金融学原理/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="" target="_blank"><span class="text-dark">Ruiyang He</span><small class="ml-1x">上海交通大学 本科生</small></a></h3>
+        <div>生活不止眼前的苟且。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2023/02/14/%E8%B4%A7%E5%B8%81%E9%87%91%E8%9E%8D%E5%AD%A6/" title="货币金融学"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="qq,wechat" data-mobile-sites="qq,wechat"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/hiryan23" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2023 Ruiyang He
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>
