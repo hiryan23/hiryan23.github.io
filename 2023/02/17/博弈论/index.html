@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>博弈论 | Hiryan的世界</title>
+  <meta name="description" content="“正如理性预期使宏观经济学发生革命一样，博弈论广泛而深远地改变了经济学家的思维方式”——Jean Tirole  第一讲 导论什么是博弈论博弈论 相互决策理论（interactive dicision theory） 1944年冯·诺伊曼与奥斯卡·摩根斯特恩合著《博弈论与经济行为》，标志着现代系统博弈理论的初步形成。 博弈论被认为是20世纪经济学最伟大的成果之一  非策略行为 vs 策略行为 非">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博弈论">
+<meta property="og:url" content="http://hiryan23.github.io/2023/02/17/%E5%8D%9A%E5%BC%88%E8%AE%BA/index.html">
+<meta property="og:site_name" content="Hiryan的世界">
+<meta property="og:description" content="“正如理性预期使宏观经济学发生革命一样，博弈论广泛而深远地改变了经济学家的思维方式”——Jean Tirole  第一讲 导论什么是博弈论博弈论 相互决策理论（interactive dicision theory） 1944年冯·诺伊曼与奥斯卡·摩根斯特恩合著《博弈论与经济行为》，标志着现代系统博弈理论的初步形成。 博弈论被认为是20世纪经济学最伟大的成果之一  非策略行为 vs 策略行为 非">
+<meta property="og:locale">
+<meta property="og:image" content="http://hiryan23.github.io/pic/3380e9fc23d2eb55f8eabc370df0bff.png">
+<meta property="og:image" content="http://hiryan23.github.io/pic/3bc96152f7d2ad2a380694596935bbc.png">
+<meta property="og:image" content="http://hiryan23.github.io/pic/f9c8fe787c87537bc18db6033829c04.png">
+<meta property="og:image" content="http://hiryan23.github.io/pic/4ad37a2c41c865c674083b2a83455d0.png">
+<meta property="og:image" content="http://hiryan23.github.io/pic/cc2eed97b5695df80ddae5ccb1ed7a5.png">
+<meta property="og:image" content="http://hiryan23.github.io/pic/9412e66297e9b2389c6ba499c42ee2e.png">
+<meta property="og:image" content="http://hiryan23.github.io/pic/1527a2384f86802fd5d5328d44001ec.png">
+<meta property="og:image" content="http://hiryan23.github.io/pic/95bea0bed949bba6acef1c2ddb67151.png">
+<meta property="article:published_time" content="2023-02-17T04:54:26.809Z">
+<meta property="article:modified_time" content="2023-02-17T09:21:18.727Z">
+<meta property="article:author" content="Ruiyang He">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="微观经济学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://hiryan23.github.io/pic/3380e9fc23d2eb55f8eabc370df0bff.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://hiryan23.github.io/2023/02/17/%E5%8D%9A%E5%BC%88%E8%AE%BA/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hiryan的世界" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Ruiyang He</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">上海交通大学 本科生</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/hiryan23" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>你永远不该评判自己不了解的事物。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">课程笔记</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%91%E5%B1%95%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">发展经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%8F%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" rel="tag">宏观金融学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">微观经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" rel="tag">微观金融学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">计量经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%91%E8%9E%8D%E5%AD%A6/" rel="tag">金融学</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/%E5%8F%91%E5%B1%95%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 13px;">发展经济学</a> <a href="/tags/%E5%AE%8F%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" style="font-size: 13px;">宏观金融学</a> <a href="/tags/%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 13px;">微观经济学</a> <a href="/tags/%E5%BE%AE%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" style="font-size: 13px;">微观金融学</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 14px;">笔记</a> <a href="/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 13px;">计量经济学</a> <a href="/tags/%E9%87%91%E8%9E%8D%E5%AD%A6/" style="font-size: 13px;">金融学</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">课程笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/02/17/%E5%8D%9A%E5%BC%88%E8%AE%BA/" class="title">博弈论</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-02-17T04:54:26.809Z" itemprop="datePublished">2023-02-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">课程笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/02/16/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/" class="title">计量经济学</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-02-16T12:46:38.494Z" itemprop="datePublished">2023-02-16</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">课程笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/02/16/%E5%8F%91%E5%B1%95%E7%BB%8F%E6%B5%8E%E5%AD%A6/" class="title">发展经济学</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-02-16T06:33:41.674Z" itemprop="datePublished">2023-02-16</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">课程笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/02/15/%E9%87%91%E8%9E%8D%E5%AD%A6%E5%8E%9F%E7%90%86/" class="title">金融学原理</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-02-15T00:29:42.226Z" itemprop="datePublished">2023-02-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">课程笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/02/14/%E8%B4%A7%E5%B8%81%E9%87%91%E8%9E%8D%E5%AD%A6/" class="title">货币金融学</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-02-13T23:52:31.728Z" itemprop="datePublished">2023-02-14</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-博弈论" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      博弈论
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2023/02/17/%E5%8D%9A%E5%BC%88%E8%AE%BA/" class="article-date">
+	  <time datetime="2023-02-17T04:54:26.809Z" itemprop="datePublished">2023-02-17</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">课程笔记</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">微观经济学</a>, <a class="article-tag-link-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+		<i class="icon icon-eye-fill" aria-hidden="true"></i>
+		<span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv"></span>
+		</span>
+	</span>
+
+	
+		
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/02/17/%E5%8D%9A%E5%BC%88%E8%AE%BA/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>“正如理性预期使宏观经济学发生革命一样，博弈论广泛而深远地改变了经济学家的思维方式”——Jean Tirole</p>
+</blockquote>
+<h2 id="第一讲-导论"><a href="#第一讲-导论" class="headerlink" title="第一讲 导论"></a>第一讲 导论</h2><h3 id="什么是博弈论"><a href="#什么是博弈论" class="headerlink" title="什么是博弈论"></a>什么是博弈论</h3><h4 id="博弈论"><a href="#博弈论" class="headerlink" title="博弈论"></a>博弈论</h4><ul>
+<li>相互决策理论（interactive dicision theory）</li>
+<li>1944年冯·诺伊曼与奥斯卡·摩根斯特恩合著《博弈论与经济行为》，标志着现代系统博弈理论的初步形成。</li>
+<li>博弈论被认为是20世纪经济学最伟大的成果之一</li>
+</ul>
+<h5 id="非策略行为-vs-策略行为"><a href="#非策略行为-vs-策略行为" class="headerlink" title="非策略行为 vs 策略行为"></a>非策略行为 vs 策略行为</h5><ul>
+<li>非策略行为：决策理论，一般均衡理论</li>
+<li>策略行为：<ul>
+<li>博弈论<br>  给定规则（从策略到结果），参与者如何行动以及行为结果如何</li>
+<li>机制设计<br>  社会计划着设计规则以达到某些合意结果（最大化社会福利）</li>
+<li>合同理论<br>  部分参与者设计规则以实现某些合意结果（最大化其收益）</li>
+</ul>
+</li>
+</ul>
+<h5 id="博弈论-1"><a href="#博弈论-1" class="headerlink" title="博弈论"></a>博弈论</h5><ul>
+<li>博弈论是研究和帮助在利益互动影响中理性人应当如何做决策的数学理论分支</li>
+<li>对人的行为进行预测的就是那些均衡策略</li>
+<li><strong>你应当用他人的利益去推测他人的行动、从而选择你自己的最佳行动。</strong></li>
+</ul>
+<h5 id="博弈论与传统决策理论的区别"><a href="#博弈论与传统决策理论的区别" class="headerlink" title="博弈论与传统决策理论的区别"></a>博弈论与传统决策理论的区别</h5><ul>
+<li>传统决策：从若干个备选方案中选择一个。</li>
+<li>博弈：研究决策主体的行为发生直接相互作用时候的决策。在博弈中，决策主体的选择不仅与决策主体的偏好结构有关，而且与其他人的选择有关。</li>
+</ul>
+<h4 id="为什么要学习博弈论？"><a href="#为什么要学习博弈论？" class="headerlink" title="为什么要学习博弈论？"></a>为什么要学习博弈论？</h4><h5 id="原因一"><a href="#原因一" class="headerlink" title="原因一"></a>原因一</h5><p><em>：懂得囚徒困境、公共品提供问题等</em></p>
+<p>”预测“结果，并”理解“其产生的原因，这就是”博弈论“的工作。</p>
+<h5 id="原因二"><a href="#原因二" class="headerlink" title="原因二"></a>原因二</h5><p><em>：了解共同知识和相互知识</em></p>
+<ul>
+<li>相互知识（mutual knowledge）：每个人都只知道的事实（事件A）</li>
+<li>共同知识（common knowledge）：每一位参与人都知道事件A，而且知道每一位参与人知道每一位参与人知道事件A，以此类推……</li>
+<li>如果仅仅是每一位参与人知道事件A，也知道其他参与人知道事件A，这个仅仅比相互知识多一些信息，但是还是不到共同知识的程度。要 知道【其他参与人知道（每一位参与人知道）】信息……才行</li>
+</ul>
+<blockquote>
+<p>你在第二层，你以为我在第一层，实际上我在第五层。</p>
+</blockquote>
+<h5 id="原因三"><a href="#原因三" class="headerlink" title="原因三"></a>原因三</h5><p><em>：了解纳什均衡、子博弈精炼均衡等</em></p>
+<ul>
+<li>规范描述博弈</li>
+<li>规范假设</li>
+<li>规范定义”解“</li>
+<li>解博弈</li>
+</ul>
+<h4 id="博弈论历史"><a href="#博弈论历史" class="headerlink" title="博弈论历史"></a>博弈论历史</h4><ul>
+<li>1838年古诺（Cournot）寡头竞争模型</li>
+<li>1883年伯特兰（Bertrand）寡头竞争模型</li>
+<li>1944年冯·诺伊曼和摩根斯坦发表《博弈论和经济行为》</li>
+<li>1950年纳什（Nash）提出了纳什均衡的概念</li>
+<li>1965年泽尔腾（Selten）提出了子博弈精炼纳什均衡的概念</li>
+<li>1967—1968年海萨尼（Harsanyi）提出了贝叶斯纳什均衡的概念</li>
+</ul>
+<h5 id="博弈论和诺贝尔经济学奖"><a href="#博弈论和诺贝尔经济学奖" class="headerlink" title="博弈论和诺贝尔经济学奖"></a>博弈论和诺贝尔经济学奖</h5><p>约翰·纳什（1994）<br><img src="/pic/3380e9fc23d2eb55f8eabc370df0bff.png" alt="约翰纳什"><br>1950年和1951年Nash的两篇关于非合作博弈的重要论文，彻底改变了人们对竞争和市场的看法。他证明了非合作博弈及其均衡解，并证明了均衡解的存在性，即著名的纳什均衡。从而揭示了博弈均衡与经济均衡的内在联系。</p>
+<p>莱茵哈德·泽尔腾（1994）<br><img src="/pic/3bc96152f7d2ad2a380694596935bbc.png" alt="莱茵哈德·泽尔腾"><br>Selten在1965年将纳什均衡的概念引入了动态分析提出了“空头威胁”（Empty Threats）的问题，并提出“子博弈精炼纳什均衡”（Subgame Perfect Nash Equilibrium）的思想。</p>
+<p>约翰·海萨尼（1994）<br><img src="/pic/f9c8fe787c87537bc18db6033829c04.png" alt="约翰·海萨尼"><br>J.Harsanyi在1967—1968年发表构造了不完全信息（Incomplete Information）博弈理论的系列论文，提出了分析不完全信息博弈问题的标准方法，以及“贝叶斯纳什均衡”（Bayesian Nash Equilibrium）的概念</p>
+<h4 id="博弈的非技术性定义"><a href="#博弈的非技术性定义" class="headerlink" title="博弈的非技术性定义"></a>博弈的非技术性定义</h4><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>博弈就是一些<strong>个人、队组或其他组织</strong>，面对<strong>一定的环境条件</strong>，在<strong>一定的规则</strong>下，<strong>同时或先后</strong>，一次或多次，从各自允许选择的行为或策略中进行选择并加以实施，各自取得相应<strong>结果</strong>的过程。</p>
+<h5 id="四个核心方面"><a href="#四个核心方面" class="headerlink" title="四个核心方面"></a>四个核心方面</h5><ul>
+<li>博弈的参加者（Player）——博弈方</li>
+<li>各博弈方的策略（Strategies）或行为（Actions）</li>
+<li>博弈的次序（Order）</li>
+<li>博弈方的得益（Payoffs）</li>
+</ul>
+<h5 id="博弈中的博弈方"><a href="#博弈中的博弈方" class="headerlink" title="博弈中的博弈方"></a>博弈中的博弈方</h5><p>独立决策、独立承担博弈结果的个人或组织</p>
+<ul>
+<li>博弈规则面前博弈方之间平等，不因博弈方之间权利、地位的差异而改变</li>
+<li>博弈方数量对博弈结果和分析有影响</li>
+<li>根据博弈方数量分单人博弈、两人博弈、多人博弈等。最常见的是两人博弈，单人博弈是退化的博弈<ul>
+<li>单人博弈：实质是个体最优化问题</li>
+<li>两人博弈<ul>
+<li>最常见，研究最多，是最基本和有用的博弈类型</li>
+<li>有多种可能性，博弈方的利益方向可能一致，也可以不一致</li>
+</ul>
+</li>
+<li>多人博弈<ul>
+<li>可能存在”破坏者“：其策略选择对自身的利益并没有影响，但却会对其他博弈方的利益产生很大的，有时甚至是决定性的影响。</li>
+<li>多人博弈的表示有时与两人博弈不同，需要多个得益矩阵，或者只能用描述法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="博弈中的策略"><a href="#博弈中的策略" class="headerlink" title="博弈中的策略"></a>博弈中的策略</h5><p>博弈中各博弈方的选择内容</p>
+<ul>
+<li>策略有定性定量、简单复杂之分</li>
+<li>不同博弈方之间不仅可选策略不同，而且可选策略数量也可不同</li>
+<li>有限博弈：每个博弈方的策略数都是有限的</li>
+<li>无限博弈：至少有某些博弈方的策略有无限多个</li>
+</ul>
+<h5 id="博弈中的得益"><a href="#博弈中的得益" class="headerlink" title="博弈中的得益"></a>博弈中的得益</h5><p>各博弈方从博弈中所获得的利益</p>
+<ul>
+<li>得益对应博弈的结果，也就是各博弈方策略的组合</li>
+<li>得益是各博弈方追求的根本目标及行为和判断的主要依据</li>
+<li>根据得益的博弈分类：零和博弈、常和博弈、变和博弈<ul>
+<li>零和博弈：总的所得不变，你死我活</li>
+<li>常和博弈：博弈方之间的利益是对立的且是竞争关系，妥协机会要多一些</li>
+<li>变和博弈：零和博弈和常和博弈以外的所有博弈。合作博弈存在，评价效率问题的重要性</li>
+</ul>
+</li>
+</ul>
+<h5 id="博弈的过程"><a href="#博弈的过程" class="headerlink" title="博弈的过程"></a>博弈的过程</h5><p>博弈方选择、行为的次序，包括是否多次重复选择、行为。</p>
+<ul>
+<li>博弈过程对博弈结果也有重要影响。</li>
+<li>根据博弈的过程，博弈可分为静态博弈、动态博弈、重复博弈。</li>
+</ul>
+<h3 id="博弈的分类和博弈理论的结构"><a href="#博弈的分类和博弈理论的结构" class="headerlink" title="博弈的分类和博弈理论的结构"></a>博弈的分类和博弈理论的结构</h3><ul>
+<li>非合作博弈和合作博弈</li>
+<li>静态博弈、动态博弈、重复博弈</li>
+<li>完全信息静态博弈、不完全信息静态博弈、完全且完美信息动态博弈、完全但不完美信息动态博弈、不完全信息动态博弈</li>
+<li>零和博弈和非零和博弈，单人博弈和多人博弈</li>
+</ul>
+<h4 id="博弈的信息结构"><a href="#博弈的信息结构" class="headerlink" title="博弈的信息结构"></a>博弈的信息结构</h4><ul>
+<li>得益信息<ul>
+<li>完全信息博弈：各博弈方都完全了解所有博弈方各种情况下的得益</li>
+<li>不完全信息博弈：至少部分博弈方不完全了解其他博弈方得益情况的博弈，也称为”不对称信息博弈“</li>
+</ul>
+</li>
+<li>博弈过程<ul>
+<li>完美信息博弈：每个轮到行为的博弈方对博弈的进程完全了解的博弈</li>
+<li>不完美信息博弈：至少某些博弈方在轮到行动时不完全了解此前全部博弈的进程的博弈</li>
+</ul>
+</li>
+</ul>
+<h4 id="博弈的分类"><a href="#博弈的分类" class="headerlink" title="博弈的分类"></a>博弈的分类</h4><ol>
+<li>完全信息静态博弈</li>
+<li>完全信息动态博弈</li>
+<li>不完全信息静态博弈</li>
+<li>不完全信息动态博弈</li>
+</ol>
+<p><img src="/pic/4ad37a2c41c865c674083b2a83455d0.png" alt="博弈分类"></p>
+<h5 id="重复博弈"><a href="#重复博弈" class="headerlink" title="重复博弈"></a>重复博弈</h5><p>同一个博弈反复进行所构成的博弈，提供了实现更有效率博弈结果的新可能——长期客户、长期合同、信誉问题</p>
+<ul>
+<li>有限次重复博弈</li>
+<li>无限次重复博弈</li>
+</ul>
+<h4 id="博弈方的能力和理性"><a href="#博弈方的能力和理性" class="headerlink" title="博弈方的能力和理性"></a>博弈方的能力和理性</h4><h5 id="完全理性和有限理性"><a href="#完全理性和有限理性" class="headerlink" title="完全理性和有限理性"></a>完全理性和有限理性</h5><ul>
+<li>完全理性：有完美的分析判断能力和不会犯选择行为的错误</li>
+<li>有限理性：博弈方的判断选择能力有缺陷</li>
+</ul>
+<h5 id="个体理性和集体理性"><a href="#个体理性和集体理性" class="headerlink" title="个体理性和集体理性"></a>个体理性和集体理性</h5><ul>
+<li>个体理性：以个体利益最大化为目标</li>
+<li>集体理性：追求集体利益最大化</li>
+<li>合作博弈：允许存在有约束力协议的博弈</li>
+<li>非合作博弈：不允许存在有约束力协议的博弈</li>
+</ul>
+<h3 id="几个经典博弈模型"><a href="#几个经典博弈模型" class="headerlink" title="几个经典博弈模型"></a>几个经典博弈模型</h3><h4 id="囚徒困境（Tucker，1950）"><a href="#囚徒困境（Tucker，1950）" class="headerlink" title="囚徒困境（Tucker，1950）"></a>囚徒困境（Tucker，1950）</h4><p><img src="/pic/cc2eed97b5695df80ddae5ccb1ed7a5.png" alt="囚徒困境"></p>
+<h4 id="双寡头降价竞争"><a href="#双寡头降价竞争" class="headerlink" title="双寡头降价竞争"></a>双寡头降价竞争</h4><p><img src="/pic/9412e66297e9b2389c6ba499c42ee2e.png" alt="双寡头降价竞争"></p>
+<h4 id="广告战"><a href="#广告战" class="headerlink" title="广告战"></a>广告战</h4><p><img src="/pic/1527a2384f86802fd5d5328d44001ec.png" alt="广告战"></p>
+<h4 id="产量决策的古诺模型（Cournot，1838）"><a href="#产量决策的古诺模型（Cournot，1838）" class="headerlink" title="产量决策的古诺模型（Cournot，1838）"></a>产量决策的古诺模型（Cournot，1838）</h4><h5 id="三厂商版本"><a href="#三厂商版本" class="headerlink" title="三厂商版本"></a>三厂商版本</h5><p><img src="/pic/95bea0bed949bba6acef1c2ddb67151.png" alt="三厂商离散产量"></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://hiryan23.github.io/2023/02/17/%E5%8D%9A%E5%BC%88%E8%AE%BA/" title="博弈论" target="_blank" rel="external">http://hiryan23.github.io/2023/02/17/博弈论/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="" target="_blank"><span class="text-dark">Ruiyang He</span><small class="ml-1x">上海交通大学 本科生</small></a></h3>
+        <div>生活不止眼前的苟且。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2023/02/16/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/" title="计量经济学"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="qq,wechat" data-mobile-sites="qq,wechat"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/hiryan23" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2023 Ruiyang He
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>
