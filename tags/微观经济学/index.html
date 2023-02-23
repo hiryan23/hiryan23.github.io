@@ -329,9 +329,9 @@
           
           <li><a href="/tags/机器学习/">机器学习</a></li>
           
-          <li><a href="/tags/汽车控制/">汽车控制</a></li>
-          
           <li><a href="/tags/微观经济学/">微观经济学</a></li>
+          
+          <li><a href="/tags/汽车控制/">汽车控制</a></li>
           
           <li><a href="/tags/发展经济学/">发展经济学</a></li>
           
@@ -423,15 +423,15 @@
 </footer>
   <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
 <script>
-window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+   window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
 
 <script src="/js/plugin.min.js"></script>
 
-
+   
 <script src="/js/application.js"></script>
 
-
+      
     <script>
 (function (window) {
     var INSIGHT_CONFIG = {
@@ -453,14 +453,58 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+         
+                  
+                           
+                                    
+                                             
+
+                                                
 
 
 
+                                                   <div id="go-top"></div>
+                                                   <style type="text/css">
+                                                      #go-top {
+                                                         width: 40px;
+                                                         height: 36px;
+                                                         background-color: #5a7db1;
+                                                         position: relative;
+                                                         border-radius: 2px;
+                                                         position: fixed;
+                                                         right: 10px;
+                                                         bottom: 60px;
+                                                         cursor: pointer;
+                                                         display: none;
+                                                      }
 
+                                                      #go-top:after {
+                                                         content: " ";
+                                                         position: absolute;
+                                                         left: 14px;
+                                                         top: 14px;
+                                                         border-top: 2px solid #fff;
+                                                         border-right: 2px solid #fff;
+                                                         width: 12px;
+                                                         height: 12px;
+                                                         transform: rotate(-45deg);
+                                                      }
 
-
-
-
-
+                                                      #go-top:hover {
+                                                         background-color: #1A2433;
+                                                      }
+                                                   </style>
+                                                   <script>
+                                                      $(function () {
+                                                         var top = $("#go-top");
+                                                         $(window).scroll(function () {
+                                                            ($(window).scrollTop() > 300) ? top.show(300) : top.hide(200);
+                                                            $("#go-top").click(function () {
+                                                               $('body,html').animate({ scrollTop: 0 });
+                                                               return false();
+                                                            })
+                                                         });
+                                                      });
+                                                   </script>
 </body>
 </html>

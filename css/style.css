@@ -8601,7 +8601,8 @@ body.okayNav-loaded {
   }
 
   .footer .copyright {
-    display: none;
+    display: block;
+    /*这里改了*/
   }
 }
 
@@ -8881,7 +8882,7 @@ body.okayNav-loaded {
   }
 
   .footer .copyright {
-    display: block;
+    display: none;
   }
 
   .social-links .tooltip {
@@ -9236,4 +9237,12 @@ screen and (max-height: 479px) {
 /* 隐藏valine版权信息 */
 .txt-right {
   display: none;
+}
+
+#busuanzi_container_page_pv {
+  display: inline !important;
+}
+
+#busuanzi_container_site_pv {
+  display: block !important;
 }
