@@ -37,7 +37,7 @@
 <meta property="og:image" content="http://hiryan23.github.io/pic/b9432d6edc99c82146c5ca340b6fd65.png">
 <meta property="og:image" content="http://hiryan23.github.io/pic/8c43075b2094ec2db8c526f1ea28d14.png">
 <meta property="article:published_time" content="2023-02-17T15:12:03.271Z">
-<meta property="article:modified_time" content="2023-02-25T15:02:55.882Z">
+<meta property="article:modified_time" content="2023-02-25T15:08:18.443Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="机器学习">
@@ -370,7 +370,7 @@
 <span class="article-date">
 	<i class="icon icon-calendar-check"></i>
 	<a href="/2023/02/17/Machine%20Learning/" class="article-date">
-		<time datetime="2023-02-25T15:02:55.882Z" itemprop="dateUpdated">
+		<time datetime="2023-02-25T15:08:18.443Z" itemprop="dateUpdated">
 			2023-02-25
 		</time>
 	</a>
@@ -526,6 +526,14 @@
 <h4 id="Conditional-probability"><a href="#Conditional-probability" class="headerlink" title="Conditional probability"></a>Conditional probability</h4><p>The conditional probability of $X$ given $Y&#x3D;y$ is defined as,<br>$$P(X&#x3D;x|Y&#x3D;y)&#x3D;\cfrac{P(X&#x3D;x,Y&#x3D;y)}{P(Y&#x3D;y)}$$</p>
 <h4 id="Product-rule"><a href="#Product-rule" class="headerlink" title="Product rule"></a>Product rule</h4><p>$$P(X&#x3D;x,Y&#x3D;y)&#x3D;P(X&#x3D;x|Y&#x3D;y)P(Y&#x3D;y)&#x3D;P(Y&#x3D;y|X&#x3D;x)P(X&#x3D;x)$$</p>
 <h4 id="Bayes’-rule"><a href="#Bayes’-rule" class="headerlink" title="Bayes’ rule"></a>Bayes’ rule</h4><p>$$P(Y&#x3D;y|X&#x3D;x)&#x3D;\cfrac{P(X&#x3D;x|Y&#x3D;y)\cdot P(Y&#x3D;y)}{P(X&#x3D;x)}$$</p>
+<ul>
+<li>Application: SPAM email case<ul>
+<li>y: labels (SPAM&#x2F;normal)</li>
+<li>x: frequency of keywords</li>
+</ul>
+</li>
+</ul>
+<p>	</p>
 <h4 id="Marginal-probability"><a href="#Marginal-probability" class="headerlink" title="Marginal probability"></a>Marginal probability</h4><p>The probability of event that will occur regardless of conditional events<br>$$<br>\begin{align}<br>P(X&#x3D;x) &amp;&#x3D; \sum_{y \in \mathcal{y}}P(X&#x3D;x,Y&#x3D;y) \<br>       &amp;&#x3D; \sum_{y \in \mathcal{y}}P(X&#x3D;x|Y&#x3D;y)P(Y&#x3D;y)<br>\end{align}<br>$$</p>
 <h4 id="Independence"><a href="#Independence" class="headerlink" title="Independence"></a>Independence</h4><p>Consider two events $A$ and $B$ , they are <em>independent</em>  if<br>$$<br>P(X&#x3D;x,Y&#x3D;y)&#x3D;P(X&#x3D;x) \cdot P(Y&#x3D;y)<br>$$<br>In addition, (if they are independent: )<br>$$<br>P(X&#x3D;x)&#x3D; \cfrac{P(X&#x3D;x,Y&#x3D;y)}{P(Y&#x3D;y)}&#x3D;P(X&#x3D;x | Y&#x3D;y)<br>$$</p>
 <h4 id="Expectation"><a href="#Expectation" class="headerlink" title="Expectation"></a>Expectation</h4><p>Expectation (expected value) of a random variable $X$ is computed as</p>
@@ -564,7 +572,7 @@
 <li>We assume that the parameter is a random variable, and we specify a prior distribution $p(\theta)$</li>
 <li>By Bayes’ rule, we compute the posterior of the parameter $$p(\theta | x_1,x_2,\cdots,x_n) \propto p(\theta)p(x_1,x_2,\cdots,x_n|\theta)$$</li>
 <li>Estimate parameter $\theta$ by maximizing the posterior $$\hat\theta_{MAP}&#x3D;\text{arg}\max_\theta p(\theta)p(x_1,x_2,\cdots,x_n|\theta)$$</li>
-<li>We take the logarithmic of the posterior, $$\hat\theta_{MAP}&#x3D;\text{arg}\max_\theta \log p(\theta)+\sum_{i&#x3D;1}^n \log p(x_i|\theta)$$</li>
+<li>We take the logarithmic of the posterior, $$\hat\theta_{MAP}&#x3D;\text{arg}\max_\theta \log p(\theta)+\sum_{i&#x3D;1}^n \log p(x_i|\theta)$$<br><em>: MAP: balance MLE and prior knowledge</em></li>
 </ul>
 <h6 id="Example-of-MAP"><a href="#Example-of-MAP" class="headerlink" title="Example of MAP"></a>Example of MAP</h6><ul>
 <li>Imagine a bowl contains a large number of red and white balls. The proportion of the red balls, denoted by $\theta$ , is unknown, but with a Beta prior, $P(\theta) &#x3D;\cfrac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)}\theta^{\alpha-1}(1-\theta)^{\beta-1}$</li>
