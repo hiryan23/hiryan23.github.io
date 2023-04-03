@@ -53,14 +53,13 @@
 <meta property="og:image" content="http://hiryan23.github.io/pic/dd55e1c530692fa6810d9b314c15f84.png">
 <meta property="og:image" content="http://hiryan23.github.io/pic/6c170feb2750e49af1c23e63965b608.png">
 <meta property="og:image" content="http://hiryan23.github.io/pic/132f7b5bbcbb9caecf14d6a7f6bf2f0.png">
-<meta property="og:image" content="http://hiryan23.github.io/8fce1beb900d9682237c079542b44f5.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/02/17/Machine%20Learning/8fce1beb900d9682237c079542b44f5.png">
 <meta property="og:image" content="http://hiryan23.github.io/pic/5192779dc145eba035b997cf1a76fcc.png">
 <meta property="og:image" content="http://hiryan23.github.io/pic/876fcd4c99289d7d14c2494c352de58.png">
 <meta property="og:image" content="http://hiryan23.github.io/pic/4cda0b999d6f3752153a5f48f5b45fa.png">
-<meta property="og:image" content="http://hiryan23.github.io/pic/bfd5b6d0bc87a6d76c69c391e921870.png">
 <meta property="og:image" content="http://hiryan23.github.io/pic/8238a887080cb52105e2da7c8321fab.png">
 <meta property="article:published_time" content="2023-02-17T15:12:03.271Z">
-<meta property="article:modified_time" content="2023-03-21T15:04:20.317Z">
+<meta property="article:modified_time" content="2023-04-03T11:04:54.175Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="机器学习">
@@ -77,6 +76,8 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
   
   
   
@@ -393,8 +394,8 @@
 <span class="article-date">
 	<i class="icon icon-calendar-check"></i>
 	<a href="/2023/02/17/Machine%20Learning/" class="article-date">
-		<time datetime="2023-03-21T15:04:20.317Z" itemprop="dateUpdated">
-			2023-03-21
+		<time datetime="2023-04-03T11:04:54.175Z" itemprop="dateUpdated">
+			2023-04-03
 		</time>
 	</a>
 </span>
@@ -530,7 +531,7 @@
 <li>$\pmb{A},\pmb{B}$ : matrix (upper case, bold)</li>
 <li>$X$ : random variable (upper case)</li>
 <li>$x$ : realizaton of random variable (lower case)</li>
-<li>$y&#x3D; f(\pmb{x})$ : function with muitiple inputs</li>
+<li>$y= f(\pmb{x})$ : function with muitiple inputs</li>
 </ul>
 <h3 id="Probability-amp-Statistics"><a href="#Probability-amp-Statistics" class="headerlink" title="Probability &amp; Statistics"></a>Probability &amp; Statistics</h3><h4 id="Sample-space-Omega"><a href="#Sample-space-Omega" class="headerlink" title="Sample space($\Omega$)"></a>Sample space($\Omega$)</h4><p>Set of all possible outcomes of an experiment</p>
 <h4 id="Event-E"><a href="#Event-E" class="headerlink" title="Event($E$)"></a>Event($E$)</h4><p>Any subset of outcomes contained in the sample space</p>
@@ -538,8 +539,8 @@
 <h4 id="Axioms-of-probability"><a href="#Axioms-of-probability" class="headerlink" title="Axioms of probability"></a>Axioms of probability</h4><p>The <em>probabililty distribution</em> P is a function that satisfies the following</p>
 <ol>
 <li>$0 \leq P(E) \leq 1$ for any $E \in \mathcal F$ (Non-negativity)</li>
-<li>$P(\Omega)&#x3D;1$ </li>
-<li>$P(E_1 \cup E_2)&#x3D;P(E_1)+P(E_2)$ if $E_1$ and $E_2$ mutually exclusive events (Additivity)</li>
+<li>$P(\Omega)=1$ </li>
+<li>$P(E_1 \cup E_2)=P(E_1)+P(E_2)$ if $E_1$ and $E_2$ mutually exclusive events (Additivity)</li>
 </ol>
 <h4 id="Random-variable-RV"><a href="#Random-variable-RV" class="headerlink" title="Random variable (RV)"></a>Random variable (RV)</h4><p>mapping from sample space to real numbers</p>
 <ul>
@@ -547,108 +548,129 @@
 <li>Discrete RV has a countable set of possible values: Bernoulli, Poisson, …</li>
 <li>Continuous RV can take infinitely many possible values: Uniform, Normal, Exponential, …</li>
 </ul>
-<h4 id="Probability-distribution"><a href="#Probability-distribution" class="headerlink" title="Probability distribution"></a>Probability distribution</h4><p>Cumulative distribution function (CDF)<br>$$ F_X(x)&#x3D;P(X \leq x)$$<br>Discrete random variable: probability mass function $p_X(x)$<br>$$p_X(x)&#x3D;P(X&#x3D;x)$$<br>Continuous random variable: probability density function $f_X(x)$<br>$$f_X(x) &#x3D; \cfrac{\text{d}F_X(x)}{\text{d}x}$$</p>
-<h4 id="Joint-distribution"><a href="#Joint-distribution" class="headerlink" title="Joint distribution"></a>Joint distribution</h4><p>Consider two random variables $X$ and $Y$ , the <em>joint cumulative distribution function</em> is defined as<br>$$F_{XY}(x,y)&#x3D;P(X \leq x,Y \leq y)$$<br>The joint probability mass function of two discrete variables $X$ , $Y$<br>$$p_{X,Y}(x,y)&#x3D;P(X&#x3D;x,Y&#x3D;y)$$<br>The joint probability density function of two continuous variables $X$ , $Y$<br>$$f_{X,Y}(x,y)&#x3D;\cfrac{\partial^2 F_{XY}(x,y)}{\partial x \partial y}$$</p>
-<h4 id="Conditional-probability"><a href="#Conditional-probability" class="headerlink" title="Conditional probability"></a>Conditional probability</h4><p>The conditional probability of $X$ given $Y&#x3D;y$ is defined as,<br>$$P(X&#x3D;x|Y&#x3D;y)&#x3D;\cfrac{P(X&#x3D;x,Y&#x3D;y)}{P(Y&#x3D;y)}$$</p>
-<h4 id="Product-rule"><a href="#Product-rule" class="headerlink" title="Product rule"></a>Product rule</h4><p>$$P(X&#x3D;x,Y&#x3D;y)&#x3D;P(X&#x3D;x|Y&#x3D;y)P(Y&#x3D;y)&#x3D;P(Y&#x3D;y|X&#x3D;x)P(X&#x3D;x)$$</p>
-<h4 id="Bayes’-rule"><a href="#Bayes’-rule" class="headerlink" title="Bayes’ rule"></a>Bayes’ rule</h4><p>$$P(Y&#x3D;y|X&#x3D;x)&#x3D;\cfrac{P(X&#x3D;x|Y&#x3D;y)\cdot P(Y&#x3D;y)}{P(X&#x3D;x)}$$</p>
-<ul>
+<h4 id="Probability-distribution"><a href="#Probability-distribution" class="headerlink" title="Probability distribution"></a>Probability distribution</h4><p>Cumulative distribution function (CDF)</p>
+<script type="math/tex; mode=display">F_X(x)=P(X \leq x)</script><p>Discrete random variable: probability mass function $p_X(x)$</p>
+<script type="math/tex; mode=display">p_X(x)=P(X=x)</script><p>Continuous random variable: probability density function $f_X(x)$</p>
+<script type="math/tex; mode=display">f_X(x) = \cfrac{\text{d}F_X(x)}{\text{d}x}</script><h4 id="Joint-distribution"><a href="#Joint-distribution" class="headerlink" title="Joint distribution"></a>Joint distribution</h4><p>Consider two random variables $X$ and $Y$ , the <em>joint cumulative distribution function</em> is defined as</p>
+<script type="math/tex; mode=display">F_{XY}(x,y)=P(X \leq x,Y \leq y)</script><p>The joint probability mass function of two discrete variables $X$ , $Y$</p>
+<script type="math/tex; mode=display">p_{X,Y}(x,y)=P(X=x,Y=y)</script><p>The joint probability density function of two continuous variables $X$ , $Y$</p>
+<script type="math/tex; mode=display">f_{X,Y}(x,y)=\cfrac{\partial^2 F_{XY}(x,y)}{\partial x \partial y}</script><h4 id="Conditional-probability"><a href="#Conditional-probability" class="headerlink" title="Conditional probability"></a>Conditional probability</h4><p>The conditional probability of $X$ given $Y=y$ is defined as, </p>
+<script type="math/tex; mode=display">P(X=x|Y=y)=\cfrac{P(X=x,Y=y)}{P(Y=y)}</script><h4 id="Product-rule"><a href="#Product-rule" class="headerlink" title="Product rule"></a>Product rule</h4><script type="math/tex; mode=display">P(X=x,Y=y)=P(X=x|Y=y)P(Y=y)=P(Y=y|X=x)P(X=x)</script><h4 id="Bayes’-rule"><a href="#Bayes’-rule" class="headerlink" title="Bayes’ rule"></a>Bayes’ rule</h4><script type="math/tex; mode=display">P(Y=y|X=x)=\cfrac{P(X=x|Y=y)\cdot P(Y=y)}{P(X=x)}</script><ul>
 <li>Application: SPAM email case<ul>
-<li>y: labels (SPAM&#x2F;normal)</li>
-<li>x: frequency of keywords</li>
+<li>y: labels (SPAM/normal)</li>
+<li>x: frequency of keywords    </li>
 </ul>
 </li>
 </ul>
-<p>	</p>
-<h4 id="Marginal-probability"><a href="#Marginal-probability" class="headerlink" title="Marginal probability"></a>Marginal probability</h4><p>The probability of event that will occur regardless of conditional events<br>$$<br>\begin{align}<br>P(X&#x3D;x) &amp;&#x3D; \sum_{y \in \mathcal{y}}P(X&#x3D;x,Y&#x3D;y) \<br>       &amp;&#x3D; \sum_{y \in \mathcal{y}}P(X&#x3D;x|Y&#x3D;y)P(Y&#x3D;y)<br>\end{align}<br>$$</p>
-<h4 id="Independence"><a href="#Independence" class="headerlink" title="Independence"></a>Independence</h4><p>Consider two events $A$ and $B$ , they are <em>independent</em>  if<br>$$<br>P(X&#x3D;x,Y&#x3D;y)&#x3D;P(X&#x3D;x) \cdot P(Y&#x3D;y)<br>$$<br>In addition, (if they are independent: )<br>$$<br>P(X&#x3D;x)&#x3D; \cfrac{P(X&#x3D;x,Y&#x3D;y)}{P(Y&#x3D;y)}&#x3D;P(X&#x3D;x | Y&#x3D;y)<br>$$</p>
-<h4 id="Expectation"><a href="#Expectation" class="headerlink" title="Expectation"></a>Expectation</h4><p>Expectation (expected value) of a random variable $X$ is computed as</p>
+<h4 id="Marginal-probability"><a href="#Marginal-probability" class="headerlink" title="Marginal probability"></a>Marginal probability</h4><p>The probability of event that will occur regardless of conditional events</p>
+<script type="math/tex; mode=display">
+\begin{align}
+P(X=x) &= \sum_{y \in \mathcal{y}}P(X=x,Y=y) \\
+       &= \sum_{y \in \mathcal{y}}P(X=x|Y=y)P(Y=y)
+\end{align}</script><h4 id="Independence"><a href="#Independence" class="headerlink" title="Independence"></a>Independence</h4><p>Consider two events $A$ and $B$ , they are <em>independent</em>  if</p>
+<script type="math/tex; mode=display">
+P(X=x,Y=y)=P(X=x) \cdot P(Y=y)</script><p>In addition, (if they are independent: )</p>
+<script type="math/tex; mode=display">
+P(X=x)= \cfrac{P(X=x,Y=y)}{P(Y=y)}=P(X=x | Y=y)</script><h4 id="Expectation"><a href="#Expectation" class="headerlink" title="Expectation"></a>Expectation</h4><p>Expectation (expected value) of a random variable $X$ is computed as</p>
 <ul>
-<li><u>Discrete RV</u> $$ \mathbb{E} [x] &#x3D; \sum_x x \cdot p(x)$$</li>
-<li><u>Continuous RV</u> $$ \mathbb{E}[X]&#x3D;\int_x x \cdot f(x) \cdot \text{d} x$$</li>
-<li>Expectation of functions $$\mathbb{E}[h(X)] &#x3D; \int_x h(x) \cdot  f(x) \cdot \text{d}x$$</li>
-<li>Other properties: $$\begin{align}<br>\mathbb{E}[aX+b]&amp;&#x3D;a\mathbb{E}[X]+b \<br>\mathbb{E}[X+Y]&amp;&#x3D;\mathbb{E}[X]+\mathbb{E}[Y]\<br>\mathbb E[XY]&amp;&#x3D;\mathbb E[X]\mathbb E[Y],\ \text{if\ X\ and\ Y\ are uncoorrelated}<br>\end{align}$$</li>
+<li><u>Discrete RV</u> <script type="math/tex">\mathbb{E} [x] = \sum_x x \cdot p(x)</script></li>
+<li><u>Continuous RV</u> <script type="math/tex">\mathbb{E}[X]=\int_x x \cdot f(x) \cdot \text{d} x</script></li>
+<li>Expectation of functions <script type="math/tex">\mathbb{E}[h(X)] = \int_x h(x) \cdot  f(x) \cdot \text{d}x</script></li>
+<li>Other properties: <script type="math/tex">\begin{align}
+\mathbb{E}[aX+b]&=a\mathbb{E}[X]+b \\
+\mathbb{E}[X+Y]&=\mathbb{E}[X]+\mathbb{E}[Y]\\
+\mathbb E[XY]&=\mathbb E[X]\mathbb E[Y],\ \text{if\ X\ and\ Y\ are uncoorrelated}
+\end{align}</script></li>
 </ul>
-<h4 id="Conditional-expectation"><a href="#Conditional-expectation" class="headerlink" title="Conditional expectation"></a>Conditional expectation</h4><p>The conditional expectation of $X$ with respect to $Y$ is the function<br>$$\mathbb{E}[X|Y&#x3D;y]$$<br>Discrete random variable<br>$$\mathbb{E}[X|Y&#x3D;y]&#x3D; \sum_x x\cdot P(X&#x3D;x|Y&#x3D;y)$$<br>Continuous random variable<br>$$ \mathbb{E}[X|Y&#x3D;y]&#x3D;\int_x x f_{X|Y}(x|y) \text{d}x$$</p>
-<h5 id="Law-of-total-expectation"><a href="#Law-of-total-expectation" class="headerlink" title="Law of total expectation"></a>Law of total expectation</h5><p>$$\mathbb{E}[X] &#x3D; \mathbb{E}[\mathbb{E}[X|Y]]$$</p>
-<h4 id="Variance"><a href="#Variance" class="headerlink" title="Variance"></a>Variance</h4><p>The squared deviation of $X$ from its mean<br>$$ \text{Var}[X]&#x3D;\mathbb{E}[(X-\mathbb{E}[X])^2]&#x3D;\mathbb{E}[X^2]&#x3D;\mathbb{E}[X]^2$$</p>
-<ul>
-<li>Standard variation $$ \sigma &#x3D; \sqrt{\text{Var}[X]}$$</li>
-<li>Other properties $$\begin{align}<br>\text{Var}[aX+b]&amp;&#x3D;a^2 \cdot \text{Var}[x] \<br>\text{Var}[X+Y]&amp;&#x3D;\text{Var}[X]+\text{Var}[Y]\ \text{if X,Y are uncorrelated}<br>\end{align}$$</li>
+<h4 id="Conditional-expectation"><a href="#Conditional-expectation" class="headerlink" title="Conditional expectation"></a>Conditional expectation</h4><p>The conditional expectation of $X$ with respect to $Y$ is the function</p>
+<script type="math/tex; mode=display">\mathbb{E}[X|Y=y]</script><p>Discrete random variable</p>
+<script type="math/tex; mode=display">\mathbb{E}[X|Y=y]= \sum_x x\cdot P(X=x|Y=y)</script><p>Continuous random variable</p>
+<script type="math/tex; mode=display">\mathbb{E}[X|Y=y]=\int_x x f_{X|Y}(x|y) \text{d}x</script><h5 id="Law-of-total-expectation"><a href="#Law-of-total-expectation" class="headerlink" title="Law of total expectation"></a>Law of total expectation</h5><script type="math/tex; mode=display">\mathbb{E}[X] = \mathbb{E}[\mathbb{E}[X|Y]]</script><h4 id="Variance"><a href="#Variance" class="headerlink" title="Variance"></a>Variance</h4><p>The squared deviation of $X$ from its mean</p>
+<script type="math/tex; mode=display">\text{Var}[X]=\mathbb{E}[(X-\mathbb{E}[X])^2]=\mathbb{E}[X^2]=\mathbb{E}[X]^2</script><ul>
+<li>Standard variation <script type="math/tex">\sigma = \sqrt{\text{Var}[X]}</script></li>
+<li>Other properties <script type="math/tex">\begin{align}
+\text{Var}[aX+b]&=a^2 \cdot \text{Var}[x] \\
+\text{Var}[X+Y]&=\text{Var}[X]+\text{Var}[Y]\ \text{if X,Y are uncorrelated}
+\end{align}</script></li>
 </ul>
-<h4 id="Covariance"><a href="#Covariance" class="headerlink" title="Covariance"></a>Covariance</h4><p>$$ \text{Cov}(X_1,X_2)&#x3D;\mathbb{E}[(X_1-\mathbb{E}[X_1])(X_2-\mathbb{E}[X_2])]$$</p>
-<h4 id="Estimation-of-Parameters"><a href="#Estimation-of-Parameters" class="headerlink" title="Estimation of Parameters"></a>Estimation of Parameters</h4><ul>
+<h4 id="Covariance"><a href="#Covariance" class="headerlink" title="Covariance"></a>Covariance</h4><script type="math/tex; mode=display">\text{Cov}(X_1,X_2)=\mathbb{E}[(X_1-\mathbb{E}[X_1])(X_2-\mathbb{E}[X_2])]</script><h4 id="Estimation-of-Parameters"><a href="#Estimation-of-Parameters" class="headerlink" title="Estimation of Parameters"></a>Estimation of Parameters</h4><ul>
 <li>Suppose we have random variables $X_1, X_2, \cdots, X_n$ and corresponding observations $x_1, x_2, \cdots, x_n$</li>
 <li>We select a parametric model and fit the parameters of the model to the data.</li>
 <li>How do we choose the values of the parameters $\theta$ ?</li>
 </ul>
 <h5 id="Maximum-Likelihood-Estimation-MLE"><a href="#Maximum-Likelihood-Estimation-MLE" class="headerlink" title="Maximum Likelihood Estimation (MLE)"></a>Maximum Likelihood Estimation (MLE)</h5><p>Which $\theta$ makes the observations $x_1,x_2,\cdots,x_n$ most likely?</p>
 <ul>
-<li>Maximize the likelihood of the observed data $$ \hat{\theta}_{MLE}&#x3D;\text{arg}\max_\theta \mathcal{L}(\theta)&#x3D;\text{arg}\max_\theta p(x_1,x_2,\cdots,x_n|\theta)$$</li>
-<li>Assume that $x_1,x_2, \cdots,x_n$ are i.i.d., we have $$\mathcal{L}(\theta)&#x3D;\prod_{i&#x3D;1}^n p(x_i|\theta)$$</li>
-<li>Take the logarithmic on both sides, we obtain the log-likelihood $$\log \mathcal{L}(\theta)&#x3D; \sum_{i&#x3D;1}^n \log p(x_i|\theta)$$</li>
-</ul>
-<h6 id="Example-of-MLE"><a href="#Example-of-MLE" class="headerlink" title="Example of MLE"></a>Example of MLE</h6><ul>
+<li>Maximize the likelihood of the observed data <script type="math/tex">\hat{\theta}_{MLE}=\text{arg}\max_\theta \mathcal{L}(\theta)=\text{arg}\max_\theta p(x_1,x_2,\cdots,x_n|\theta)</script></li>
+<li>Assume that $x_1,x_2, \cdots,x_n$ are i.i.d., we have <script type="math/tex">\mathcal{L}(\theta)=\prod_{i=1}^n p(x_i|\theta)</script></li>
+<li>Take the logarithmic on both sides, we obtain the log-likelihood <script type="math/tex">\log \mathcal{L}(\theta)= \sum_{i=1}^n \log p(x_i|\theta)</script><h6 id="Example-of-MLE"><a href="#Example-of-MLE" class="headerlink" title="Example of MLE"></a>Example of MLE</h6></li>
 <li>Imagine a bowl contains a large number of red and white balls. The proportion of the red balls, denoted by $\theta$ , is unknown.</li>
 <li>Now we sample balls from this bowl with replacement for $n$ times and observe $x$ red balls out of $n$ balls.</li>
-<li>Likelihood function:$$\begin{align}<br>L(\theta)&#x3D;L(x;\theta)&#x3D;\binom{n}{x}\theta^x(1-\theta)^{n-x} \<br>\log L(\theta) &#x3D; x\log \theta+(n-x)\log(1-\theta) \<br>\cfrac{\partial \log L(\theta)}{\partial \theta} &#x3D; 0 \Rightarrow \hat\theta_{MLE} &#x3D; \cfrac{x}{n}<br>\end{align}$$</li>
+<li>Likelihood function:<script type="math/tex">\begin{align}
+L(\theta)=L(x;\theta)=\binom{n}{x}\theta^x(1-\theta)^{n-x} \\
+\log L(\theta) = x\log \theta+(n-x)\log(1-\theta) \\
+\cfrac{\partial \log L(\theta)}{\partial \theta} = 0 \Rightarrow \hat\theta_{MLE} = \cfrac{x}{n}
+\end{align}</script></li>
 </ul>
 <h5 id="Maximum-A-Posteriori-Estimation-MAP"><a href="#Maximum-A-Posteriori-Estimation-MAP" class="headerlink" title="Maximum A Posteriori Estimation (MAP)"></a>Maximum A Posteriori Estimation (MAP)</h5><p>Which $\theta$ maximizes the posterior $p(\theta | x_1,x_2,\cdots,x_n)$ given the prior $p(\theta)$ ?</p>
 <ul>
 <li>We assume that the parameter is a random variable, and we specify a prior distribution $p(\theta)$</li>
-<li>By Bayes’ rule, we compute the posterior of the parameter $$p(\theta | x_1,x_2,\cdots,x_n) \propto p(\theta)p(x_1,x_2,\cdots,x_n|\theta)$$</li>
-<li>Estimate parameter $\theta$ by maximizing the posterior $$\hat\theta_{MAP}&#x3D;\text{arg}\max_\theta p(\theta)p(x_1,x_2,\cdots,x_n|\theta)$$</li>
-<li>We take the logarithmic of the posterior, $$\hat\theta_{MAP}&#x3D;\text{arg}\max_\theta \log p(\theta)+\sum_{i&#x3D;1}^n \log p(x_i|\theta)$$<br><em>: MAP: balance MLE and prior knowledge</em></li>
+<li>By Bayes’ rule, we compute the posterior of the parameter <script type="math/tex">p(\theta | x_1,x_2,\cdots,x_n) \propto p(\theta)p(x_1,x_2,\cdots,x_n|\theta)</script></li>
+<li>Estimate parameter $\theta$ by maximizing the posterior <script type="math/tex">\hat\theta_{MAP}=\text{arg}\max_\theta p(\theta)p(x_1,x_2,\cdots,x_n|\theta)</script></li>
+<li>We take the logarithmic of the posterior, <script type="math/tex">\hat\theta_{MAP}=\text{arg}\max_\theta \log p(\theta)+\sum_{i=1}^n \log p(x_i|\theta)</script><br><em>: MAP: balance MLE and prior knowledge</em></li>
 </ul>
 <h6 id="Example-of-MAP"><a href="#Example-of-MAP" class="headerlink" title="Example of MAP"></a>Example of MAP</h6><ul>
-<li>Imagine a bowl contains a large number of red and white balls. The proportion of the red balls, denoted by $\theta$ , is unknown, but with a Beta prior, $P(\theta) &#x3D;\cfrac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)}\theta^{\alpha-1}(1-\theta)^{\beta-1}$</li>
+<li>Imagine a bowl contains a large number of red and white balls. The proportion of the red balls, denoted by $\theta$ , is unknown, but with a Beta prior, $P(\theta) =\cfrac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)}\theta^{\alpha-1}(1-\theta)^{\beta-1}$</li>
 <li>Now we sample balls from this bowl with replacement for $n$ times and observe $x$ red balls out of $n$ balls.</li>
-<li>The posterior function: $$\begin{align}<br>p(x|\theta)p(\theta) &amp;&#x3D; \binom{n}{x}\theta^x(1-\theta)^{n-x}\cfrac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\theta^{\alpha-1}(1-\theta)^{\beta-1} \<br>\log p(x|\theta)p(\theta) &amp;&#x3D; (x+\alpha-1)\log \theta +(n-x+\beta -1)\log(1-\theta) \<br>\hat\theta_{MAP}&amp;&#x3D;\cfrac{x+\alpha-1}{n+\alpha+\beta-2}<br>\end{align}$$</li>
+<li>The posterior function: <script type="math/tex">\begin{align}
+p(x|\theta)p(\theta) &= \binom{n}{x}\theta^x(1-\theta)^{n-x}\cfrac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\theta^{\alpha-1}(1-\theta)^{\beta-1} \\
+\log p(x|\theta)p(\theta) &= (x+\alpha-1)\log \theta +(n-x+\beta -1)\log(1-\theta) \\
+\hat\theta_{MAP}&=\cfrac{x+\alpha-1}{n+\alpha+\beta-2}
+\end{align}</script></li>
 </ul>
 <h3 id="Linear-Algebra"><a href="#Linear-Algebra" class="headerlink" title="Linear Algebra"></a>Linear Algebra</h3><h4 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h4><ul>
 <li>A one-dimension array of $n$ values, denoted by $\pmb{x}$ (lower case, bold)</li>
-<li>$x_i$ is the $i$-th element of $\pmb{x}$ $$ \pmb{x}&#x3D;(x_1,x_2,\cdots,x_n)^T&#x3D; \begin{bmatrix}x_1\ x_2\ \vdots \ x_n \end{bmatrix}$$</li>
+<li>$x_i$ is the $i$-th element of $\pmb{x}$ <script type="math/tex">\pmb{x}=(x_1,x_2,\cdots,x_n)^T= \begin{bmatrix}x_1\\ x_2\\ \vdots \\ x_n \end{bmatrix}</script></li>
 </ul>
 <h4 id="Matrix"><a href="#Matrix" class="headerlink" title="Matrix"></a>Matrix</h4><ul>
 <li>A two-dimension array of $m \times n$ values, denoted by $\pmb{A}$ (upper case, bold)</li>
 <li>$m$ is the number of row vector, $n$ is the number of column vectors</li>
-<li>$a_{ij}$ is the entry in $i$-th row and $j$-th column $$\pmb{A}&#x3D;\begin{bmatrix} a_{11} &amp;\cdots &amp;a_{1n} \ \vdots &amp;\ddots &amp;\vdots \ a_{m1} &amp;\cdots &amp;a_{mn} \end{bmatrix} $$</li>
+<li>$a_{ij}$ is the entry in $i$-th row and $j$-th column <script type="math/tex">\pmb{A}=\begin{bmatrix} a_{11} &\cdots &a_{1n} \\ \vdots &\ddots &\vdots \\ a_{m1} &\cdots &a_{mn} \end{bmatrix}</script></li>
 </ul>
 <h4 id="Vector-algorithmic"><a href="#Vector-algorithmic" class="headerlink" title="Vector algorithmic"></a>Vector algorithmic</h4><ul>
-<li>Scalar multiplication of a vector $$ \pmb{y}&#x3D;a\pmb{x}&#x3D;(ax_1,ax_2,\cdots,ax_n)^T$$</li>
-<li>Dot product of the vectors $\pmb{x},\pmb{y} \in \mathbb{R}^n$ $$\pmb{x}^T\pmb{y} &#x3D; [x_1,x_2,\cdots, x_n]\begin{bmatrix}y_1\ y_2\ \vdots\ y_n\end{bmatrix}&#x3D;\sum_{i&#x3D;1}^n x_iy_i \in \mathbb{R}$$</li>
-<li>Outer product of the vectors $\pmb{x} \in \mathbb{R}^m, \pmb{y} \in \mathbb{R}^n$ $$\pmb{x}\pmb{y}^T&#x3D;\begin{bmatrix}x_1\ x_2\ \vdots x_m\end{bmatrix}[y_1,y_2,\cdots,y_n]&#x3D;\begin{bmatrix}x_1y_1 &amp;\cdots &amp;x_1y_n\ \vdots &amp;\ddots &amp;\vdots\ x_my_1 &amp;\cdots &amp;x_my_n\end{bmatrix}$$</li>
+<li>Scalar multiplication of a vector <script type="math/tex">\pmb{y}=a\pmb{x}=(ax_1,ax_2,\cdots,ax_n)^T</script></li>
+<li>Dot product of the vectors $\pmb{x},\pmb{y} \in \mathbb{R}^n$ <script type="math/tex">\pmb{x}^T\pmb{y} = [x_1,x_2,\cdots, x_n]\begin{bmatrix}y_1\\ y_2\\ \vdots\\ y_n\end{bmatrix}=\sum_{i=1}^n x_iy_i \in \mathbb{R}</script></li>
+<li>Outer product of the vectors $\pmb{x} \in \mathbb{R}^m, \pmb{y} \in \mathbb{R}^n$ <script type="math/tex">\pmb{x}\pmb{y}^T=\begin{bmatrix}x_1\\ x_2\\ \vdots x_m\end{bmatrix}[y_1,y_2,\cdots,y_n]=\begin{bmatrix}x_1y_1 &\cdots &x_1y_n\\ \vdots &\ddots &\vdots\\ x_my_1 &\cdots &x_my_n\end{bmatrix}</script></li>
 </ul>
 <h4 id="Vector-norm"><a href="#Vector-norm" class="headerlink" title="Vector norm"></a>Vector norm</h4><p>A norm $||\cdot||$ is a function that satisfies</p>
 <ul>
-<li>$||\pmb{x}|| \geq 0$ with equality if and only if $\pmb{x}&#x3D;\pmb{0}$</li>
+<li>$||\pmb{x}|| \geq 0$ with equality if and only if $\pmb{x}=\pmb{0}$</li>
 <li>$||\pmb{x}+\pmb{y}|| \leq ||\pmb{x}|| + ||\pmb{y}||$</li>
-<li>$||a\pmb{x}||&#x3D;|a|||\pmb{x}||$</li>
-<li>$\pmb{x}^T\pmb{y}&#x3D;||\pmb{x}||_2||\pmb{y}||_2\cos(\theta)$</li>
-<li>$l_1$ norm $||\pmb{x}||<em>1&#x3D;\displaystyle\sum</em>{i&#x3D;1}^n|x_i|$</li>
-<li>$l_2$ norm $||\pmb{x}||<em>2&#x3D;\left(\displaystyle\sum</em>{i&#x3D;1}^n|x_i|^2\right)^{\frac{1}{2}}$</li>
+<li>$||a\pmb{x}||=|a|||\pmb{x}||$</li>
+<li>$\pmb{x}^T\pmb{y}=||\pmb{x}||_2||\pmb{y}||_2\cos(\theta)$</li>
+<li>$l_1$ norm $||\pmb{x}||_1=\displaystyle\sum_{i=1}^n|x_i|$</li>
+<li>$l_2$ norm $||\pmb{x}||_2=\left(\displaystyle\sum_{i=1}^n|x_i|^2\right)^{\frac{1}{2}}$ </li>
 </ul>
 <h4 id="Matrix-arithmetric"><a href="#Matrix-arithmetric" class="headerlink" title="Matrix arithmetric"></a>Matrix arithmetric</h4><ul>
-<li>Addition of matrices $\pmb{A},\pmb{B} \in \mathbb{R}^{m\times n}$ $$\pmb{C}&#x3D;\pmb{A}+\textcolor{red}{\pmb{B}}&#x3D;\begin{bmatrix} a_{11}+\textcolor{red}{b_{11}} &amp;\cdots &amp;a_{1n}+\textcolor{red}{b_{1n}}\ \vdots &amp;\ddots &amp;\vdots\ a_{m1}+\textcolor{red}{b_{m1}} &amp;\cdots &amp;a_{mn}+\textcolor{red}{b_{mn}} \end{bmatrix}$$</li>
-<li>Scalar multiplication of a matrix $$\pmb{B}&#x3D;\textcolor{red}{d}\cdot \pmb{A}&#x3D;\begin{bmatrix}\textcolor{red}{d}\cdot a_{11} &amp;\cdots &amp;\textcolor{red}{d}\cdot a_{1n}\ \vdots &amp;\ddots &amp;\vdots\ \textcolor{red}{d}\cdot a_{m1} &amp;\cdots &amp;\textcolor{red}{d}\cdot a_{mn}\end{bmatrix}$$</li>
-<li>Multiplication of matrices $\pmb{A} \in \mathbb{R}^{m \times n}$ and $\pmb{B} \in \mathbb{R}^{n\times p}$ $$ \pmb{A}\pmb{B}&#x3D;\pmb{C} \in \mathbb{R}^{m\times p},\ \ \ \ c_{ij}&#x3D;\sum_{k&#x3D;1}^na_{ik}b_{kj}$$</li>
-<li>Matrix multiplication is <em>associative</em>: $\pmb{A}(\pmb{B}\pmb{C})&#x3D;(\pmb{AB})\pmb{C}$ </li>
-<li>Matrix multiplication is <em>distributive</em>: $\pmb A (\pmb B+\pmb C)&#x3D;\pmb{AB}+\pmb{AC}$</li>
+<li>Addition of matrices $\pmb{A},\pmb{B} \in \mathbb{R}^{m\times n}$ <script type="math/tex">\pmb{C}=\pmb{A}+\textcolor{red}{\pmb{B}}=\begin{bmatrix} a_{11}+\textcolor{red}{b_{11}} &\cdots &a_{1n}+\textcolor{red}{b_{1n}}\\ \vdots &\ddots &\vdots\\ a_{m1}+\textcolor{red}{b_{m1}} &\cdots &a_{mn}+\textcolor{red}{b_{mn}} \end{bmatrix}</script></li>
+<li>Scalar multiplication of a matrix <script type="math/tex">\pmb{B}=\textcolor{red}{d}\cdot \pmb{A}=\begin{bmatrix}\textcolor{red}{d}\cdot a_{11} &\cdots &\textcolor{red}{d}\cdot a_{1n}\\ \vdots &\ddots &\vdots\\ \textcolor{red}{d}\cdot a_{m1} &\cdots &\textcolor{red}{d}\cdot a_{mn}\end{bmatrix}</script></li>
+<li>Multiplication of matrices $\pmb{A} \in \mathbb{R}^{m \times n}$ and $\pmb{B} \in \mathbb{R}^{n\times p}$ <script type="math/tex">\pmb{A}\pmb{B}=\pmb{C} \in \mathbb{R}^{m\times p},\ \ \ \ c_{ij}=\sum_{k=1}^na_{ik}b_{kj}</script></li>
+<li>Matrix multiplication is <em>associative</em>: $\pmb{A}(\pmb{B}\pmb{C})=(\pmb{AB})\pmb{C}$ </li>
+<li>Matrix multiplication is <em>distributive</em>: $\pmb A (\pmb B+\pmb C)=\pmb{AB}+\pmb{AC}$</li>
 <li>Matrix multiplication is <em>NOT communicative</em>: $\pmb{AB} \neq \pmb{BA}$</li>
 </ul>
-<h4 id="Transpose"><a href="#Transpose" class="headerlink" title="Transpose"></a>Transpose</h4><p>Given a matrix $\pmb A \in \mathbb R^{m\times n}$ , its transpose, written by $\pmb A^T \in \mathbb R^{n\times m}$ , is given by $$(\pmb A^T)<em>{ij}&#x3D;(\pmb A)</em>{ji}$$<br>Some properties</p>
+<h4 id="Transpose"><a href="#Transpose" class="headerlink" title="Transpose"></a>Transpose</h4><p>Given a matrix $\pmb A \in \mathbb R^{m\times n}$ , its transpose, written by $\pmb A^T \in \mathbb R^{n\times m}$ , is given by <script type="math/tex">(\pmb A^T)_{ij}=(\pmb A)_{ji}</script><br>Some properties</p>
 <ul>
-<li>$(\pmb{AB})^T&#x3D;\pmb B^T\pmb A^T$</li>
-<li>$(\pmb A^T)^T&#x3D;\pmb A$</li>
-<li>$(\pmb A+\pmb B)^T&#x3D;\pmb A^T+\pmb B^T$</li>
+<li>$(\pmb{AB})^T=\pmb B^T\pmb A^T$</li>
+<li>$(\pmb A^T)^T=\pmb A$</li>
+<li>$(\pmb A+\pmb B)^T=\pmb A^T+\pmb B^T$</li>
 </ul>
-<h4 id="Symmetric-matrix"><a href="#Symmetric-matrix" class="headerlink" title="Symmetric matrix"></a>Symmetric matrix</h4><p>A square matrix is <em>symmetric</em> if $\pmb A &#x3D;\pmb A^T$.</p>
-<h4 id="Inverse-of-a-matrix"><a href="#Inverse-of-a-matrix" class="headerlink" title="Inverse of a matrix"></a>Inverse of a matrix</h4><p>For a matrix $\pmb A\in \mathbb R^{n\times n}$ , if there exists a square matrix $\pmb B \in \mathbb R^{n\times n}$ such that $$\pmb{BA}&#x3D;\pmb{AB}&#x3D;\pmb I$$<br>where $\pmb I$ is the $n$-by-$n$ <em>identity matrix</em>, then $\pmb B$ is the <em>inverse</em> of $\pmb A$.</p>
+<h4 id="Symmetric-matrix"><a href="#Symmetric-matrix" class="headerlink" title="Symmetric matrix"></a>Symmetric matrix</h4><p>A square matrix is <em>symmetric</em> if $\pmb A =\pmb A^T$.</p>
+<h4 id="Inverse-of-a-matrix"><a href="#Inverse-of-a-matrix" class="headerlink" title="Inverse of a matrix"></a>Inverse of a matrix</h4><p>For a matrix $\pmb A\in \mathbb R^{n\times n}$ , if there exists a square matrix $\pmb B \in \mathbb R^{n\times n}$ such that <script type="math/tex">\pmb{BA}=\pmb{AB}=\pmb I</script><br>where $\pmb I$ is the $n$-by-$n$ <em>identity matrix</em>, then $\pmb B$ is the <em>inverse</em> of $\pmb A$.</p>
 <ul>
 <li>The inverse of $\pmb A$ is denoted by $\pmb A^{-1}$ </li>
 <li>A matrix is <em>invertible</em> if it is not <em>singular</em>.</li>
 </ul>
-<p><u>Solving a linear system</u><br>If $\pmb A$ is square nonsingular matrix, then the solution to the linear system $\pmb{AX}&#x3D;\pmb b$ is given by $$\pmb x&#x3D;\pmb A^{-1}\pmb b$$</p>
+<p><u>Solving a linear system</u><br>If $\pmb A$ is square nonsingular matrix, then the solution to the linear system $\pmb{AX}=\pmb b$ is given by <script type="math/tex">\pmb x=\pmb A^{-1}\pmb b</script></p>
 <h4 id="Semidefinite-matrices"><a href="#Semidefinite-matrices" class="headerlink" title="Semidefinite matrices"></a>Semidefinite matrices</h4><p>A symmetric matrix $\pmb A \in \mathbb S^{n\times n}$ is </p>
 <ul>
 <li><em>positive semidefinite</em> if $\pmb x^T \pmb{Ax} \geq 0$ for any $\pmb x \in \mathbb R^n$ and $\pmb x \neq \pmb 0$ , denoted by $\pmb A \succcurlyeq 0$ ;</li>
@@ -657,22 +679,25 @@
 <li>negative definite if $-\pmb A$ is positive definite;</li>
 <li>indefinite if it is neither positive nor negative definite.</li>
 </ul>
-<h4 id="Back-to-Probability-amp-Statistics"><a href="#Back-to-Probability-amp-Statistics" class="headerlink" title="Back to Probability &amp; Statistics"></a>Back to Probability &amp; Statistics</h4><h5 id="Random-vector"><a href="#Random-vector" class="headerlink" title="Random vector"></a>Random vector</h5><p>A vector of random variables $X_1,X_2,\cdots,X_n$, denoted by $\pmb X&#x3D;[X_1,X_2,\cdots,X_n]^T$ </p>
+<h4 id="Back-to-Probability-amp-Statistics"><a href="#Back-to-Probability-amp-Statistics" class="headerlink" title="Back to Probability &amp; Statistics"></a>Back to Probability &amp; Statistics</h4><h5 id="Random-vector"><a href="#Random-vector" class="headerlink" title="Random vector"></a>Random vector</h5><p>A vector of random variables $X_1,X_2,\cdots,X_n$, denoted by $\pmb X=[X_1,X_2,\cdots,X_n]^T$ </p>
 <ul>
-<li>$\mathbb E[X]&#x3D;[\mathbb E[X_1],\mathbb E[X_2],\cdots,\mathbb E[X_n]]^T$</li>
+<li>$\mathbb E[X]=[\mathbb E[X_1],\mathbb E[X_2],\cdots,\mathbb E[X_n]]^T$</li>
 </ul>
-<h5 id="Covariance-matrix"><a href="#Covariance-matrix" class="headerlink" title="Covariance matrix"></a>Covariance matrix</h5><p>$$\Sigma &#x3D; \begin{bmatrix} \text{Cov}[X_1,X_1] &amp;\cdots &amp;\text{Cov}[X_1,X_n]\ \vdots &amp;\ddots &amp;\vdots\ \text{Cov}[X_n,X_1] &amp;\cdots &amp;\text{Cov}[X_n,X_n]\end{bmatrix}&#x3D;\mathbb E[(\pmb X -\mathbb E[X])(\pmb X-\mathbb E[\pmb X])^T]$$</p>
-<h4 id="Matrix-calculus"><a href="#Matrix-calculus" class="headerlink" title="Matrix calculus"></a>Matrix calculus</h4><p>Consider a function $f:\mathbb R^n \rightarrow \mathbb R$ , the <em>gradient</em> of $f$ is defined as a vector of partial derivatives $$\nabla f(\pmb x)&#x3D;\begin{bmatrix}\cfrac{\partial f(\pmb x)}{\partial x_1}\ \cfrac{\partial f(\pmb x)}{\partial x_2}\ \vdots\ \cfrac{\partial f(\pmb x)}{\partial x_n}\end{bmatrix}$$<br>“direction and rate of fastest <strong>increase</strong>“</p>
+<h5 id="Covariance-matrix"><a href="#Covariance-matrix" class="headerlink" title="Covariance matrix"></a>Covariance matrix</h5><script type="math/tex; mode=display">\Sigma = \begin{bmatrix} \text{Cov}[X_1,X_1] &\cdots &\text{Cov}[X_1,X_n]\\ \vdots &\ddots &\vdots\\ \text{Cov}[X_n,X_1] &\cdots &\text{Cov}[X_n,X_n]\end{bmatrix}=\mathbb E[(\pmb X -\mathbb E[X])(\pmb X-\mathbb E[\pmb X])^T]</script><h4 id="Matrix-calculus"><a href="#Matrix-calculus" class="headerlink" title="Matrix calculus"></a>Matrix calculus</h4><p>Consider a function $f:\mathbb R^n \rightarrow \mathbb R$ , the <em>gradient</em> of $f$ is defined as a vector of partial derivatives <script type="math/tex">\nabla f(\pmb x)=\begin{bmatrix}\cfrac{\partial f(\pmb x)}{\partial x_1}\\ \cfrac{\partial f(\pmb x)}{\partial x_2}\\ \vdots\\ \cfrac{\partial f(\pmb x)}{\partial x_n}\end{bmatrix}</script><br>“direction and rate of fastest <strong>increase</strong>“</p>
 <ul>
 <li>The direction of fastest increase of the function</li>
 <li>The magnitude is the rate of increase</li>
 </ul>
-<p>Consider a function $f: \mathbb R^n \rightarrow \mathbb R$, the <em>Hessian</em> of $f$ is defined as $$\nabla^2f(\pmb x)&#x3D;\begin{bmatrix}\cfrac{\partial^2f(\pmb x)}{\partial x_1^2} &amp;\cdots &amp;\cfrac{\partial^2f(\pmb x)}{\partial x_1\partial x_n}\ \vdots &amp;\ddots &amp;\vdots\ \cfrac{\partial^2f(\pmb x)}{\partial x_n\partial x_1} &amp;\cdots &amp;\cfrac{\partial^2f(\pmb x)}{\partial x_n^2}\end{bmatrix}$$</p>
+<p>Consider a function $f: \mathbb R^n \rightarrow \mathbb R$, the <em>Hessian</em> of $f$ is defined as <script type="math/tex">\nabla^2f(\pmb x)=\begin{bmatrix}\cfrac{\partial^2f(\pmb x)}{\partial x_1^2} &\cdots &\cfrac{\partial^2f(\pmb x)}{\partial x_1\partial x_n}\\ \vdots &\ddots &\vdots\\ \cfrac{\partial^2f(\pmb x)}{\partial x_n\partial x_1} &\cdots &\cfrac{\partial^2f(\pmb x)}{\partial x_n^2}\end{bmatrix}</script></p>
 <ul>
-<li>Hessian is symmetric when $f$ is twice differentiable. $$\cfrac{\partial^2 f(\pmb x)}{\partial x_i\partial x_j}&#x3D;\cfrac{\partial^2f(\pmb x)}{\partial x_j\partial x_i}$$</li>
+<li>Hessian is symmetric when $f$ is twice differentiable. <script type="math/tex">\cfrac{\partial^2 f(\pmb x)}{\partial x_i\partial x_j}=\cfrac{\partial^2f(\pmb x)}{\partial x_j\partial x_i}</script><h3 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h3></li>
 </ul>
-<h3 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h3><h4 id="What-is-optimization"><a href="#What-is-optimization" class="headerlink" title="What is optimization?"></a>What is optimization?</h4><p>Finding the minimizer of a function subject to constraints:<br>$$\begin{align}<br>\text{minimize}_{\pmb x} \ \ \ \ &amp;f(\pmb x) \<br>s.t.\ \ \ \ &amp;f_i(\pmb x)\leq 0,i&#x3D;1,2,\cdots, k;\<br>&amp;h_j(\pmb x)&#x3D;0,j&#x3D;1,2,\cdots,l.<br>\end{align}$$</p>
-<ul>
+<h4 id="What-is-optimization"><a href="#What-is-optimization" class="headerlink" title="What is optimization?"></a>What is optimization?</h4><p>Finding the minimizer of a function subject to constraints:</p>
+<script type="math/tex; mode=display">\begin{align}
+\text{minimize}_{\pmb x} \ \ \ \ &f(\pmb x) \\
+s.t.\ \ \ \ &f_i(\pmb x)\leq 0,i=1,2,\cdots, k;\\
+&h_j(\pmb x)=0,j=1,2,\cdots,l.
+\end{align}</script><ul>
 <li>Mean-variance analysis</li>
 <li>Transportation problems</li>
 <li>Facility location</li>
@@ -683,23 +708,27 @@
 </ul>
 <h4 id="Local-minima-and-global-minima"><a href="#Local-minima-and-global-minima" class="headerlink" title="Local minima and global minima"></a>Local minima and global minima</h4><ul>
 <li>Local minima is the solution that optimal within a neighboring set</li>
-<li>Global minima is the optimal solution among all possible solutions<br><img src="/pic/379ac1b116f3c5612b0e6a1f3df25ea.png"></li>
+<li>Global minima is the optimal solution among all possible solutions<br><img src="/pic/379ac1b116f3c5612b0e6a1f3df25ea.png" alt=""></li>
 </ul>
-<h4 id="Convex-set"><a href="#Convex-set" class="headerlink" title="Convex set"></a>Convex set</h4><p>A set $C\in \mathbb R^n$ is <em>convex</em> if for $\pmb x,\pmb y\in C$ and any $\alpha\in [0,1]$, $$\alpha \pmb x+(1-\alpha)\pmb y \in C$$<img src="/pic/b885ffb38cf90c077ad79abb079e005.png"></p>
+<h4 id="Convex-set"><a href="#Convex-set" class="headerlink" title="Convex set"></a>Convex set</h4><p>A set $C\in \mathbb R^n$ is <em>convex</em> if for $\pmb x,\pmb y\in C$ and any $\alpha\in [0,1]$, <script type="math/tex">\alpha \pmb x+(1-\alpha)\pmb y \in C</script><img src="/pic/b885ffb38cf90c077ad79abb079e005.png" alt=""></p>
 <p>Examples: $\mathbb R^n$ , norm ball {$\pmb x: ||\pmb x|| \leq r$} for a given $r$ , intersection of convex sets</p>
-<h4 id="Convex-Concave-function"><a href="#Convex-Concave-function" class="headerlink" title="Convex (Concave) function"></a>Convex (Concave) function</h4><p>A function $f:\mathbb R^n \rightarrow \mathbb R$ is convex (concave) if for $\pmb x,\pmb y \in \text{dom}(f)$ and any $\alpha \in [0,1]$ , $$f(\alpha \pmb x+(1-\alpha)\pmb y)\leq(\geq) \alpha f(\pmb x)+(1-\alpha)f(\pmb y)$$<img src="/pic/57c1cdf60aceade4f79afcdcf5781c5.png"></p>
-<h4 id="First-order-convexity-condition"><a href="#First-order-convexity-condition" class="headerlink" title="First-order convexity condition"></a>First-order convexity condition</h4><p>Suppose a function $f:\mathbb R^n \rightarrow \mathbb R$ is differentiable. Then $f$ is convex if and only if for all $\pmb x,\pmb y \in \text{dom}(f)$ $$f(\pmb y) \geq f(\pmb x) + \nabla f(\pmb x)^T(\pmb y-\pmb x)$$<img src="/pic/b9432d6edc99c82146c5ca340b6fd65.png"></p>
-<h4 id="Second-order-convexity-condition"><a href="#Second-order-convexity-condition" class="headerlink" title="Second-order convexity condition"></a>Second-order convexity condition</h4><p>Suppose a function $f:\mathbb R^n \rightarrow \mathbb R$ is twice differentiable. Then $f$ is convex if and only if for all $\pmb x \in \text{dom}(f)$ $$\nabla^2f(\pmb x)\succcurlyeq 0$$<img src="/pic/8c43075b2094ec2db8c526f1ea28d14.png"></p>
+<h4 id="Convex-Concave-function"><a href="#Convex-Concave-function" class="headerlink" title="Convex (Concave) function"></a>Convex (Concave) function</h4><p>A function $f:\mathbb R^n \rightarrow \mathbb R$ is convex (concave) if for $\pmb x,\pmb y \in \text{dom}(f)$ and any $\alpha \in [0,1]$ , <script type="math/tex">f(\alpha \pmb x+(1-\alpha)\pmb y)\leq(\geq) \alpha f(\pmb x)+(1-\alpha)f(\pmb y)</script><img src="/pic/57c1cdf60aceade4f79afcdcf5781c5.png" alt=""></p>
+<h4 id="First-order-convexity-condition"><a href="#First-order-convexity-condition" class="headerlink" title="First-order convexity condition"></a>First-order convexity condition</h4><p>Suppose a function $f:\mathbb R^n \rightarrow \mathbb R$ is differentiable. Then $f$ is convex if and only if for all $\pmb x,\pmb y \in \text{dom}(f)$ <script type="math/tex">f(\pmb y) \geq f(\pmb x) + \nabla f(\pmb x)^T(\pmb y-\pmb x)</script><img src="/pic/b9432d6edc99c82146c5ca340b6fd65.png" alt=""></p>
+<h4 id="Second-order-convexity-condition"><a href="#Second-order-convexity-condition" class="headerlink" title="Second-order convexity condition"></a>Second-order convexity condition</h4><p>Suppose a function $f:\mathbb R^n \rightarrow \mathbb R$ is twice differentiable. Then $f$ is convex if and only if for all $\pmb x \in \text{dom}(f)$ <script type="math/tex">\nabla^2f(\pmb x)\succcurlyeq 0</script><img src="/pic/8c43075b2094ec2db8c526f1ea28d14.png" alt=""></p>
 <h4 id="Examples-of-convex-functions"><a href="#Examples-of-convex-functions" class="headerlink" title="Examples of convex functions"></a>Examples of convex functions</h4><ul>
 <li>Exponential function: $e^{ax}$</li>
 <li>Logarithmic function: $\log(x)$ is concave</li>
 <li>Affine function: $\pmb a^T\pmb x+b$ is a convex and concave</li>
 <li>Least square loss: $||\pmb y-\pmb{X\beta}||_2^2$</li>
-<li>$f_1(x)$ is convex for $x\in \text{dom}(f_1)$ and $f_2(x)$ is convex for $x\in \text{dom}(f_2)$ , then $f_1+f_2$ is convex for $x\in \text{dom}(f_1) \cap \text{dom}(f_2)$</li>
+<li>$f_1(x)$ is convex for $x\in \text{dom}(f_1)$ and $f_2(x)$ is convex for $x\in \text{dom}(f_2)$ , then $f_1+f_2$ is convex for $x\in \text{dom}(f_1) \cap \text{dom}(f_2)$ </li>
 </ul>
-<h4 id="Convex-optimization-problem"><a href="#Convex-optimization-problem" class="headerlink" title="Convex optimization problem"></a>Convex optimization problem</h4><p>An optimization problem is convex if its objective is a convex function, the inequality constraints $f_j$ are convex, and the equality constraints $h_j$ are affine.<br>$$\begin{align}<br>\text{minimize}_{\pmb x} \ \ \ \ &amp;f(\pmb x)\<br>s.t. \ \ \ \ &amp;f_i(\pmb x)\leq 0,i&#x3D;1,2,\cdots,k; \<br>&amp;h_j(\pmb x)&#x3D;0,j&#x3D;1,2,\cdots,l.<br>\end{align}$$</p>
-<h4 id="It’s-nice-to-be-convex"><a href="#It’s-nice-to-be-convex" class="headerlink" title="It’s nice to be convex!"></a>It’s nice to be convex!</h4><ul>
-<li>$\nabla f(\pmb x)&#x3D;0$ if and only if $\pmb x$ is a global minimizer of $f(\pmb x)$ .</li>
+<h4 id="Convex-optimization-problem"><a href="#Convex-optimization-problem" class="headerlink" title="Convex optimization problem"></a>Convex optimization problem</h4><p>An optimization problem is convex if its objective is a convex function, the inequality constraints $f_j$ are convex, and the equality constraints $h_j$ are affine. </p>
+<script type="math/tex; mode=display">\begin{align}
+\text{minimize}_{\pmb x} \ \ \ \ &f(\pmb x)\\
+s.t. \ \ \ \ &f_i(\pmb x)\leq 0,i=1,2,\cdots,k; \\
+&h_j(\pmb x)=0,j=1,2,\cdots,l.
+\end{align}</script><h4 id="It’s-nice-to-be-convex"><a href="#It’s-nice-to-be-convex" class="headerlink" title="It’s nice to be convex!"></a>It’s nice to be convex!</h4><ul>
+<li>$\nabla f(\pmb x)=0$ if and only if $\pmb x$ is a global minimizer of $f(\pmb x)$ .</li>
 <li>If $\pmb x$ is a local minimizer of a convex optimization problem, it is a global minimizer.</li>
 </ul>
 <h4 id="Optimization-methods"><a href="#Optimization-methods" class="headerlink" title="Optimization methods"></a>Optimization methods</h4><ul>
@@ -710,73 +739,65 @@
 </ul>
 <h2 id="Lecture3-BasicInML"><a href="#Lecture3-BasicInML" class="headerlink" title="Lecture3_BasicInML"></a>Lecture3_BasicInML</h2><h3 id="Generalization-ability-泛化能力"><a href="#Generalization-ability-泛化能力" class="headerlink" title="Generalization ability (泛化能力)"></a>Generalization ability (泛化能力)</h3><ul>
 <li>A model’s ability to generalize to new data</li>
-<li>If the model is trained too well, it can fit perfectly the random fluctuatioins or noise in the training data but it will fail to predict accurately on new data<br><img src="/pic/a99b5dbe4e510c276edb458034cea64.png"></li>
+<li>If the model is trained too well, it can fit perfectly the random fluctuatioins or noise in the training data but it will fail to predict accurately on new data<br><img src="/pic/a99b5dbe4e510c276edb458034cea64.png" alt=""></li>
 </ul>
 <h4 id="Underfitting-and-overfitting"><a href="#Underfitting-and-overfitting" class="headerlink" title="Underfitting and overfitting"></a>Underfitting and overfitting</h4><ul>
-<li><p>Underfitting (欠拟合) occurs when a statistical model or machine learning algorithm cannot capture the underlying trend of the data.<br><img src="/pic/f70b694bdd89dce57b1ed3575e59c22.png"></p>
+<li><p>Underfitting (欠拟合) occurs when a statistical model or machine learning algorithm cannot capture the underlying trend of the data.<br><img src="/pic/f70b694bdd89dce57b1ed3575e59c22.png" alt=""></p>
 </li>
-<li><p>Overfitting (过拟合) occurs when a statistical model describes random error or noise instead of the underlying relationship.<br><img src="/pic/8918735b6e8c752e2d4ae0af01c4e03.png"></p>
+<li><p>Overfitting (过拟合) occurs when a statistical model describes random error or noise instead of the underlying relationship.<br><img src="/pic/8918735b6e8c752e2d4ae0af01c4e03.png" alt=""></p>
 </li>
 </ul>
 <h4 id="Basic-terms"><a href="#Basic-terms" class="headerlink" title="Basic terms"></a>Basic terms</h4><ul>
 <li>A sample is denoted by $(\pmb x_i,y_i)$ where $\pmb x_i$ is the attribute (feature) vector and $y_i$ is the label (response).</li>
-<li>A list of $m$ samples is a dataset, denoted by $D$ .$$D&#x3D;{(\pmb x_i,y_i):i&#x3D;1,2,\cdots,m}$$<ul>
+<li>A list of $m$ samples is a dataset, denoted by $D$ .<script type="math/tex">D=\{(\pmb x_i,y_i):i=1,2,\cdots,m\}</script><ul>
 <li>Training set, denoted by $S$ , is used to train the model</li>
 <li>Test set, denoted by $T$ , is used to evaluate the performance of the model</li>
 </ul>
 </li>
-<li>A mapping from the attribute space (特征空间) $\mathcal X$ to the label space (标签空间) $\mathcal Y$ , denoted by $f$ , is called a hypothesis (假设).$$f:\mathcal X \rightarrow \mathcal Y$$</li>
-<li>The set of all possible hypotheses is called hypothesis space (假设空间), denoted by $F$ .$$F&#x3D;{f_1,f_2,\cdots}$$</li>
+<li>A mapping from the attribute space (特征空间) $\mathcal X$ to the label space (标签空间) $\mathcal Y$ , denoted by $f$ , is called a hypothesis (假设).<script type="math/tex">f:\mathcal X \rightarrow \mathcal Y</script></li>
+<li>The set of all possible hypotheses is called hypothesis space (假设空间), denoted by $F$ .<script type="math/tex">F=\{f_1,f_2,\cdots\}</script></li>
 </ul>
 <h4 id="Loss-function"><a href="#Loss-function" class="headerlink" title="Loss function"></a>Loss function</h4><ul>
 <li>Suppose $\hat f(\pmb x)$ is obtained using the training set $S$ </li>
-<li>For an unknown sample $(\pmb x_0,y_0)$ , the error between the prediction $\hat f(\pmb x_0)$ and the observed value $y_0$ is measured by the loss function (损失函数) $$ L(\hat f(\pmb x_0),y_0)$$</li>
+<li>For an unknown sample $(\pmb x_0,y_0)$ , the error between the prediction $\hat f(\pmb x_0)$ and the observed value $y_0$ is measured by the loss function (损失函数) <script type="math/tex">L(\hat f(\pmb x_0),y_0)</script></li>
 <li>Examples<ul>
-<li>$L(\hat f(\pmb x),y)&#x3D;\mathbb I(\hat f(\pmb x)\neq y)$ (binary classification)</li>
-<li>$L(\hat f(\pmb x),y)&#x3D;(\hat f(\pmb x)-y)^2$ (regression)</li>
+<li>$L(\hat f(\pmb x),y)=\mathbb I(\hat f(\pmb x)\neq y)$ (binary classification)</li>
+<li>$L(\hat f(\pmb x),y)=(\hat f(\pmb x)-y)^2$ (regression)</li>
 </ul>
 </li>
 </ul>
-<h4 id="Generalization-error"><a href="#Generalization-error" class="headerlink" title="Generalization error"></a>Generalization error</h4><h5 id="Generalization-error-泛化误差"><a href="#Generalization-error-泛化误差" class="headerlink" title="Generalization error (泛化误差)"></a>Generalization error (泛化误差)</h5><p>$$R(f)&#x3D;\mathbb E [L(f(\pmb x),y)]$$</p>
-<ul>
-<li>The expectation is taken over the joint distribution of $(\pmb x ,y)$</li>
+<h4 id="Generalization-error"><a href="#Generalization-error" class="headerlink" title="Generalization error"></a>Generalization error</h4><h5 id="Generalization-error-泛化误差"><a href="#Generalization-error-泛化误差" class="headerlink" title="Generalization error (泛化误差)"></a>Generalization error (泛化误差)</h5><script type="math/tex; mode=display">R(f)=\mathbb E [L(f(\pmb x),y)]</script><ul>
+<li>The expectation is taken over the joint distribution of $(\pmb x ,y)$ </li>
 </ul>
 <h5 id="Test-error-测试误差"><a href="#Test-error-测试误差" class="headerlink" title="Test error (测试误差)"></a>Test error (测试误差)</h5><ul>
-<li>Given a set of test samples $T&#x3D;{(\pmb x_i,y_i):i&#x3D;1,2,\cdots,n}$ , the test error is given by $$\hat R_T(f)&#x3D;\cfrac{1}{n}\sum_{i&#x3D;1}^n L(f(\pmb x_i),y_i)$$</li>
+<li>Given a set of test samples $T=\{(\pmb x_i,y_i):i=1,2,\cdots,n\}$ , the test error is given by <script type="math/tex">\hat R_T(f)=\cfrac{1}{n}\sum_{i=1}^n L(f(\pmb x_i),y_i)</script></li>
 </ul>
 <h5 id="Training-error-训练误差"><a href="#Training-error-训练误差" class="headerlink" title="Training error (训练误差)"></a>Training error (训练误差)</h5><ul>
-<li>Given a set of training samples $S&#x3D;{(\pmb x_i,y_i):i&#x3D;1,2,\cdots,m}$ , the training error is given by $$\hat R_S(f)&#x3D;\cfrac{1}{m}\sum_{i&#x3D;1}^mL(f(\pmb x_i),y_i)$$</li>
-</ul>
-<h5 id="Learning-objective"><a href="#Learning-objective" class="headerlink" title="Learning objective"></a>Learning objective</h5><ul>
-<li>Select a hypothesis $f\in F$ with the smallest <em>generalization error</em>. $$\min_{f\in F}R(f)&#x3D;\min_{f\in F}\mathbb E[L(f(\pmb x),y)]$$</li>
+<li>Given a set of training samples $S=\{(\pmb x_i,y_i):i=1,2,\cdots,m\}$ , the training error is given by <script type="math/tex">\hat R_S(f)=\cfrac{1}{m}\sum_{i=1}^mL(f(\pmb x_i),y_i)</script><h5 id="Learning-objective"><a href="#Learning-objective" class="headerlink" title="Learning objective"></a>Learning objective</h5></li>
+<li>Select a hypothesis $f\in F$ with the smallest <em>generalization error</em>. <script type="math/tex">\min_{f\in F}R(f)=\min_{f\in F}\mathbb E[L(f(\pmb x),y)]</script></li>
 <li>However, the true distribution of $(\pmb x,y)$ is usually unknown in practice.</li>
-<li>We obtain the hypothesis by minimizing the <em>training error</em> with the training set $S&#x3D;{(\pmb x_i,y_i):i&#x3D;1,2,\cdots,m}$ ,$$\min_{f\in F}\hat R_S(f)&#x3D;\min_{f\in F}\cfrac{1}{m}\sum_{i&#x3D;1}^m L(f(\pmb x_i),y_i)$$</li>
+<li>We obtain the hypothesis by minimizing the <em>training error</em> with the training set $S=\{(\pmb x_i,y_i):i=1,2,\cdots,m\}$ ,<script type="math/tex">\min_{f\in F}\hat R_S(f)=\min_{f\in F}\cfrac{1}{m}\sum_{i=1}^m L(f(\pmb x_i),y_i)</script></li>
 </ul>
-<h5 id="Training-error-vs-test-error"><a href="#Training-error-vs-test-error" class="headerlink" title="Training error vs test error"></a>Training error vs test error</h5><p><img src="/pic/7ba8a7a66050778027f6549fa41cb2a.png"></p>
+<h5 id="Training-error-vs-test-error"><a href="#Training-error-vs-test-error" class="headerlink" title="Training error vs test error"></a>Training error vs test error</h5><p><img src="/pic/7ba8a7a66050778027f6549fa41cb2a.png" alt=""></p>
 <h3 id="Performance-metrics"><a href="#Performance-metrics" class="headerlink" title="Performance metrics"></a>Performance metrics</h3><h4 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h4><h5 id="Performance-metrics-for-classification"><a href="#Performance-metrics-for-classification" class="headerlink" title="Performance metrics for classification"></a>Performance metrics for classification</h5><ul>
-<li>Consider a binary classifier $\mathcal Y &#x3D;{-,+}$<br><img src="/pic/10adcb662406252426c360458bf636b.png"></li>
+<li>Consider a binary classifier $\mathcal Y =\{-,+\}$<br><img src="/pic/10adcb662406252426c360458bf636b.png" alt=""></li>
 </ul>
-<h5 id="Confusion-matrix"><a href="#Confusion-matrix" class="headerlink" title="Confusion matrix"></a>Confusion matrix</h5><p><img src="/pic/8181efdc993f5c23481a08ae4ac524b.png"></p>
+<h5 id="Confusion-matrix"><a href="#Confusion-matrix" class="headerlink" title="Confusion matrix"></a>Confusion matrix</h5><p><img src="/pic/8181efdc993f5c23481a08ae4ac524b.png" alt=""></p>
 <ul>
 <li>True Positive (真正例) - we predicted “+” and the true class is “+”</li>
 <li>True Negative (真反例) - we predicted “-“ and the true class is “-“</li>
 <li>False Positive (假正例) - we predicted “+” and the true class is “-“</li>
 <li>False Negative (假反例) - we predicted “-“ and the true class is “+”</li>
 </ul>
-<h5 id="Accuracy"><a href="#Accuracy" class="headerlink" title="Accuracy"></a>Accuracy</h5><p>$$\text{Accuracy} &#x3D; \cfrac{TP+TN}{TP+FN+FP+TN}&#x3D;\cfrac{\text{Correct predictions}}{\text{Total data points}}$$</p>
-<ul>
-<li>The relationship with the misclassification error rate (分类错误率), $$\text{Accuracy}&#x3D;1-\cfrac{1}{m}\sum_{i&#x3D;1}^m\mathbb I (f(\pmb x_i\neq y_i))$$</li>
-</ul>
-<h6 id="Limitation-of-Accuracy"><a href="#Limitation-of-Accuracy" class="headerlink" title="Limitation of Accuracy"></a>Limitation of Accuracy</h6><ul>
+<h5 id="Accuracy"><a href="#Accuracy" class="headerlink" title="Accuracy"></a>Accuracy</h5><script type="math/tex; mode=display">\text{Accuracy} = \cfrac{TP+TN}{TP+FN+FP+TN}=\cfrac{\text{Correct predictions}}{\text{Total data points}}</script><ul>
+<li>The relationship with the misclassification error rate (分类错误率), <script type="math/tex">\text{Accuracy}=1-\cfrac{1}{m}\sum_{i=1}^m\mathbb I (f(\pmb x_i\neq y_i))</script><h6 id="Limitation-of-Accuracy"><a href="#Limitation-of-Accuracy" class="headerlink" title="Limitation of Accuracy"></a>Limitation of Accuracy</h6></li>
 <li>A predictive model may have high accuracy, but be useless.<ul>
 <li>Suppose the positive class is only a tiny portion of the observed data. For example, only 1% of patients has true cancer while other 99% of patients don’t have any cancers.</li>
 <li>Consider a “stupid” model that always predicts “no cancer”, what is the accuracy?</li>
 </ul>
 </li>
 </ul>
-<h5 id="Precision-查准率"><a href="#Precision-查准率" class="headerlink" title="Precision(查准率)"></a>Precision(查准率)</h5><p>$$\text{Precision}&#x3D;\cfrac{TP}{TP+FP}&#x3D;\cfrac{\text{Correctly predicted positive}}{\text{All predicted positive}}$$</p>
-<h5 id="Recall-查全率"><a href="#Recall-查全率" class="headerlink" title="Recall(查全率)"></a>Recall(查全率)</h5><p>$$\text{Recall}&#x3D;\cfrac{TP}{TP+FN}&#x3D;\cfrac{\text{Correctly predicted positive}}{\text{All real positive}}$$</p>
-<ul>
+<h5 id="Precision-查准率"><a href="#Precision-查准率" class="headerlink" title="Precision(查准率)"></a>Precision(查准率)</h5><script type="math/tex; mode=display">\text{Precision}=\cfrac{TP}{TP+FP}=\cfrac{\text{Correctly predicted positive}}{\text{All predicted positive}}</script><h5 id="Recall-查全率"><a href="#Recall-查全率" class="headerlink" title="Recall(查全率)"></a>Recall(查全率)</h5><script type="math/tex; mode=display">\text{Recall}=\cfrac{TP}{TP+FN}=\cfrac{\text{Correctly predicted positive}}{\text{All real positive}}</script><ul>
 <li>Which one is worse, False Positive or False Negative?</li>
 <li>It depends!<ul>
 <li>Medical Diagnosis - False Negative</li>
@@ -785,32 +806,27 @@
 </li>
 </ul>
 <h5 id="F-1-score"><a href="#F-1-score" class="headerlink" title="$F_1$ score"></a>$F_1$ score</h5><ul>
-<li><p>How to compare precision&#x2F;recall and decide which algorithm is better?</p>
-</li>
-<li><p>$F_1$ score: a combined measure $$F_1&#x3D;2\cfrac{\text{Precision}\times\text{Recall}}{\text{Precision}+\text{Recall}}$$</p>
+<li>How to compare precision/recall and decide which algorithm is better?</li>
+<li><p>$F_1$ score: a combined measure <script type="math/tex">F_1=2\cfrac{\text{Precision}\times\text{Recall}}{\text{Precision}+\text{Recall}}</script></p>
 </li>
 <li><p>Which metric to use?</p>
 </li>
-<li><p>Accuracy</p>
-<ul>
+<li>Accuracy<ul>
 <li>The class distribution is balanced</li>
 <li>FP and FN costs are similar</li>
 </ul>
 </li>
-<li><p>$F_1$ score</p>
-<ul>
+<li>$F_1$ score<ul>
 <li>The class distribution is unbalanced</li>
 <li>FP and FN costs may be different</li>
 </ul>
 </li>
-<li><p>Recall</p>
-<ul>
+<li>Recall<ul>
 <li>The cost of FN is much higher than that of FP</li>
 <li>e.g. rather get healthy people labeled as sick over leaving a infected person labeled healthy</li>
 </ul>
 </li>
-<li><p>Precision</p>
-<ul>
+<li>Precision<ul>
 <li>The cost of FP is much higher than that of FN</li>
 <li>e.g. rather have some span emails in inbox than some regular emails in your spam box</li>
 </ul>
@@ -818,7 +834,7 @@
 </ul>
 <h4 id="Regression"><a href="#Regression" class="headerlink" title="Regression"></a>Regression</h4><h5 id="Performance-metrics-for-regression"><a href="#Performance-metrics-for-regression" class="headerlink" title="Performance metrics for regression"></a>Performance metrics for regression</h5><ul>
 <li>The common performance measure for regression is <em>mean squared error (MSE)</em> .</li>
-<li>For a dateset $D&#x3D;{(\pmb x_i,y_i):i&#x3D;1,2,\cdots,m}$ , $$\hat R_D(\hat f)&#x3D;\cfrac{1}{m}\sum_{i&#x3D;1}^m(\hat f(\pmb x_i)-y_i)^2$$</li>
+<li>For a dateset $D=\{(\pmb x_i,y_i):i=1,2,\cdots,m\}$ , <script type="math/tex">\hat R_D(\hat f)=\cfrac{1}{m}\sum_{i=1}^m(\hat f(\pmb x_i)-y_i)^2</script></li>
 <li>Some other performance measures<ul>
 <li>Root Mean Square Error (RMSE)</li>
 <li>Mean Absolute Error (MAE)</li>
@@ -827,56 +843,58 @@
 </li>
 </ul>
 <h3 id="Bias-variance-decomposition"><a href="#Bias-variance-decomposition" class="headerlink" title="Bias-variance decomposition"></a>Bias-variance decomposition</h3><ul>
-<li><p>Given a training set $S&#x3D;{(\pmb x_i,y_i),i&#x3D;1,2,\cdots,m}$ such that each sample $(\pmb x_i,y_i)$ satisfies the following relationship $$y&#x3D;f(\pmb x)+\epsilon$$</p>
-<ul>
+<li>Given a training set $S=\{(\pmb x_i,y_i),i=1,2,\cdots,m\}$ such that each sample $(\pmb x_i,y_i)$ satisfies the following relationship <script type="math/tex">y=f(\pmb x)+\epsilon</script><ul>
 <li>$\epsilon$ is the noise with mean zero and variance $\sigma^2$ .</li>
 </ul>
 </li>
-<li><p>Let $\hat f(\pmb x;S)$ denote the estimated function that is trained with the set $S$ </p>
-</li>
+<li>Let $\hat f(\pmb x;S)$ denote the estimated function that is trained with the set $S$ </li>
 <li><p>For an unseen sample $(\pmb x_0,y_0)$ ,</p>
 <ul>
 <li>the predicted value using the function trained with $S$ is $\hat f(\pmb x_0;S)$ </li>
 <li>the expected predicted value is $\mathbb E_S[\hat f(\pmb x_0;S)]$ </li>
 <li>the true value is $f(\pmb x_0)$ </li>
-<li>the bias (偏差) of the predicted value is $$\text{Bias}[\hat f(\pmb x_0;S)]&#x3D;\mathbb E[\hat f(\pmb x_0;S)]-f(\pmb x_0)$$</li>
-<li>the variance (方差) of the predicted value is $$\text{Var}[\hat f(\pmb x_0;S)]&#x3D;\mathbb E\left[(\hat f(\pmb x_0;S)-\mathbb E[\hat f(\pmb x_0;S)])^2\right]$$</li>
-<li>the expected squared error, where the expectation is over the random noise and the training set, is given by $$E\left[(y_0-\hat f(\pmb x_0;S))^2\right]&#x3D;(\text{Bias}[\hat f(\pmb x_0;S)])^2+\text{Var}[\hat f(\pmb x_0;S)]+\sigma^2$$</li>
-<li>proof: $$\begin{align}<br>  &amp;\mathbb E\left[(y_0-\hat f(\pmb x_0;S))^2\right]\<br>  &#x3D;&amp;\mathbb E\left[(y_0-\textcolor{red}{\mathbb E[\hat f(\pmb x_0;S)]+\mathbb E[\hat f(\pmb x_0;S)]}-\hat f(\pmb x_0;S))^2\right]\<br>  &#x3D;&amp;\mathbb E\left[(\mathbb E[\hat f(\pmb x_0;S)]-\hat f(\pmb x_0;S))^2+(y_0-\mathbb E[[\hat f(\pmb x_0;S)])^2+2(y_0-\mathbb E[\hat f(\pmb x_0;S)])(\mathbb E[\hat f(\pmb x_0;S)]-\hat f(\pmb x_0;S))\right]\<br>  &#x3D;&amp;\mathbb E\left[(\mathbb E[\hat f(\pmb x_0;S)]-\hat f(\pmb x_0;S))^2\right]+\mathbb E[(y_0-\mathbb E[\hat f(\pmb x_0;S)])^2]+\mathbb E[2(y_0-\mathbb E[\hat f(\pmb x_0;S)])(\mathbb E[\hat f(\pmb x_0;S)]-\hat f(\pmb x_0;S))]\<br>  &#x3D;&amp;\mathbb E\left[(\mathbb E[\hat f(\pmb x_0;S)]-\hat f(\pmb x_0;S))^2\right]+\mathbb E [(\textcolor{red}{f(\pmb x_0)+\epsilon}-\mathbb E[\hat f(\pmb x_0;S)])^2]\<br>  &#x3D;&amp;\mathbb E\left[(\mathbb E[\hat f(\pmb x_0;S)]-\hat f(\pmb x_0;S))^2\right]+\mathbb E[\hat f(\pmb x_0)-\mathbb E[\hat f(\pmb x_0;S)])^2]+\mathbb E[\epsilon^2]+\mathbb E[2\epsilon(f(\pmb x_0)-\mathbb E[\hat f(\pmb x_0;S)])]\<br>  &#x3D;&amp;\text{Var}[\hat f(\pmb x_0;S)]+(\text{Bias}[\hat f(\pmb x_0;S)])^2+\sigma^2<br>  \end{align}$$</li>
+<li>the bias (偏差) of the predicted value is <script type="math/tex">\text{Bias}[\hat f(\pmb x_0;S)]=\mathbb E[\hat f(\pmb x_0;S)]-f(\pmb x_0)</script></li>
+<li>the variance (方差) of the predicted value is <script type="math/tex">\text{Var}[\hat f(\pmb x_0;S)]=\mathbb E\left[(\hat f(\pmb x_0;S)-\mathbb E[\hat f(\pmb x_0;S)])^2\right]</script></li>
+<li>the expected squared error, where the expectation is over the random noise and the training set, is given by <script type="math/tex">E\left[(y_0-\hat f(\pmb x_0;S))^2\right]=(\text{Bias}[\hat f(\pmb x_0;S)])^2+\text{Var}[\hat f(\pmb x_0;S)]+\sigma^2</script></li>
+<li>proof: <script type="math/tex">\begin{align}
+&\mathbb E\left[(y_0-\hat f(\pmb x_0;S))^2\right]\\
+=&\mathbb E\left[(y_0-\textcolor{red}{\mathbb E[\hat f(\pmb x_0;S)]+\mathbb E[\hat f(\pmb x_0;S)]}-\hat f(\pmb x_0;S))^2\right]\\
+=&\mathbb E\left[(\mathbb E[\hat f(\pmb x_0;S)]-\hat f(\pmb x_0;S))^2+(y_0-\mathbb E[[\hat f(\pmb x_0;S)])^2+2(y_0-\mathbb E[\hat f(\pmb x_0;S)])(\mathbb E[\hat f(\pmb x_0;S)]-\hat f(\pmb x_0;S))\right]\\
+=&\mathbb E\left[(\mathbb E[\hat f(\pmb x_0;S)]-\hat f(\pmb x_0;S))^2\right]+\mathbb E[(y_0-\mathbb E[\hat f(\pmb x_0;S)])^2]+\mathbb E[2(y_0-\mathbb E[\hat f(\pmb x_0;S)])(\mathbb E[\hat f(\pmb x_0;S)]-\hat f(\pmb x_0;S))]\\
+=&\mathbb E\left[(\mathbb E[\hat f(\pmb x_0;S)]-\hat f(\pmb x_0;S))^2\right]+\mathbb E [(\textcolor{red}{f(\pmb x_0)+\epsilon}-\mathbb E[\hat f(\pmb x_0;S)])^2]\\
+=&\mathbb E\left[(\mathbb E[\hat f(\pmb x_0;S)]-\hat f(\pmb x_0;S))^2\right]+\mathbb E[\hat f(\pmb x_0)-\mathbb E[\hat f(\pmb x_0;S)])^2]+\mathbb E[\epsilon^2]+\mathbb E[2\epsilon(f(\pmb x_0)-\mathbb E[\hat f(\pmb x_0;S)])]\\
+=&\text{Var}[\hat f(\pmb x_0;S)]+(\text{Bias}[\hat f(\pmb x_0;S)])^2+\sigma^2
+\end{align}</script></li>
 </ul>
 </li>
 <li><p>The <em>variance</em> represents how much the trained model move about its mean.</p>
 </li>
-<li><p>The <em>bias</em> represents the difference between the expected prediction of our model and the true value.<br><img src="/pic/e4f39df5e0cf02295ed0adf94236c82.png"><br><img src="/pic/4010e1c4642202ac977ba16ffc9a0ee.png"></p>
+<li><p>The <em>bias</em> represents the difference between the expected prediction of our model and the true value.<br><img src="/pic/e4f39df5e0cf02295ed0adf94236c82.png" alt=""><br><img src="/pic/4010e1c4642202ac977ba16ffc9a0ee.png" alt=""></p>
 </li>
 <li><p>The ideal case is that we reduce both the bias and variance to reduce the total error.</p>
 </li>
-<li><p>However, there is a trade-off between the bias and variance.</p>
-<ul>
+<li>However, there is a trade-off between the bias and variance.<ul>
 <li>High bias: more features, more complex models, better optimization, boosting, …</li>
-<li>High variance: more data, regularization, less features, less complex models, bagging, …<br><img src="/pic/b0f3730daa3d994524a12413137e863.png"></li>
+<li>High variance: more data, regularization, less features, less complex models, bagging, …<br><img src="/pic/b0f3730daa3d994524a12413137e863.png" alt=""></li>
 </ul>
 </li>
 </ul>
 <h3 id="Model-selection"><a href="#Model-selection" class="headerlink" title="Model selection"></a>Model selection</h3><p>Fit the data (blue dots) using polynomials with different degrees of freedom.</p>
 <ul>
-<li>How to select the appropriate model with good fit?<br><img src="/pic/1a58a26150be5c680563a0eb25d7b8a.png"></li>
+<li>How to select the appropriate model with good fit?<br><img src="/pic/1a58a26150be5c680563a0eb25d7b8a.png" alt=""></li>
 </ul>
 <h4 id="Principle-of-Occam’s-razor-奥卡姆剃刀"><a href="#Principle-of-Occam’s-razor-奥卡姆剃刀" class="headerlink" title="Principle of Occam’s razor (奥卡姆剃刀)"></a>Principle of Occam’s razor (奥卡姆剃刀)</h4><ul>
-<li>Select the hypothesis with the fewest assumptions among all competing hypotheses that explain known observations equally well.<br><img src="/pic/30dc5adbbd599316a0cb17da5726c8c.png"></li>
+<li>Select the hypothesis with the fewest assumptions among all competing hypotheses that explain known observations equally well.<br><img src="/pic/30dc5adbbd599316a0cb17da5726c8c.png" alt=""></li>
 </ul>
 <h4 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization"></a>Regularization</h4><ul>
-<li><p>Regularization(正则化) refers to the process of adding additional terms to our loss function, often to introduce a <u>preference for simpler models</u></p>
+<li>Regularization(正则化) refers to the process of adding additional terms to our loss function, often to introduce a <u>preference for simpler models</u></li>
+<li>It aims to reduce the generalization error but not its training error.</li>
+<li>Recall the training error $\hat R_S(f)=\cfrac{1}{m}\displaystyle\sum_{i=1}^mL(f(\pmb x_i),y_i)$ , we search for the hypothesis that leads to the smallest training error <script type="math/tex">\min_{f\in F}\hat R_S(f)</script></li>
+<li><p>Minimization problem with regularized loss function <script type="math/tex">\min_{f\in F}\hat R_S(f)+\lambda E(f)</script><br><img src="/pic/f4eec853b3f60729c5dd34dc7b4acc9.png" alt=""></p>
 </li>
-<li><p>It aims to reduce the generalization error but not its training error.</p>
+<li><p>$L_2$ regularization <script type="math/tex">E(f=\pmb w^T\pmb x)=||\pmb w||_2^2=\sum_{i=1}^nw_i^2</script><br><img src="/pic/0ad30f160f2e7ecab62f7354a1c4616.png" alt=""></p>
 </li>
-<li><p>Recall the training error $\hat R_S(f)&#x3D;\cfrac{1}{m}\displaystyle\sum_{i&#x3D;1}^mL(f(\pmb x_i),y_i)$ , we search for the hypothesis that leads to the smallest training error $$\min_{f\in F}\hat R_S(f)$$</p>
-</li>
-<li><p>Minimization problem with regularized loss function $$\min_{f\in F}\hat R_S(f)+\lambda E(f)$$<br><img src="/pic/f4eec853b3f60729c5dd34dc7b4acc9.png"></p>
-</li>
-<li><p>$L_2$ regularization $$E(f&#x3D;\pmb w^T\pmb x)&#x3D;||\pmb w||<em>2^2&#x3D;\sum</em>{i&#x3D;1}^nw_i^2$$<br><img src="/pic/0ad30f160f2e7ecab62f7354a1c4616.png"></p>
-</li>
-<li><p>$L_1$ regularization $$E(f&#x3D;\pmb w^T\pmb x)&#x3D;||\pmb w||<em>1&#x3D;\sum</em>{i&#x3D;1}^n|w_i|$$<br><img src="/pic/a28e0bebc2515f58f224263e5cbedf5.png"></p>
+<li><p>$L_1$ regularization <script type="math/tex">E(f=\pmb w^T\pmb x)=||\pmb w||_1=\sum_{i=1}^n|w_i|</script><br><img src="/pic/a28e0bebc2515f58f224263e5cbedf5.png" alt=""></p>
 </li>
 </ul>
 <h4 id="Hyperparameter-超参数"><a href="#Hyperparameter-超参数" class="headerlink" title="Hyperparameter(超参数)"></a>Hyperparameter(超参数)</h4><ul>
@@ -893,20 +911,18 @@
 </li>
 </ul>
 <h4 id="Validation-strategy"><a href="#Validation-strategy" class="headerlink" title="Validation strategy"></a>Validation strategy</h4><h5 id="Hold-out-validation"><a href="#Hold-out-validation" class="headerlink" title="Hold-out validation"></a>Hold-out validation</h5><ul>
-<li>Split the training set into two parts: a training set and a validation set<br><img src="/pic/dd55e1c530692fa6810d9b314c15f84.png"></li>
+<li>Split the training set into two parts: a training set and a validation set<br><img src="/pic/dd55e1c530692fa6810d9b314c15f84.png" alt=""></li>
 </ul>
 <h5 id="Cross-validation"><a href="#Cross-validation" class="headerlink" title="Cross validation"></a>Cross validation</h5><ul>
-<li>K-fold cross validation: divide the training set into k equal size subsets<br><img src="/pic/6c170feb2750e49af1c23e63965b608.png"></li>
+<li>K-fold cross validation: divide the training set into k equal size subsets<br><img src="/pic/6c170feb2750e49af1c23e63965b608.png" alt=""></li>
 </ul>
 <h5 id="Leave-one-out-cross-validation"><a href="#Leave-one-out-cross-validation" class="headerlink" title="Leave-one-out cross validation"></a>Leave-one-out cross validation</h5><ul>
-<li><p>K-fold cross validation where $k&#x3D;m$<br><img src="/pic/132f7b5bbcbb9caecf14d6a7f6bf2f0.png"></p>
+<li><p>K-fold cross validation where $k=m$<br><img src="/pic/132f7b5bbcbb9caecf14d6a7f6bf2f0.png" alt=""></p>
 </li>
 <li><p>Use one observation as the validation set</p>
 </li>
-<li><p>Each sample is used once for validation</p>
-</li>
-<li><p>It could be vary computationally intensive!</p>
-</li>
+<li>Each sample is used once for validation</li>
+<li>It could be vary computationally intensive!</li>
 </ul>
 <h4 id="Which-validation-strategy-to-use"><a href="#Which-validation-strategy-to-use" class="headerlink" title="Which validation strategy to use?"></a>Which validation strategy to use?</h4><ul>
 <li>Large data set<ul>
@@ -921,42 +937,65 @@
 </li>
 </ul>
 <h2 id="Lecture4-LinearModels"><a href="#Lecture4-LinearModels" class="headerlink" title="Lecture4_LinearModels"></a>Lecture4_LinearModels</h2><h3 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h3><h4 id="Motivating-example"><a href="#Motivating-example" class="headerlink" title="Motivating example"></a>Motivating example</h4><ul>
-<li>The Advertising data set consists of the <em>sales</em> of that product in 200 different markets, along with advertising budgets for the product in each of those markets for three different media: <em>TV, radio and newspaper</em>.<br><img src="/8fce1beb900d9682237c079542b44f5.png"></li>
+<li>The Advertising data set consists of the <em>sales</em> of that product in 200 different markets, along with advertising budgets for the product in each of those markets for three different media: <em>TV, radio and newspaper</em>.<br><img src="8fce1beb900d9682237c079542b44f5.png" alt=""></li>
 </ul>
 <h4 id="Simple-linear-regression"><a href="#Simple-linear-regression" class="headerlink" title="Simple linear regression"></a>Simple linear regression</h4><ul>
-<li>Assuming approximately a linear relationship between $X$ and $Y$ $$y\approx b+w\cdot x$$</li>
-<li>Predicting $\hat y$ based on $x$ $$\hat y&#x3D;\hat b+\hat w\cdot x$$<br><img src="/pic/5192779dc145eba035b997cf1a76fcc.png"></li>
+<li>Assuming approximately a linear relationship between $X$ and $Y$ <script type="math/tex">y\approx b+w\cdot x</script></li>
+<li>Predicting $\hat y$ based on $x$ <script type="math/tex">\hat y=\hat b+\hat w\cdot x</script><br><img src="/pic/5192779dc145eba035b997cf1a76fcc.png" alt=""></li>
 </ul>
 <h5 id="Estimating-the-parameters"><a href="#Estimating-the-parameters" class="headerlink" title="Estimating the parameters"></a>Estimating the parameters</h5><ul>
-<li><p>Mean square error (MSE) $$\begin{align}<br>MSE&amp;&#x3D;\cfrac{1}{m}((y_1-b-w\cdot x_1)^2+(y_2-b-w\cdot x_2)^2+\cdots+(y_m-b-w\cdot x_m)^2)\<br>&amp;&#x3D;\cfrac{1}{m}\sum_{i&#x3D;1}^m(y_i-b-w\cdot x_i)^2<br>\end{align}$$<br><img src="/pic/876fcd4c99289d7d14c2494c352de58.png"></p>
+<li><p>Mean square error (MSE) <script type="math/tex">\begin{align}
+MSE&=\cfrac{1}{m}((y_1-b-w\cdot x_1)^2+(y_2-b-w\cdot x_2)^2+\cdots+(y_m-b-w\cdot x_m)^2)\\
+&=\cfrac{1}{m}\sum_{i=1}^m(y_i-b-w\cdot x_i)^2
+\end{align}</script><br><img src="/pic/876fcd4c99289d7d14c2494c352de58.png" alt=""></p>
 </li>
-<li><p>FInd the linear function with the smallest MSE $$(\hat w,\hat b)&#x3D;\text{arg}\min_{w,b}&#x3D;\cfrac{1}{m}\sum_{i&#x3D;1}^m(y_i-b-w\cdot x_i)^2$$</p>
+<li><p>FInd the linear function with the smallest MSE <script type="math/tex">(\hat w,\hat b)=\text{arg}\min_{w,b}=\cfrac{1}{m}\sum_{i=1}^m(y_i-b-w\cdot x_i)^2</script></p>
 </li>
-<li><p>FOCs: $$\begin{align}<br>\cfrac{\partial L(w,b)}{\partial w}&amp;&#x3D;\cfrac{1}{m}\sum_{i&#x3D;1}^m2(y_i-b-w\cdot x_i)(-x_i)&#x3D;0\<br>\cfrac{\partial L(w,b)}{\partial b}&amp;&#x3D;\cfrac{1}{m}\sum_{i&#x3D;1}^m2(y_i-b-w\cdot x_i)(-1)&#x3D;0<br>\end{align}$$<br>$$\begin{align}<br>\hat w&amp;&#x3D;\cfrac{\displaystyle\sum_{i&#x3D;1}^m(x_i-\bar x)(y_i-\bar y)}{\displaystyle\sum_{i&#x3D;1}^m(x_i-\bar x)^2},\ \ \ \ \hat b&#x3D;\bar y-\hat w\bar x,\<br>\bar x&amp;&#x3D;\cfrac{1}{m}\sum_{i&#x3D;1}^mx_i, \ \ \ \ \bar y&#x3D;\cfrac{1}{m}\sum_{i&#x3D;1}^my_i<br>\end{align}$$</p>
-</li>
+<li>FOCs: <script type="math/tex">\begin{align}
+\cfrac{\partial L(w,b)}{\partial w}&=\cfrac{1}{m}\sum_{i=1}^m2(y_i-b-w\cdot x_i)(-x_i)=0\\
+\cfrac{\partial L(w,b)}{\partial b}&=\cfrac{1}{m}\sum_{i=1}^m2(y_i-b-w\cdot x_i)(-1)=0
+\end{align}</script><script type="math/tex; mode=display">\begin{align}
+\hat w&=\cfrac{\displaystyle\sum_{i=1}^m(x_i-\bar x)(y_i-\bar y)}{\displaystyle\sum_{i=1}^m(x_i-\bar x)^2},\ \ \ \ \hat b=\bar y-\hat w\bar x,\\
+\bar x&=\cfrac{1}{m}\sum_{i=1}^mx_i, \ \ \ \ \bar y=\cfrac{1}{m}\sum_{i=1}^my_i
+\end{align}</script></li>
 </ul>
-<p><img src="/pic/4cda0b999d6f3752153a5f48f5b45fa.png"></p>
+<p><img src="/pic/4cda0b999d6f3752153a5f48f5b45fa.png" alt=""></p>
 <h4 id="Multivariate-linear-regression"><a href="#Multivariate-linear-regression" class="headerlink" title="Multivariate linear regression"></a>Multivariate linear regression</h4><ul>
 <li>We ignore the other two factors when estimating the coefficients</li>
-<li>How to make predictions given the levels of the three advertising media?$$sales&#x3D;b+w_1\cdot TV+w_2\cdot radio+w_3\cdot newspaper+\epsilon$$<br>In general, with $n$-dimension features, $$\begin{align}<br>Y&amp;\approx b+w_1\cdot x_1+w_2\cdot x_2+\cdots+w_n\cdot x_n\<br>\hat y &amp;&#x3D;\hat b+\hat w_1\cdot x_1+\hat w_2\cdot x_2+\cdots+\hat w_n\cdot x_n<br>\end{align}$$<br>Choose $b,w_1,\cdots,w_n$ to minimize the following $$MSE&#x3D;\cfrac{1}{m}\sum_{i&#x3D;1}^m(y_i-\hat y_i)^2&#x3D;\cfrac{1}{m}\sum_{i&#x3D;1}^m(y_i-b-\hat w_1\cdot x_{i,1}-\hat w_2\cdot x_{i,2}-\cdots-\hat w_n\cdot x_{i,n})^2$$<br>$$\begin{align}<br>\pmb X&amp;&#x3D;\begin{bmatrix}<br>1 &amp;x_{1,1} &amp;\cdots &amp;x_{i,n}\<br>\vdots &amp;\vdots &amp;\ddots &amp;\vdots\<br>1 &amp;x_{m,1} &amp;\cdots &amp;x_{m,n}<br>\end{bmatrix}\ \ \ \ m\times (n+1) \text{ matrix with each row a feature vector}\<br>\pmb y&amp;&#x3D;[y_1,y_2,\cdots,y_m]^T\ \ \ \ m\times 1\text{ vector of outputs in the training set}\<br>\pmb\beta &amp;&#x3D;[b,w_1,w_2,\cdots,w_n]^T\ \ \ \ (n+1)\times 1\text{ vector of parameters}<br>\end{align}$$</li>
+<li>How to make predictions given the levels of the three advertising media?<script type="math/tex">sales=b+w_1\cdot TV+w_2\cdot radio+w_3\cdot newspaper+\epsilon</script><br>In general, with $n$-dimension features, <script type="math/tex">\begin{align}
+Y&\approx b+w_1\cdot x_1+w_2\cdot x_2+\cdots+w_n\cdot x_n\\
+\hat y &=\hat b+\hat w_1\cdot x_1+\hat w_2\cdot x_2+\cdots+\hat w_n\cdot x_n
+\end{align}</script><br>Choose $b,w_1,\cdots,w_n$ to minimize the following <script type="math/tex">MSE=\cfrac{1}{m}\sum_{i=1}^m(y_i-\hat y_i)^2=\cfrac{1}{m}\sum_{i=1}^m(y_i-b-\hat w_1\cdot x_{i,1}-\hat w_2\cdot x_{i,2}-\cdots-\hat w_n\cdot x_{i,n})^2</script><script type="math/tex; mode=display">\begin{align}
+\pmb X&=\begin{bmatrix}
+1 &x_{1,1} &\cdots &x_{i,n}\\
+\vdots &\vdots &\ddots &\vdots\\
+1 &x_{m,1} &\cdots &x_{m,n}
+\end{bmatrix}\ \ \ \ m\times (n+1) \text{ matrix with each row a feature vector}\\
+\pmb y&=[y_1,y_2,\cdots,y_m]^T\ \ \ \ m\times 1\text{ vector of outputs in the training set}\\
+\pmb\beta &=[b,w_1,w_2,\cdots,w_n]^T\ \ \ \ (n+1)\times 1\text{ vector of parameters}
+\end{align}</script></li>
 </ul>
-<p>Choose $\beta$ to minimize the following objective $$MSE&#x3D;\cfrac{1}{m}(\pmb y-\pmb X\pmb \beta)^T(\pmb y-\pmb X\pmb\beta)$$</p>
-<p>$$\min_{\pmb\beta} L(\pmb\beta)&#x3D;\cfrac{1}{2}(\pmb y-\pmb X\pmb\beta)^T(\pmb y-\pmb X\pmb\beta)$$<br>$$\cfrac{\partial L(\pmb\beta)}{\partial \pmb\beta}&#x3D;-\pmb X^T(\pmb y-\pmb X\pmb\beta)$$<br>To minimize $L(\pmb\beta)$ , we set its derivatives to zero and obtain the normal equations $$\cfrac{\partial L(\pmb\beta)}{\partial \pmb\beta}&#x3D;-\pmb X^T(\pmb y-\pmb X\pmb\beta)&#x3D;0\Rightarrow \pmb X^T\pmb X\hat{\pmb\beta}&#x3D;\pmb X^T\pmb y$$<br>Suppose $\pmb X^T\pmb X$ is invertible, $$\begin{align}<br>\hat{\pmb\beta}&amp;&#x3D;(\pmb X^T\pmb X)^{-1}\pmb X^T\pmb y\<br>\hat y_i&amp;&#x3D;\pmb x_i^T\hat{\pmb\beta}&#x3D;\pmb x_i^T(\pmb X^T\pmb X)^{-1}\pmb X^T\pmb y\<br>\hat {\pmb y}&amp;&#x3D;\pmb X\hat{\pmb\beta}&#x3D;\pmb X(\pmb X^T\pmb X)^{-1}\pmb X^T\pmb y<br>\end{align}$$</p>
+<p>Choose $\beta$ to minimize the following objective <script type="math/tex">MSE=\cfrac{1}{m}(\pmb y-\pmb X\pmb \beta)^T(\pmb y-\pmb X\pmb\beta)</script></p>
+<script type="math/tex; mode=display">\min_{\pmb\beta} L(\pmb\beta)=\cfrac{1}{2}(\pmb y-\pmb X\pmb\beta)^T(\pmb y-\pmb X\pmb\beta)</script><script type="math/tex; mode=display">\cfrac{\partial L(\pmb\beta)}{\partial \pmb\beta}=-\pmb X^T(\pmb y-\pmb X\pmb\beta)</script><p>To minimize $L(\pmb\beta)$ , we set its derivatives to zero and obtain the normal equations <script type="math/tex">\cfrac{\partial L(\pmb\beta)}{\partial \pmb\beta}=-\pmb X^T(\pmb y-\pmb X\pmb\beta)=0\Rightarrow \pmb X^T\pmb X\hat{\pmb\beta}=\pmb X^T\pmb y</script><br>Suppose $\pmb X^T\pmb X$ is invertible, <script type="math/tex">\begin{align}
+\hat{\pmb\beta}&=(\pmb X^T\pmb X)^{-1}\pmb X^T\pmb y\\
+\hat y_i&=\pmb x_i^T\hat{\pmb\beta}=\pmb x_i^T(\pmb X^T\pmb X)^{-1}\pmb X^T\pmb y\\
+\hat {\pmb y}&=\pmb X\hat{\pmb\beta}=\pmb X(\pmb X^T\pmb X)^{-1}\pmb X^T\pmb y
+\end{align}</script></p>
 <h5 id="Ridge-regression"><a href="#Ridge-regression" class="headerlink" title="Ridge regression"></a>Ridge regression</h5><ul>
-<li>What if $\pmb X^T\pmb X$ is not invertible? $$\min_{\pmb\beta}L(\pmb\beta)&#x3D;(\pmb y-\pmb X\pmb\beta)^T(\pmb y-\pmb X\pmb\beta)+\lambda||\pmb\beta||_2^2$$ $$\cfrac{\partial L(\pmb\beta)}{\partial \pmb\beta}&#x3D;-2\pmb X^T(\pmb y-\pmb X\pmb\beta)+2\lambda\pmb\beta$$</li>
-<li>To minimize $L(\pmb\beta)$ , we set its derivatives to zero: $$(\lambda\pmb I+\pmb X^T\pmb X)\pmb\beta&#x3D;\pmb X^T\pmb y$$</li>
-<li>The estimator from Ridge regression is computed as: $$\hat{\pmb\beta}_\text{ridge}&#x3D;(\lambda\pmb I+\pmb X^T\pmb X)^{-1}\pmb X^T\pmb y\Leftarrow (\lambda\pmb I+\pmb X^T\pmb X)\text{ is invertible for }\lambda\textgreater 0$$</li>
+<li>What if $\pmb X^T\pmb X$ is not invertible? <script type="math/tex">\min_{\pmb\beta}L(\pmb\beta)=(\pmb y-\pmb X\pmb\beta)^T(\pmb y-\pmb X\pmb\beta)+\lambda||\pmb\beta||_2^2</script> <script type="math/tex">\cfrac{\partial L(\pmb\beta)}{\partial \pmb\beta}=-2\pmb X^T(\pmb y-\pmb X\pmb\beta)+2\lambda\pmb\beta</script></li>
+<li>To minimize $L(\pmb\beta)$ , we set its derivatives to zero: <script type="math/tex">(\lambda\pmb I+\pmb X^T\pmb X)\pmb\beta=\pmb X^T\pmb y</script></li>
+<li>The estimator from Ridge regression is computed as: <script type="math/tex">\hat{\pmb\beta}_\text{ridge}=(\lambda\pmb I+\pmb X^T\pmb X)^{-1}\pmb X^T\pmb y\Leftarrow (\lambda\pmb I+\pmb X^T\pmb X)\text{ is invertible for }\lambda\textgreater 0</script></li>
 </ul>
-<h4 id="Regularized-linear-regression"><a href="#Regularized-linear-regression" class="headerlink" title="Regularized linear regression"></a>Regularized linear regression</h4><p>$$(\pmb y-\pmb X\pmb\beta)^T(\pmb y-\pmb X\pmb\beta)+\lambda E(\pmb\beta^T\pmb x)$$<br>$\lambda$ : Regularization coefficient;<br>$E(\pmb\beta^T\pmb x)$ : Regularization term</p>
+<h4 id="Regularized-linear-regression"><a href="#Regularized-linear-regression" class="headerlink" title="Regularized linear regression"></a>Regularized linear regression</h4><script type="math/tex; mode=display">(\pmb y-\pmb X\pmb\beta)^T(\pmb y-\pmb X\pmb\beta)+\lambda E(\pmb\beta^T\pmb x)</script><p>$\lambda$ : Regularization coefficient;<br>$E(\pmb\beta^T\pmb x)$ : Regularization term</p>
 <ul>
 <li>L2 regularization (Ridge regression)<ul>
-<li>$E(f&#x3D;\pmb\beta^T\pmb x)&#x3D;||\pmb\beta||_2^2$</li>
-<li>$\lambda\rightarrow 0, \hat{\pmb\beta}<em>\text{ridge}\rightarrow\hat{\pmb\beta}</em>{OLS}$</li>
+<li>$E(f=\pmb\beta^T\pmb x)=||\pmb\beta||_2^2$</li>
+<li>$\lambda\rightarrow 0, \hat{\pmb\beta}_\text{ridge}\rightarrow\hat{\pmb\beta}_{OLS}$</li>
 <li>$\lambda\rightarrow\infty,\hat{\pmb\beta}_\text{ridge}\rightarrow 0$</li>
 </ul>
 </li>
 <li>L1 regularization (Lasso regression)<ul>
-<li>$E(f&#x3D;\pmb\beta^T\pmb x)&#x3D;||\pmb\beta||_1$</li>
+<li>$E(f=\pmb\beta^T\pmb x)=||\pmb\beta||_1$</li>
 <li>Some of coefficient estimates tend to zeros</li>
 <li>Variable selection (sparse models)</li>
 </ul>
@@ -974,27 +1013,44 @@
 </li>
 <li>Neither ridge nor lasso regression would universally dominate the other</li>
 <li>Which approach to use? How to determine $\lambda$ ?<ul>
-<li>Cross validation!</li>
+<li>Cross validation! </li>
 </ul>
 </li>
 </ul>
-<h4 id="Linear-regression-Probabilistic-View"><a href="#Linear-regression-Probabilistic-View" class="headerlink" title="Linear regression: Probabilistic View"></a>Linear regression: Probabilistic View</h4><h5 id="Recap-Probability-amp-Statistics"><a href="#Recap-Probability-amp-Statistics" class="headerlink" title="Recap: Probability &amp; Statistics"></a>Recap: Probability &amp; Statistics</h5><h6 id="The-multivariate-Gaussian-distribution"><a href="#The-multivariate-Gaussian-distribution" class="headerlink" title="The multivariate Gaussian distribution"></a>The multivariate Gaussian distribution</h6><p>A random vector $X$ is said to have a multivariate normal (Gaussian) distribution with mean $\mu\in\mathbb R^n$ and covariance matrix $\Sigma \in S_{++}^n$<br>$$f_{X_1,X_2,\cdots,X_n}(x_1,x_2,\cdots,x_n)&#x3D;\cfrac{1}{(2\pi)^\frac{n}{2}|\Sigma|^\frac{1}{2}}e^{-\frac{1}{2}(\pmb x-\mu)^T\Sigma^{-1}(\pmb x-\mu)}$$ We write this as $X\sim\mathcal N(\mu,\Sigma)$. </p>
-<p><img src="/pic/bfd5b6d0bc87a6d76c69c391e921870.png"></p>
-<p>When $n&#x3D;1$ , it is a normal (Gaussian) distribution $\mathcal N(\mu_1,\Sigma_{11})$ .<br>$$f_{X_1}(x_1)&#x3D;\cfrac{1}{(2\pi)^\frac{1}{2}|\Sigma_{11}|^\frac{1}{2}}e^{-\frac{1}{2}(x_1-\mu_1)^T\Sigma_{11}^{-1}(x_1-\mu_1)}$$</p>
-<h5 id="Linear-regression-Probabilistic-View-1"><a href="#Linear-regression-Probabilistic-View-1" class="headerlink" title="Linear regression: Probabilistic View"></a>Linear regression: Probabilistic View</h5><p>Assume the response $Y$ is given by a deterministic function and an additive Gaussian noise. $$y&#x3D;\pmb\beta^T\pmb x+\epsilon,\text{ where }\epsilon\sim N(0,\sigma^2)$$</p>
+<h4 id="Linear-regression-Probabilistic-View"><a href="#Linear-regression-Probabilistic-View" class="headerlink" title="Linear regression: Probabilistic View"></a>Linear regression: Probabilistic View</h4><h5 id="Recap-Probability-amp-Statistics"><a href="#Recap-Probability-amp-Statistics" class="headerlink" title="Recap: Probability &amp; Statistics"></a>Recap: Probability &amp; Statistics</h5><h6 id="The-multivariate-Gaussian-distribution"><a href="#The-multivariate-Gaussian-distribution" class="headerlink" title="The multivariate Gaussian distribution"></a>The multivariate Gaussian distribution</h6><p>A random vector $X$ is said to have a multivariate normal (Gaussian) distribution with mean $\mu\in\mathbb R^n$ and covariance matrix $\Sigma \in S_{++}^n$ </p>
+<script type="math/tex; mode=display">f_{X_1,X_2,\cdots,X_n}(x_1,x_2,\cdots,x_n)=\cfrac{1}{(2\pi)^\frac{n}{2}|\Sigma|^\frac{1}{2}}e^{-\frac{1}{2}(\pmb x-\mu)^T\Sigma^{-1}(\pmb x-\mu)}$$ We write this as $X\sim\mathcal N(\mu,\Sigma)$. 
+
+![](/pic/bfd5b6d0bc87a6d76c69c391e921870.png)
+
+When $n=1$ , it is a normal (Gaussian) distribution $\mathcal N(\mu_1,\Sigma_{11})$ .
+$$f_{X_1}(x_1)=\cfrac{1}{(2\pi)^\frac{1}{2}|\Sigma_{11}|^\frac{1}{2}}e^{-\frac{1}{2}(x_1-\mu_1)^T\Sigma_{11}^{-1}(x_1-\mu_1)}</script><h5 id="Linear-regression-Probabilistic-View-1"><a href="#Linear-regression-Probabilistic-View-1" class="headerlink" title="Linear regression: Probabilistic View"></a>Linear regression: Probabilistic View</h5><p>Assume the response $Y$ is given by a deterministic function and an additive Gaussian noise. <script type="math/tex">y=\pmb\beta^T\pmb x+\epsilon,\text{ where }\epsilon\sim N(0,\sigma^2)</script></p>
 <ul>
 <li>The linear regression estimator is the maximum likelihood estimator of the data.</li>
-<li>The likelihood function $$P(\pmb y|\pmb X;\pmb\beta)&#x3D;P(y_1|\pmb x_1;\pmb\beta)P(y_2|\pmb x_2;\pmb\beta)\cdots P(y_m|\pmb x_m;\pmb\beta)&#x3D;\prod_{i&#x3D;1}^mP(y_i|\pmb x_i;\pmb\beta)$$</li>
-<li>The log-likelihood function $$\log P(\pmb y|\pmb X;\pmb\beta)&#x3D;\log\prod_{i&#x3D;1}^m P(y_i|\pmb x_i;\pmb\beta)&#x3D;\sum_{i&#x3D;1}^m\log P(y_i|\pmb x_i;\pmb\beta)$$</li>
-<li>Given dataset $(\pmb X,\pmb y)$ , find $\pmb\beta$ that can maximize the log-likelihood of $\pmb y$ . $$\hat{\pmb\beta}&#x3D;\text{arg}\max_{\pmb\beta}\log P(\pmb y|\pmb X;\pmb\beta)&#x3D;\text{arg}\max_{\pmb\beta}\sum_{i&#x3D;1}^m\log P(y_i|\pmb x_i;\pmb\beta)$$</li>
+<li>The likelihood function <script type="math/tex">P(\pmb y|\pmb X;\pmb\beta)=P(y_1|\pmb x_1;\pmb\beta)P(y_2|\pmb x_2;\pmb\beta)\cdots P(y_m|\pmb x_m;\pmb\beta)=\prod_{i=1}^mP(y_i|\pmb x_i;\pmb\beta)</script></li>
+<li>The log-likelihood function <script type="math/tex">\log P(\pmb y|\pmb X;\pmb\beta)=\log\prod_{i=1}^m P(y_i|\pmb x_i;\pmb\beta)=\sum_{i=1}^m\log P(y_i|\pmb x_i;\pmb\beta)</script></li>
+<li>Given dataset $(\pmb X,\pmb y)$ , find $\pmb\beta$ that can maximize the log-likelihood of $\pmb y$ . <script type="math/tex">\hat{\pmb\beta}=\text{arg}\max_{\pmb\beta}\log P(\pmb y|\pmb X;\pmb\beta)=\text{arg}\max_{\pmb\beta}\sum_{i=1}^m\log P(y_i|\pmb x_i;\pmb\beta)</script></li>
 </ul>
-<p>$$\begin{align}<br>\hat{\pmb\beta}&amp;&#x3D;\text{arg}\max_{\pmb\beta}\log P(\pmb y|\pmb X;\pmb\beta)\<br>&amp;&#x3D;\text{arg}\max_{\pmb\beta}\sum_{i&#x3D;1}^m\log P(y_i|\pmb x_i;\pmb\beta)\<br>&amp;&#x3D;\text{arg}\max_{\pmb\beta}\sum_{i&#x3D;1}^m\log\cfrac{1}{\sqrt{2\pi\sigma^2}}e^{-\cfrac{(y_i-\pmb\beta^T\pmb x_i)^2}{2\sigma^2}}<br>\Leftarrow P(y_i|\pmb x_i;\pmb\beta)&#x3D;\cfrac{1}{\sqrt{2\pi\sigma^2}}e^{-\cfrac{(y_i-\pmb\beta^T\pmb x_i)^2}{2\sigma^2}}\<br>&amp;&#x3D;\text{arg}\max_{\pmb\beta}-\sum_{i&#x3D;1}^m\cfrac{(y_i-\pmb\beta^T\pmb x_i)^2}{2\sigma^2}\<br>&amp;&#x3D;\text{arg}\min_{\pmb\beta}\sum_{i&#x3D;1}^m\cfrac{(y_i-\pmb\beta^T\pmb x_i)^2}{2\sigma^2}\<br>&amp;&#x3D;\text{arg}\min_{\pmb\beta}\sum_{i&#x3D;1}^m(y_i-\pmb\beta^T\pmb x_i)^2<br>\Leftrightarrow MSE&#x3D;\frac{1}{m}(\pmb y-\pmb X\pmb\beta)^T(\pmb  y-\pmb X\pmb\beta)<br>\end{align}$$</p>
-<h5 id="Ridge-regression-Probabilistic-View"><a href="#Ridge-regression-Probabilistic-View" class="headerlink" title="Ridge regression: Probabilistic View"></a>Ridge regression: Probabilistic View</h5><ul>
-<li>Assume the response $Y$ is given by a deterministic function and an additive Gaussian noise. $$y&#x3D;\pmb\beta^T\pmb x+\epsilon,\text{ where }\epsilon\sim N(0,\sigma^2)$$</li>
-<li>Suppose $\pmb\beta$ has the prior $p(\pmb\beta)&#x3D;\mathcal N(0,\tau^2\pmb I)$</li>
-<li>Ridge regression estimator is a MAP estimator with Gaussian prior $$\begin{align}<br>\hat{\pmb\beta}<em>{MAP}&amp;&#x3D;\text{arg}\max\sum</em>{i&#x3D;1}^m\log p(y_i|\pmb x_i;\pmb\beta)+\log p(\pmb\beta)\<br>P(y_i|\pmb x_i;\pmb\beta)&#x3D;\cfrac{1}{\sqrt{2\pi\sigma^2}}e^{-\cfrac{(y_i-\pmb\beta^T\pmb x_i)^2}{2\sigma^2}}<br>\Rightarrow &amp;&#x3D;\text{arg}\max\sum_{i&#x3D;1}^m-\cfrac{(y_i-\pmb\beta^T\pmb x_i)^2}{2\sigma^2}-\cfrac{1}{2\tau^2}||\pmb\beta||<em>2^2<br>\Leftarrow p(\pmb\beta)&#x3D;\cfrac{e^{-\cfrac{1}{2\tau^2}\pmb\beta^T\pmb\beta}}{\sqrt{(2\pi\tau^2)^n}}\<br>&amp;&#x3D;\text{arg}\max</em>{\pmb\beta}\sum_{i&#x3D;1}^m-(y_i-\pmb\beta^T\pmb x_i)^2-\lambda||\pmb\beta||<em>2^2<br>\Leftarrow \lambda&#x3D;\cfrac{\sigma^2}{\tau^2}\<br>\text{Ridge regression}\Leftrightarrow &amp;&#x3D;\text{arg}\min</em>{\pmb\beta}\sum_{i&#x3D;1}^m(y_i-\pmb\beta^T\pmb x_i)^2+\lambda||\pmb\beta||_2^2<br>\end{align}$$</li>
-</ul>
-<h3 id="Classification-1"><a href="#Classification-1" class="headerlink" title="Classification"></a>Classification</h3><ul>
+<script type="math/tex; mode=display">\begin{align}
+\hat{\pmb\beta}&=\text{arg}\max_{\pmb\beta}\log P(\pmb y|\pmb X;\pmb\beta)\\
+&=\text{arg}\max_{\pmb\beta}\sum_{i=1}^m\log P(y_i|\pmb x_i;\pmb\beta)\\
+&=\text{arg}\max_{\pmb\beta}\sum_{i=1}^m\log\cfrac{1}{\sqrt{2\pi\sigma^2}}e^{-\cfrac{(y_i-\pmb\beta^T\pmb x_i)^2}{2\sigma^2}}
+\Leftarrow P(y_i|\pmb x_i;\pmb\beta)=\cfrac{1}{\sqrt{2\pi\sigma^2}}e^{-\cfrac{(y_i-\pmb\beta^T\pmb x_i)^2}{2\sigma^2}}\\
+&=\text{arg}\max_{\pmb\beta}-\sum_{i=1}^m\cfrac{(y_i-\pmb\beta^T\pmb x_i)^2}{2\sigma^2}\\
+&=\text{arg}\min_{\pmb\beta}\sum_{i=1}^m\cfrac{(y_i-\pmb\beta^T\pmb x_i)^2}{2\sigma^2}\\
+&=\text{arg}\min_{\pmb\beta}\sum_{i=1}^m(y_i-\pmb\beta^T\pmb x_i)^2
+\Leftrightarrow MSE=\frac{1}{m}(\pmb y-\pmb X\pmb\beta)^T(\pmb  y-\pmb X\pmb\beta)
+\end{align}</script><h5 id="Ridge-regression-Probabilistic-View"><a href="#Ridge-regression-Probabilistic-View" class="headerlink" title="Ridge regression: Probabilistic View"></a>Ridge regression: Probabilistic View</h5><ul>
+<li>Assume the response $Y$ is given by a deterministic function and an additive Gaussian noise. <script type="math/tex">y=\pmb\beta^T\pmb x+\epsilon,\text{ where }\epsilon\sim N(0,\sigma^2)</script></li>
+<li>Suppose $\pmb\beta$ has the prior $p(\pmb\beta)=\mathcal N(0,\tau^2\pmb I)$</li>
+<li>Ridge regression estimator is a MAP estimator with Gaussian prior <script type="math/tex">\begin{align}
+\hat{\pmb\beta}_{MAP}&=\text{arg}\max\sum_{i=1}^m\log p(y_i|\pmb x_i;\pmb\beta)+\log p(\pmb\beta)\\
+P(y_i|\pmb x_i;\pmb\beta)=\cfrac{1}{\sqrt{2\pi\sigma^2}}e^{-\cfrac{(y_i-\pmb\beta^T\pmb x_i)^2}{2\sigma^2}}
+\Rightarrow &=\text{arg}\max\sum_{i=1}^m-\cfrac{(y_i-\pmb\beta^T\pmb x_i)^2}{2\sigma^2}-\cfrac{1}{2\tau^2}||\pmb\beta||_2^2
+\Leftarrow p(\pmb\beta)=\cfrac{e^{-\cfrac{1}{2\tau^2}\pmb\beta^T\pmb\beta}}{\sqrt{(2\pi\tau^2)^n}}\\
+&=\text{arg}\max_{\pmb\beta}\sum_{i=1}^m-(y_i-\pmb\beta^T\pmb x_i)^2-\lambda||\pmb\beta||_2^2
+\Leftarrow \lambda=\cfrac{\sigma^2}{\tau^2}\\
+\text{Ridge regression}\Leftrightarrow &=\text{arg}\min_{\pmb\beta}\sum_{i=1}^m(y_i-\pmb\beta^T\pmb x_i)^2+\lambda||\pmb\beta||_2^2
+\end{align}</script><h3 id="Classification-1"><a href="#Classification-1" class="headerlink" title="Classification"></a>Classification</h3></li>
 <li>In many situation, the response variable is qualitative. </li>
 <li>Classification is a process of predicting qualitative responses.</li>
 <li>Examples<ul>
@@ -1012,10 +1068,10 @@
 </ul>
 </li>
 </ul>
-<h4 id="Logistic-regression"><a href="#Logistic-regression" class="headerlink" title="Logistic regression"></a>Logistic regression</h4><h5 id="Why-not-linear-regression"><a href="#Why-not-linear-regression" class="headerlink" title="Why not linear regression?"></a>Why not linear regression?</h5><p>Can we use linear regression to predict the probability of default? $$p(\pmb x)&#x3D;\pmb w^T\pmb x+b$$</p>
+<h4 id="Logistic-regression"><a href="#Logistic-regression" class="headerlink" title="Logistic regression"></a>Logistic regression</h4><h5 id="Why-not-linear-regression"><a href="#Why-not-linear-regression" class="headerlink" title="Why not linear regression?"></a>Why not linear regression?</h5><p>Can we use linear regression to predict the probability of default? <script type="math/tex">p(\pmb x)=\pmb w^T\pmb x+b</script></p>
 <ul>
 <li>The probability of default could be negative when balances close to 0, and could be bigger than 1 when the balances are large. </li>
-<li>We must model $p(\pmb x)$ as a function that gives output between 0 and 1.<br><img src="/pic/8238a887080cb52105e2da7c8321fab.png"></li>
+<li>We must model $p(\pmb x)$ as a function that gives output between 0 and 1.<br><img src="/pic/8238a887080cb52105e2da7c8321fab.png" alt=""></li>
 </ul>
 <h5 id="Logistic-function"><a href="#Logistic-function" class="headerlink" title="Logistic function"></a>Logistic function</h5><h2 id="Lecture5-FeatureEngineering"><a href="#Lecture5-FeatureEngineering" class="headerlink" title="Lecture5_FeatureEngineering"></a>Lecture5_FeatureEngineering</h2><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><h3 id="Data-understanding"><a href="#Data-understanding" class="headerlink" title="Data understanding"></a>Data understanding</h3><h4 id="Structured-versus-unstructured-data"><a href="#Structured-versus-unstructured-data" class="headerlink" title="Structured versus unstructured data"></a>Structured versus unstructured data</h4><h4 id="Quantitative-versus-qualitative-data"><a href="#Quantitative-versus-qualitative-data" class="headerlink" title="Quantitative versus qualitative data"></a>Quantitative versus qualitative data</h4><h4 id="Exploratory-data-analysis-descriptive-statistics-and-data-visualizations"><a href="#Exploratory-data-analysis-descriptive-statistics-and-data-visualizations" class="headerlink" title="Exploratory data analysis: descriptive statistics and data visualizations"></a>Exploratory data analysis: descriptive statistics and data visualizations</h4><h3 id="Data-processing"><a href="#Data-processing" class="headerlink" title="Data processing"></a>Data processing</h3><h4 id="Missing-values"><a href="#Missing-values" class="headerlink" title="Missing values"></a>Missing values</h4><h4 id="Class-imbanlance"><a href="#Class-imbanlance" class="headerlink" title="Class imbanlance"></a>Class imbanlance</h4><h4 id="Feature-scaling-amp-discretization"><a href="#Feature-scaling-amp-discretization" class="headerlink" title="Feature scaling &amp; discretization"></a>Feature scaling &amp; discretization</h4><h4 id="Feature-encoding-amp-text-data-representation"><a href="#Feature-encoding-amp-text-data-representation" class="headerlink" title="Feature encoding &amp; text data representation"></a>Feature encoding &amp; text data representation</h4>
       
@@ -1267,5 +1323,20 @@
                                                          });
                                                       });
                                                    </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

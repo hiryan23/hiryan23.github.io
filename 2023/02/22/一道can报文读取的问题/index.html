@@ -18,12 +18,12 @@
   
   
   <title>一道can报文读取的问题 | Hiryan的世界</title>
-  <meta name="description" content="问题 小端模式（Little Endian &#x2F; Intel Order）数据的高字节保存在内存的高地址中，而数据的低字节保存在内存的低地址中 解决首先，收到的CAN报文为5(Y) C4 61 60 86 AF 11 9(X)，为16进制 转换为2进制：0101 (YYYY) 1100 0100 0110 0001 0110 0000 1000 0110 1010 1111 0001 00">
+  <meta name="description" content="问题 小端模式（Little Endian &#x2F; Intel Order）数据的高字节保存在内存的高地址中，而数据的低字节保存在内存的低地址中 解决首先，收到的CAN报文为5(Y) C4 61 60 86 AF 11 9(X)，为16进制 转换为2进制：0101 (YYYY) 1100 0100 0110 0001 0110 0000 1000 0110 1010 1111 0001 0001 10">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一道can报文读取的问题">
 <meta property="og:url" content="http://hiryan23.github.io/2023/02/22/%E4%B8%80%E9%81%93can%E6%8A%A5%E6%96%87%E8%AF%BB%E5%8F%96%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Hiryan的世界">
-<meta property="og:description" content="问题 小端模式（Little Endian &#x2F; Intel Order）数据的高字节保存在内存的高地址中，而数据的低字节保存在内存的低地址中 解决首先，收到的CAN报文为5(Y) C4 61 60 86 AF 11 9(X)，为16进制 转换为2进制：0101 (YYYY) 1100 0100 0110 0001 0110 0000 1000 0110 1010 1111 0001 00">
+<meta property="og:description" content="问题 小端模式（Little Endian &#x2F; Intel Order）数据的高字节保存在内存的高地址中，而数据的低字节保存在内存的低地址中 解决首先，收到的CAN报文为5(Y) C4 61 60 86 AF 11 9(X)，为16进制 转换为2进制：0101 (YYYY) 1100 0100 0110 0001 0110 0000 1000 0110 1010 1111 0001 0001 10">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://hiryan23.github.io/pic/733c9efe42012d64aa64fee7b66367b.png">
 <meta property="og:image" content="http://hiryan23.github.io/pic/15e38f285c14beb7f97417d9b276b50.png">
@@ -329,7 +329,7 @@
         <h3 class="toc-title">
           文章目录
         </h3>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text">问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%AB%AF%E6%A8%A1%E5%BC%8F%EF%BC%88Little-Endian-x2F-Intel-Order%EF%BC%89"><span class="toc-text">小端模式（Little Endian &#x2F; Intel Order）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3"><span class="toc-text">解决</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text">问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%AB%AF%E6%A8%A1%E5%BC%8F%EF%BC%88Little-Endian-Intel-Order%EF%BC%89"><span class="toc-text">小端模式（Little Endian &#x2F; Intel Order）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3"><span class="toc-text">解决</span></a></li></ol>
       </nav>
     </div>
   </aside>
@@ -395,24 +395,24 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p><img src="/pic/733c9efe42012d64aa64fee7b66367b.png"></p>
-<h3 id="小端模式（Little-Endian-x2F-Intel-Order）"><a href="#小端模式（Little-Endian-x2F-Intel-Order）" class="headerlink" title="小端模式（Little Endian &#x2F; Intel Order）"></a>小端模式（Little Endian &#x2F; Intel Order）</h3><p>数据的高字节保存在内存的高地址中，而数据的低字节保存在内存的低地址中</p>
+        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p><img src="/pic/733c9efe42012d64aa64fee7b66367b.png" alt=""></p>
+<h3 id="小端模式（Little-Endian-Intel-Order）"><a href="#小端模式（Little-Endian-Intel-Order）" class="headerlink" title="小端模式（Little Endian / Intel Order）"></a>小端模式（Little Endian / Intel Order）</h3><p>数据的高字节保存在内存的高地址中，而数据的低字节保存在内存的低地址中</p>
 <h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>首先，收到的CAN报文为5(Y) C4 61 60 86 AF 11 9(X)，为16进制</p>
 <p>转换为2进制：0101 (YYYY) 1100 0100 0110 0001 0110 0000 1000 0110 1010 1111 0001 0001 1001 （XXXX）</p>
-<p>然后，画出各报文位置对应数据含义表格<br><img src="/pic/15e38f285c14beb7f97417d9b276b50.png"></p>
-<p>按<strong>小端模式</strong>填充<br><img src="/pic/faa4153db0e11f009359d1e132051e0.png"></p>
+<p>然后，画出各报文位置对应数据含义表格<br><img src="/pic/15e38f285c14beb7f97417d9b276b50.png" alt=""></p>
+<p>按<strong>小端模式</strong>填充<br><img src="/pic/faa4153db0e11f009359d1e132051e0.png" alt=""></p>
 <p>因此可得</p>
 <ul>
 <li>刹车指示：00 0101</li>
-<li>电池电流：01 1000 0111 0001（-500+6257*0.1&#x3D;125.7A）</li>
-<li>电机转速：1000 0110 0110 0000 （-10000+34400*0.5&#x3D;7200r&#x2F;min）</li>
-<li>动力电池电压：1 0001 1010 1111 （4527*0.1&#x3D;452.7）</li>
+<li>电池电流：01 1000 0111 0001（-500+6257*0.1=125.7A）</li>
+<li>电机转速：1000 0110 0110 0000 （-10000+34400*0.5=7200r/min）</li>
+<li>动力电池电压：1 0001 1010 1111 （4527*0.1=452.7）</li>
 </ul>
 <p>填空</p>
 <ul>
-<li>蓄电池电压：100 1XXX X000 （应为1272*0.01&#x3D;12.72）</li>
+<li>蓄电池电压：100 1XXX X000 （应为1272*0.01=12.72）</li>
 <li>转速红区标志：Y3Y2（应为0x03）</li>
-<li>超功率标志：Y1Y0（计算功率125.7*452.7&#x3D;56904.39W，应为0x01）</li>
+<li>超功率标志：Y1Y0（计算功率125.7*452.7=56904.39W，应为0x01）</li>
 </ul>
 <p>所以X为1111（F），Y为1101（D）</p>
 
@@ -665,5 +665,20 @@
                                                          });
                                                       });
                                                    </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

@@ -381,7 +381,7 @@
 <li>运气</li>
 </ol>
 <hr>
-<p>社会公认无风险利率（政府债券&#x2F;银行活期存款&#x2F;银行间隔夜拆借利率？）</p>
+<p>社会公认无风险利率（政府债券/银行活期存款/银行间隔夜拆借利率？）</p>
 <p>杠杆原理</p>
 <p>优先股是什么鬼</p>
 
@@ -599,5 +599,20 @@
                                                          });
                                                       });
                                                    </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

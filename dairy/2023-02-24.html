@@ -374,7 +374,7 @@
       
         <p>博弈论导论：3.3-3.3 4.1-4.3 5.1-5.2 6.1-6.4</p>
 <p>那个赌徒分钱的问题，律师的激励？如果把律师作为博弈的主体之一……去中心化方法</p>
-<p>U()&#x3D;(u1,u2)</p>
+<p>U()=(u1,u2)</p>
 <p>Nash论文</p>
 <p>收益矩阵中的不动点</p>
 <p>古诺：用重复剔除劣策略方法寻找均衡</p>
@@ -596,5 +596,20 @@
                                                          });
                                                       });
                                                    </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
