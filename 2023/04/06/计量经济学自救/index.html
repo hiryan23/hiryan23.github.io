@@ -24,7 +24,7 @@
 <meta property="og:description" content="马上第九周，半学期过去了，计量经济学学习得感觉还是雾里看花，这样子下去期末成绩只能水中望月了。这可不行，不能忘记上学期商务统计学的惨痛教训。遂写本文，旨在自救。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-06T08:12:12.507Z">
-<meta property="article:modified_time" content="2023-09-16T11:41:38.699Z">
+<meta property="article:modified_time" content="2023-06-11T16:00:00.000Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="具有自我意识的笔记">
 <meta name="twitter:card" content="summary">
@@ -414,7 +414,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：1 小时前
+                    本文最后更新于：3 个月前
                   
                 
               </p>
@@ -1083,7 +1083,7 @@ class="math inline">\(\mu\)</span>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年9月16日</div>
+          <div>2023年6月12日</div>
         </div>
       
       
@@ -1136,6 +1136,15 @@ class="math inline">\(\mu\)</span>
             </div>
 
             
+  
+  
+    <article id="comments" lazyload>
+      
+
+    </article>
+  
+
+
           </article>
         </div>
       </div>
@@ -1182,6 +1191,12 @@ class="math inline">\(\mu\)</span>
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -1375,6 +1390,49 @@ class="math inline">\(\mu\)</span>
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

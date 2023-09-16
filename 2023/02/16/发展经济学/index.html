@@ -34,7 +34,7 @@
 <meta property="og:image" content="http://hiryan23.github.io/pic/e4a5f2e591f891ebf74fd70cb98ab0e.png">
 <meta property="og:image" content="http://hiryan23.github.io/pic/1be6fbf7b3122571ef018ff8548f0bf.png">
 <meta property="article:published_time" content="2023-02-16T06:33:41.674Z">
-<meta property="article:modified_time" content="2023-09-16T11:39:29.026Z">
+<meta property="article:modified_time" content="2023-05-31T16:00:00.000Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="课程笔记">
 <meta name="twitter:card" content="summary">
@@ -425,7 +425,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：1 小时前
+                    本文最后更新于：4 个月前
                   
                 
               </p>
@@ -2203,7 +2203,7 @@ id="联合国千年发展目标和2030可持续发展议程">联合国千年发�
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年9月16日</div>
+          <div>2023年6月1日</div>
         </div>
       
       
@@ -2256,6 +2256,15 @@ id="联合国千年发展目标和2030可持续发展议程">联合国千年发�
             </div>
 
             
+  
+  
+    <article id="comments" lazyload>
+      
+
+    </article>
+  
+
+
           </article>
         </div>
       </div>
@@ -2302,6 +2311,12 @@ id="联合国千年发展目标和2030可持续发展议程">联合国千年发�
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -2495,6 +2510,49 @@ id="联合国千年发展目标和2030可持续发展议程">联合国千年发�
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

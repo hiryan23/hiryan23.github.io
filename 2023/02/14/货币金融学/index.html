@@ -47,7 +47,7 @@
 <meta property="og:image" content="http://hiryan23.github.io/pic/00a394bb6e92fc3719e4d189fa1ae91.png">
 <meta property="og:image" content="http://hiryan23.github.io/pic/c32799fbe18d5a7e6dbe94fb5f8ae4c.png">
 <meta property="article:published_time" content="2023-02-13T23:52:31.728Z">
-<meta property="article:modified_time" content="2023-09-16T11:39:31.581Z">
+<meta property="article:modified_time" content="2023-05-31T16:00:00.000Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="课程笔记">
 <meta name="twitter:card" content="summary">
@@ -438,7 +438,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：1 小时前
+                    本文最后更新于：4 个月前
                   
                 
               </p>
@@ -1971,7 +1971,7 @@ id="使用收益率曲线预测通货膨胀走势">使用收益率曲线预测�
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年9月16日</div>
+          <div>2023年6月1日</div>
         </div>
       
       
@@ -2024,6 +2024,15 @@ id="使用收益率曲线预测通货膨胀走势">使用收益率曲线预测�
             </div>
 
             
+  
+  
+    <article id="comments" lazyload>
+      
+
+    </article>
+  
+
+
           </article>
         </div>
       </div>
@@ -2070,6 +2079,12 @@ id="使用收益率曲线预测通货膨胀走势">使用收益率曲线预测�
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -2263,6 +2278,49 @@ id="使用收益率曲线预测通货膨胀走势">使用收益率曲线预测�
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
