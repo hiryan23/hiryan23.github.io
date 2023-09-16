@@ -1,28 +1,26 @@
+
+
 <!DOCTYPE html>
-<html lang=zh>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="renderer" content="webkit">
-  <meta http-equiv="Cache-Control" content="no-transform" />
-  <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="format-detection" content="telephone=no,email=no,adress=no">
-  <!-- Color theme for statusbar -->
-  <meta name="theme-color" content="#000000" />
-  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
-  <meta http-equiv="window-target" content="_top" />
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Ruiyang He">
+  <meta name="keywords" content="">
   
-  
-  <title>机器学习-课程笔记 | Hiryan的世界</title>
-  <meta name="description" content="本笔记整理自安泰经济与管理学院2022年春季学期课程BUSS2505-02机器学习，授课人是李成璋老师。  Lecture1_IntroductionApplicationsMachine Learning is all around us Game AI Deep blue, IBM AlphaGo, Deep Mind Deepstack, CMU &amp; Facebook AI   R">
+    <meta name="description" content="本笔记整理自安泰经济与管理学院2022年春季学期课程BUSS2505-02机器学习，授课人是李成璋老师。  Lecture1_IntroductionApplicationsMachine Learning is all around us Game AI Deep blue, IBM AlphaGo, Deep Mind Deepstack, CMU &amp; Facebook AI   R">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习-课程笔记">
 <meta property="og:url" content="http://hiryan23.github.io/2023/02/17/Machine%20Learning/index.html">
-<meta property="og:site_name" content="Hiryan的世界">
+<meta property="og:site_name" content="Hiryan&#39;s Blog">
 <meta property="og:description" content="本笔记整理自安泰经济与管理学院2022年春季学期课程BUSS2505-02机器学习，授课人是李成璋老师。  Lecture1_IntroductionApplicationsMachine Learning is all around us Game AI Deep blue, IBM AlphaGo, Deep Mind Deepstack, CMU &amp; Facebook AI   R">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://hiryan23.github.io/pic/9538373a69fb3836595f01495607834.png">
@@ -76,377 +74,275 @@
 <meta property="og:image" content="http://hiryan23.github.io/pic/f7eb0da81ed0871c9b951828e1eef00.png">
 <meta property="og:image" content="http://hiryan23.github.io/pic/44f6ee7c2003c9bfdc6952ad6a82bb8.png">
 <meta property="og:image" content="http://hiryan23.github.io/pic/7932e2084b642ada22ad4a78f912adf.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/02/17/Machine%20Learning/cf8051b1925bef0c1100e19ec7ecdc2.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/02/17/Machine%20Learning/46bc95f08fe1f0d64f8f9a4733f00b0.png">
+<meta property="og:image" content="http://hiryan23.github.io/pic/60f7ff4efd734ff604959c09c02b128.png">
+<meta property="og:image" content="http://hiryan23.github.io/pic/9bc96b20dd2d9a83b34e6770feefa63.png">
+<meta property="og:image" content="http://hiryan23.github.io/pic/cba0fc4f531383fa7eee44fe02e9de0.png">
 <meta property="article:published_time" content="2023-02-17T15:12:03.271Z">
-<meta property="article:modified_time" content="2023-04-18T08:16:01.519Z">
+<meta property="article:modified_time" content="2023-09-16T04:55:56.352Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="笔记">
-<meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://hiryan23.github.io/pic/9538373a69fb3836595f01495607834.png">
-  <!-- Canonical links -->
-  <link rel="canonical" href="http://hiryan23.github.io/2023/02/17/Machine%20Learning/index.html">
-  
-    <link rel="alternate" href="/atom.xml" title="Hiryan的世界" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png" type="image/x-icon">
   
-  
-<link rel="stylesheet" href="/css/style.css">
+  <title>机器学习-课程笔记 - Hiryan&#39;s Blog</title>
 
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
-    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hiryan23.github.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
   
-  
+
+
   
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 
-<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
-  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-  <div class="slimContent">
-    <div class="navbar-header">
-      
-      
-      <div class="profile-block text-center">
-        <a id="avatar" href="" target="_blank">
-          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
-        </a>
-        <h2 id="name" class="hidden-xs hidden-sm">Ruiyang He</h2>
-        <h3 id="title" class="hidden-xs hidden-sm hidden-md">上海交通大学 本科生</h3>
-        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
-      </div>
-      
-      <div class="search" id="search-form-wrap">
+<body>
+  
 
-    <form class="search-form sidebar-form">
-        <div class="input-group">
-            <input type="text" class="search-form-input form-control" placeholder="搜索" />
-            <span class="input-group-btn">
-                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
-            </span>
-        </div>
-    </form>
-    <div class="ins-search">
-  <div class="ins-search-mask"></div>
-  <div class="ins-search-container">
-    <div class="ins-input-wrapper">
-      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
-      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-    </div>
-    <div class="ins-section-wrapper">
-      <div class="ins-section-container"></div>
-    </div>
-  </div>
-</div>
+  <header>
+    
 
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Hiryan&#39;s blog</strong>
+    </a>
 
-</div>
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-      <ul class="nav navbar-nav main-nav menu-highlight">
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
         
         
-        <li class="menu-item menu-item-home">
-          <a href="/.">
-            
-            <i class="icon icon-home-fill"></i>
-            
-            <span class="menu-title">首页</span>
-          </a>
-        </li>
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
         
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives">
-            
-            <i class="icon icon-archives-fill"></i>
-            
-            <span class="menu-title">归档</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories">
-            
-            <i class="icon icon-folder"></i>
-            
-            <span class="menu-title">分类</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags">
-            
-            <i class="icon icon-tags"></i>
-            
-            <span class="menu-title">标签</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-links">
-          <a href="/links">
-            
-            <i class="icon icon-friendship"></i>
-            
-            <span class="menu-title">友链</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about">
-            
-            <i class="icon icon-cup-fill"></i>
-            
-            <span class="menu-title">关于</span>
-          </a>
-        </li>
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
         
       </ul>
-      
-	
-    <ul class="social-links">
-    	
-        <li><a href="https://github.com/hiryan23" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
-        
-    </ul>
-
-    </nav>
+    </div>
   </div>
-</header>
+</nav>
 
   
-    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/lungmen.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="机器学习-课程笔记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
     
-      <div class="widget">
-    <h3 class="widget-title">公告</h3>
-    <div class="widget-body">
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-02-17 23:12" pubdate>
+          2023年2月17日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          45k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          372 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
-            <div class="content">
-                <p>你永远不该评判自己不了解的事物。</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E5%8D%9A%E5%BC%88%E8%AE%BA/">2022S博弈论</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E5%8F%91%E5%B1%95%E7%BB%8F%E6%B5%8E%E5%AD%A6/">2022S发展经济学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">2022S机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/">2022S计量经济学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86/">2022S财务管理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E8%B4%A7%E5%B8%81%E9%87%91%E8%9E%8D%E5%AD%A6/">2022S货币金融学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E9%87%91%E8%9E%8D%E5%AD%A6%E5%8E%9F%E7%90%86/">2022S金融学原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2023S%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%8E%9F%E7%90%86/">2023S马克思主义原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%86%E4%BA%AB%E6%96%87%E7%AB%A0/">分享文章</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0%E3%80%81%E6%9D%82%E6%84%9F%E4%B8%8E%E8%87%AA%E6%88%91%E6%89%B9%E5%88%A4/">日记、杂感与自我批判</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82/">杂</a><span class="category-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E2%80%9C%E6%84%8F%E8%AF%86%E6%B5%81%E2%80%9D/" rel="tag">“意识流”</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%91%E5%B1%95%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">发展经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%8E%B0%E4%BB%A3%E4%B8%BB%E4%B9%89%E5%93%B2%E5%AD%A6/" rel="tag">后现代主义哲学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%8F%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" rel="tag">宏观金融学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E8%AF%B4-%E6%95%A3%E6%96%87%E7%AD%89/" rel="tag">小说\散文等</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">微观经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" rel="tag">微观金融学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B1%BD%E8%BD%A6%E6%8E%A7%E5%88%B6/" rel="tag">汽车控制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A4%BE%E4%BC%9A%E5%88%86%E6%9E%90/" rel="tag">社会分析</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">计量经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%91%E8%9E%8D%E5%AD%A6/" rel="tag">金融学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A9%AC%E5%8E%9F/" rel="tag">马原</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget-body tagcloud">
-      <a href="/tags/%E2%80%9C%E6%84%8F%E8%AF%86%E6%B5%81%E2%80%9D/" style="font-size: 13px;">“意识流”</a> <a href="/tags/%E5%8F%91%E5%B1%95%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 13px;">发展经济学</a> <a href="/tags/%E5%90%8E%E7%8E%B0%E4%BB%A3%E4%B8%BB%E4%B9%89%E5%93%B2%E5%AD%A6/" style="font-size: 13px;">后现代主义哲学</a> <a href="/tags/%E5%AE%8F%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" style="font-size: 13px;">宏观金融学</a> <a href="/tags/%E5%B0%8F%E8%AF%B4-%E6%95%A3%E6%96%87%E7%AD%89/" style="font-size: 13px;">小说\散文等</a> <a href="/tags/%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 13px;">微观经济学</a> <a href="/tags/%E5%BE%AE%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" style="font-size: 13px;">微观金融学</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 13px;">机器学习</a> <a href="/tags/%E6%B1%BD%E8%BD%A6%E6%8E%A7%E5%88%B6/" style="font-size: 13px;">汽车控制</a> <a href="/tags/%E7%A4%BE%E4%BC%9A%E5%88%86%E6%9E%90/" style="font-size: 13px;">社会分析</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 14px;">笔记</a> <a href="/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 13px;">计量经济学</a> <a href="/tags/%E9%87%91%E8%9E%8D%E5%AD%A6/" style="font-size: 13px;">金融学</a> <a href="/tags/%E9%A9%AC%E5%8E%9F/" style="font-size: 13px;">马原</a>
-    </div>
-  </div>
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a><span class="archive-list-count">13</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget-body">
-      <ul class="recent-post-list list-unstyled no-thumbnail">
-        
-          <li>
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">机器学习-课程笔记</h1>
             
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E6%97%A5%E8%AE%B0%E3%80%81%E6%9D%82%E6%84%9F%E4%B8%8E%E8%87%AA%E6%88%91%E6%89%B9%E5%88%A4/">日记、杂感与自我批判</a>
-              </p>
-              <p class="item-title">
-                <a href="/2023/03/14/%E7%94%9F%E7%97%85%E4%BA%86/" class="title">2023.03.14 生病了</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-03-14T14:09:52.155Z" itemprop="datePublished">2023-03-14</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
             
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E5%88%86%E4%BA%AB%E6%96%87%E7%AB%A0/">分享文章</a>
-              </p>
-              <p class="item-title">
-                <a href="/2023/02/28/%E6%9C%80%E5%90%8E%E4%B8%80%E5%90%8D/" class="title">最后一名 | 马塞尔·埃梅</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-02-28T13:04:05.126Z" itemprop="datePublished">2023-02-28</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/2023S%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%8E%9F%E7%90%86/">2023S马克思主义原理</a>
-              </p>
-              <p class="item-title">
-                <a href="/2023/02/27/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%8E%9F%E7%90%86/" class="title">马克思主义原理-重点梳理</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-02-27T06:20:15.125Z" itemprop="datePublished">2023-02-27</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E6%9D%82/">杂</a>
-              </p>
-              <p class="item-title">
-                <a href="/2023/02/22/%E4%B8%80%E9%81%93can%E6%8A%A5%E6%96%87%E8%AF%BB%E5%8F%96%E7%9A%84%E9%97%AE%E9%A2%98/" class="title">一道can报文读取的问题</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-02-22T05:44:19.256Z" itemprop="datePublished">2023-02-22</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E6%97%A5%E8%AE%B0%E3%80%81%E6%9D%82%E6%84%9F%E4%B8%8E%E8%87%AA%E6%88%91%E6%89%B9%E5%88%A4/">日记、杂感与自我批判</a>
-              </p>
-              <p class="item-title">
-                <a href="/2023/02/22/%E4%BB%8E%E7%8F%AD%E4%BC%9A%E5%8F%91%E8%A8%80%E5%BC%95%E5%87%BA%E7%9A%84%E6%80%9D%E8%80%83/" class="title">2023.02.22 从班会发言引出的思考</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-02-22T00:14:36.308Z" itemprop="datePublished">2023-02-22</time>
-              </p>
-            </div>
-          </li>
-          
-      </ul>
-    </div>
-  </div>
-  
-
-    
-  </div>
-</aside>
-
-  
-  
-  <aside class="sidebar sidebar-toc   in  " id="collapseToc" itemscope
-    itemtype="http://schema.org/WPSideBar">
-    <div class="slimContent">
-      <nav id="toc" class="article-toc">
-        <h3 class="toc-title">
-          文章目录
-        </h3>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Lecture1-Introduction"><span class="toc-text">Lecture1_Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Applications"><span class="toc-text">Applications</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Machine-Learning-is-all-around-us"><span class="toc-text">Machine Learning is all around us</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Economical-impact-of-Machine-Learning"><span class="toc-text">Economical impact of Machine Learning</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Trends-of-Machine-Learning"><span class="toc-text">Trends of Machine Learning</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Definition"><span class="toc-text">Definition</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#What-is-Machine-Learning"><span class="toc-text">What is Machine Learning?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Programming-vs-Machine-Learning"><span class="toc-text">Programming vs Machine Learning</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Brief-History-of-Machine-Learning"><span class="toc-text">Brief History of Machine Learning</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Categories"><span class="toc-text">Categories</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Supervised-Learning"><span class="toc-text">Supervised Learning</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Process-of-Supervised-Learning"><span class="toc-text">Process of Supervised Learning</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Unsupervised-Learning"><span class="toc-text">Unsupervised Learning</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Some-Machine-Learning-algorithms"><span class="toc-text">Some Machine Learning algorithms</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lecture2-MathForML"><span class="toc-text">Lecture2_MathForML</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Notations"><span class="toc-text">Notations</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Probability-amp-Statistics"><span class="toc-text">Probability &amp; Statistics</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Sample-space-Omega"><span class="toc-text">Sample space($\Omega$)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Event-E"><span class="toc-text">Event($E$)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Event-space-mathcal-F"><span class="toc-text">Event space($\mathcal F$)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Axioms-of-probability"><span class="toc-text">Axioms of probability</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Random-variable-RV"><span class="toc-text">Random variable (RV)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Probability-distribution"><span class="toc-text">Probability distribution</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Joint-distribution"><span class="toc-text">Joint distribution</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Conditional-probability"><span class="toc-text">Conditional probability</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Product-rule"><span class="toc-text">Product rule</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bayes%E2%80%99-rule"><span class="toc-text">Bayes’ rule</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Marginal-probability"><span class="toc-text">Marginal probability</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Independence"><span class="toc-text">Independence</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Expectation"><span class="toc-text">Expectation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Conditional-expectation"><span class="toc-text">Conditional expectation</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Law-of-total-expectation"><span class="toc-text">Law of total expectation</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Variance"><span class="toc-text">Variance</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Covariance"><span class="toc-text">Covariance</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Estimation-of-Parameters"><span class="toc-text">Estimation of Parameters</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Maximum-Likelihood-Estimation-MLE"><span class="toc-text">Maximum Likelihood Estimation (MLE)</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Example-of-MLE"><span class="toc-text">Example of MLE</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Maximum-A-Posteriori-Estimation-MAP"><span class="toc-text">Maximum A Posteriori Estimation (MAP)</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Example-of-MAP"><span class="toc-text">Example of MAP</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linear-Algebra"><span class="toc-text">Linear Algebra</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Vector"><span class="toc-text">Vector</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Matrix"><span class="toc-text">Matrix</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vector-algorithmic"><span class="toc-text">Vector algorithmic</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vector-norm"><span class="toc-text">Vector norm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Matrix-arithmetric"><span class="toc-text">Matrix arithmetric</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Transpose"><span class="toc-text">Transpose</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Symmetric-matrix"><span class="toc-text">Symmetric matrix</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Inverse-of-a-matrix"><span class="toc-text">Inverse of a matrix</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Semidefinite-matrices"><span class="toc-text">Semidefinite matrices</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Back-to-Probability-amp-Statistics"><span class="toc-text">Back to Probability &amp; Statistics</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Random-vector"><span class="toc-text">Random vector</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Covariance-matrix"><span class="toc-text">Covariance matrix</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Matrix-calculus"><span class="toc-text">Matrix calculus</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Optimization"><span class="toc-text">Optimization</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#What-is-optimization"><span class="toc-text">What is optimization?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Local-minima-and-global-minima"><span class="toc-text">Local minima and global minima</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Convex-set"><span class="toc-text">Convex set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Convex-Concave-function"><span class="toc-text">Convex (Concave) function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#First-order-convexity-condition"><span class="toc-text">First-order convexity condition</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Second-order-convexity-condition"><span class="toc-text">Second-order convexity condition</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Examples-of-convex-functions"><span class="toc-text">Examples of convex functions</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Convex-optimization-problem"><span class="toc-text">Convex optimization problem</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#It%E2%80%99s-nice-to-be-convex"><span class="toc-text">It’s nice to be convex!</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Optimization-methods"><span class="toc-text">Optimization methods</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lecture3-BasicInML"><span class="toc-text">Lecture3_BasicInML</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Generalization-ability-%E6%B3%9B%E5%8C%96%E8%83%BD%E5%8A%9B"><span class="toc-text">Generalization ability (泛化能力)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Underfitting-and-overfitting"><span class="toc-text">Underfitting and overfitting</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Basic-terms"><span class="toc-text">Basic terms</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Loss-function"><span class="toc-text">Loss function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Generalization-error"><span class="toc-text">Generalization error</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Generalization-error-%E6%B3%9B%E5%8C%96%E8%AF%AF%E5%B7%AE"><span class="toc-text">Generalization error (泛化误差)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Test-error-%E6%B5%8B%E8%AF%95%E8%AF%AF%E5%B7%AE"><span class="toc-text">Test error (测试误差)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Training-error-%E8%AE%AD%E7%BB%83%E8%AF%AF%E5%B7%AE"><span class="toc-text">Training error (训练误差)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Learning-objective"><span class="toc-text">Learning objective</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Training-error-vs-test-error"><span class="toc-text">Training error vs test error</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Performance-metrics"><span class="toc-text">Performance metrics</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Classification"><span class="toc-text">Classification</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Performance-metrics-for-classification"><span class="toc-text">Performance metrics for classification</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Confusion-matrix"><span class="toc-text">Confusion matrix</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Accuracy"><span class="toc-text">Accuracy</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Limitation-of-Accuracy"><span class="toc-text">Limitation of Accuracy</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Precision-%E6%9F%A5%E5%87%86%E7%8E%87"><span class="toc-text">Precision(查准率)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Recall-%E6%9F%A5%E5%85%A8%E7%8E%87"><span class="toc-text">Recall(查全率)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#F-1-score"><span class="toc-text">$F_1$ score</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Regression"><span class="toc-text">Regression</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Performance-metrics-for-regression"><span class="toc-text">Performance metrics for regression</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bias-variance-decomposition"><span class="toc-text">Bias-variance decomposition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Model-selection"><span class="toc-text">Model selection</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Principle-of-Occam%E2%80%99s-razor-%E5%A5%A5%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80"><span class="toc-text">Principle of Occam’s razor (奥卡姆剃刀)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Regularization"><span class="toc-text">Regularization</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hyperparameter-%E8%B6%85%E5%8F%82%E6%95%B0"><span class="toc-text">Hyperparameter(超参数)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Validation-strategy"><span class="toc-text">Validation strategy</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Hold-out-validation"><span class="toc-text">Hold-out validation</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Cross-validation"><span class="toc-text">Cross validation</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Leave-one-out-cross-validation"><span class="toc-text">Leave-one-out cross validation</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Which-validation-strategy-to-use"><span class="toc-text">Which validation strategy to use?</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lecture4-LinearModels"><span class="toc-text">Lecture4_LinearModels</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linear-Regression"><span class="toc-text">Linear Regression</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Motivating-example"><span class="toc-text">Motivating example</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Simple-linear-regression"><span class="toc-text">Simple linear regression</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Estimating-the-parameters"><span class="toc-text">Estimating the parameters</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Multivariate-linear-regression"><span class="toc-text">Multivariate linear regression</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Ridge-regression"><span class="toc-text">Ridge regression</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Regularized-linear-regression"><span class="toc-text">Regularized linear regression</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Regularization-1"><span class="toc-text">Regularization</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Linear-regression-Probabilistic-View"><span class="toc-text">Linear regression: Probabilistic View</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Recap-Probability-amp-Statistics"><span class="toc-text">Recap: Probability &amp; Statistics</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#The-multivariate-Gaussian-distribution"><span class="toc-text">The multivariate Gaussian distribution</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Linear-regression-Probabilistic-View-1"><span class="toc-text">Linear regression: Probabilistic View</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Ridge-regression-Probabilistic-View"><span class="toc-text">Ridge regression: Probabilistic View</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Classification-1"><span class="toc-text">Classification</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Logistic-regression"><span class="toc-text">Logistic regression</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Why-not-linear-regression"><span class="toc-text">Why not linear regression?</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Logistic-function"><span class="toc-text">Logistic function</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Binary-classification-using-logistic-function"><span class="toc-text">Binary classification using logistic function</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Interpretation-of-logistic-regression"><span class="toc-text">Interpretation of logistic regression</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Training-the-logistic-function"><span class="toc-text">Training the logistic function</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Gradient-descent-method-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95"><span class="toc-text">Gradient descent method (梯度下降法)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Batch-gradient-descent-%E6%89%B9%E9%87%8F%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D"><span class="toc-text">Batch gradient descent (批量梯度下降)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Stochastic-gradient-descent-%E9%9A%8F%E6%9C%BA%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D"><span class="toc-text">Stochastic gradient descent (随机梯度下降)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Mini-batch-gradient-descent-%E5%B0%8F%E6%89%B9%E9%87%8F%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D"><span class="toc-text">Mini-batch gradient descent (小批量梯度下降)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Choice-of-learning-rate-%E5%AD%A6%E4%B9%A0%E9%80%9F%E7%8E%87"><span class="toc-text">Choice of learning rate (学习速率)</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Making-prediction"><span class="toc-text">Making prediction</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Label-decision-and-thresholds"><span class="toc-text">Label decision and thresholds</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Another-evaluation-measure-ROC-curve"><span class="toc-text">Another evaluation measure: ROC curve</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ROC-curve-and-AUC-area-under-the-curve"><span class="toc-text">ROC curve and AUC (area under the curve)</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Regularization-in-logistic-regression"><span class="toc-text">Regularization in logistic regression</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Multiclass-classification-%E5%A4%9A%E5%88%86%E7%B1%BB"><span class="toc-text">Multiclass classification (多分类)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Multinomial-logistic-regression-%E5%A4%9A%E9%A1%B9%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92"><span class="toc-text">Multinomial logistic regression (多项逻辑回归)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#One-vs-Rest-OvR"><span class="toc-text">One-vs-Rest (OvR)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#One-vs-One-OvO"><span class="toc-text">One-vs-One (OvO)</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lecture5-FeatureEngineering"><span class="toc-text">Lecture5_FeatureEngineering</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-understanding"><span class="toc-text">Data understanding</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Structured-versus-unstructured-data"><span class="toc-text">Structured versus unstructured data</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Quantitative-versus-qualitative-data"><span class="toc-text">Quantitative versus qualitative data</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Exploratory-data-analysis-descriptive-statistics-and-data-visualizations"><span class="toc-text">Exploratory data analysis: descriptive statistics and data visualizations</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-processing"><span class="toc-text">Data processing</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Missing-values"><span class="toc-text">Missing values</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Class-imbanlance"><span class="toc-text">Class imbanlance</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Feature-scaling-amp-discretization"><span class="toc-text">Feature scaling &amp; discretization</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Feature-encoding-amp-text-data-representation"><span class="toc-text">Feature encoding &amp; text data representation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lecture7-NeuralNetworks"><span class="toc-text">Lecture7_NeuralNetworks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Overview-of-neural-networks"><span class="toc-text">Overview of neural networks</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Structure-of-neurons-in-human-brain"><span class="toc-text">Structure of neurons in human brain</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Artificial-neurons"><span class="toc-text">Artificial neurons</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Artificial-Neural-Networks-ANN"><span class="toc-text">Artificial Neural Networks (ANN)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#History-of-neural-networks"><span class="toc-text">History of neural networks</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Perceptron-model"><span class="toc-text">Perceptron model</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Training-the-Perceptron-model"><span class="toc-text">Training the Perceptron model</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Representation-of-Boolean-functions-%E5%B8%83%E5%B0%94%E5%87%BD%E6%95%B0"><span class="toc-text">Representation of Boolean functions (布尔函数)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Limitation-of-Perceptron-model"><span class="toc-text">Limitation of Perceptron model</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Solution-Add-a-hidden-layer"><span class="toc-text">Solution - Add a hidden layer</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multi-layer-feedforward-neural-networks"><span class="toc-text">Multi-layer feedforward neural networks</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Back-Propagation-algorithm"><span class="toc-text">Back-Propagation algorithm</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Activation-functions"><span class="toc-text">Activation functions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Issues-of-training-neural-networks"><span class="toc-text">Issues of training neural networks</span></a></li></ol></li></ol>
-      </nav>
-    </div>
-  </aside>
-  
-<main class="main" role="main">
-  <div class="content">
-  <article id="post-Machine Learning" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-    
-    <div class="article-header">
-      
-        
-    
-          <h1 class="article-title" itemprop="name">
-            机器学习-课程笔记
-          </h1>
-          
-            
-      
-      <div class="article-meta">
-        <span class="article-date">
-	<i class="icon icon-calendar"></i>
-	<a href="/2023/02/17/Machine%20Learning/" class="article-date">
-		<time datetime="2023-02-17T15:12:03.271Z" itemprop="datePublished">
-			2023-02-17
-		</time>
-	</a>
-</span>
-
-<span class="article-date">
-	<i class="icon icon-calendar-check"></i>
-	<a href="/2023/02/17/Machine%20Learning/" class="article-date">
-		<time datetime="2023-04-18T08:16:01.519Z" itemprop="dateUpdated">
-			2023-04-18
-		</time>
-	</a>
-</span>
-        
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/2022S%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">2022S机器学习</a>
-  </span>
-
-        
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a>, <a class="article-tag-link-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a>
-  </span>
-
-
-        
-	<span class="article-read hidden-xs">
-		<i class="icon icon-eye-fill" aria-hidden="true"></i>
-		<span id="busuanzi_container_page_pv">
-			<span id="busuanzi_value_page_pv"></span>
-		</span>
-	</span>
-
-	
-		
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/02/17/Machine%20Learning/#comments" class="article-comment-link">评论</a></span>
-        
-      </div>
-    </div>
-    <div class="article-entry marked-body" itemprop="articleBody">
-      
-        <blockquote>
+              <div class="markdown-body">
+                
+                <blockquote>
 <p><em>本笔记整理自安泰经济与管理学院2022年春季学期课程BUSS2505-02机器学习，授课人是李成璋老师。</em></p>
 </blockquote>
 <h2 id="Lecture1-Introduction"><a href="#Lecture1-Introduction" class="headerlink" title="Lecture1_Introduction"></a>Lecture1_Introduction</h2><h3 id="Applications"><a href="#Applications" class="headerlink" title="Applications"></a>Applications</h3><h4 id="Machine-Learning-is-all-around-us"><a href="#Machine-Learning-is-all-around-us" class="headerlink" title="Machine Learning is all around us"></a>Machine Learning is all around us</h4><ul>
@@ -482,12 +378,12 @@
 <li>By 2035, AI could double annual global economic growth rates (Accenture)</li>
 <li>Global GDP may increase by up to 14% (the equivalent of US$15.7 trillion) by 2030 as a result of the accelerating development and take-up of AI (PwC)</li>
 </ul>
-<h4 id="Trends-of-Machine-Learning"><a href="#Trends-of-Machine-Learning" class="headerlink" title="Trends of Machine Learning"></a>Trends of Machine Learning</h4><p><img src="/pic/9538373a69fb3836595f01495607834.png" alt="Trends of ML"></p>
+<h4 id="Trends-of-Machine-Learning"><a href="#Trends-of-Machine-Learning" class="headerlink" title="Trends of Machine Learning"></a>Trends of Machine Learning</h4><p><img src="/pic/9538373a69fb3836595f01495607834.png" srcset="/img/loading.gif" lazyload alt="Trends of ML"></p>
 <h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><h4 id="What-is-Machine-Learning"><a href="#What-is-Machine-Learning" class="headerlink" title="What is Machine Learning?"></a>What is Machine Learning?</h4><ul>
 <li>Field of study that gives computers the ability to learn without being explicitly programmed. - Arthur Samuel, 1959</li>
 <li>A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E. - Tom Mitchell, 1997</li>
 </ul>
-<h4 id="Programming-vs-Machine-Learning"><a href="#Programming-vs-Machine-Learning" class="headerlink" title="Programming vs Machine Learning"></a>Programming vs Machine Learning</h4><p><img src="/pic/bfec802ec5619a7f6b5ef92fd832d31.png" alt="Programming vs ML"></p>
+<h4 id="Programming-vs-Machine-Learning"><a href="#Programming-vs-Machine-Learning" class="headerlink" title="Programming vs Machine Learning"></a>Programming vs Machine Learning</h4><p><img src="/pic/bfec802ec5619a7f6b5ef92fd832d31.png" srcset="/img/loading.gif" lazyload alt="Programming vs ML"></p>
 <h4 id="Brief-History-of-Machine-Learning"><a href="#Brief-History-of-Machine-Learning" class="headerlink" title="Brief History of Machine Learning"></a>Brief History of Machine Learning</h4><ol>
 <li>Connectionism, 1950s<ul>
 <li>Perception, F. Rosenblatt</li>
@@ -518,8 +414,8 @@
 </ul>
 </li>
 </ol>
-<h3 id="Categories"><a href="#Categories" class="headerlink" title="Categories"></a>Categories</h3><p>Categories of Machine Learning<br><img src="/pic/6cf69ccc0b5e18ab05c080df1515205.png" alt="Categories of ML"></p>
-<h4 id="Supervised-Learning"><a href="#Supervised-Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h4><p><img src="/pic/110a43955525c0ad9a62c039eb3876a.png" alt="SL"></p>
+<h3 id="Categories"><a href="#Categories" class="headerlink" title="Categories"></a>Categories</h3><p>Categories of Machine Learning<br><img src="/pic/6cf69ccc0b5e18ab05c080df1515205.png" srcset="/img/loading.gif" lazyload alt="Categories of ML"></p>
+<h4 id="Supervised-Learning"><a href="#Supervised-Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h4><p><img src="/pic/110a43955525c0ad9a62c039eb3876a.png" srcset="/img/loading.gif" lazyload alt="SL"></p>
 <ul>
 <li>Aims to <strong>predict on unknown data</strong> using models trained by labeled data</li>
 <li>Learning a function that maps the <strong>feature (attribute)</strong> to <strong>label (response)</strong></li>
@@ -535,13 +431,13 @@
 <li>Make predictions on testing set</li>
 <li>Compare predicted and true labels</li>
 </ol>
-<h4 id="Unsupervised-Learning"><a href="#Unsupervised-Learning" class="headerlink" title="Unsupervised Learning"></a>Unsupervised Learning</h4><p><img src="/pic/dce728e8f2d0819688a148ebaf686f9.png" alt="UL"></p>
+<h4 id="Unsupervised-Learning"><a href="#Unsupervised-Learning" class="headerlink" title="Unsupervised Learning"></a>Unsupervised Learning</h4><p><img src="/pic/dce728e8f2d0819688a148ebaf686f9.png" srcset="/img/loading.gif" lazyload alt="UL"></p>
 <p>Discover the structure and pattern within the unlabeled data.</p>
 <ul>
 <li>Market Segmentation</li>
 <li>Social Network Analysis</li>
 </ul>
-<h4 id="Some-Machine-Learning-algorithms"><a href="#Some-Machine-Learning-algorithms" class="headerlink" title="Some Machine Learning algorithms"></a>Some Machine Learning algorithms</h4><p><img src="/pic/11af398aea2369112afe0fe46f5d255.png" alt="ML algorithms"></p>
+<h4 id="Some-Machine-Learning-algorithms"><a href="#Some-Machine-Learning-algorithms" class="headerlink" title="Some Machine Learning algorithms"></a>Some Machine Learning algorithms</h4><p><img src="/pic/11af398aea2369112afe0fe46f5d255.png" srcset="/img/loading.gif" lazyload alt="ML algorithms"></p>
 <h2 id="Lecture2-MathForML"><a href="#Lecture2-MathForML" class="headerlink" title="Lecture2_MathForML"></a>Lecture2_MathForML</h2><h4 id="Notations"><a href="#Notations" class="headerlink" title="Notations"></a>Notations</h4><ul>
 <li>$a \in A$ : $a$ is a member of set A</li>
 <li>$||\pmb{v}||$ : the norm of vector $\pmb{v}$</li>
@@ -726,13 +622,13 @@ s.t.\ \ \ \ &f_i(\pmb x)\leq 0,i=1,2,\cdots, k;\\
 </ul>
 <h4 id="Local-minima-and-global-minima"><a href="#Local-minima-and-global-minima" class="headerlink" title="Local minima and global minima"></a>Local minima and global minima</h4><ul>
 <li>Local minima is the solution that optimal within a neighboring set</li>
-<li>Global minima is the optimal solution among all possible solutions<br><img src="/pic/379ac1b116f3c5612b0e6a1f3df25ea.png" alt=""></li>
+<li>Global minima is the optimal solution among all possible solutions<br><img src="/pic/379ac1b116f3c5612b0e6a1f3df25ea.png" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
-<h4 id="Convex-set"><a href="#Convex-set" class="headerlink" title="Convex set"></a>Convex set</h4><p>A set $C\in \mathbb R^n$ is <em>convex</em> if for $\pmb x,\pmb y\in C$ and any $\alpha\in [0,1]$, <script type="math/tex">\alpha \pmb x+(1-\alpha)\pmb y \in C</script><img src="/pic/b885ffb38cf90c077ad79abb079e005.png" alt=""></p>
+<h4 id="Convex-set"><a href="#Convex-set" class="headerlink" title="Convex set"></a>Convex set</h4><p>A set $C\in \mathbb R^n$ is <em>convex</em> if for $\pmb x,\pmb y\in C$ and any $\alpha\in [0,1]$, <script type="math/tex">\alpha \pmb x+(1-\alpha)\pmb y \in C</script><img src="/pic/b885ffb38cf90c077ad79abb079e005.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <p>Examples: $\mathbb R^n$ , norm ball {$\pmb x: ||\pmb x|| \leq r$} for a given $r$ , intersection of convex sets</p>
-<h4 id="Convex-Concave-function"><a href="#Convex-Concave-function" class="headerlink" title="Convex (Concave) function"></a>Convex (Concave) function</h4><p>A function $f:\mathbb R^n \rightarrow \mathbb R$ is convex (concave) if for $\pmb x,\pmb y \in \text{dom}(f)$ and any $\alpha \in [0,1]$ , <script type="math/tex">f(\alpha \pmb x+(1-\alpha)\pmb y)\leq(\geq) \alpha f(\pmb x)+(1-\alpha)f(\pmb y)</script><img src="/pic/57c1cdf60aceade4f79afcdcf5781c5.png" alt=""></p>
-<h4 id="First-order-convexity-condition"><a href="#First-order-convexity-condition" class="headerlink" title="First-order convexity condition"></a>First-order convexity condition</h4><p>Suppose a function $f:\mathbb R^n \rightarrow \mathbb R$ is differentiable. Then $f$ is convex if and only if for all $\pmb x,\pmb y \in \text{dom}(f)$ <script type="math/tex">f(\pmb y) \geq f(\pmb x) + \nabla f(\pmb x)^T(\pmb y-\pmb x)</script><img src="/pic/b9432d6edc99c82146c5ca340b6fd65.png" alt=""></p>
-<h4 id="Second-order-convexity-condition"><a href="#Second-order-convexity-condition" class="headerlink" title="Second-order convexity condition"></a>Second-order convexity condition</h4><p>Suppose a function $f:\mathbb R^n \rightarrow \mathbb R$ is twice differentiable. Then $f$ is convex if and only if for all $\pmb x \in \text{dom}(f)$ <script type="math/tex">\nabla^2f(\pmb x)\succcurlyeq 0</script><img src="/pic/8c43075b2094ec2db8c526f1ea28d14.png" alt=""></p>
+<h4 id="Convex-Concave-function"><a href="#Convex-Concave-function" class="headerlink" title="Convex (Concave) function"></a>Convex (Concave) function</h4><p>A function $f:\mathbb R^n \rightarrow \mathbb R$ is convex (concave) if for $\pmb x,\pmb y \in \text{dom}(f)$ and any $\alpha \in [0,1]$ , <script type="math/tex">f(\alpha \pmb x+(1-\alpha)\pmb y)\leq(\geq) \alpha f(\pmb x)+(1-\alpha)f(\pmb y)</script><img src="/pic/57c1cdf60aceade4f79afcdcf5781c5.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h4 id="First-order-convexity-condition"><a href="#First-order-convexity-condition" class="headerlink" title="First-order convexity condition"></a>First-order convexity condition</h4><p>Suppose a function $f:\mathbb R^n \rightarrow \mathbb R$ is differentiable. Then $f$ is convex if and only if for all $\pmb x,\pmb y \in \text{dom}(f)$ <script type="math/tex">f(\pmb y) \geq f(\pmb x) + \nabla f(\pmb x)^T(\pmb y-\pmb x)</script><img src="/pic/b9432d6edc99c82146c5ca340b6fd65.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h4 id="Second-order-convexity-condition"><a href="#Second-order-convexity-condition" class="headerlink" title="Second-order convexity condition"></a>Second-order convexity condition</h4><p>Suppose a function $f:\mathbb R^n \rightarrow \mathbb R$ is twice differentiable. Then $f$ is convex if and only if for all $\pmb x \in \text{dom}(f)$ <script type="math/tex">\nabla^2f(\pmb x)\succcurlyeq 0</script><img src="/pic/8c43075b2094ec2db8c526f1ea28d14.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <h4 id="Examples-of-convex-functions"><a href="#Examples-of-convex-functions" class="headerlink" title="Examples of convex functions"></a>Examples of convex functions</h4><ul>
 <li>Exponential function: $e^{ax}$</li>
 <li>Logarithmic function: $\log(x)$ is concave</li>
@@ -757,12 +653,12 @@ s.t. \ \ \ \ &f_i(\pmb x)\leq 0,i=1,2,\cdots,k; \\
 </ul>
 <h2 id="Lecture3-BasicInML"><a href="#Lecture3-BasicInML" class="headerlink" title="Lecture3_BasicInML"></a>Lecture3_BasicInML</h2><h3 id="Generalization-ability-泛化能力"><a href="#Generalization-ability-泛化能力" class="headerlink" title="Generalization ability (泛化能力)"></a>Generalization ability (泛化能力)</h3><ul>
 <li>A model’s ability to generalize to new data</li>
-<li>If the model is trained too well, it can fit perfectly the random fluctuatioins or noise in the training data but it will fail to predict accurately on new data<br><img src="/pic/a99b5dbe4e510c276edb458034cea64.png" alt=""></li>
+<li>If the model is trained too well, it can fit perfectly the random fluctuatioins or noise in the training data but it will fail to predict accurately on new data<br><img src="/pic/a99b5dbe4e510c276edb458034cea64.png" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
 <h4 id="Underfitting-and-overfitting"><a href="#Underfitting-and-overfitting" class="headerlink" title="Underfitting and overfitting"></a>Underfitting and overfitting</h4><ul>
-<li><p>Underfitting (欠拟合) occurs when a statistical model or machine learning algorithm cannot capture the underlying trend of the data.<br><img src="/pic/f70b694bdd89dce57b1ed3575e59c22.png" alt=""></p>
+<li><p>Underfitting (欠拟合) occurs when a statistical model or machine learning algorithm cannot capture the underlying trend of the data.<br><img src="/pic/f70b694bdd89dce57b1ed3575e59c22.png" srcset="/img/loading.gif" lazyload alt=""></p>
 </li>
-<li><p>Overfitting (过拟合) occurs when a statistical model describes random error or noise instead of the underlying relationship.<br><img src="/pic/8918735b6e8c752e2d4ae0af01c4e03.png" alt=""></p>
+<li><p>Overfitting (过拟合) occurs when a statistical model describes random error or noise instead of the underlying relationship.<br><img src="/pic/8918735b6e8c752e2d4ae0af01c4e03.png" srcset="/img/loading.gif" lazyload alt=""></p>
 </li>
 </ul>
 <h4 id="Basic-terms"><a href="#Basic-terms" class="headerlink" title="Basic terms"></a>Basic terms</h4><ul>
@@ -796,11 +692,11 @@ s.t. \ \ \ \ &f_i(\pmb x)\leq 0,i=1,2,\cdots,k; \\
 <li>However, the true distribution of $(\pmb x,y)$ is usually unknown in practice.</li>
 <li>We obtain the hypothesis by minimizing the <em>training error</em> with the training set $S=\{(\pmb x_i,y_i):i=1,2,\cdots,m\}$ ,<script type="math/tex">\min_{f\in F}\hat R_S(f)=\min_{f\in F}\cfrac{1}{m}\sum_{i=1}^m L(f(\pmb x_i),y_i)</script></li>
 </ul>
-<h5 id="Training-error-vs-test-error"><a href="#Training-error-vs-test-error" class="headerlink" title="Training error vs test error"></a>Training error vs test error</h5><p><img src="/pic/7ba8a7a66050778027f6549fa41cb2a.png" alt=""></p>
+<h5 id="Training-error-vs-test-error"><a href="#Training-error-vs-test-error" class="headerlink" title="Training error vs test error"></a>Training error vs test error</h5><p><img src="/pic/7ba8a7a66050778027f6549fa41cb2a.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <h3 id="Performance-metrics"><a href="#Performance-metrics" class="headerlink" title="Performance metrics"></a>Performance metrics</h3><h4 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h4><h5 id="Performance-metrics-for-classification"><a href="#Performance-metrics-for-classification" class="headerlink" title="Performance metrics for classification"></a>Performance metrics for classification</h5><ul>
-<li>Consider a binary classifier $\mathcal Y =\{-,+\}$<br><img src="/pic/10adcb662406252426c360458bf636b.png" alt=""></li>
+<li>Consider a binary classifier $\mathcal Y =\{-,+\}$<br><img src="/pic/10adcb662406252426c360458bf636b.png" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
-<h5 id="Confusion-matrix"><a href="#Confusion-matrix" class="headerlink" title="Confusion matrix"></a>Confusion matrix</h5><p><img src="/pic/8181efdc993f5c23481a08ae4ac524b.png" alt=""></p>
+<h5 id="Confusion-matrix"><a href="#Confusion-matrix" class="headerlink" title="Confusion matrix"></a>Confusion matrix</h5><p><img src="/pic/8181efdc993f5c23481a08ae4ac524b.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <ul>
 <li>True Positive (真正例) - we predicted “+” and the true class is “+”</li>
 <li>True Negative (真反例) - we predicted “-“ and the true class is “-“</li>
@@ -887,32 +783,32 @@ s.t. \ \ \ \ &f_i(\pmb x)\leq 0,i=1,2,\cdots,k; \\
 </li>
 <li><p>The <em>variance</em> represents how much the trained model move about its mean.</p>
 </li>
-<li><p>The <em>bias</em> represents the difference between the expected prediction of our model and the true value.<br><img src="/pic/e4f39df5e0cf02295ed0adf94236c82.png" alt=""><br><img src="/pic/4010e1c4642202ac977ba16ffc9a0ee.png" alt=""></p>
+<li><p>The <em>bias</em> represents the difference between the expected prediction of our model and the true value.<br><img src="/pic/e4f39df5e0cf02295ed0adf94236c82.png" srcset="/img/loading.gif" lazyload alt=""><br><img src="/pic/4010e1c4642202ac977ba16ffc9a0ee.png" srcset="/img/loading.gif" lazyload alt=""></p>
 </li>
 <li><p>The ideal case is that we reduce both the bias and variance to reduce the total error.</p>
 </li>
 <li>However, there is a trade-off between the bias and variance.<ul>
 <li>High bias: more features, more complex models, better optimization, boosting, …</li>
-<li>High variance: more data, regularization, less features, less complex models, bagging, …<br><img src="/pic/b0f3730daa3d994524a12413137e863.png" alt=""></li>
+<li>High variance: more data, regularization, less features, less complex models, bagging, …<br><img src="/pic/b0f3730daa3d994524a12413137e863.png" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
 </li>
 </ul>
 <h3 id="Model-selection"><a href="#Model-selection" class="headerlink" title="Model selection"></a>Model selection</h3><p>Fit the data (blue dots) using polynomials with different degrees of freedom.</p>
 <ul>
-<li>How to select the appropriate model with good fit?<br><img src="/pic/1a58a26150be5c680563a0eb25d7b8a.png" alt=""></li>
+<li>How to select the appropriate model with good fit?<br><img src="/pic/1a58a26150be5c680563a0eb25d7b8a.png" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
 <h4 id="Principle-of-Occam’s-razor-奥卡姆剃刀"><a href="#Principle-of-Occam’s-razor-奥卡姆剃刀" class="headerlink" title="Principle of Occam’s razor (奥卡姆剃刀)"></a>Principle of Occam’s razor (奥卡姆剃刀)</h4><ul>
-<li>Select the hypothesis with the fewest assumptions among all competing hypotheses that explain known observations equally well.<br><img src="/pic/30dc5adbbd599316a0cb17da5726c8c.png" alt=""></li>
+<li>Select the hypothesis with the fewest assumptions among all competing hypotheses that explain known observations equally well.<br><img src="/pic/30dc5adbbd599316a0cb17da5726c8c.png" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
 <h4 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization"></a>Regularization</h4><ul>
 <li>Regularization(正则化) refers to the process of adding additional terms to our loss function, often to introduce a <u>preference for simpler models</u></li>
 <li>It aims to reduce the generalization error but not its training error.</li>
 <li>Recall the training error $\hat R_S(f)=\cfrac{1}{m}\displaystyle\sum_{i=1}^mL(f(\pmb x_i),y_i)$ , we search for the hypothesis that leads to the smallest training error <script type="math/tex">\min_{f\in F}\hat R_S(f)</script></li>
-<li><p>Minimization problem with regularized loss function <script type="math/tex">\min_{f\in F}\hat R_S(f)+\lambda E(f)</script><br><img src="/pic/f4eec853b3f60729c5dd34dc7b4acc9.png" alt=""></p>
+<li><p>Minimization problem with regularized loss function <script type="math/tex">\min_{f\in F}\hat R_S(f)+\lambda E(f)</script><br><img src="/pic/f4eec853b3f60729c5dd34dc7b4acc9.png" srcset="/img/loading.gif" lazyload alt=""></p>
 </li>
-<li><p>$L_2$ regularization <script type="math/tex">E(f=\pmb w^T\pmb x)=||\pmb w||_2^2=\sum_{i=1}^nw_i^2</script><br><img src="/pic/0ad30f160f2e7ecab62f7354a1c4616.png" alt=""></p>
+<li><p>$L_2$ regularization <script type="math/tex">E(f=\pmb w^T\pmb x)=||\pmb w||_2^2=\sum_{i=1}^nw_i^2</script><br><img src="/pic/0ad30f160f2e7ecab62f7354a1c4616.png" srcset="/img/loading.gif" lazyload alt=""></p>
 </li>
-<li><p>$L_1$ regularization <script type="math/tex">E(f=\pmb w^T\pmb x)=||\pmb w||_1=\sum_{i=1}^n|w_i|</script><br><img src="/pic/a28e0bebc2515f58f224263e5cbedf5.png" alt=""></p>
+<li><p>$L_1$ regularization <script type="math/tex">E(f=\pmb w^T\pmb x)=||\pmb w||_1=\sum_{i=1}^n|w_i|</script><br><img src="/pic/a28e0bebc2515f58f224263e5cbedf5.png" srcset="/img/loading.gif" lazyload alt=""></p>
 </li>
 </ul>
 <h4 id="Hyperparameter-超参数"><a href="#Hyperparameter-超参数" class="headerlink" title="Hyperparameter(超参数)"></a>Hyperparameter(超参数)</h4><ul>
@@ -929,13 +825,13 @@ s.t. \ \ \ \ &f_i(\pmb x)\leq 0,i=1,2,\cdots,k; \\
 </li>
 </ul>
 <h4 id="Validation-strategy"><a href="#Validation-strategy" class="headerlink" title="Validation strategy"></a>Validation strategy</h4><h5 id="Hold-out-validation"><a href="#Hold-out-validation" class="headerlink" title="Hold-out validation"></a>Hold-out validation</h5><ul>
-<li>Split the training set into two parts: a training set and a validation set<br><img src="/pic/dd55e1c530692fa6810d9b314c15f84.png" alt=""></li>
+<li>Split the training set into two parts: a training set and a validation set<br><img src="/pic/dd55e1c530692fa6810d9b314c15f84.png" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
 <h5 id="Cross-validation"><a href="#Cross-validation" class="headerlink" title="Cross validation"></a>Cross validation</h5><ul>
-<li>K-fold cross validation: divide the training set into k equal size subsets<br><img src="/pic/6c170feb2750e49af1c23e63965b608.png" alt=""></li>
+<li>K-fold cross validation: divide the training set into k equal size subsets<br><img src="/pic/6c170feb2750e49af1c23e63965b608.png" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
 <h5 id="Leave-one-out-cross-validation"><a href="#Leave-one-out-cross-validation" class="headerlink" title="Leave-one-out cross validation"></a>Leave-one-out cross validation</h5><ul>
-<li><p>K-fold cross validation where $k=m$<br><img src="/pic/132f7b5bbcbb9caecf14d6a7f6bf2f0.png" alt=""></p>
+<li><p>K-fold cross validation where $k=m$<br><img src="/pic/132f7b5bbcbb9caecf14d6a7f6bf2f0.png" srcset="/img/loading.gif" lazyload alt=""></p>
 </li>
 <li><p>Use one observation as the validation set</p>
 </li>
@@ -955,17 +851,17 @@ s.t. \ \ \ \ &f_i(\pmb x)\leq 0,i=1,2,\cdots,k; \\
 </li>
 </ul>
 <h2 id="Lecture4-LinearModels"><a href="#Lecture4-LinearModels" class="headerlink" title="Lecture4_LinearModels"></a>Lecture4_LinearModels</h2><h3 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h3><h4 id="Motivating-example"><a href="#Motivating-example" class="headerlink" title="Motivating example"></a>Motivating example</h4><ul>
-<li>The Advertising data set consists of the <em>sales</em> of that product in 200 different markets, along with advertising budgets for the product in each of those markets for three different media: <em>TV, radio and newspaper</em>.<br><img src="8fce1beb900d9682237c079542b44f5.png" alt=""></li>
+<li>The Advertising data set consists of the <em>sales</em> of that product in 200 different markets, along with advertising budgets for the product in each of those markets for three different media: <em>TV, radio and newspaper</em>.<br><img src="8fce1beb900d9682237c079542b44f5.png" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
 <h4 id="Simple-linear-regression"><a href="#Simple-linear-regression" class="headerlink" title="Simple linear regression"></a>Simple linear regression</h4><ul>
 <li>Assuming approximately a linear relationship between $X$ and $Y$ <script type="math/tex">y\approx b+w\cdot x</script></li>
-<li>Predicting $\hat y$ based on $x$ <script type="math/tex">\hat y=\hat b+\hat w\cdot x</script><br><img src="/pic/5192779dc145eba035b997cf1a76fcc.png" alt=""></li>
+<li>Predicting $\hat y$ based on $x$ <script type="math/tex">\hat y=\hat b+\hat w\cdot x</script><br><img src="/pic/5192779dc145eba035b997cf1a76fcc.png" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
 <h5 id="Estimating-the-parameters"><a href="#Estimating-the-parameters" class="headerlink" title="Estimating the parameters"></a>Estimating the parameters</h5><ul>
 <li><p>Mean square error (MSE) <script type="math/tex">\begin{align}
 MSE&=\cfrac{1}{m}((y_1-b-w\cdot x_1)^2+(y_2-b-w\cdot x_2)^2+\cdots+(y_m-b-w\cdot x_m)^2)\\
 &=\cfrac{1}{m}\sum_{i=1}^m(y_i-b-w\cdot x_i)^2
-\end{align}</script><br><img src="/pic/876fcd4c99289d7d14c2494c352de58.png" alt=""></p>
+\end{align}</script><br><img src="/pic/876fcd4c99289d7d14c2494c352de58.png" srcset="/img/loading.gif" lazyload alt=""></p>
 </li>
 <li><p>FInd the linear function with the smallest MSE <script type="math/tex">(\hat w,\hat b)=\text{arg}\min_{w,b}=\cfrac{1}{m}\sum_{i=1}^m(y_i-b-w\cdot x_i)^2</script></p>
 </li>
@@ -977,7 +873,7 @@ MSE&=\cfrac{1}{m}((y_1-b-w\cdot x_1)^2+(y_2-b-w\cdot x_2)^2+\cdots+(y_m-b-w\cdot
 \bar x&=\cfrac{1}{m}\sum_{i=1}^mx_i, \ \ \ \ \bar y=\cfrac{1}{m}\sum_{i=1}^my_i
 \end{align}</script></li>
 </ul>
-<p><img src="/pic/4cda0b999d6f3752153a5f48f5b45fa.png" alt=""></p>
+<p><img src="/pic/4cda0b999d6f3752153a5f48f5b45fa.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <h4 id="Multivariate-linear-regression"><a href="#Multivariate-linear-regression" class="headerlink" title="Multivariate linear regression"></a>Multivariate linear regression</h4><ul>
 <li>We ignore the other two factors when estimating the coefficients</li>
 <li>How to make predictions given the levels of the three advertising media?<script type="math/tex">sales=b+w_1\cdot TV+w_2\cdot radio+w_3\cdot newspaper+\epsilon</script><br>In general, with $n$-dimension features, <script type="math/tex">\begin{align}
@@ -1089,7 +985,7 @@ P(y_i|\pmb x_i;\pmb\beta)=\cfrac{1}{\sqrt{2\pi\sigma^2}}e^{-\cfrac{(y_i-\pmb\bet
 <h4 id="Logistic-regression"><a href="#Logistic-regression" class="headerlink" title="Logistic regression"></a>Logistic regression</h4><h5 id="Why-not-linear-regression"><a href="#Why-not-linear-regression" class="headerlink" title="Why not linear regression?"></a>Why not linear regression?</h5><p>Can we use linear regression to predict the probability of default? <script type="math/tex">p(\pmb x)=\pmb w^T\pmb x+b</script></p>
 <ul>
 <li>The probability of default could be negative when balances close to 0, and could be bigger than 1 when the balances are large. </li>
-<li>We must model $p(\pmb x)$ as a function that gives output between 0 and 1.<br><img src="/pic/8238a887080cb52105e2da7c8321fab.png" alt=""></li>
+<li>We must model $p(\pmb x)$ as a function that gives output between 0 and 1.<br><img src="/pic/8238a887080cb52105e2da7c8321fab.png" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
 <h5 id="Logistic-function"><a href="#Logistic-function" class="headerlink" title="Logistic function"></a>Logistic function</h5><script type="math/tex; mode=display">\sigma(z)=\cfrac{1}{1+e^{-z}}</script><ul>
 <li>bounded in (0,1)</li>
@@ -1141,7 +1037,7 @@ p(y=0|\pmb x;\pmb\beta)=1-\sigma(\pmb\beta^T\pmb x)=\cfrac{e^{-\pmb\beta^T\pmb x
 <li>Move the parameters in the direction of steepest descent</li>
 </ol>
 </li>
-<li>Stop until <strong>convergence</strong><br><img src="/pic/6360a7faf1d39affd8e0985f07daa4a.png" alt=""></li>
+<li>Stop until <strong>convergence</strong><br><img src="/pic/6360a7faf1d39affd8e0985f07daa4a.png" srcset="/img/loading.gif" lazyload alt=""></li>
 </ol>
 </li>
 </ul>
@@ -1149,13 +1045,13 @@ p(y=0|\pmb x;\pmb\beta)=1-\sigma(\pmb\beta^T\pmb x)=\cfrac{e^{-\pmb\beta^T\pmb x
 \mathcal l(\pmb\beta)&=\sum_{i=1}^m(-y_i\pmb\beta^T\pmb x_i+\log(1+e^{\pmb\beta^T\pmb x_i}))\\
 \nabla\mathcal l(\pmb\beta)&=-\sum_{i=1}^m\pmb x_i(y_i-p(y_i=1|\pmb x;\pmb\beta))
 \end{align}</script><p>Update $\pmb\beta$ using the whole batch</p>
-<script type="math/tex; mode=display">\pmb\beta_{new}\leftarrow\pmb\beta_{old}+\eta\sum_{i=1}^m\pmb x_i(y_i-p(y=1|\pmb x;\pmb\beta_{old}))</script><p><img src="/pic/a07605c556f05131fcb0eed75e8fe92.png" alt=""></p>
+<script type="math/tex; mode=display">\pmb\beta_{new}\leftarrow\pmb\beta_{old}+\eta\sum_{i=1}^m\pmb x_i(y_i-p(y=1|\pmb x;\pmb\beta_{old}))</script><p><img src="/pic/a07605c556f05131fcb0eed75e8fe92.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <h5 id="Stochastic-gradient-descent-随机梯度下降"><a href="#Stochastic-gradient-descent-随机梯度下降" class="headerlink" title="Stochastic gradient descent (随机梯度下降)"></a>Stochastic gradient descent (随机梯度下降)</h5><script type="math/tex; mode=display">\begin{align}
 \mathcal l(\pmb\beta)=\sum_{i=1}^m-y_i\pmb\beta^T\pmb x_i+\log(1+e^{\pmb\beta^T\pmb x_i})=\sum_{i=1}^m\mathcal l^{(i)}(\pmb\beta)\\
 \text{where } \mathcal l^{(i)}(\pmb\beta)=-y_i\pmb\beta^T\pmb x_i+\log(1+e^{\pmb\beta^T\pmb x_i})\\
 \nabla\mathcal l^{(i)}(\pmb\beta)=-\pmb x_i(y_i-p(y_i=1|\pmb x_i;\pmb\beta))
 \end{align}</script><p>Update $\pmb\beta$ using single data sample</p>
-<script type="math/tex; mode=display">\pmb\beta_{new}\leftarrow\pmb\beta_{old}+\eta\pmb x_i(y_i-p(y_i=1|\pmb x_i;\pmb\beta_{old}))</script><p><img src="/pic/c04750dc47e5320cec59791c2897602.png" alt=""></p>
+<script type="math/tex; mode=display">\pmb\beta_{new}\leftarrow\pmb\beta_{old}+\eta\pmb x_i(y_i-p(y_i=1|\pmb x_i;\pmb\beta_{old}))</script><p><img src="/pic/c04750dc47e5320cec59791c2897602.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <h5 id="Mini-batch-gradient-descent-小批量梯度下降"><a href="#Mini-batch-gradient-descent-小批量梯度下降" class="headerlink" title="Mini-batch gradient descent (小批量梯度下降)"></a>Mini-batch gradient descent (小批量梯度下降)</h5><ul>
 <li>A combination of batch GD and stochastic GD<ul>
 <li>Split the whole dataset into $K$ mini-batches $\{1,2,3\cdots,K\}$</li>
@@ -1166,16 +1062,16 @@ p(y=0|\pmb x;\pmb\beta)=1-\sigma(\pmb\beta^T\pmb x)=\cfrac{e^{-\pmb\beta^T\pmb x
 </ul>
 </li>
 </ul>
-<h5 id="Choice-of-learning-rate-学习速率"><a href="#Choice-of-learning-rate-学习速率" class="headerlink" title="Choice of learning rate (学习速率)"></a>Choice of learning rate (学习速率)</h5><p><img src="/pic/4e3d1c319b8d2121651b340bb9e0379.png" alt=""></p>
+<h5 id="Choice-of-learning-rate-学习速率"><a href="#Choice-of-learning-rate-学习速率" class="headerlink" title="Choice of learning rate (学习速率)"></a>Choice of learning rate (学习速率)</h5><p><img src="/pic/4e3d1c319b8d2121651b340bb9e0379.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <ul>
 <li>Gradient descent would take long time to converge and can be very slow</li>
 </ul>
-<p><img src="/pic/28249e9b76fddb1d028bad646f5b33e.png" alt=""></p>
+<p><img src="/pic/28249e9b76fddb1d028bad646f5b33e.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <ul>
 <li>May overshoot the minimum</li>
 <li>The algorithm may fail to converge, or even diverge</li>
 </ul>
-<p><img src="/pic/34a695cff223faf29380cb4cd036595.png" alt=""></p>
+<p><img src="/pic/34a695cff223faf29380cb4cd036595.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <ul>
 <li>For sufficiently small $\eta$, the loss function should decrease on every iteration.</li>
 <li>Plot the loss function as a function of number of iterations to see if the learning rate is appropriate</li>
@@ -1196,13 +1092,13 @@ p(y=0|\pmb x;\pmb\beta)=1-\sigma(\pmb\beta^T\pmb x)=\cfrac{e^{-\pmb\beta^T\pmb x
 <li>ROC curve plots True Positive rate vs. False Positive rate at different thresholds between 0 and 1</li>
 <li>It shows the trade-off between true-positive rate and false-positive rate of classification algorithms</li>
 <li>True Positive rate (recall, 真正例率)<script type="math/tex; mode=display">TPR=\cfrac{TP}{TP+FN}</script></li>
-<li>False Positive rate (假正例率)<script type="math/tex; mode=display">FPR=\cfrac{FP}{FP+TN}</script><img src="/pic/6a2e08f093e043bef56e9524d47d15f.png" alt=""></li>
+<li>False Positive rate (假正例率)<script type="math/tex; mode=display">FPR=\cfrac{FP}{FP+TN}</script><img src="/pic/6a2e08f093e043bef56e9524d47d15f.png" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
-<h5 id="ROC-curve-and-AUC-area-under-the-curve"><a href="#ROC-curve-and-AUC-area-under-the-curve" class="headerlink" title="ROC curve and AUC (area under the curve)"></a>ROC curve and AUC (area under the curve)</h5><p><img src="/pic/2beb86993fa4ae74f0081ec91c2c703.png" alt=""></p>
+<h5 id="ROC-curve-and-AUC-area-under-the-curve"><a href="#ROC-curve-and-AUC-area-under-the-curve" class="headerlink" title="ROC curve and AUC (area under the curve)"></a>ROC curve and AUC (area under the curve)</h5><p><img src="/pic/2beb86993fa4ae74f0081ec91c2c703.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <ul>
 <li>In this example, Classifier A is better than B, which is better than random guessing</li>
 </ul>
-<p><img src="/pic/ab20f3bcdac435adab7fbe44748781b.png" alt=""></p>
+<p><img src="/pic/ab20f3bcdac435adab7fbe44748781b.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <ul>
 <li>Compare multiple models by a single number </li>
 <li>Higher AUC will be the better </li>
@@ -1217,7 +1113,7 @@ p(y=0|\pmb x;\pmb\beta)=1-\sigma(\pmb\beta^T\pmb x)=\cfrac{e^{-\pmb\beta^T\pmb x
 <h4 id="Multiclass-classification-多分类"><a href="#Multiclass-classification-多分类" class="headerlink" title="Multiclass classification (多分类)"></a>Multiclass classification (多分类)</h4><ul>
 <li>Email tagging: Work, Friends, Family, Hobby</li>
 <li>Medical diagrams: Healthy, Cold, Flu</li>
-<li>Weather: Sunny, Windy, Rainy<br><img src="/pic/0dbd9f34a7dd01a3cf8fdff2267228b.png" alt=""></li>
+<li>Weather: Sunny, Windy, Rainy<br><img src="/pic/0dbd9f34a7dd01a3cf8fdff2267228b.png" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
 <h5 id="Multinomial-logistic-regression-多项逻辑回归"><a href="#Multinomial-logistic-regression-多项逻辑回归" class="headerlink" title="Multinomial logistic regression (多项逻辑回归)"></a>Multinomial logistic regression (多项逻辑回归)</h5><ul>
 <li>The label can take values from the set $\{1,2,\cdots,K\}$</li>
@@ -1227,13 +1123,13 @@ P(Y=K|\pmb x)&=\cfrac{1}{1+\displaystyle\sum_{i=1}^{K-1}e^{\pmb\beta_i^T\pmb x}}
 \end{align}</script></li>
 <li>The parameters can be estimated by the MLE approach <script type="math/tex">\max_{\beta_k,k=1,2,\cdots,K-1}\sum_{i=1}^m\sum_{k=1}^Ky_i^k\log P(y_i^k=1|\pmb x_i)</script></li>
 </ul>
-<h5 id="One-vs-Rest-OvR"><a href="#One-vs-Rest-OvR" class="headerlink" title="One-vs-Rest (OvR)"></a>One-vs-Rest (OvR)</h5><p><img src="/pic/3b345e6e23b44d137f2eef677b086a0.png" alt=""></p>
-<h5 id="One-vs-One-OvO"><a href="#One-vs-One-OvO" class="headerlink" title="One-vs-One (OvO)"></a>One-vs-One (OvO)</h5><p><img src="/pic/163ee69801c5fd90f0db8434f12c0a0.png" alt=""></p>
+<h5 id="One-vs-Rest-OvR"><a href="#One-vs-Rest-OvR" class="headerlink" title="One-vs-Rest (OvR)"></a>One-vs-Rest (OvR)</h5><p><img src="/pic/3b345e6e23b44d137f2eef677b086a0.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h5 id="One-vs-One-OvO"><a href="#One-vs-One-OvO" class="headerlink" title="One-vs-One (OvO)"></a>One-vs-One (OvO)</h5><p><img src="/pic/163ee69801c5fd90f0db8434f12c0a0.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <h2 id="Lecture5-FeatureEngineering"><a href="#Lecture5-FeatureEngineering" class="headerlink" title="Lecture5_FeatureEngineering"></a>Lecture5_FeatureEngineering</h2><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><h3 id="Data-understanding"><a href="#Data-understanding" class="headerlink" title="Data understanding"></a>Data understanding</h3><h4 id="Structured-versus-unstructured-data"><a href="#Structured-versus-unstructured-data" class="headerlink" title="Structured versus unstructured data"></a>Structured versus unstructured data</h4><h4 id="Quantitative-versus-qualitative-data"><a href="#Quantitative-versus-qualitative-data" class="headerlink" title="Quantitative versus qualitative data"></a>Quantitative versus qualitative data</h4><h4 id="Exploratory-data-analysis-descriptive-statistics-and-data-visualizations"><a href="#Exploratory-data-analysis-descriptive-statistics-and-data-visualizations" class="headerlink" title="Exploratory data analysis: descriptive statistics and data visualizations"></a>Exploratory data analysis: descriptive statistics and data visualizations</h4><h3 id="Data-processing"><a href="#Data-processing" class="headerlink" title="Data processing"></a>Data processing</h3><h4 id="Missing-values"><a href="#Missing-values" class="headerlink" title="Missing values"></a>Missing values</h4><h4 id="Class-imbanlance"><a href="#Class-imbanlance" class="headerlink" title="Class imbanlance"></a>Class imbanlance</h4><h4 id="Feature-scaling-amp-discretization"><a href="#Feature-scaling-amp-discretization" class="headerlink" title="Feature scaling &amp; discretization"></a>Feature scaling &amp; discretization</h4><h4 id="Feature-encoding-amp-text-data-representation"><a href="#Feature-encoding-amp-text-data-representation" class="headerlink" title="Feature encoding &amp; text data representation"></a>Feature encoding &amp; text data representation</h4><h2 id="Lecture7-NeuralNetworks"><a href="#Lecture7-NeuralNetworks" class="headerlink" title="Lecture7_NeuralNetworks"></a>Lecture7_NeuralNetworks</h2><h3 id="Overview-of-neural-networks"><a href="#Overview-of-neural-networks" class="headerlink" title="Overview of neural networks"></a>Overview of neural networks</h3><h4 id="Structure-of-neurons-in-human-brain"><a href="#Structure-of-neurons-in-human-brain" class="headerlink" title="Structure of neurons in human brain"></a>Structure of neurons in human brain</h4><ul>
 <li>The human brain can be described as a biological neural network—an interconnected web of neurons transmitting elaborate patterns of electrical signals.</li>
 <li>Dendrites receive input signals and, based on those inputs, fire an output signal via an axon.</li>
 </ul>
-<p><img src="/pic/d6ac10786053cf27bd83808148d4005.png" alt=""></p>
+<p><img src="/pic/d6ac10786053cf27bd83808148d4005.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <ul>
 <li>Dendrite (树突): It receives signals from other neurons</li>
 <li>Cell body: It sums all the incoming signals to generate input</li>
@@ -1250,7 +1146,7 @@ P(Y=K|\pmb x)&=\cfrac{1}{1+\displaystyle\sum_{i=1}^{K-1}e^{\pmb\beta_i^T\pmb x}}
 <li>Artificial neural networks (ANN) are computing systems inspired by the biological neural networks.</li>
 <li>It is comprised of a network of artificial neurons (nodes).</li>
 </ul>
-<p><img src="/pic/99505909a8ce803cd2585640c29ea03.png" alt=""></p>
+<p><img src="/pic/99505909a8ce803cd2585640c29ea03.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <ul>
 <li>The connections between units do not form a cycle.</li>
 <li><p>The information moves in only one direction.</p>
@@ -1299,7 +1195,7 @@ P(Y=K|\pmb x)&=\cfrac{1}{1+\displaystyle\sum_{i=1}^{K-1}e^{\pmb\beta_i^T\pmb x}}
 </ul>
 </li>
 </ul>
-<p><img src="/pic/31005d52795dd6bf9d6ccb279d59ceb.png" alt=""></p>
+<p><img src="/pic/31005d52795dd6bf9d6ccb279d59ceb.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <ul>
 <li><em>Activation function (激活函数)</em> <script type="math/tex">f(z)=\begin{cases}
 1 &\text{if } z\geq 0\\
@@ -1324,7 +1220,7 @@ w_i\leftarrow w_i+\Delta w_i\\
 </ul>
 </li>
 </ul>
-<h4 id="Representation-of-Boolean-functions-布尔函数"><a href="#Representation-of-Boolean-functions-布尔函数" class="headerlink" title="Representation of Boolean functions (布尔函数)"></a>Representation of Boolean functions (布尔函数)</h4><p><img src="/pic/f7eb0da81ed0871c9b951828e1eef00.png" alt=""></p>
+<h4 id="Representation-of-Boolean-functions-布尔函数"><a href="#Representation-of-Boolean-functions-布尔函数" class="headerlink" title="Representation of Boolean functions (布尔函数)"></a>Representation of Boolean functions (布尔函数)</h4><p><img src="/pic/f7eb0da81ed0871c9b951828e1eef00.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <ul>
 <li>AND ($x_1 \wedge x_2$ , 与)<ul>
 <li>$w_1=w_2=1,b=-1.5$</li>
@@ -1340,235 +1236,439 @@ w_i\leftarrow w_i+\Delta w_i\\
 </li>
 </ul>
 <h5 id="Limitation-of-Perceptron-model"><a href="#Limitation-of-Perceptron-model" class="headerlink" title="Limitation of Perceptron model"></a>Limitation of Perceptron model</h5><p>XOR ($\overline{x_1}\wedge x_2+\overline{x_2}\vee x_1$ , 异或)<br>| Input | |  Output |<br>|—-|—-|—-|<br>| $x_1$ | $x_2$ | $y$ |<br>| 0 | 0 | 0 |<br>| 0 | 1 | 1 |<br>| 1 | 0 | 1 |<br>| 1 | 1 | 0 |</p>
-<p><img src="/pic/44f6ee7c2003c9bfdc6952ad6a82bb8.png" alt=""></p>
+<p><img src="/pic/44f6ee7c2003c9bfdc6952ad6a82bb8.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <ul>
 <li>XOR is not linearly separable</li>
 <li>Some elementary computations such as XOR cannot be represented by Rosenblatt’s single layer perceptron</li>
 </ul>
-<h5 id="Solution-Add-a-hidden-layer"><a href="#Solution-Add-a-hidden-layer" class="headerlink" title="Solution - Add a hidden layer"></a>Solution - Add a hidden layer</h5><p><img src="/pic/7932e2084b642ada22ad4a78f912adf.png" alt=""></p>
-<h3 id="Multi-layer-feedforward-neural-networks"><a href="#Multi-layer-feedforward-neural-networks" class="headerlink" title="Multi-layer feedforward neural networks"></a>Multi-layer feedforward neural networks</h3><h4 id="Back-Propagation-algorithm"><a href="#Back-Propagation-algorithm" class="headerlink" title="Back-Propagation algorithm"></a>Back-Propagation algorithm</h4><h3 id="Activation-functions"><a href="#Activation-functions" class="headerlink" title="Activation functions"></a>Activation functions</h3><h3 id="Issues-of-training-neural-networks"><a href="#Issues-of-training-neural-networks" class="headerlink" title="Issues of training neural networks"></a>Issues of training neural networks</h3>
-      
-    </div>
-    <div class="article-footer">
-      <blockquote class="mt-2x">
-  <ul class="post-copyright list-unstyled">
-    
-    <li class="post-copyright-link hidden-xs">
-      <strong>本文链接：</strong>
-      <a href="http://hiryan23.github.io/2023/02/17/Machine%20Learning/" title="机器学习-课程笔记" target="_blank" rel="external">http://hiryan23.github.io/2023/02/17/Machine Learning/</a>
-    </li>
-    
-    <li class="post-copyright-license">
-      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
-</blockquote>
-
-
-<div class="panel panel-default panel-badger">
-  <div class="panel-body">
-    <figure class="media">
-      <div class="media-left">
-        <a href="" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
-        </a>
-      </div>
-      <div class="media-body">
-        <h3 class="media-heading"><a href="" target="_blank"><span class="text-dark">Ruiyang He</span><small class="ml-1x">上海交通大学 本科生</small></a></h3>
-        <div>生活不止眼前的苟且。</div>
-      </div>
-    </figure>
-  </div>
-</div>
-
-
-    </div>
-  </article>
-  
-    
-  <section id="comments">
-  	
-  </section>
-
-
-  
-</div>
-
-  <nav class="bar bar-footer clearfix" data-stick-bottom>
-  <div class="bar-inner">
-    
-      <ul class="pager pull-left">
-        
-          <li class="prev">
-            <a href="/2023/02/19/%E5%AF%B9chatgpt%E7%9A%84%E6%AC%A2%E5%91%BC%E6%98%AF%E4%BA%BA%E5%AF%B9%E5%BC%82%E5%8C%96%E7%9A%84%E5%8F%8D%E6%8A%97%E2%80%94%E2%80%94%E8%AE%BAai%E4%BB%A3%E5%86%99%E8%AE%BA%E6%96%87%E7%9A%84%E8%A7%A3%E6%94%BE%E6%80%A7%E4%B8%8E%E5%BC%80%E6%94%BE%E6%80%A7/" title="对chatgpt的欢呼是人对异化的反抗——论ai代写论文的解放性与开放性"><i
-                class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-          </li>
-          
+<h5 id="Solution-Add-a-hidden-layer"><a href="#Solution-Add-a-hidden-layer" class="headerlink" title="Solution - Add a hidden layer"></a>Solution - Add a hidden layer</h5><p><img src="/pic/7932e2084b642ada22ad4a78f912adf.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h3 id="Multi-layer-feedforward-neural-networks"><a href="#Multi-layer-feedforward-neural-networks" class="headerlink" title="Multi-layer feedforward neural networks"></a>Multi-layer feedforward neural networks</h3><p>Input layer (输入层) </p>
+<ul>
+<li>No computation performed</li>
+<li>Pass information to hidden layers<br>Hidden layer (隐藏层)</li>
+<li>Intermediate layer between input and output layers</li>
+<li>Activation function apply on those layers</li>
+<li>Can be multiple hidden layers<br>Output layer (输出层)</li>
+<li>Transferring information to outside world<br><img src="cf8051b1925bef0c1100e19ec7ecdc2.png" srcset="/img/loading.gif" lazyload alt=""></li>
+</ul>
+<p><img src="46bc95f08fe1f0d64f8f9a4733f00b0.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<script type="math/tex; mode=display">\begin{align}
+\alpha_j=\sum_{i=1}^dv_{ij}x_i\\
+\beta_l=\sum_{j=1}^qw_{ji}b_j\\
+\end{align}</script><p>Forward prediction</p>
+<script type="math/tex; mode=display">x=(x_1,x_2,\cdots,x_d)\overset{b_j=f(\alpha_j)=f(\sum_{i=1}^dv_{ij}x_i)}{\longrightarrow}b_j\overset{y_i=f(\beta_i)=f(\sum_{j=1}^qw_{ji}b_j)}{\longrightarrow}y_i</script><p>For the training sample $(\pmb x_k,\pmb y_k)$ , the square error loss is <script type="math/tex">E_k=\cfrac{1}{2}\sum_{t=1}^l(\hat y_t^k-y_t^k)^2</script></p>
+<p>The accumulated square error loss of dataset $S=\{(\pmb x_k,\pmb y_k): 1,2,\cdots, m\}$ is <script type="math/tex">\begin{align}
+E&=\cfrac{1}{m}\sum_{k=1}^mE_k\\
+&=\cfrac{1}{2m}\sum_{k=1}^m\sum_{t=1}^l(\hat y_t^k-y_t^k)^2
+\end{align}</script></p>
+<h4 id="Back-Propagation-algorithm"><a href="#Back-Propagation-algorithm" class="headerlink" title="Back-Propagation algorithm"></a>Back-Propagation algorithm</h4><p><img src="/pic/60f7ff4efd734ff604959c09c02b128.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<script type="math/tex; mode=display">\begin{align}
+\alpha_j=\sum_{i=1}^dv_{ij}x_i\\
+\beta_l=\sum_{j=1}^qw_{jl}b_j
+\end{align}</script><ul>
+<li>Use <strong>gradient descent method</strong> to train the neural network</li>
+<li>Updating rules <script type="math/tex">\begin{align}
+\pmb w\leftarrow \pmb w+\Delta \pmb w\\
+\pmb v\leftarrow \pmb v+\Delta \pmb v\\
+\end{align}</script></li>
+<li>Learning $\pmb w$ <script type="math/tex; mode=display">\begin{align}
+\pmb w&\leftarrow \pmb w+\Delta \pmb w\\
+\Delta w_{ji}&=-\eta\cfrac{\partial E_k}{\partial w_{jl}}\\
+\cfrac{\partial E_k}{\partial w_{jl}}&=\cfrac{\partial E_k}{\partial\hat y_l^k}\cdot\cfrac{\partial\hat y_l^k}{\partial\beta_l}\cdot\cfrac{\partial\beta_l}{\partial w_{jl}}\ \ \ \ \text{(Chain rule)}\\
+\\
+\cfrac{\partial E_k}{\partial\hat y_l^k}&=(\hat y_l^k-y_l^k)\\
+\\
+\cfrac{\partial\hat y_l^k}{\partial\beta_l}&=f^\prime(\beta_l)\\
+&=f(\beta_l)(1-f(\beta_l))\\
+&=\hat y_l^k(1-\hat y_l^k)\\
+\\
+\cfrac{\partial\beta_l}{\partial w_{jl}}&=b_j\\
+\\
+\cfrac{\partial E_k}{\partial w_{jl}}&=b_j(\hat y_l^k-y_l^k)\hat y_l^k(1-\hat y_l^k)\\
+\\
+\Delta w_{jl}&=-\eta\cfrac{\partial E_k}{\partial w_{jl}}=-\eta b_j(\hat y_l^k-y_l^k)\hat y_l^k(1-\hat y_l^k)=\eta b_jg_l\\
+g_l&=\hat y_l^k(1-\hat y_l^k)(y_l^k-\hat y_l^k)\ \ \ \ \text{("error" at node $l$)}
+\end{align}</script></li>
+</ul>
+<p><code>Input: learning rate 𝜂 and data set 𝑆 = &#123;(𝒙_𝑘, 𝒚_𝑘, 𝑘=1,2, … ,𝑚&#125;</code><br><code>Initialize: 𝒘, 𝒗</code><br><code>Procedure: Repeat until convergence</code><br>    <code>For training sample k = 1,2,…,m do</code><br>        <code>Calculate predictions \hat 𝒚_𝑘 %Feedforward prediction</code><br>        <code>Calculate 𝑔_𝑡,𝑡=1,2, … 𝑙 %Back-propagate errors</code><br>        <code>Calculate 𝑒_𝑗,𝑗=1,2, … 𝑞 %Back-propagate errors</code><br>        <code>Calculate Δ𝒘, Δ𝒗       %Calculate weights gradients</code><br>        <code>Update 𝒘, 𝒗            %Update weights</code> </p>
+<p><img src="/pic/9bc96b20dd2d9a83b34e6770feefa63.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h5 id="An-calculation-example"><a href="#An-calculation-example" class="headerlink" title="An calculation example"></a>An calculation example</h5><p><img src="/pic/cba0fc4f531383fa7eee44fe02e9de0.png" srcset="/img/loading.gif" lazyload alt=""><br>Assume that the neurons have a Sigmoid activation function:</p>
+<ol>
+<li>Perform a forward pass on the network</li>
+<li>Perform a reverse pass (training) once with target = 0.5 and learning rate = 1</li>
+<li>Perform a further forward pass and comment on the results</li>
+</ol>
+<p>(i)<br>Input to the top neuron: $(0.35\times0.1) + (0.9 \times 0.8) = 0.755$. $Out_1 = 0.68$<br>Input to the bottom neuron: $(0.9 \times 0.6) + (0.35 \times 0.4) = 0.68$. $Out_2 = 0.6637$<br>Input to the final neuron: $(0.3 \times 0.68) + (0.9 \times 0.6637) = 0.80$. $Output = 0.69$<br>(ii)<br>Output error $g = (y − \hat y)(1 − \hat y)\hat y = (0.5 − 0.69)(1 − 0.69)0.69 = −0.0406$</p>
+<p>Errors for the hidden layer $e_1 = 𝑔 \times 𝑤_1 \times (1 − out_1) \times out_1 = −0.0406 \times 0.3 \times (1 − 0.68) \times 0.68 = −0.00265$<br>$e_2 = g \times w_2 \times (1 − out_2) \times out_2 = −0.0406 \times 0.9 \times (1 − 0.6637) \times 0.6637 = −0.008156$<br>Update the weights for the output layer<br>$w_1 \leftarrow w_1 +(\eta \times g \times out_1) = 0.3 + (−0.0406 \times 0.68) = 0.272392$<br>$w_2 \leftarrow w_2 + (\eta \times g \times out_2) = 0.9 + (−0.0406 × 0.6637) = 0.87305$ </p>
+<p>Update the weights for the hidden layer 𝑤𝑤3 ← 𝑤𝑤3 + 𝜂𝜂 × 𝑒𝑒1 × 𝑥𝑥1 = 0.1 + −0.00265 × 0.35 = 0.0991 𝑤𝑤4 ← 𝑤𝑤4 + 𝜂𝜂 × 𝑒𝑒1 × 𝑥𝑥2 = 0.8 + −0.00265 × 0.9 = 0.7976 𝑤𝑤5 ← 𝑤𝑤5 + 𝜂𝜂 × 𝑒𝑒2 × 𝑥𝑥1 = 0.4 + −0.008156 × 0.35 = 0.3971 𝑤𝑤6 ← 𝑤𝑤6 + 𝜂𝜂 × 𝑒𝑒2 × 𝑥𝑥2 = 0.6 + −0.008156 × 0.9 = 0.5927 (iii) Input to the top neuron: 0.35 × 0.0991 + 0.9 × 0.7976 = 0.7525. Out1 = 0.6797 Input to the bottom neuron: 0.9 × 0.5927 + 0.35 × 0.3971 = 0.6724. Out2 = 0.662 Input to the final neuron: 0.272392 × 0.6797 + 0.87305 × 0.662 = 0.7631. Output = 0.682</p>
+<h3 id="Activation-functions"><a href="#Activation-functions" class="headerlink" title="Activation functions"></a>Activation functions</h3><h3 id="Issues-of-training-neural-networks"><a href="#Issues-of-training-neural-networks" class="headerlink" title="Issues of training neural networks"></a>Issues of training neural networks</h3>
+                
+              </div>
             
-              <li class="next">
-                <a href="/2023/02/17/%E5%8D%9A%E5%BC%88%E8%AE%BA/" title="博弈论-课程笔记"><span>
-                    下一篇&nbsp;&nbsp;
-                  </span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
-              </li>
-              
-                
-                  <li class="toggle-toc">
-                    <a class="toggle-btn " data-toggle="collapse"
-                      href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
-                      <span>[&nbsp;</span><span>
-                        文章目录
-                      </span>
-                      <i class="text-collapsed icon icon-anchor"></i>
-                      <i class="text-in icon icon-close"></i>
-                      <span>]</span>
-                    </a>
-                  </li>
-                  
-      </ul>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
       
-        
 
-            <div class="bar-right">
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/2022S/" class="category-chain-item">2022S</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%AC%94%E8%AE%B0/" class="print-no-link">#笔记</a>
+      
+    </div>
+  
+</div>
+
+
               
-                <div class="share-component" data-sites="qq,wechat"
-                  data-mobile-sites="qq,wechat"></div>
-                
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>机器学习-课程笔记</div>
+      <div>http://hiryan23.github.io/2023/02/17/Machine Learning/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Ruiyang He</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年2月17日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/02/19/%E5%AF%B9chatgpt%E7%9A%84%E6%AC%A2%E5%91%BC%E6%98%AF%E4%BA%BA%E5%AF%B9%E5%BC%82%E5%8C%96%E7%9A%84%E5%8F%8D%E6%8A%97%E2%80%94%E2%80%94%E8%AE%BAai%E4%BB%A3%E5%86%99%E8%AE%BA%E6%96%87%E7%9A%84%E8%A7%A3%E6%94%BE%E6%80%A7%E4%B8%8E%E5%BC%80%E6%94%BE%E6%80%A7/" title="对chatgpt的欢呼是人对异化的反抗——论ai代写论文的解放性与开放性">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">对chatgpt的欢呼是人对异化的反抗——论ai代写论文的解放性与开放性</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/02/17/%E5%8D%9A%E5%BC%88%E8%AE%BA/" title="博弈论-课程笔记">
+                        <span class="hidden-mobile">博弈论-课程笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
             </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
   </div>
-</nav>
+</div>
+
+
+
+
+
   
 
 
-</main>
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-<footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
-	
-    <ul class="social-links">
-    	
-        <li><a href="https://github.com/hiryan23" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
-        
-    </ul>
 
-        <div class="copyright">
-            
-                &copy; 2023
-                    Ruiyang He
-                        
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-                            <div class="publishby">
-                                <span id="busuanzi_container_site_pv">
-                                    <!--点击<span id="busuanzi_value_site_pv" style="font-family:Courier"></span>次，
-                                    -->
-                                    访客<span id="busuanzi_value_site_uv" style="font-family:Courier"></span>人
-                                </span>
-                            </div>
-
-                            <!--
-        <div class="publishby">
-            Theme by
-            <a href="https://github.com/cofess" target="_blank"> cofess </a>
-            base on
-            <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
-        -->
-        </div>
-</footer>
-  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-<script>
-   window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
-</script>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<script src="/js/plugin.min.js"></script>
+    
 
-   
-<script src="/js/application.js"></script>
+    
+  </main>
 
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
       
-    <script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
 </script>
 
-<script src="/js/insight.js"></script>
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
-         
-                  
-                           
-                              
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
-
-                                 
-                                    
-                                       
-                                          
-                                             
-
-                                                
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
 
 
+  
 
-                                                   <div id="go-top"></div>
-                                                   <style type="text/css">
-                                                      #go-top {
-                                                         width: 40px;
-                                                         height: 36px;
-                                                         background-color: #5a7db1;
-                                                         position: relative;
-                                                         border-radius: 2px;
-                                                         position: fixed;
-                                                         right: 10px;
-                                                         bottom: 60px;
-                                                         cursor: pointer;
-                                                         display: none;
-                                                      }
-
-                                                      #go-top:after {
-                                                         content: " ";
-                                                         position: absolute;
-                                                         left: 14px;
-                                                         top: 14px;
-                                                         border-top: 2px solid #fff;
-                                                         border-right: 2px solid #fff;
-                                                         width: 12px;
-                                                         height: 12px;
-                                                         transform: rotate(-45deg);
-                                                      }
-
-                                                      #go-top:hover {
-                                                         background-color: #1A2433;
-                                                      }
-                                                   </style>
-                                                   <script>
-                                                      $(function () {
-                                                         var top = $("#go-top");
-                                                         $(window).scroll(function () {
-                                                            ($(window).scrollTop() > 300) ? top.show(300) : top.hide(200);
-                                                            $("#go-top").click(function () {
-                                                               $('body,html').animate({ scrollTop: 0 });
-                                                               return false();
-                                                            })
-                                                         });
-                                                      });
-                                                   </script>
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {

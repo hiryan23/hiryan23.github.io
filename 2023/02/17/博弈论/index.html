@@ -1,28 +1,26 @@
+
+
 <!DOCTYPE html>
-<html lang=zh>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="renderer" content="webkit">
-  <meta http-equiv="Cache-Control" content="no-transform" />
-  <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="format-detection" content="telephone=no,email=no,adress=no">
-  <!-- Color theme for statusbar -->
-  <meta name="theme-color" content="#000000" />
-  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
-  <meta http-equiv="window-target" content="_top" />
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Ruiyang He">
+  <meta name="keywords" content="">
   
-  
-  <title>博弈论-课程笔记 | Hiryan的世界</title>
-  <meta name="description" content="本笔记整理自安泰经济与管理学院2022年春季学期课程ECON2501-01博弈论，授课人是胥莉老师。 “正如理性预期使宏观经济学发生革命一样，博弈论广泛而深远地改变了经济学家的思维方式”——Jean Tirole  第一讲 导论什么是博弈论博弈论 相互决策理论（interactive dicision theory） 1944年冯·诺伊曼与奥斯卡·摩根斯特恩合著《博弈论与经济行为》，标志着现代系">
+    <meta name="description" content="本笔记整理自安泰经济与管理学院2022年春季学期课程ECON2501-01博弈论，授课人是胥莉老师。 “正如理性预期使宏观经济学发生革命一样，博弈论广泛而深远地改变了经济学家的思维方式”——Jean Tirole  第一讲 导论什么是博弈论博弈论 相互决策理论（interactive dicision theory） 1944年冯·诺伊曼与奥斯卡·摩根斯特恩合著《博弈论与经济行为》，标志着现代系">
 <meta property="og:type" content="article">
 <meta property="og:title" content="博弈论-课程笔记">
 <meta property="og:url" content="http://hiryan23.github.io/2023/02/17/%E5%8D%9A%E5%BC%88%E8%AE%BA/index.html">
-<meta property="og:site_name" content="Hiryan的世界">
+<meta property="og:site_name" content="Hiryan&#39;s Blog">
 <meta property="og:description" content="本笔记整理自安泰经济与管理学院2022年春季学期课程ECON2501-01博弈论，授课人是胥莉老师。 “正如理性预期使宏观经济学发生革命一样，博弈论广泛而深远地改变了经济学家的思维方式”——Jean Tirole  第一讲 导论什么是博弈论博弈论 相互决策理论（interactive dicision theory） 1944年冯·诺伊曼与奥斯卡·摩根斯特恩合著《博弈论与经济行为》，标志着现代系">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://hiryan23.github.io/pic/3380e9fc23d2eb55f8eabc370df0bff.png">
@@ -51,376 +49,269 @@
 <meta property="og:image" content="http://hiryan23.github.io/pic/d7770dd67b40284628f28ffa1d11482.png">
 <meta property="og:image" content="http://hiryan23.github.io/2023/02/17/%E5%8D%9A%E5%BC%88%E8%AE%BA/pic/a48a6832f7e6d3795e1cdf7e8efd02d.png">
 <meta property="article:published_time" content="2023-02-17T04:54:26.809Z">
-<meta property="article:modified_time" content="2023-04-03T11:04:34.818Z">
+<meta property="article:modified_time" content="2023-09-16T04:55:31.380Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="笔记">
-<meta property="article:tag" content="微观经济学">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://hiryan23.github.io/pic/3380e9fc23d2eb55f8eabc370df0bff.png">
-  <!-- Canonical links -->
-  <link rel="canonical" href="http://hiryan23.github.io/2023/02/17/%E5%8D%9A%E5%BC%88%E8%AE%BA/index.html">
-  
-    <link rel="alternate" href="/atom.xml" title="Hiryan的世界" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png" type="image/x-icon">
   
-  
-<link rel="stylesheet" href="/css/style.css">
+  <title>博弈论-课程笔记 - Hiryan&#39;s Blog</title>
 
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
-    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hiryan23.github.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
   
-  
+
+
   
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 
-<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
-  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-  <div class="slimContent">
-    <div class="navbar-header">
-      
-      
-      <div class="profile-block text-center">
-        <a id="avatar" href="" target="_blank">
-          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
-        </a>
-        <h2 id="name" class="hidden-xs hidden-sm">Ruiyang He</h2>
-        <h3 id="title" class="hidden-xs hidden-sm hidden-md">上海交通大学 本科生</h3>
-        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
-      </div>
-      
-      <div class="search" id="search-form-wrap">
+<body>
+  
 
-    <form class="search-form sidebar-form">
-        <div class="input-group">
-            <input type="text" class="search-form-input form-control" placeholder="搜索" />
-            <span class="input-group-btn">
-                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
-            </span>
-        </div>
-    </form>
-    <div class="ins-search">
-  <div class="ins-search-mask"></div>
-  <div class="ins-search-container">
-    <div class="ins-input-wrapper">
-      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
-      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-    </div>
-    <div class="ins-section-wrapper">
-      <div class="ins-section-container"></div>
-    </div>
-  </div>
-</div>
+  <header>
+    
 
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Hiryan&#39;s blog</strong>
+    </a>
 
-</div>
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-      <ul class="nav navbar-nav main-nav menu-highlight">
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
         
         
-        <li class="menu-item menu-item-home">
-          <a href="/.">
-            
-            <i class="icon icon-home-fill"></i>
-            
-            <span class="menu-title">首页</span>
-          </a>
-        </li>
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
         
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives">
-            
-            <i class="icon icon-archives-fill"></i>
-            
-            <span class="menu-title">归档</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories">
-            
-            <i class="icon icon-folder"></i>
-            
-            <span class="menu-title">分类</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags">
-            
-            <i class="icon icon-tags"></i>
-            
-            <span class="menu-title">标签</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-links">
-          <a href="/links">
-            
-            <i class="icon icon-friendship"></i>
-            
-            <span class="menu-title">友链</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about">
-            
-            <i class="icon icon-cup-fill"></i>
-            
-            <span class="menu-title">关于</span>
-          </a>
-        </li>
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
         
       </ul>
-      
-	
-    <ul class="social-links">
-    	
-        <li><a href="https://github.com/hiryan23" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
-        
-    </ul>
-
-    </nav>
+    </div>
   </div>
-</header>
+</nav>
 
   
-    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/lungmen.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="博弈论-课程笔记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
     
-      <div class="widget">
-    <h3 class="widget-title">公告</h3>
-    <div class="widget-body">
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-02-17 12:54" pubdate>
+          2023年2月17日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          23k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          193 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
-            <div class="content">
-                <p>你永远不该评判自己不了解的事物。</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E5%8D%9A%E5%BC%88%E8%AE%BA/">2022S博弈论</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E5%8F%91%E5%B1%95%E7%BB%8F%E6%B5%8E%E5%AD%A6/">2022S发展经济学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">2022S机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/">2022S计量经济学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86/">2022S财务管理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E8%B4%A7%E5%B8%81%E9%87%91%E8%9E%8D%E5%AD%A6/">2022S货币金融学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E9%87%91%E8%9E%8D%E5%AD%A6%E5%8E%9F%E7%90%86/">2022S金融学原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2023S%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%8E%9F%E7%90%86/">2023S马克思主义原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%86%E4%BA%AB%E6%96%87%E7%AB%A0/">分享文章</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0%E3%80%81%E6%9D%82%E6%84%9F%E4%B8%8E%E8%87%AA%E6%88%91%E6%89%B9%E5%88%A4/">日记、杂感与自我批判</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82/">杂</a><span class="category-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E2%80%9C%E6%84%8F%E8%AF%86%E6%B5%81%E2%80%9D/" rel="tag">“意识流”</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%91%E5%B1%95%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">发展经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%8E%B0%E4%BB%A3%E4%B8%BB%E4%B9%89%E5%93%B2%E5%AD%A6/" rel="tag">后现代主义哲学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%8F%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" rel="tag">宏观金融学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E8%AF%B4-%E6%95%A3%E6%96%87%E7%AD%89/" rel="tag">小说\散文等</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">微观经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" rel="tag">微观金融学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B1%BD%E8%BD%A6%E6%8E%A7%E5%88%B6/" rel="tag">汽车控制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A4%BE%E4%BC%9A%E5%88%86%E6%9E%90/" rel="tag">社会分析</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">计量经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%91%E8%9E%8D%E5%AD%A6/" rel="tag">金融学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A9%AC%E5%8E%9F/" rel="tag">马原</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget-body tagcloud">
-      <a href="/tags/%E2%80%9C%E6%84%8F%E8%AF%86%E6%B5%81%E2%80%9D/" style="font-size: 13px;">“意识流”</a> <a href="/tags/%E5%8F%91%E5%B1%95%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 13px;">发展经济学</a> <a href="/tags/%E5%90%8E%E7%8E%B0%E4%BB%A3%E4%B8%BB%E4%B9%89%E5%93%B2%E5%AD%A6/" style="font-size: 13px;">后现代主义哲学</a> <a href="/tags/%E5%AE%8F%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" style="font-size: 13px;">宏观金融学</a> <a href="/tags/%E5%B0%8F%E8%AF%B4-%E6%95%A3%E6%96%87%E7%AD%89/" style="font-size: 13px;">小说\散文等</a> <a href="/tags/%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 13px;">微观经济学</a> <a href="/tags/%E5%BE%AE%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" style="font-size: 13px;">微观金融学</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 13px;">机器学习</a> <a href="/tags/%E6%B1%BD%E8%BD%A6%E6%8E%A7%E5%88%B6/" style="font-size: 13px;">汽车控制</a> <a href="/tags/%E7%A4%BE%E4%BC%9A%E5%88%86%E6%9E%90/" style="font-size: 13px;">社会分析</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 14px;">笔记</a> <a href="/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 13px;">计量经济学</a> <a href="/tags/%E9%87%91%E8%9E%8D%E5%AD%A6/" style="font-size: 13px;">金融学</a> <a href="/tags/%E9%A9%AC%E5%8E%9F/" style="font-size: 13px;">马原</a>
-    </div>
-  </div>
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a><span class="archive-list-count">13</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget-body">
-      <ul class="recent-post-list list-unstyled no-thumbnail">
-        
-          <li>
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">博弈论-课程笔记</h1>
             
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E6%97%A5%E8%AE%B0%E3%80%81%E6%9D%82%E6%84%9F%E4%B8%8E%E8%87%AA%E6%88%91%E6%89%B9%E5%88%A4/">日记、杂感与自我批判</a>
-              </p>
-              <p class="item-title">
-                <a href="/2023/03/14/%E7%94%9F%E7%97%85%E4%BA%86/" class="title">2023.03.14 生病了</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-03-14T14:09:52.155Z" itemprop="datePublished">2023-03-14</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
             
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E5%88%86%E4%BA%AB%E6%96%87%E7%AB%A0/">分享文章</a>
-              </p>
-              <p class="item-title">
-                <a href="/2023/02/28/%E6%9C%80%E5%90%8E%E4%B8%80%E5%90%8D/" class="title">最后一名 | 马塞尔·埃梅</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-02-28T13:04:05.126Z" itemprop="datePublished">2023-02-28</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/2023S%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%8E%9F%E7%90%86/">2023S马克思主义原理</a>
-              </p>
-              <p class="item-title">
-                <a href="/2023/02/27/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%8E%9F%E7%90%86/" class="title">马克思主义原理-重点梳理</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-02-27T06:20:15.125Z" itemprop="datePublished">2023-02-27</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E6%9D%82/">杂</a>
-              </p>
-              <p class="item-title">
-                <a href="/2023/02/22/%E4%B8%80%E9%81%93can%E6%8A%A5%E6%96%87%E8%AF%BB%E5%8F%96%E7%9A%84%E9%97%AE%E9%A2%98/" class="title">一道can报文读取的问题</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-02-22T05:44:19.256Z" itemprop="datePublished">2023-02-22</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E6%97%A5%E8%AE%B0%E3%80%81%E6%9D%82%E6%84%9F%E4%B8%8E%E8%87%AA%E6%88%91%E6%89%B9%E5%88%A4/">日记、杂感与自我批判</a>
-              </p>
-              <p class="item-title">
-                <a href="/2023/02/22/%E4%BB%8E%E7%8F%AD%E4%BC%9A%E5%8F%91%E8%A8%80%E5%BC%95%E5%87%BA%E7%9A%84%E6%80%9D%E8%80%83/" class="title">2023.02.22 从班会发言引出的思考</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-02-22T00:14:36.308Z" itemprop="datePublished">2023-02-22</time>
-              </p>
-            </div>
-          </li>
-          
-      </ul>
-    </div>
-  </div>
-  
-
-    
-  </div>
-</aside>
-
-  
-  
-  <aside class="sidebar sidebar-toc   in  " id="collapseToc" itemscope
-    itemtype="http://schema.org/WPSideBar">
-    <div class="slimContent">
-      <nav id="toc" class="article-toc">
-        <h3 class="toc-title">
-          文章目录
-        </h3>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E8%AE%B2-%E5%AF%BC%E8%AE%BA"><span class="toc-text">第一讲 导论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%9A%E5%BC%88%E8%AE%BA"><span class="toc-text">什么是博弈论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88%E8%AE%BA"><span class="toc-text">博弈论</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%9E%E7%AD%96%E7%95%A5%E8%A1%8C%E4%B8%BA-vs-%E7%AD%96%E7%95%A5%E8%A1%8C%E4%B8%BA"><span class="toc-text">非策略行为 vs 策略行为</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88%E8%AE%BA-1"><span class="toc-text">博弈论</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88%E8%AE%BA%E4%B8%8E%E4%BC%A0%E7%BB%9F%E5%86%B3%E7%AD%96%E7%90%86%E8%AE%BA%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">博弈论与传统决策理论的区别</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%9F"><span class="toc-text">为什么要学习博弈论？</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8E%9F%E5%9B%A0%E4%B8%80"><span class="toc-text">原因一</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8E%9F%E5%9B%A0%E4%BA%8C"><span class="toc-text">原因二</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8E%9F%E5%9B%A0%E4%B8%89"><span class="toc-text">原因三</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%8E%86%E5%8F%B2"><span class="toc-text">博弈论历史</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%92%8C%E8%AF%BA%E8%B4%9D%E5%B0%94%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%A5%96"><span class="toc-text">博弈论和诺贝尔经济学奖</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88%E7%9A%84%E9%9D%9E%E6%8A%80%E6%9C%AF%E6%80%A7%E5%AE%9A%E4%B9%89"><span class="toc-text">博弈的非技术性定义</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9B%9B%E4%B8%AA%E6%A0%B8%E5%BF%83%E6%96%B9%E9%9D%A2"><span class="toc-text">四个核心方面</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88%E4%B8%AD%E7%9A%84%E5%8D%9A%E5%BC%88%E6%96%B9"><span class="toc-text">博弈中的博弈方</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88%E4%B8%AD%E7%9A%84%E7%AD%96%E7%95%A5"><span class="toc-text">博弈中的策略</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88%E4%B8%AD%E7%9A%84%E5%BE%97%E7%9B%8A"><span class="toc-text">博弈中的得益</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="toc-text">博弈的过程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88%E7%9A%84%E5%88%86%E7%B1%BB%E5%92%8C%E5%8D%9A%E5%BC%88%E7%90%86%E8%AE%BA%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-text">博弈的分类和博弈理论的结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88%E7%9A%84%E4%BF%A1%E6%81%AF%E7%BB%93%E6%9E%84"><span class="toc-text">博弈的信息结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">博弈的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88"><span class="toc-text">重复博弈</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88%E6%96%B9%E7%9A%84%E8%83%BD%E5%8A%9B%E5%92%8C%E7%90%86%E6%80%A7"><span class="toc-text">博弈方的能力和理性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E7%90%86%E6%80%A7%E5%92%8C%E6%9C%89%E9%99%90%E7%90%86%E6%80%A7"><span class="toc-text">完全理性和有限理性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%AA%E4%BD%93%E7%90%86%E6%80%A7%E5%92%8C%E9%9B%86%E4%BD%93%E7%90%86%E6%80%A7"><span class="toc-text">个体理性和集体理性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E4%B8%AA%E7%BB%8F%E5%85%B8%E5%8D%9A%E5%BC%88%E6%A8%A1%E5%9E%8B"><span class="toc-text">几个经典博弈模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9A%E5%BE%92%E5%9B%B0%E5%A2%83%EF%BC%88Tucker%EF%BC%8C1950%EF%BC%89"><span class="toc-text">囚徒困境（Tucker，1950）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E5%AF%A1%E5%A4%B4%E9%99%8D%E4%BB%B7%E7%AB%9E%E4%BA%89"><span class="toc-text">双寡头降价竞争</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%BF%E5%91%8A%E6%88%98"><span class="toc-text">广告战</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A7%E9%87%8F%E5%86%B3%E7%AD%96%E7%9A%84%E5%8F%A4%E8%AF%BA%E6%A8%A1%E5%9E%8B%EF%BC%88Cournot%EF%BC%8C1838%EF%BC%89"><span class="toc-text">产量决策的古诺模型（Cournot，1838）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%89%E5%8E%82%E5%95%86%E7%89%88%E6%9C%AC"><span class="toc-text">三厂商版本</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%AE%B2-%E5%AE%8C%E5%85%A8%E4%BF%A1%E6%81%AF%E9%9D%99%E6%80%81%E5%8D%9A%E5%BC%88"><span class="toc-text">第二讲 完全信息静态博弈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E6%96%B9%E6%B3%95"><span class="toc-text">基本分析思路和方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E4%BF%A1%E6%81%AF%E9%9D%99%E6%80%81%E5%8D%9A%E5%BC%88"><span class="toc-text">完全信息静态博弈</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E4%BF%A1%E6%81%AF"><span class="toc-text">完全信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%99%E6%80%81"><span class="toc-text">静态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88%E5%88%86%E6%9E%90%E7%9A%84%E7%9B%AE%E7%9A%84%EF%BC%9A%E9%A2%84%E6%B5%8B%E5%8D%9A%E5%BC%88%E7%9A%84%E5%9D%87%E8%A1%A1%E7%BB%93%E6%9E%9C"><span class="toc-text">博弈分析的目的：预测博弈的均衡结果</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88%E7%9A%84%E6%A0%87%E5%87%86%E5%BC%8F%E8%A1%A8%E8%BF%B0%EF%BC%88%E7%AD%96%E7%95%A5%E5%BC%8F%E8%A1%A8%E8%BF%B0%EF%BC%89"><span class="toc-text">博弈的标准式表述（策略式表述）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90"><span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E6%95%B0%E5%8E%9F%E5%88%99%EF%BC%88Majority-Rule%EF%BC%89"><span class="toc-text">多数原则（Majority Rule）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%90%86%E6%80%A7"><span class="toc-text">理性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%8C%9C%E7%A1%AC%E5%B8%81%E5%8D%9A%E5%BC%88"><span class="toc-text">猜硬币博弈</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%90%86%E6%80%A7%E4%B8%8E%E5%85%B1%E5%90%8C%E7%9F%A5%E8%AF%86"><span class="toc-text">理性与共同知识</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%90%86%E6%80%A7-1"><span class="toc-text">理性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%90%86%E6%80%A7%E4%B8%8E%E5%85%B1%E5%90%8C%E7%9F%A5%E8%AF%86-1"><span class="toc-text">理性与共同知识</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%A0%E4%BC%98%E7%AD%96%E7%95%A5"><span class="toc-text">占优策略</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%A0%E4%BC%98%E7%AD%96%E7%95%A5-1"><span class="toc-text">占优策略</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%B1%E5%8D%A0%E4%BC%98%E7%AD%96%E7%95%A5"><span class="toc-text">弱占优策略</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%A0%E4%BC%98%E7%AD%96%E7%95%A5%E5%9D%87%E8%A1%A1"><span class="toc-text">占优策略均衡</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%A0%E4%BC%98%E7%AD%96%E7%95%A5%E5%9D%87%E8%A1%A1%E4%B8%8E%E2%80%9C%E7%90%86%E6%80%A7%E2%80%9D"><span class="toc-text">占优策略均衡与“理性”</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%8B%EF%BC%9A%E4%BA%8C%E4%BB%B7%E6%8B%8D%E5%8D%96"><span class="toc-text">例：二价拍卖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%99%BA%E7%8C%AA%E5%8D%9A%E5%BC%88"><span class="toc-text">智猪博弈</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A5%E6%A0%BC%E5%8A%A3%E7%AD%96%E7%95%A5%E7%9A%84%E9%87%8D%E5%A4%8D%E5%89%94%E9%99%A4%E6%B3%95%EF%BC%88%E9%87%8D%E5%A4%8D%E5%8D%A0%E4%BC%98%E6%B3%95%EF%BC%89"><span class="toc-text">严格劣策略的重复剔除法（重复占优法）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8A%A3%E7%AD%96%E7%95%A5"><span class="toc-text">劣策略</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E5%A4%8D%E5%89%94%E9%99%A4%E7%9A%84%E5%8D%A0%E4%BC%98%E7%AD%96%E7%95%A5%E5%9D%87%E8%A1%A1"><span class="toc-text">重复剔除的占优策略均衡</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%A5%E6%A0%BC%E5%8A%A3%E7%AD%96%E7%95%A5%E7%9A%84%E9%87%8D%E5%A4%8D%E5%89%94%E9%99%A4%E6%B3%95%E7%9A%84%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-text">严格劣策略的重复剔除法的步骤：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E5%A4%8D%E5%8D%A0%E4%BC%98%E6%B3%95"><span class="toc-text">重复占优法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%B7%B7%E5%90%88%E7%AD%96%E7%95%A5"><span class="toc-text">混合策略</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-text">缺点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%89%E7%BE%8E%E7%AB%9E%E8%B5%9B"><span class="toc-text">选美竞赛</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8A%95%E9%92%B1%E6%B8%B8%E6%88%8F"><span class="toc-text">投钱游戏</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8C%E5%AF%A1%E5%A4%B4%E5%8F%A4%E8%AF%BA%E6%A8%A1%E5%9E%8B"><span class="toc-text">双寡头古诺模型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%AF%81%E6%98%8E%E4%B8%8D%E5%AD%98%E5%9C%A8%E5%BC%B1%E5%8D%A0%E4%BC%98%E7%AD%96%E7%95%A5%EF%BC%88%E5%9B%A0%E6%AD%A4%E4%B8%8D%E5%AD%98%E5%9C%A8%E5%8D%A0%E4%BC%98%E7%AD%96%E7%95%A5%EF%BC%89"><span class="toc-text">证明不存在弱占优策略（因此不存在占优策略）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%87%8D%E5%A4%8D%E5%8D%A0%E4%BC%98%E7%AD%96%E7%95%A5"><span class="toc-text">重复占优策略</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E5%BF%B5"><span class="toc-text">信念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%B7%E5%90%88%E7%AD%96%E7%95%A5-1"><span class="toc-text">混合策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%9F%E6%9C%9B%E6%95%88%E7%94%A8"><span class="toc-text">期望效用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E4%BC%98%E5%8F%8D%E5%BA%94"><span class="toc-text">最优反应</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E7%90%86%E6%80%A7%E5%8C%96%E4%B8%8E%E9%87%8D%E5%A4%8D%E5%8D%A0%E4%BC%98"><span class="toc-text">可理性化与重复占优</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%AF%E7%90%86%E6%80%A7%E5%8C%96%E7%AD%96%E7%95%A5"><span class="toc-text">可理性化策略</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%97%E9%B8%A1%E5%8D%9A%E5%BC%88"><span class="toc-text">斗鸡博弈</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%B3%E4%BB%80%E5%9D%87%E8%A1%A1"><span class="toc-text">纳什均衡</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%B3%E4%BB%80%E5%9D%87%E8%A1%A1%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">纳什均衡的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BA%B3%E4%BB%80%E5%9D%87%E8%A1%A1-1"><span class="toc-text">纳什均衡</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%B3%E4%BB%80%E5%9D%87%E8%A1%A1%E7%9A%84%E5%90%AB%E4%B9%89"><span class="toc-text">纳什均衡的含义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%B3%E4%BB%80%E5%9D%87%E8%A1%A1%E4%B8%8E%E9%87%8D%E5%A4%8D%E5%89%94%E9%99%A4%E5%8A%A3%E7%AD%96%E7%95%A5%E6%B3%95"><span class="toc-text">纳什均衡与重复剔除劣策略法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%B3%E4%BB%80%E5%9D%87%E8%A1%A1%E7%9A%84%E4%B8%80%E8%87%B4%E9%A2%84%E6%B5%8B%E6%80%A7%E8%B4%A8"><span class="toc-text">纳什均衡的一致预测性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%92%E7%BA%BF%E6%B3%95"><span class="toc-text">划线法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E9%99%90%E7%AD%96%E7%95%A5%E5%88%86%E6%9E%90%E5%92%8C%E5%8F%8D%E5%BA%94%E5%87%BD%E6%95%B0"><span class="toc-text">无限策略分析和反应函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%A4%E8%AF%BA%E7%9A%84%E5%AF%A1%E5%A4%B4%E6%A8%A1%E5%9E%8B"><span class="toc-text">古诺的寡头模型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8F%8D%E5%BA%94%E5%87%BD%E6%95%B0"><span class="toc-text">反应函数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8F%8D%E5%BA%94%E5%87%BD%E6%95%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E5%B1%80%E9%99%90%E6%80%A7"><span class="toc-text">反应函数的问题和局限性</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Bertrand%E6%A8%A1%E5%9E%8B"><span class="toc-text">Bertrand模型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Bertrand%E6%82%96%E8%AE%BA"><span class="toc-text">Bertrand悖论</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Hotelling%E6%A8%A1%E5%9E%8B"><span class="toc-text">Hotelling模型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%AC%E5%85%B1%E8%B4%A2%E4%BA%A7%E9%97%AE%E9%A2%98"><span class="toc-text">公共财产问题</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%85%AC%E5%85%B1%E8%8D%89%E5%9C%B0%E5%85%BB%E7%BE%8A%E9%97%AE%E9%A2%98"><span class="toc-text">公共草地养羊问题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E8%87%B4%E7%AD%96%E7%95%A5%E5%92%8C%E7%BA%B3%E4%BB%80%E5%9D%87%E8%A1%A1"><span class="toc-text">一致策略和纳什均衡</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%AF%E7%AD%96%E7%95%A5%E4%B8%8E%E6%B7%B7%E5%90%88%E7%AD%96%E7%95%A5"><span class="toc-text">纯策略与混合策略</span></a></li></ol></li></ol>
-      </nav>
-    </div>
-  </aside>
-  
-<main class="main" role="main">
-  <div class="content">
-  <article id="post-博弈论" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-    
-    <div class="article-header">
-      
-        
-    
-          <h1 class="article-title" itemprop="name">
-            博弈论-课程笔记
-          </h1>
-          
-            
-      
-      <div class="article-meta">
-        <span class="article-date">
-	<i class="icon icon-calendar"></i>
-	<a href="/2023/02/17/%E5%8D%9A%E5%BC%88%E8%AE%BA/" class="article-date">
-		<time datetime="2023-02-17T04:54:26.809Z" itemprop="datePublished">
-			2023-02-17
-		</time>
-	</a>
-</span>
-
-<span class="article-date">
-	<i class="icon icon-calendar-check"></i>
-	<a href="/2023/02/17/%E5%8D%9A%E5%BC%88%E8%AE%BA/" class="article-date">
-		<time datetime="2023-04-03T11:04:34.818Z" itemprop="dateUpdated">
-			2023-04-03
-		</time>
-	</a>
-</span>
-        
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/2022S%E5%8D%9A%E5%BC%88%E8%AE%BA/">2022S博弈论</a>
-  </span>
-
-        
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">微观经济学</a>, <a class="article-tag-link-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a>
-  </span>
-
-
-        
-	<span class="article-read hidden-xs">
-		<i class="icon icon-eye-fill" aria-hidden="true"></i>
-		<span id="busuanzi_container_page_pv">
-			<span id="busuanzi_value_page_pv"></span>
-		</span>
-	</span>
-
-	
-		
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/02/17/%E5%8D%9A%E5%BC%88%E8%AE%BA/#comments" class="article-comment-link">评论</a></span>
-        
-      </div>
-    </div>
-    <div class="article-entry marked-body" itemprop="articleBody">
-      
-        <blockquote>
+              <div class="markdown-body">
+                
+                <blockquote>
 <p><em>本笔记整理自安泰经济与管理学院2022年春季学期课程ECON2501-01博弈论，授课人是胥莉老师。</em></p>
 <p>“正如理性预期使宏观经济学发生革命一样，博弈论广泛而深远地改变了经济学家的思维方式”——Jean Tirole</p>
 </blockquote>
@@ -473,9 +364,9 @@
 <li>1965年泽尔腾（Selten）提出了子博弈精炼纳什均衡的概念</li>
 <li>1967—1968年海萨尼（Harsanyi）提出了贝叶斯纳什均衡的概念</li>
 </ul>
-<h5 id="博弈论和诺贝尔经济学奖"><a href="#博弈论和诺贝尔经济学奖" class="headerlink" title="博弈论和诺贝尔经济学奖"></a>博弈论和诺贝尔经济学奖</h5><p>约翰·纳什（1994）<br><img src="/pic/3380e9fc23d2eb55f8eabc370df0bff.png" alt="约翰纳什"><br>1950年和1951年Nash的两篇关于非合作博弈的重要论文，彻底改变了人们对竞争和市场的看法。他证明了非合作博弈及其均衡解，并证明了均衡解的存在性，即著名的纳什均衡。从而揭示了博弈均衡与经济均衡的内在联系。</p>
-<p>莱茵哈德·泽尔腾（1994）<br><img src="/pic/3bc96152f7d2ad2a380694596935bbc.png" alt="莱茵哈德·泽尔腾"><br>Selten在1965年将纳什均衡的概念引入了动态分析提出了“空头威胁”（Empty Threats）的问题，并提出“子博弈精炼纳什均衡”（Subgame Perfect Nash Equilibrium）的思想。</p>
-<p>约翰·海萨尼（1994）<br><img src="/pic/f9c8fe787c87537bc18db6033829c04.png" alt="约翰·海萨尼"><br>J.Harsanyi在1967—1968年发表构造了不完全信息（Incomplete Information）博弈理论的系列论文，提出了分析不完全信息博弈问题的标准方法，以及“贝叶斯纳什均衡”（Bayesian Nash Equilibrium）的概念</p>
+<h5 id="博弈论和诺贝尔经济学奖"><a href="#博弈论和诺贝尔经济学奖" class="headerlink" title="博弈论和诺贝尔经济学奖"></a>博弈论和诺贝尔经济学奖</h5><p>约翰·纳什（1994）<br><img src="/pic/3380e9fc23d2eb55f8eabc370df0bff.png" srcset="/img/loading.gif" lazyload alt="约翰纳什"><br>1950年和1951年Nash的两篇关于非合作博弈的重要论文，彻底改变了人们对竞争和市场的看法。他证明了非合作博弈及其均衡解，并证明了均衡解的存在性，即著名的纳什均衡。从而揭示了博弈均衡与经济均衡的内在联系。</p>
+<p>莱茵哈德·泽尔腾（1994）<br><img src="/pic/3bc96152f7d2ad2a380694596935bbc.png" srcset="/img/loading.gif" lazyload alt="莱茵哈德·泽尔腾"><br>Selten在1965年将纳什均衡的概念引入了动态分析提出了“空头威胁”（Empty Threats）的问题，并提出“子博弈精炼纳什均衡”（Subgame Perfect Nash Equilibrium）的思想。</p>
+<p>约翰·海萨尼（1994）<br><img src="/pic/f9c8fe787c87537bc18db6033829c04.png" srcset="/img/loading.gif" lazyload alt="约翰·海萨尼"><br>J.Harsanyi在1967—1968年发表构造了不完全信息（Incomplete Information）博弈理论的系列论文，提出了分析不完全信息博弈问题的标准方法，以及“贝叶斯纳什均衡”（Bayesian Nash Equilibrium）的概念</p>
 <h4 id="博弈的非技术性定义"><a href="#博弈的非技术性定义" class="headerlink" title="博弈的非技术性定义"></a>博弈的非技术性定义</h4><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>博弈就是一些<strong>个人、队组或其他组织</strong>，面对<strong>一定的环境条件</strong>，在<strong>一定的规则</strong>下，<strong>同时或先后</strong>，一次或多次，从各自允许选择的行为或策略中进行选择并加以实施，各自取得相应<strong>结果</strong>的过程。</p>
 <h5 id="四个核心方面"><a href="#四个核心方面" class="headerlink" title="四个核心方面"></a>四个核心方面</h5><ul>
 <li>博弈的参加者（Player）——博弈方</li>
@@ -549,7 +440,7 @@
 <li>不完全信息静态博弈</li>
 <li>不完全信息动态博弈</li>
 </ol>
-<p><img src="/pic/4ad37a2c41c865c674083b2a83455d0.png" alt="博弈分类"></p>
+<p><img src="/pic/4ad37a2c41c865c674083b2a83455d0.png" srcset="/img/loading.gif" lazyload alt="博弈分类"></p>
 <h5 id="重复博弈"><a href="#重复博弈" class="headerlink" title="重复博弈"></a>重复博弈</h5><p>同一个博弈反复进行所构成的博弈，提供了实现更有效率博弈结果的新可能——长期客户、长期合同、信誉问题</p>
 <ul>
 <li>有限次重复博弈</li>
@@ -565,10 +456,10 @@
 <li>合作博弈：允许存在有约束力协议的博弈</li>
 <li>非合作博弈：不允许存在有约束力协议的博弈</li>
 </ul>
-<h3 id="几个经典博弈模型"><a href="#几个经典博弈模型" class="headerlink" title="几个经典博弈模型"></a>几个经典博弈模型</h3><h4 id="囚徒困境（Tucker，1950）"><a href="#囚徒困境（Tucker，1950）" class="headerlink" title="囚徒困境（Tucker，1950）"></a>囚徒困境（Tucker，1950）</h4><p><img src="/pic/cc2eed97b5695df80ddae5ccb1ed7a5.png" alt="囚徒困境"></p>
-<h4 id="双寡头降价竞争"><a href="#双寡头降价竞争" class="headerlink" title="双寡头降价竞争"></a>双寡头降价竞争</h4><p><img src="/pic/9412e66297e9b2389c6ba499c42ee2e.png" alt="双寡头降价竞争"></p>
-<h4 id="广告战"><a href="#广告战" class="headerlink" title="广告战"></a>广告战</h4><p><img src="/pic/1527a2384f86802fd5d5328d44001ec.png" alt="广告战"></p>
-<h4 id="产量决策的古诺模型（Cournot，1838）"><a href="#产量决策的古诺模型（Cournot，1838）" class="headerlink" title="产量决策的古诺模型（Cournot，1838）"></a>产量决策的古诺模型（Cournot，1838）</h4><h5 id="三厂商版本"><a href="#三厂商版本" class="headerlink" title="三厂商版本"></a>三厂商版本</h5><p><img src="/pic/95bea0bed949bba6acef1c2ddb67151.png" alt="三厂商离散产量"></p>
+<h3 id="几个经典博弈模型"><a href="#几个经典博弈模型" class="headerlink" title="几个经典博弈模型"></a>几个经典博弈模型</h3><h4 id="囚徒困境（Tucker，1950）"><a href="#囚徒困境（Tucker，1950）" class="headerlink" title="囚徒困境（Tucker，1950）"></a>囚徒困境（Tucker，1950）</h4><p><img src="/pic/cc2eed97b5695df80ddae5ccb1ed7a5.png" srcset="/img/loading.gif" lazyload alt="囚徒困境"></p>
+<h4 id="双寡头降价竞争"><a href="#双寡头降价竞争" class="headerlink" title="双寡头降价竞争"></a>双寡头降价竞争</h4><p><img src="/pic/9412e66297e9b2389c6ba499c42ee2e.png" srcset="/img/loading.gif" lazyload alt="双寡头降价竞争"></p>
+<h4 id="广告战"><a href="#广告战" class="headerlink" title="广告战"></a>广告战</h4><p><img src="/pic/1527a2384f86802fd5d5328d44001ec.png" srcset="/img/loading.gif" lazyload alt="广告战"></p>
+<h4 id="产量决策的古诺模型（Cournot，1838）"><a href="#产量决策的古诺模型（Cournot，1838）" class="headerlink" title="产量决策的古诺模型（Cournot，1838）"></a>产量决策的古诺模型（Cournot，1838）</h4><h5 id="三厂商版本"><a href="#三厂商版本" class="headerlink" title="三厂商版本"></a>三厂商版本</h5><p><img src="/pic/95bea0bed949bba6acef1c2ddb67151.png" srcset="/img/loading.gif" lazyload alt="三厂商离散产量"></p>
 <h2 id="第二讲-完全信息静态博弈"><a href="#第二讲-完全信息静态博弈" class="headerlink" title="第二讲 完全信息静态博弈"></a>第二讲 完全信息静态博弈</h2><h3 id="基本分析思路和方法"><a href="#基本分析思路和方法" class="headerlink" title="基本分析思路和方法"></a>基本分析思路和方法</h3><h4 id="完全信息静态博弈"><a href="#完全信息静态博弈" class="headerlink" title="完全信息静态博弈"></a>完全信息静态博弈</h4><h5 id="完全信息"><a href="#完全信息" class="headerlink" title="完全信息"></a>完全信息</h5><ul>
 <li>每一个参与人对所有其他参与人的特征（策略空间、支付函数）有完全的了解</li>
 </ul>
@@ -605,7 +496,7 @@
 <li>博弈：$G=\{S_1,\cdots,S_n;u_1,\cdots,u_n\}$ </li>
 </ul>
 <h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><ul>
-<li><p>囚徒困境<img src="/pic/11fbc92caf8776cc91e693911599ee9.png" alt=""></p>
+<li><p>囚徒困境<img src="/pic/11fbc92caf8776cc91e693911599ee9.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <ul>
 <li>博弈者：囚徒1，囚徒2</li>
 <li>每一个博弈者的策略空间：$S_1=S_2=\{坦白，不坦白\}$ </li>
@@ -639,7 +530,7 @@ u_1(b,b,a)=0&,u_1(b,b,b)=0
 <li>为了<strong>预测</strong>， 我们需要关于<strong>理性</strong>的假设</li>
 <li><strong>理性</strong>：参与人$i$ 是理性的，如果给定他关于其他参与人采取某个策略（行动）的信念，参与人$i$ 的选择使其（期望）收益最大化。</li>
 </ul>
-<h5 id="猜硬币博弈"><a href="#猜硬币博弈" class="headerlink" title="猜硬币博弈"></a>猜硬币博弈</h5><p><img src="/pic/68a3964557a1d02e3c0ff97f9c196b5.png" alt=""></p>
+<h5 id="猜硬币博弈"><a href="#猜硬币博弈" class="headerlink" title="猜硬币博弈"></a>猜硬币博弈</h5><p><img src="/pic/68a3964557a1d02e3c0ff97f9c196b5.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <ul>
 <li>假设$P1$ 认为$P2$ 会选择正面，那么$P1$ 会选择正面。$u_1(正，正)=1 \textgreater -1=u_1(反，正) \Rightarrow$ 理性的$P1$ 会选择正面。</li>
 <li>假设$P1$ 认为$P2$ 会选择反面，那么$P1$ 会选择反面。$u_1(正，反)=-1\textless 1=u_1(反，反) \Rightarrow$ 理性的$P1$ 会选择反面。</li>
@@ -655,7 +546,7 @@ u_1(b,b,a)=0&,u_1(b,b,b)=0
 <li>信念</li>
 <li>理性</li>
 </ul>
-<p><img src="/pic/bc85e7659dd60acca40612546dec17b.png" alt=""></p>
+<p><img src="/pic/bc85e7659dd60acca40612546dec17b.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <ul>
 <li>假设$P1$ 认为$P2$ 选择正面的概率为$\beta$ ，选择反面的概率是$(1-\beta)$ ，那么，<script type="math/tex">\begin{align}
 u_1(正，\beta正+(1-\beta)反)&=\beta*u_1(正，正)+(1-\beta)u_1(正，反)=\beta*a+(1-\beta)*b \\
@@ -732,7 +623,7 @@ W(s)&\equiv \{k:\forall j,s_k \geq s_j\}是出价最高的投标人集合
 <li>占优均衡不是普遍存在的</li>
 <li>有些博弈没有占优策略均衡，但通过剔除”坏“策略，我们可以预测博弈的结果。如“智猪博弈”</li>
 </ul>
-<h5 id="智猪博弈"><a href="#智猪博弈" class="headerlink" title="智猪博弈"></a>智猪博弈</h5><p><img src="/pic/989c2ccfc7c49be058e00a1eb3e532b.png" alt=""></p>
+<h5 id="智猪博弈"><a href="#智猪博弈" class="headerlink" title="智猪博弈"></a>智猪博弈</h5><p><img src="/pic/989c2ccfc7c49be058e00a1eb3e532b.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <ul>
 <li>假定小猪是理性的，那么理性的小猪会选择“不踩”。再假定大猪知道小猪是理性的，那么大猪的最优选择只能是“按”。这是一个“多劳不多得，少劳不少得”的均衡。</li>
 <li>踩一次出现4份食物</li>
@@ -745,7 +636,7 @@ W(s)&\equiv \{k:\forall j,s_k \geq s_j\}是出价最高的投标人集合
 <li>找出某个参与人的劣策略（假定存在），将这个劣策略剔除，重新构造一个不包含已剔除策略的新的博弈</li>
 <li>然后在继续剔除新的博弈中的某个参与人的劣策略，继续这个过程，一直到仅仅剩下一个唯一的策略组合为止。</li>
 </ol>
-<p>重复剔除占优策略均衡要求“理性”为“共同知识”<br><img src="/pic/a7ce15b41e96297c03d089a50d8e1e0.png" alt=""><img src="/pic/7ed26875954c3dcb6f699707892bded.png" alt=""></p>
+<p>重复剔除占优策略均衡要求“理性”为“共同知识”<br><img src="/pic/a7ce15b41e96297c03d089a50d8e1e0.png" srcset="/img/loading.gif" lazyload alt=""><img src="/pic/7ed26875954c3dcb6f699707892bded.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <h5 id="重复占优法"><a href="#重复占优法" class="headerlink" title="重复占优法"></a>重复占优法</h5><p><em>：别忘了被混合策略占优！</em></p>
 <h6 id="混合策略"><a href="#混合策略" class="headerlink" title="混合策略"></a>混合策略</h6><ul>
 <li>一个参与人的混合策略是指这个参与人根据一个概率分布来随机选择策略的行为。参与人$i$ 的混合策略用$\sigma_i$ 表示，$\sigma_i \in \Delta S_i$ ，$\Delta S_i$ 为参与人$i$ 的混合策略集合</li>
@@ -767,7 +658,7 @@ W(s)&\equiv \{k:\forall j,s_k \geq s_j\}是出价最高的投标人集合
 &因此，大家都会如此，使最终给分均为0分
 \end{align}</script></li>
 </ul>
-<h5 id="投钱游戏"><a href="#投钱游戏" class="headerlink" title="投钱游戏"></a>投钱游戏</h5><p><img src="/pic/65939707f3984f6cc1d15186168a827.png" alt=""></p>
+<h5 id="投钱游戏"><a href="#投钱游戏" class="headerlink" title="投钱游戏"></a>投钱游戏</h5><p><img src="/pic/65939707f3984f6cc1d15186168a827.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <ul>
 <li>通过重复剔除劣策略（弱占优）得到$(T,C)$ <ul>
 <li>首先是穷人B会对有钱人A形成信念</li>
@@ -806,7 +697,7 @@ W(s)&\equiv \{k:\forall j,s_k \geq s_j\}是出价最高的投标人集合
 </ol>
 <h4 id="信念"><a href="#信念" class="headerlink" title="信念"></a>信念</h4><ul>
 <li>信念是参与人对其他参与人行为的主观判断。</li>
-<li>e.g. 囚徒困境<br><img src="/pic/b17bfd283b707d4bd35001747594c68.png" alt=""></li>
+<li>e.g. 囚徒困境<br><img src="/pic/b17bfd283b707d4bd35001747594c68.png" srcset="/img/loading.gif" lazyload alt=""></li>
 <li>P1 的信念<ul>
 <li>“P1认为P2可能选择D2”</li>
 <li>“P1认为P2肯定选择D2”</li>
@@ -833,7 +724,7 @@ W(s)&\equiv \{k:\forall j,s_k \geq s_j\}是出价最高的投标人集合
 <h4 id="混合策略-1"><a href="#混合策略-1" class="headerlink" title="混合策略"></a>混合策略</h4><p><a href="#混合策略">见上文</a></p>
 <h4 id="期望效用"><a href="#期望效用" class="headerlink" title="期望效用"></a>期望效用</h4><p>一个参与人的期望效用是指这个参与人采取策略$s_i$ ，而其他人根据$\mu_{-i}$ 采取i行动时的“平均”得益。</p>
 <script type="math/tex; mode=display">u_i(s_i,\mu_{-i})=\sum_{s_{-1}\in S_{-i}}\mu_{-i}(s_{-i})u_i(s_i,s_{-i})</script><ul>
-<li>以此处所示的博弈为例，假设参与人1相信参与人2采取策略$L$的可能性为$\frac{1}{2}$ ，采取策略$M$ 和$R$ 的可能性都是$\frac{1}{4}$ 。即$\mu_2(L)=\frac{1}{2}$ ，$\mu_2(M)=\frac{1}{4}$ ，$\mu_2(R)=\frac{1}{4}$ 。这个信念简写为$(\frac{1}{2},\frac{1}{4},\frac{1}{4})$ 。如果参与人1选择$U$ ，他的期望效用为：<script type="math/tex">u_1(U,\mu_2)=(\frac{1}{2})8+\frac{1}{4}0+\frac{1}{4}4=5</script><br><img src="/pic/9598286739dd97104adec56eee6a599.png" alt=""></li>
+<li>以此处所示的博弈为例，假设参与人1相信参与人2采取策略$L$的可能性为$\frac{1}{2}$ ，采取策略$M$ 和$R$ 的可能性都是$\frac{1}{4}$ 。即$\mu_2(L)=\frac{1}{2}$ ，$\mu_2(M)=\frac{1}{4}$ ，$\mu_2(R)=\frac{1}{4}$ 。这个信念简写为$(\frac{1}{2},\frac{1}{4},\frac{1}{4})$ 。如果参与人1选择$U$ ，他的期望效用为：<script type="math/tex">u_1(U,\mu_2)=(\frac{1}{2})8+\frac{1}{4}0+\frac{1}{4}4=5</script><br><img src="/pic/9598286739dd97104adec56eee6a599.png" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
 <h4 id="最优反应"><a href="#最优反应" class="headerlink" title="最优反应"></a>最优反应</h4><p>假设参与人$i$ 对于其他参与人采取的策略具有信念$\mu_i\in\Delta S_{-i}$ ，参与人$i$ 的策略$s_i\in S_i$<br>如果对于任何$s_i^\prime\in S_i$ 都满足$u_i(s_i,\mu_{-i})\geq u_i(s_i^\prime,\mu_{-i})$ ，那么$s_i$ 是一个最优反应。</p>
 <ul>
@@ -843,7 +734,7 @@ W(s)&\equiv \{k:\forall j,s_k \geq s_j\}是出价最高的投标人集合
 (\frac{1}{3})3+(\frac{1}{2})0+(\frac{1}{6})1&=\frac{7}{6}\\
 (\frac{1}{3})1+(\frac{1}{2}3+(\frac{1}{6})2&=\frac{13}{6}\\
 BR_1(\frac{1}{3},\frac{1}{2},\frac{1}{6})=&\{D\}
-\end{align}</script><br><img src="/pic/e1b3353ef8e10be4c48aca467176323.png" alt=""></p>
+\end{align}</script><br><img src="/pic/e1b3353ef8e10be4c48aca467176323.png" srcset="/img/loading.gif" lazyload alt=""></p>
 </li>
 <li><p>仍以此处所示的博弈为例，假设参与人2对参与1所采取的策略具有信念$(\frac{1}{2},\frac{1}{4},\frac{1}{4})$ </p>
 </li>
@@ -867,14 +758,14 @@ BR_2(\frac{1}{2},\frac{1}{4},\frac{1}{4})=&\{L,R\}
 <ul>
 <li>在以下的博弈中，假设你是参与人$1$，你的两个策略中没有劣策略。因此你可以根据你对对方行动的信念，理性地选择策略$A$或$B$</li>
 <li>用$p$ 表示你认为对方会采取$X$ ，用$q$ 表示采取$Y$ ，用$1-p-q$ 表示采取$Z$ 的概率。基于你的信念，你采取策略$A$ 获得的期望收益为$3p+0q+0(1-p-q)=3p$ 。你采取$B$ 的期望收益为$0p+3q+1(1-p-q)=1-p+2q$ </li>
-<li><p>因此，当$3p\textgreater 1-p+2q$ 的时候，你的最优反应是采取$A$<br><img src="/pic/35f29f320948fecb249eae01222c4fa.png" alt=""></p>
+<li><p>因此，当$3p\textgreater 1-p+2q$ 的时候，你的最优反应是采取$A$<br><img src="/pic/35f29f320948fecb249eae01222c4fa.png" srcset="/img/loading.gif" lazyload alt=""></p>
 </li>
 <li><p>当$4p\textless 1+2q$ 时，采取$B$ 。如果$4p=1+2q$ ，$A$ 和$B$ 都是最优反应。</p>
 </li>
 <li>假设你和你的竞争对手之间存在着这样的共同知识，即你们双方都是理性的，都对彼此之间进行的博弈有确切的了解。也就是说，你和他之间都知道描述这一博弈的收益矩阵。他知道你知道，你知道他知道，他知道你知道他知道，如此类推。</li>
 <li>面对一个理性的对手，你采取策略$A$ 是理性行为吗？事实上，这个策略完全不理性。设想你处于参与人$2$ 的位置，他的策略$X$ 是严格劣于$Y$ 的。因此，他不会采取$X$ 。知道这一点，你应该认为他采取策略$X$ 的概率为$0$ 。因此你可以划去矩阵中，对应$X$ 策略的那一列。</li>
 <li>而在这个简化的博弈中，你的策略$A$ 是一个劣于$B$ 的。因此我们可以划去$A$ 的那行。</li>
-<li><p>你的对手知道你知道他不会采取$X$ ，在认定你是理性的情况下，他推断你不会采取策略$A$ 。在认为你采取$B$ 的概率为$1$ 的情况下，他的最优反应是采取$Z$ 。<br><img src="/pic/c24b1c00282bc962b98838ffa9f4dbe.png" alt=""></p>
+<li><p>你的对手知道你知道他不会采取$X$ ，在认定你是理性的情况下，他推断你不会采取策略$A$ 。在认为你采取$B$ 的概率为$1$ 的情况下，他的最优反应是采取$Z$ 。<br><img src="/pic/c24b1c00282bc962b98838ffa9f4dbe.png" srcset="/img/loading.gif" lazyload alt=""></p>
 </li>
 <li><p>在各个参与人都是理性的情况下，导致的唯一结果是策略组合$(B,Z)$ 。需要注意的是，我们这里预测的结果是绝对无效率的结果。如果采取策略组合$(A,X)$ ，双方的境况都会好一些。但是，没有一方有这样做的兴趣。</p>
 </li>
@@ -901,7 +792,7 @@ BR_2(\frac{1}{2},\frac{1}{4},\frac{1}{4})=&\{L,R\}
 </li>
 <li>沟通也为协调行为提供了一个简单的方法。</li>
 </ul>
-<h4 id="斗鸡博弈"><a href="#斗鸡博弈" class="headerlink" title="斗鸡博弈"></a>斗鸡博弈</h4><p><img src="/pic/a984915f482c70a8c44dcb902686059.png" alt=""></p>
+<h4 id="斗鸡博弈"><a href="#斗鸡博弈" class="headerlink" title="斗鸡博弈"></a>斗鸡博弈</h4><p><img src="/pic/a984915f482c70a8c44dcb902686059.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <ul>
 <li>对于相当多的博弈，我们无法运用重复剔除劣战略的方法找出均衡解。</li>
 <li>为了找出这些博弈的均衡解，需要引入纳什均衡。</li>
@@ -932,7 +823,7 @@ BR_2(\frac{1}{2},\frac{1}{4},\frac{1}{4})=&\{L,R\}
 <li>一致预测性是纳什均衡的本质属性，所谓“一致”是指各博弈方的实际行为选择与他们的预测一致，而不是不同博弈方的预测相同，无差异。</li>
 <li>一致预测并不意味着一定能准确预测，因为有多重均衡，预测不一致的可能。</li>
 </ul>
-<h4 id="划线法"><a href="#划线法" class="headerlink" title="划线法"></a>划线法</h4><p>在每一个博弈方对其他博弈方每一个策略或者策略组合（对多人博弈）的最佳策略对应的收益下划线。<br><img src="/pic/f5cadaf7ee9e7d07136a4fb8d4af78b.png" alt=""></p>
+<h4 id="划线法"><a href="#划线法" class="headerlink" title="划线法"></a>划线法</h4><p>在每一个博弈方对其他博弈方每一个策略或者策略组合（对多人博弈）的最佳策略对应的收益下划线。<br><img src="/pic/f5cadaf7ee9e7d07136a4fb8d4af78b.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <h4 id="无限策略分析和反应函数"><a href="#无限策略分析和反应函数" class="headerlink" title="无限策略分析和反应函数"></a>无限策略分析和反应函数</h4><h5 id="古诺的寡头模型"><a href="#古诺的寡头模型" class="headerlink" title="古诺的寡头模型"></a>古诺的寡头模型</h5><p>寡头产量竞争——以两厂商产量竞争为例</p>
 <script type="math/tex; mode=display">Q=q_1+q_2\ \ \ \ P=P(Q)=8-Q\ \ \ \ c_1=c_2=2</script><script type="math/tex; mode=display">\begin{align}
 \pi_1&=q_1P(Q)-c_1q_1=q_1[8-(q_1+q_2)]-2q_1\\
@@ -945,7 +836,7 @@ BR_2(\frac{1}{2},\frac{1}{4},\frac{1}{4})=&\{L,R\}
 &q_1=R_1(q_2)=\frac{1}{2}(6-q_2)\\
 &q_2=R_2(q_1)=\frac{1}{2}(6-q_1)\\
 &q_1^*=q_2^*=2,\pi_1^*=\pi_2^*=4
-\end{align}</script><p><img src="/pic/be97996b37680cf2e3f2bd06ece60b0.png" alt=""></p>
+\end{align}</script><p><img src="/pic/be97996b37680cf2e3f2bd06ece60b0.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <h6 id="反应函数的问题和局限性"><a href="#反应函数的问题和局限性" class="headerlink" title="反应函数的问题和局限性"></a>反应函数的问题和局限性</h6><ul>
 <li>在许多博弈中，博弈方的策略是有限且非连续时，其得益函数不是连续可导函数，无法求得反应函数，从而不能通过解方程组的方法求得纳什均衡。</li>
 <li>即使得益函数可以求导，也可能各博弈方的得益函数比较复杂，因此各自的反应函数也比较复杂，并不总能保证各博弈方的反应函数有交点，特别不能保证有唯一的交点。</li>
@@ -995,7 +886,7 @@ BR_2(\frac{1}{2},\frac{1}{4},\frac{1}{4})=&\{L,R\}
 <li>假定存在两个厂商，分别位于线性城市的两端，并向消费者出售性能相同的商品，每一个厂商的成本为$c$ </li>
 <li>位于不同位置的消费者要支付不同的运输成本，其单位运输成本为$t$ ，运输成本与厂商消费者之间的距离$x$ 成比例，即$xt$ 。消费者的保留效用为$v$ </li>
 <li>当产品在空间位置上有差异时，对于消费者来说价格不再是决定购买的唯一因素，理性的消费者会选择到价格和运输成本之和较小的企业购买。</li>
-<li><p>企业$i(i=1,2)$ 的策略为选择价格$p_i$ ，目标为最大化本企业利润。<br><img src="/pic/d7770dd67b40284628f28ffa1d11482.png" alt=""></p>
+<li><p>企业$i(i=1,2)$ 的策略为选择价格$p_i$ ，目标为最大化本企业利润。<br><img src="/pic/d7770dd67b40284628f28ffa1d11482.png" srcset="/img/loading.gif" lazyload alt=""></p>
 </li>
 <li><p>若直线上$x$ 处的消费者在企业1处购买，则$x$ 左边的消费者必然也在企业1购买</p>
 </li>
@@ -1058,7 +949,7 @@ BR_2(\frac{1}{2},\frac{1}{4},\frac{1}{4})=&\{L,R\}
 </li>
 <li><p>条件1. 表明每只羊的平均价值随着放养总数的增加将会下降；条件2. 表明随着放养总数的增加，每只羊的平均价值下降的速度将会加快。</p>
 </li>
-<li><p>每只羊的平均价值曲线<br><img src="pic/a48a6832f7e6d3795e1cdf7e8efd02d.png" alt=""></p>
+<li><p>每只羊的平均价值曲线<br><img src="pic/a48a6832f7e6d3795e1cdf7e8efd02d.png" srcset="/img/loading.gif" lazyload alt=""></p>
 </li>
 <li><p>假设每年开春时所有村民同时决定放养羊的数量$q_i$</p>
 </li>
@@ -1125,228 +1016,373 @@ u&=2304\textgreater3\times576=1728
 </li>
 </ul>
 <h3 id="纯策略与混合策略"><a href="#纯策略与混合策略" class="headerlink" title="纯策略与混合策略"></a>纯策略与混合策略</h3>
-      
-    </div>
-    <div class="article-footer">
-      <blockquote class="mt-2x">
-  <ul class="post-copyright list-unstyled">
-    
-    <li class="post-copyright-link hidden-xs">
-      <strong>本文链接：</strong>
-      <a href="http://hiryan23.github.io/2023/02/17/%E5%8D%9A%E5%BC%88%E8%AE%BA/" title="博弈论-课程笔记" target="_blank" rel="external">http://hiryan23.github.io/2023/02/17/博弈论/</a>
-    </li>
-    
-    <li class="post-copyright-license">
-      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
-</blockquote>
-
-
-<div class="panel panel-default panel-badger">
-  <div class="panel-body">
-    <figure class="media">
-      <div class="media-left">
-        <a href="" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
-        </a>
-      </div>
-      <div class="media-body">
-        <h3 class="media-heading"><a href="" target="_blank"><span class="text-dark">Ruiyang He</span><small class="ml-1x">上海交通大学 本科生</small></a></h3>
-        <div>生活不止眼前的苟且。</div>
-      </div>
-    </figure>
-  </div>
-</div>
-
-
-    </div>
-  </article>
-  
-    
-  <section id="comments">
-  	
-  </section>
-
-
-  
-</div>
-
-  <nav class="bar bar-footer clearfix" data-stick-bottom>
-  <div class="bar-inner">
-    
-      <ul class="pager pull-left">
-        
-          <li class="prev">
-            <a href="/2023/02/17/Machine%20Learning/" title="机器学习-课程笔记"><i
-                class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-          </li>
-          
+                
+              </div>
             
-              <li class="next">
-                <a href="/2023/02/16/Econometrics/" title="计量经济学-课程笔记"><span>
-                    下一篇&nbsp;&nbsp;
-                  </span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
-              </li>
-              
-                
-                  <li class="toggle-toc">
-                    <a class="toggle-btn " data-toggle="collapse"
-                      href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
-                      <span>[&nbsp;</span><span>
-                        文章目录
-                      </span>
-                      <i class="text-collapsed icon icon-anchor"></i>
-                      <i class="text-in icon icon-close"></i>
-                      <span>]</span>
-                    </a>
-                  </li>
-                  
-      </ul>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
       
-        
 
-            <div class="bar-right">
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/2022S/" class="category-chain-item">2022S</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%AC%94%E8%AE%B0/" class="print-no-link">#笔记</a>
+      
+    </div>
+  
+</div>
+
+
               
-                <div class="share-component" data-sites="qq,wechat"
-                  data-mobile-sites="qq,wechat"></div>
-                
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>博弈论-课程笔记</div>
+      <div>http://hiryan23.github.io/2023/02/17/博弈论/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Ruiyang He</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年2月17日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/02/17/Machine%20Learning/" title="机器学习-课程笔记">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">机器学习-课程笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/02/16/Econometrics/" title="计量经济学-课程笔记">
+                        <span class="hidden-mobile">计量经济学-课程笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
             </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
   </div>
-</nav>
+</div>
+
+
+
+
+
   
 
 
-</main>
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-<footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
-	
-    <ul class="social-links">
-    	
-        <li><a href="https://github.com/hiryan23" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
-        
-    </ul>
 
-        <div class="copyright">
-            
-                &copy; 2023
-                    Ruiyang He
-                        
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-                            <div class="publishby">
-                                <span id="busuanzi_container_site_pv">
-                                    <!--点击<span id="busuanzi_value_site_pv" style="font-family:Courier"></span>次，
-                                    -->
-                                    访客<span id="busuanzi_value_site_uv" style="font-family:Courier"></span>人
-                                </span>
-                            </div>
-
-                            <!--
-        <div class="publishby">
-            Theme by
-            <a href="https://github.com/cofess" target="_blank"> cofess </a>
-            base on
-            <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
-        -->
-        </div>
-</footer>
-  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-<script>
-   window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
-</script>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<script src="/js/plugin.min.js"></script>
+    
 
-   
-<script src="/js/application.js"></script>
+    
+  </main>
 
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
       
-    <script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
 </script>
 
-<script src="/js/insight.js"></script>
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
-         
-                  
-                           
-                              
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
-
-                                 
-                                    
-                                       
-                                          
-                                             
-
-                                                
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
 
 
+  
 
-                                                   <div id="go-top"></div>
-                                                   <style type="text/css">
-                                                      #go-top {
-                                                         width: 40px;
-                                                         height: 36px;
-                                                         background-color: #5a7db1;
-                                                         position: relative;
-                                                         border-radius: 2px;
-                                                         position: fixed;
-                                                         right: 10px;
-                                                         bottom: 60px;
-                                                         cursor: pointer;
-                                                         display: none;
-                                                      }
-
-                                                      #go-top:after {
-                                                         content: " ";
-                                                         position: absolute;
-                                                         left: 14px;
-                                                         top: 14px;
-                                                         border-top: 2px solid #fff;
-                                                         border-right: 2px solid #fff;
-                                                         width: 12px;
-                                                         height: 12px;
-                                                         transform: rotate(-45deg);
-                                                      }
-
-                                                      #go-top:hover {
-                                                         background-color: #1A2433;
-                                                      }
-                                                   </style>
-                                                   <script>
-                                                      $(function () {
-                                                         var top = $("#go-top");
-                                                         $(window).scroll(function () {
-                                                            ($(window).scrollTop() > 300) ? top.show(300) : top.hide(200);
-                                                            $("#go-top").click(function () {
-                                                               $('body,html').animate({ scrollTop: 0 });
-                                                               return false();
-                                                            })
-                                                         });
-                                                      });
-                                                   </script>
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {

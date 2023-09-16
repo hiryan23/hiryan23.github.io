@@ -1,378 +1,238 @@
+
+
 <!DOCTYPE html>
-<html lang=zh>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="renderer" content="webkit">
-  <meta http-equiv="Cache-Control" content="no-transform" />
-  <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="format-detection" content="telephone=no,email=no,adress=no">
-  <!-- Color theme for statusbar -->
-  <meta name="theme-color" content="#000000" />
-  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
-  <meta http-equiv="window-target" content="_top" />
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Ruiyang He">
+  <meta name="keywords" content="">
   
-  
-  <title>Hiryan的世界</title>
-  <meta name="description" content="马上第九周，半学期过去了，计量经济学学习得感觉还是雾里看花，这样子下去期末成绩只能水中望月了。这可不行，不能忘记上学期商务统计学的惨痛教训。遂写本文，旨在自救。 计量经济学是干啥用的？ 不知道 用数据说话 讲道理 实证分析  计量经济学的方法论（实证分析的步骤） 陈述论点或假设 确定数学模型 确定统计学或经济学模型 获取数据 估计经济学模型中的参数 假设检验 结论与预测 应用到实际  模型作用 这">
+    <meta name="description" content="马上第九周，半学期过去了，计量经济学学习得感觉还是雾里看花，这样子下去期末成绩只能水中望月了。这可不行，不能忘记上学期商务统计学的惨痛教训。遂写本文，旨在自救。 —-23.5.24 updated—-已经第15周了，悲 —-23.6.12 updated—-考前两天，寄 计量经济学是干啥用的？ 不知道 用数据说话 讲道理 实证分析  计量经济学的方法论（实证分析的步骤） 陈述论点或假设 确定数学模">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hiryan的世界">
+<meta property="og:title" content="page.title">
 <meta property="og:url" content="http://hiryan23.github.io/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E8%87%AA%E6%95%91.html">
-<meta property="og:site_name" content="Hiryan的世界">
-<meta property="og:description" content="马上第九周，半学期过去了，计量经济学学习得感觉还是雾里看花，这样子下去期末成绩只能水中望月了。这可不行，不能忘记上学期商务统计学的惨痛教训。遂写本文，旨在自救。 计量经济学是干啥用的？ 不知道 用数据说话 讲道理 实证分析  计量经济学的方法论（实证分析的步骤） 陈述论点或假设 确定数学模型 确定统计学或经济学模型 获取数据 估计经济学模型中的参数 假设检验 结论与预测 应用到实际  模型作用 这">
+<meta property="og:site_name" content="Hiryan&#39;s Blog">
+<meta property="og:description" content="马上第九周，半学期过去了，计量经济学学习得感觉还是雾里看花，这样子下去期末成绩只能水中望月了。这可不行，不能忘记上学期商务统计学的惨痛教训。遂写本文，旨在自救。 —-23.5.24 updated—-已经第15周了，悲 —-23.6.12 updated—-考前两天，寄 计量经济学是干啥用的？ 不知道 用数据说话 讲道理 实证分析  计量经济学的方法论（实证分析的步骤） 陈述论点或假设 确定数学模">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-09T12:27:17.213Z">
-<meta property="article:modified_time" content="2023-04-09T12:27:17.213Z">
+<meta property="article:published_time" content="2023-06-12T14:33:37.554Z">
+<meta property="article:modified_time" content="2023-06-12T14:33:37.554Z">
 <meta property="article:author" content="Ruiyang He">
 <meta name="twitter:card" content="summary">
-  <!-- Canonical links -->
-  <link rel="canonical" href="http://hiryan23.github.io/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E8%87%AA%E6%95%91.html">
-  
-    <link rel="alternate" href="/atom.xml" title="Hiryan的世界" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png" type="image/x-icon">
   
-  
-<link rel="stylesheet" href="/css/style.css">
+  <title>page.title - Hiryan&#39;s Blog</title>
 
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hiryan23.github.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
   
+
+
   
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 
-<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
-  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-  <div class="slimContent">
-    <div class="navbar-header">
-      
-      
-      <div class="profile-block text-center">
-        <a id="avatar" href="" target="_blank">
-          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
-        </a>
-        <h2 id="name" class="hidden-xs hidden-sm">Ruiyang He</h2>
-        <h3 id="title" class="hidden-xs hidden-sm hidden-md">上海交通大学 本科生</h3>
-        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
-      </div>
-      
-      <div class="search" id="search-form-wrap">
-
-    <form class="search-form sidebar-form">
-        <div class="input-group">
-            <input type="text" class="search-form-input form-control" placeholder="搜索" />
-            <span class="input-group-btn">
-                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
-            </span>
-        </div>
-    </form>
-    <div class="ins-search">
-  <div class="ins-search-mask"></div>
-  <div class="ins-search-container">
-    <div class="ins-input-wrapper">
-      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
-      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-    </div>
-    <div class="ins-section-wrapper">
-      <div class="ins-section-container"></div>
-    </div>
-  </div>
-</div>
-
-
-</div>
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-      <ul class="nav navbar-nav main-nav menu-highlight">
-        
-        
-        <li class="menu-item menu-item-home">
-          <a href="/.">
-            
-            <i class="icon icon-home-fill"></i>
-            
-            <span class="menu-title">首页</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives">
-            
-            <i class="icon icon-archives-fill"></i>
-            
-            <span class="menu-title">归档</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories">
-            
-            <i class="icon icon-folder"></i>
-            
-            <span class="menu-title">分类</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags">
-            
-            <i class="icon icon-tags"></i>
-            
-            <span class="menu-title">标签</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-links">
-          <a href="/links">
-            
-            <i class="icon icon-friendship"></i>
-            
-            <span class="menu-title">友链</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about">
-            
-            <i class="icon icon-cup-fill"></i>
-            
-            <span class="menu-title">关于</span>
-          </a>
-        </li>
-        
-      </ul>
-      
-	
-    <ul class="social-links">
-    	
-        <li><a href="https://github.com/hiryan23" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
-        
-    </ul>
-
-    </nav>
-  </div>
-</header>
-
+<body>
   
-    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
+
+  <header>
     
-      <div class="widget">
-    <h3 class="widget-title">公告</h3>
-    <div class="widget-body">
-        <div id="board">
-            <div class="content">
-                <p>你永远不该评判自己不了解的事物。</p>
-            </div>
-        </div>
-    </div>
-</div>
 
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E5%8D%9A%E5%BC%88%E8%AE%BA/">2022S博弈论</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E5%8F%91%E5%B1%95%E7%BB%8F%E6%B5%8E%E5%AD%A6/">2022S发展经济学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">2022S机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/">2022S计量经济学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86/">2022S财务管理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E8%B4%A7%E5%B8%81%E9%87%91%E8%9E%8D%E5%AD%A6/">2022S货币金融学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022S%E9%87%91%E8%9E%8D%E5%AD%A6%E5%8E%9F%E7%90%86/">2022S金融学原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/2023S%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%8E%9F%E7%90%86/">2023S马克思主义原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%86%E4%BA%AB%E6%96%87%E7%AB%A0/">分享文章</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0%E3%80%81%E6%9D%82%E6%84%9F%E4%B8%8E%E8%87%AA%E6%88%91%E6%89%B9%E5%88%A4/">日记、杂感与自我批判</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82/">杂</a><span class="category-list-count">1</span></li></ul>
-    </div>
-  </div>
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Hiryan&#39;s blog</strong>
+    </a>
 
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
 
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E2%80%9C%E6%84%8F%E8%AF%86%E6%B5%81%E2%80%9D/" rel="tag">“意识流”</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%91%E5%B1%95%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">发展经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%8E%B0%E4%BB%A3%E4%B8%BB%E4%B9%89%E5%93%B2%E5%AD%A6/" rel="tag">后现代主义哲学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%8F%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" rel="tag">宏观金融学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E8%AF%B4-%E6%95%A3%E6%96%87%E7%AD%89/" rel="tag">小说\散文等</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">微观经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" rel="tag">微观金融学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B1%BD%E8%BD%A6%E6%8E%A7%E5%88%B6/" rel="tag">汽车控制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A4%BE%E4%BC%9A%E5%88%86%E6%9E%90/" rel="tag">社会分析</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">计量经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%91%E8%9E%8D%E5%AD%A6/" rel="tag">金融学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A9%AC%E5%8E%9F/" rel="tag">马原</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget-body tagcloud">
-      <a href="/tags/%E2%80%9C%E6%84%8F%E8%AF%86%E6%B5%81%E2%80%9D/" style="font-size: 13px;">“意识流”</a> <a href="/tags/%E5%8F%91%E5%B1%95%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 13px;">发展经济学</a> <a href="/tags/%E5%90%8E%E7%8E%B0%E4%BB%A3%E4%B8%BB%E4%B9%89%E5%93%B2%E5%AD%A6/" style="font-size: 13px;">后现代主义哲学</a> <a href="/tags/%E5%AE%8F%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" style="font-size: 13px;">宏观金融学</a> <a href="/tags/%E5%B0%8F%E8%AF%B4-%E6%95%A3%E6%96%87%E7%AD%89/" style="font-size: 13px;">小说\散文等</a> <a href="/tags/%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 13px;">微观经济学</a> <a href="/tags/%E5%BE%AE%E8%A7%82%E9%87%91%E8%9E%8D%E5%AD%A6/" style="font-size: 13px;">微观金融学</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 13px;">机器学习</a> <a href="/tags/%E6%B1%BD%E8%BD%A6%E6%8E%A7%E5%88%B6/" style="font-size: 13px;">汽车控制</a> <a href="/tags/%E7%A4%BE%E4%BC%9A%E5%88%86%E6%9E%90/" style="font-size: 13px;">社会分析</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 14px;">笔记</a> <a href="/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 13px;">计量经济学</a> <a href="/tags/%E9%87%91%E8%9E%8D%E5%AD%A6/" style="font-size: 13px;">金融学</a> <a href="/tags/%E9%A9%AC%E5%8E%9F/" style="font-size: 13px;">马原</a>
-    </div>
-  </div>
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a><span class="archive-list-count">13</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget-body">
-      <ul class="recent-post-list list-unstyled no-thumbnail">
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E6%97%A5%E8%AE%B0%E3%80%81%E6%9D%82%E6%84%9F%E4%B8%8E%E8%87%AA%E6%88%91%E6%89%B9%E5%88%A4/">日记、杂感与自我批判</a>
-              </p>
-              <p class="item-title">
-                <a href="/2023/03/14/%E7%94%9F%E7%97%85%E4%BA%86/" class="title">2023.03.14 生病了</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-03-14T14:09:52.155Z" itemprop="datePublished">2023-03-14</time>
-              </p>
-            </div>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
           </li>
           
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E5%88%86%E4%BA%AB%E6%96%87%E7%AB%A0/">分享文章</a>
-              </p>
-              <p class="item-title">
-                <a href="/2023/02/28/%E6%9C%80%E5%90%8E%E4%B8%80%E5%90%8D/" class="title">最后一名 | 马塞尔·埃梅</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-02-28T13:04:05.126Z" itemprop="datePublished">2023-02-28</time>
-              </p>
-            </div>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/2023S%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%8E%9F%E7%90%86/">2023S马克思主义原理</a>
-              </p>
-              <p class="item-title">
-                <a href="/2023/02/27/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%8E%9F%E7%90%86/" class="title">马克思主义原理-重点梳理</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-02-27T06:20:15.125Z" itemprop="datePublished">2023-02-27</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E6%9D%82/">杂</a>
-              </p>
-              <p class="item-title">
-                <a href="/2023/02/22/%E4%B8%80%E9%81%93can%E6%8A%A5%E6%96%87%E8%AF%BB%E5%8F%96%E7%9A%84%E9%97%AE%E9%A2%98/" class="title">一道can报文读取的问题</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-02-22T05:44:19.256Z" itemprop="datePublished">2023-02-22</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E6%97%A5%E8%AE%B0%E3%80%81%E6%9D%82%E6%84%9F%E4%B8%8E%E8%87%AA%E6%88%91%E6%89%B9%E5%88%A4/">日记、杂感与自我批判</a>
-              </p>
-              <p class="item-title">
-                <a href="/2023/02/22/%E4%BB%8E%E7%8F%AD%E4%BC%9A%E5%8F%91%E8%A8%80%E5%BC%95%E5%87%BA%E7%9A%84%E6%80%9D%E8%80%83/" class="title">2023.02.22 从班会发言引出的思考</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-02-22T00:14:36.308Z" itemprop="datePublished">2023-02-22</time>
-              </p>
-            </div>
-          </li>
-          
+        
       </ul>
     </div>
   </div>
-  
-
-    
-  </div>
-</aside>
+</nav>
 
   
-  
-  <aside class="sidebar sidebar-toc   in  " id="collapseToc" itemscope
-    itemtype="http://schema.org/WPSideBar">
-    <div class="slimContent">
-      <nav id="toc" class="article-toc">
-        <h3 class="toc-title">
-          文章目录
-        </h3>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E6%98%AF%E5%B9%B2%E5%95%A5%E7%94%A8%E7%9A%84%EF%BC%9F"><span class="toc-text">计量经济学是干啥用的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%9A%84%E6%96%B9%E6%B3%95%E8%AE%BA%EF%BC%88%E5%AE%9E%E8%AF%81%E5%88%86%E6%9E%90%E7%9A%84%E6%AD%A5%E9%AA%A4%EF%BC%89"><span class="toc-text">计量经济学的方法论（实证分析的步骤）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B"><span class="toc-text">模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8"><span class="toc-text">作用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B-Simple-Linear-Regression-Model"><span class="toc-text">简单线性回归模型 Simple Linear Regression Model</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E8%A7%A3"><span class="toc-text">理解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E6%80%A7%E8%B4%A8"><span class="toc-text">数学性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%8F%E6%B5%8E%E5%AD%A6%E6%80%A7%E8%B4%A8"><span class="toc-text">经济学性质</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%9C%9F%E6%9C%9B%E4%B8%BA0"><span class="toc-text">条件期望为0</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E8%A7%A3%E9%87%8A"><span class="toc-text">自然语言解释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8C%BA%E5%88%86"><span class="toc-text">区分</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E4%BD%93%E5%9B%9E%E5%BD%92%E6%96%B9%E7%A8%8B-Population-Regression-Function"><span class="toc-text">总体回归方程 Population Regression Function</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A"><span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E4%BC%B0%E8%AE%A1-OLS"><span class="toc-text">最小二乘估计 OLS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AE%8B%E5%B7%AE"><span class="toc-text">残差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E5%8C%96%E6%AE%8B%E5%B7%AE%E7%9A%84%E5%B9%B3%E6%96%B9%E5%92%8C"><span class="toc-text">最小化残差的平方和</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#OLS%E4%BC%B0%E8%AE%A1"><span class="toc-text">OLS估计</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%A6%E6%80%A7%E8%B4%A8"><span class="toc-text">OLS估计量的数学性质</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E6%96%B9%E5%B7%AE%E5%92%8C%E7%9A%84%E6%B5%8B%E9%87%8F"><span class="toc-text">一些方差和的测量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B9%E5%B7%AE%E5%92%8C%E5%88%86%E8%A7%A3"><span class="toc-text">方差和分解</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%A8%A1%E5%9E%8B%E6%8B%9F%E5%90%88%E7%9A%84%E7%A8%8B%E5%BA%A6-R-2"><span class="toc-text">判断模型拟合的程度 $R^2$</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E5%8F%AF%E4%BB%A5%E8%A1%A8%E8%BE%BE%E9%9D%9E%E7%BA%BF%E6%80%A7"><span class="toc-text">线性回归可以表达非线性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%80%A7%E8%B4%A8"><span class="toc-text">OLS估计量的统计学性质</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE"><span class="toc-text">OLS估计量的期望和方差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Assumption-SLR-1-Linear-in-parameters"><span class="toc-text">Assumption SLR.1 (Linear in parameters)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Assumption-SLR-2-Random-sampling"><span class="toc-text">Assumption SLR.2 (Random sampling)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Assumption-SLR-3-Sample-variation-in-explanatory-variable"><span class="toc-text">Assumption SLR.3 (Sample variation in explanatory variable)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Assumption-SLR-4-Zero-conditional-mean"><span class="toc-text">Assumption SLR.4 (Zero conditional mean)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E6%97%A0%E5%81%8F%E6%80%A7"><span class="toc-text">OLS估计量无偏性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Assumption-SLR-5-Homoskedasticity"><span class="toc-text">Assumption SLR.5 (Homoskedasticity)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E6%96%B9%E5%B7%AE"><span class="toc-text">OLS估计量方差</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#u%E7%9A%84%E6%96%B9%E5%B7%AE-sigma-2-%E7%9A%84%E4%BC%B0%E8%AE%A1"><span class="toc-text">u的方差($\sigma^2$)的估计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u%E7%9A%84%E6%96%B9%E5%B7%AE%E4%BC%B0%E8%AE%A1%E6%97%A0%E5%81%8F%E6%80%A7"><span class="toc-text">u的方差估计无偏性</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B-The-Multiple-Regression-Model"><span class="toc-text">多元线性回归模型 The Multiple Regression Model</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-2"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A-1"><span class="toc-text">解释</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E5%BC%8F%E8%A1%A8%E8%BF%B0"><span class="toc-text">正式表述</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E4%BC%B0%E8%AE%A1OLS"><span class="toc-text">最小二乘估计OLS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%8F%96%E6%A0%B7"><span class="toc-text">随机取样</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9E%E5%BD%92%E6%AE%8B%E5%B7%AE"><span class="toc-text">回归残差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E5%8C%96%E6%AE%8B%E5%B7%AE%E7%9A%84%E5%B9%B3%E6%96%B9%E5%92%8C-1"><span class="toc-text">最小化残差的平方和</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95%E2%80%94%E2%80%94partialling-out"><span class="toc-text">计算方法——partialling out</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-text">步骤</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-text">原理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%A6%E6%80%A7%E8%B4%A8-1"><span class="toc-text">OLS估计量的数学性质</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%A8%A1%E5%9E%8B%E6%8B%9F%E5%90%88%E7%A8%8B%E5%BA%A6"><span class="toc-text">判断模型拟合程度</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%80%A7%E8%B4%A8-1"><span class="toc-text">OLS估计量的统计学性质</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Assumption-MLR-1-Linear-in-parameters"><span class="toc-text">Assumption MLR.1 (Linear in parameters)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Assumption-MLR-2-Random-sampling"><span class="toc-text">Assumption MLR.2 (Random sampling)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Assumption-MLR-3-No-perfect-collinearity"><span class="toc-text">Assumption MLR.3 (No perfect collinearity)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Assumption-MLR-4-Zero-conditional-mean"><span class="toc-text">Assumption MLR.4 (Zero conditional mean)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%96%E7%94%9F%E5%8F%98%E9%87%8F%E5%92%8C%E5%86%85%E7%94%9F%E5%8F%98%E9%87%8F"><span class="toc-text">外生变量和内生变量</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E6%97%A0%E5%81%8F%E6%80%A7-1"><span class="toc-text">OLS估计量无偏性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A8%E8%AE%BA%EF%BC%9A%E5%8C%85%E5%90%AB%E6%97%A0%E5%85%B3%E5%8F%98%E9%87%8F-%E5%BF%BD%E7%95%A5%E6%9C%89%E5%85%B3%E5%8F%98%E9%87%8F"><span class="toc-text">讨论：包含无关变量&#x2F;忽略有关变量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E5%8C%85%E5%90%AB%E4%BA%86%E6%97%A0%E5%85%B3%E7%9A%84%E5%8F%98%E9%87%8F"><span class="toc-text">模型包含了无关的变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E5%BF%BD%E7%95%A5%E4%BA%86%E6%9C%89%E5%85%B3%E7%9A%84%E5%8F%98%E9%87%8F%EF%BC%88%E5%8F%8C%E5%8F%98%E9%87%8F%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="toc-text">模型忽略了有关的变量（双变量模型）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Assumption-MLR-5-Homoscedasticity"><span class="toc-text">Assumption MLR.5 (Homoscedasticity)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E6%96%B9%E5%B7%AE-1"><span class="toc-text">OLS估计量方差</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%AF%E5%B7%AE%E9%A1%B9%E7%9A%84%E6%96%B9%E5%B7%AE"><span class="toc-text">误差项的方差</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#SST-j"><span class="toc-text">$SST_j$</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#R-2"><span class="toc-text">$R^2$</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%A4%9A%E9%87%8D%E5%85%B1%E7%BA%BF%E6%80%A7"><span class="toc-text">多重共线性</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%AF%E5%B7%AE%E9%A1%B9%E7%9A%84%E6%96%B9%E5%B7%AE%E7%9A%84%E4%BC%B0%E8%AE%A1"><span class="toc-text">误差项的方差的估计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%AF%E5%B7%AE%E9%A1%B9%E6%96%B9%E5%B7%AE%E4%BC%B0%E8%AE%A1%E6%97%A0%E5%81%8F%E6%80%A7"><span class="toc-text">误差项方差估计无偏性</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#OLS%E4%BC%B0%E8%AE%A1%E7%9A%84%E6%9C%89%E6%95%88%E6%80%A7"><span class="toc-text">OLS估计的有效性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E2%80%94%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%AE%9A%E7%90%86-Gauss-Markov-Theorem"><span class="toc-text">高斯—马尔可夫定理 Gauss-Markov Theorem</span></a></li></ol></li></ol></li></ol></li></ol>
-      </nav>
-    </div>
-  </aside>
-  
-<main class="main" role="main">
-  <div class="content">
-  <article id="page-" class="article article-type-page" itemscope itemtype="http://schema.org/BlogPosting">
-    
-    <div class="article-header">
-      
-      <div class="article-meta">
-        <span class="article-date">
-	<i class="icon icon-calendar"></i>
-	<a href="/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E8%87%AA%E6%95%91.html" class="article-date">
-		<time datetime="2023-04-09T12:27:17.213Z" itemprop="datePublished">
-			2023-04-09
-		</time>
-	</a>
-</span>
 
-<span class="article-date">
-	<i class="icon icon-calendar-check"></i>
-	<a href="/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E8%87%AA%E6%95%91.html" class="article-date">
-		<time datetime="2023-04-09T12:27:17.213Z" itemprop="dateUpdated">
-			2023-04-09
-		</time>
-	</a>
-</span>
-        
-        
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/lungmen.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="page.title"></span>
+          
+        </div>
 
-        
-	<span class="article-read hidden-xs">
-		<i class="icon icon-eye-fill" aria-hidden="true"></i>
-		<span id="busuanzi_container_page_pv">
-			<span id="busuanzi_value_page_pv"></span>
-		</span>
-	</span>
-
-	
-		
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E8%87%AA%E6%95%91.html#comments" class="article-comment-link">评论</a></span>
         
       </div>
-    </div>
-    <div class="article-entry marked-body" itemprop="articleBody">
+
       
-        <p>马上第九周，半学期过去了，计量经济学学习得感觉还是雾里看花，这样子下去期末成绩只能水中望月了。这可不行，不能忘记上学期商务统计学的惨痛教训。遂写本文，旨在自救。</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  <p>马上第九周，半学期过去了，计量经济学学习得感觉还是雾里看花，这样子下去期末成绩只能水中望月了。这可不行，不能忘记上学期商务统计学的惨痛教训。遂写本文，旨在自救。</p>
+<p>—-23.5.24 updated—-<br>已经第15周了，悲</p>
+<p>—-23.6.12 updated—-<br>考前两天，寄</p>
 <h2 id="计量经济学是干啥用的？"><a href="#计量经济学是干啥用的？" class="headerlink" title="计量经济学是干啥用的？"></a>计量经济学是干啥用的？</h2><ul>
 <li>不知道</li>
 <li>用数据说话</li>
@@ -385,12 +245,12 @@
 <li>确定统计学或经济学模型</li>
 <li>获取数据</li>
 <li><strong>估计</strong>经济学模型中的参数</li>
-<li>假设检验</li>
+<li>统计推断（假设检验）</li>
 <li>结论与预测</li>
 <li>应用到实际</li>
 </ol>
 <h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><ul>
-<li>这是一个模型！模型是抽象的，用来描述某种现象，刻画某种<strong>性质</strong>。</li>
+<li>这是一个模型！模型是抽象的，用来描述某种现象，刻画某种<strong>性质</strong>（准确说是关系？）。</li>
 <li>数学模型用来刻画数量方面的性质，经济学模型在此基础上还要考虑经济学性质。</li>
 </ul>
 <p>感觉甚至可以定义模型，<del>然后创办一门理论：模型论</del>：$M=M(\pmb y,\pmb x,f)$</p>
@@ -446,7 +306,11 @@
 </li>
 </ul>
 <h4 id="Assumption-SLR-1-Linear-in-parameters"><a href="#Assumption-SLR-1-Linear-in-parameters" class="headerlink" title="Assumption SLR.1 (Linear in parameters)"></a>Assumption SLR.1 (Linear in parameters)</h4><script type="math/tex; mode=display">y=\beta_0+\beta_1x+u</script><p>总体模型满足简单线性关系<del>（研究的不就是SLR？）</del></p>
-<p>注意，此处线性性是指参数是线性的，而非变量是线性的</p>
+<p>注意，此处线性性是指参数是线性的，而非变量是线性的：</p>
+<ul>
+<li>参数线性：$y=a+bx^2$，$y=a+\frac{b}{x}$</li>
+<li>模型线性：$y=a+b^2x$</li>
+</ul>
 <h4 id="Assumption-SLR-2-Random-sampling"><a href="#Assumption-SLR-2-Random-sampling" class="headerlink" title="Assumption SLR.2 (Random sampling)"></a>Assumption SLR.2 (Random sampling)</h4><script type="math/tex; mode=display">\{(x_i,y_i):i=1,\cdots,n\}</script><p>样本是随机抽的<del>（不是的话可以remake了）</del></p>
 <h4 id="Assumption-SLR-3-Sample-variation-in-explanatory-variable"><a href="#Assumption-SLR-3-Sample-variation-in-explanatory-variable" class="headerlink" title="Assumption SLR.3 (Sample variation in explanatory variable)"></a>Assumption SLR.3 (Sample variation in explanatory variable)</h4><script type="math/tex; mode=display">\sum_{i=1}^n(x_i-\bar x)^2\textgreater 0</script><p>x的值别都是一样的<del>（都是一样的还拟合个锤子）</del></p>
 <h4 id="Assumption-SLR-4-Zero-conditional-mean"><a href="#Assumption-SLR-4-Zero-conditional-mean" class="headerlink" title="Assumption SLR.4 (Zero conditional mean)"></a>Assumption SLR.4 (Zero conditional mean)</h4><script type="math/tex; mode=display">E(u_j|x_i)=0</script><p>x必须不包含任何u的信息</p>
@@ -506,7 +370,7 @@
 &\Rightarrow y=\beta_0+\beta_1x_1+\beta_2(\delta_0+\delta_1x_1+v)+u\\
 &=(\beta_0+\beta_2\delta_0)+(\beta_1+\beta_2\delta_1)x_1+(\beta_2v+u)
 \end{align}</script></li>
-<li>如果$x_1$ 和$x_2$ 相关，则有误差，如果$x_1$ 和$x_2$ 无关，则无误差</li>
+<li>如果$x_1$ 和$x_2$ 相关，则有误差，如果$x_1$ 和$x_2$ 无关，则无误差，相当于少拟合了一个变量</li>
 <li>对于更多变量的模型，需要根据实际情况考虑</li>
 </ul>
 <h4 id="Assumption-MLR-5-Homoscedasticity"><a href="#Assumption-MLR-5-Homoscedasticity" class="headerlink" title="Assumption MLR.5 (Homoscedasticity)"></a>Assumption MLR.5 (Homoscedasticity)</h4><script type="math/tex; mode=display">\text{Var}(u_i|x_{i1},x_{i2},\cdots,x_{ik})=\sigma^2</script><p>或者说（基于MLR.4）</p>
@@ -539,205 +403,238 @@
 </ul>
 <h5 id="误差项方差估计无偏性"><a href="#误差项方差估计无偏性" class="headerlink" title="误差项方差估计无偏性"></a>误差项方差估计无偏性</h5><script type="math/tex; mode=display">E(\hat\sigma^2)=\sigma^2</script><p>所以可以把$\hat\sigma^2$ 代入$\text{Var}(\hat\beta_j)$ 的式子中</p>
 <h4 id="OLS估计的有效性"><a href="#OLS估计的有效性" class="headerlink" title="OLS估计的有效性"></a>OLS估计的有效性</h4><ul>
-<li>在MLR.1-MLR.5的假设下，所有OLS估计量是无偏的</li>
+<li>在MLR.1-MLR.5（实际上是MLR.1-MLR.4）的假设下，所有OLS估计量是无偏的</li>
 <li>可能有一些其它的估计量也是无偏的<ul>
 <li>如：$\tilde\beta_j=\displaystyle\sum_{i=1}^nw_{ij}y_i,    E(\tilde\beta_j)=\beta_j$</li>
 </ul>
 </li>
 <li>但是在这些无偏的估计量中哪个有最小的方差呢？（相合性最好）</li>
 </ul>
-<h5 id="高斯—马尔可夫定理-Gauss-Markov-Theorem"><a href="#高斯—马尔可夫定理-Gauss-Markov-Theorem" class="headerlink" title="高斯—马尔可夫定理 Gauss-Markov Theorem"></a>高斯—马尔可夫定理 Gauss-Markov Theorem</h5><p>在MLR.1-MLR.5的假设下，OLS估计量是回归参数的最佳线性无偏估计量（BLUEs, Best Linear Unbiased Estimators）<script type="math/tex">\text{Var}(\hat\beta_j)\leq\text{Var}(\tilde\beta_j)\ \ \ \ j=0,1,\cdots,k</script></p>
+<h5 id="高斯—马尔可夫定理-Gauss-Markov-Theorem"><a href="#高斯—马尔可夫定理-Gauss-Markov-Theorem" class="headerlink" title="高斯—马尔可夫定理 Gauss-Markov Theorem"></a>高斯—马尔可夫定理 Gauss-Markov Theorem</h5><p>在MLR.1-MLR.5的假设下（这个假设叫做高斯—马尔可夫假设），OLS估计量是回归参数的最佳线性无偏估计量（BLUEs, Best Linear Unbiased Estimators）<script type="math/tex">\text{Var}(\hat\beta_j)\leq\text{Var}(\tilde\beta_j)\ \ \ \ j=0,1,\cdots,k</script></p>
 <ul>
 <li>OLS只是MLR.1-MLR.5条件下的BLUE，如果其它条件（如异方差性），就存在更好的估计量。</li>
+<li>这里的Linear指的是：被估计的参数与数据是线性关系</li>
+</ul>
+<h2 id="统计推断（假设检验）"><a href="#统计推断（假设检验）" class="headerlink" title="统计推断（假设检验）"></a>统计推断（假设检验）</h2><p>通过假设检验判断整个建模是否具有统计学意义。主要包括以下：</p>
+<ol>
+<li>模型检验 Model Test</li>
+<li>参数检验 Parameter Test</li>
+</ol>
+<h3 id="OLS估计量的抽样分布"><a href="#OLS估计量的抽样分布" class="headerlink" title="OLS估计量的抽样分布"></a>OLS估计量的抽样分布</h3><p>为了做假设检验，我们需要知道OLS估计量的分布</p>
+<h4 id="Assumption-MLR-6-Normality-of-error-terms"><a href="#Assumption-MLR-6-Normality-of-error-terms" class="headerlink" title="Assumption MLR.6 (Normality of error terms)"></a>Assumption MLR.6 (Normality of error terms)</h4><script type="math/tex; mode=display">u_i\sim N(0,\sigma^2)\ \ \ \ 独立于\ \ \ \ x_{i1},x_{i2},\cdots,x_{ik}</script><p>为什么这里$u$ 有下标$i$ 呢，我感觉是因为虽然在一次MLR建模中，模型是同一个，但是每次抽样的方程要区分开来。虽然形式一样，但是要加下标。误差项也是，虽然形式一样，但是显然不是同一个，要知道，PRF是不含$u$ 的。</p>
+<ul>
+<li>误差项的正态性是一个实证问题，有点不好评价，需要结合实际情况使用。当误差项表示下面因素的时候，正态性可能不适用：<ul>
+<li>薪酬（非负；存在最低工资）</li>
+<li>抓捕次数（一般为较小的正整数）</li>
+<li>是否失业（为指示变量，只取值0或1）</li>
+</ul>
+</li>
+<li>但是，有时候可以通过变换形式使正态性假设成立（如使用$\log(wage)$代替$wage$）</li>
+<li>在正态性假设下，OLS估计量是最佳无偏估计量。<ul>
+<li>事实上，在MLR.1-MLR.6的假设下（这个假设叫做经典线性回归模型 (Classical Linear Regression Model, CLRM) 假设），OLS估计量是所有无偏估计量中最有效的（包括了线性无偏估计量），叫做最小方差无偏估计量（Minimum Variance Unbiased Estimator, MVUE）。MVUE比BLUE更强。<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/374988044">最小方差无偏估计和最佳线性无偏估计?有什么区别？</a></li>
+<li>注意<a href="#高斯—马尔可夫定理 Gauss-Markov Theorem">Linear的含义</a></li>
+</ul>
+</li>
+<li>在实际中，正态性假设可以用大样本容量代替</li>
+</ul>
+<h4 id="OLS估计量的正态分布性质"><a href="#OLS估计量的正态分布性质" class="headerlink" title="OLS估计量的正态分布性质"></a>OLS估计量的正态分布性质</h4><p>在MLR.1-MLR.6的假设下，<script type="math/tex">\hat\beta_j\sim N(\beta_j,\text{Var}(\hat\beta_j))\ \ \ \ \cfrac{\hat\beta_j-\beta_j}{\text{sd}(\hat\beta_j)}\sim N(0,1)</script></p>
+<h3 id="单参数的假设检验"><a href="#单参数的假设检验" class="headerlink" title="单参数的假设检验"></a>单参数的假设检验</h3><p>所有的假设检验用的都是CLRM假设条件</p>
+<h4 id="测测参数是不是0"><a href="#测测参数是不是0" class="headerlink" title="测测参数是不是0"></a>测测参数是不是0</h4><p>表明在其它条件保持一定的情况下，$x_j$ 对$y$ 没有影响（影响不显著）</p>
+<h5 id="t分布——标准化参数估计量"><a href="#t分布——标准化参数估计量" class="headerlink" title="t分布——标准化参数估计量"></a>t分布——标准化参数估计量</h5><script type="math/tex; mode=display">\cfrac{\hat\beta_j-\beta_j}{\text{se}(\hat\beta_j)}\sim t_{n-k-1}</script><ul>
+<li>此处的$\text{se}(\hat\beta_j)$ 是参数标准差$\text{sd}(\hat\beta_j)$的<strong>估计量</strong></li>
+</ul>
+<h5 id="t检验"><a href="#t检验" class="headerlink" title="t检验"></a>t检验</h5><p>原假设<script type="math/tex">H_0:\beta_j=0</script><br>t统计量<script type="math/tex">t_{\hat\beta_j}=\cfrac{\hat\beta_j}{\text{se}(\hat\beta_j)}</script><br>拒绝法则</p>
+<ul>
+<li>单侧（右侧）检验（vs $H_1:\beta_j\textgreater 0$），如果t统计量太大了就拒绝</li>
+<li>单侧（左侧）检验（vs $H_1:\beta_j\textless 0$），如果t统计量太小了就拒绝</li>
+<li>双侧检验（vs $H_1:\beta_j\neq 0$）， 如果t统计量过大或过小就拒绝</li>
+</ul>
+<h4 id="显著性"><a href="#显著性" class="headerlink" title="显著性"></a>显著性</h4><p>如果回归参数通过了零假设的双侧检验，则说明对应的变量是统计学显著的</p>
+<ul>
+<li><p>如果自由度够大，正态性假设满足，则有下列数据：</p>
+<ul>
+<li>$|t-ratio| \textgreater 1.645\rightarrow$ 10%显著性水平</li>
+<li>$|t-ratio| \textgreater 1.96\rightarrow$ 5%显著性水平</li>
+<li>$|t-ratio| \textgreater 2.576\rightarrow$ 1%显著性水平</li>
+</ul>
+</li>
+<li><p>如果一个变量是统计学显著的，那么讨论它系数的大小具有意义</p>
+</li>
+<li>事实上，统计学显著不一定意味着经济学显著或实际显著</li>
+</ul>
+<h4 id="测测参数是不是a"><a href="#测测参数是不是a" class="headerlink" title="测测参数是不是a"></a>测测参数是不是a</h4><h5 id="t检验-1"><a href="#t检验-1" class="headerlink" title="t检验"></a>t检验</h5><p>原假设<script type="math/tex">H_0:\beta_j=a_j</script><br>t统计量<script type="math/tex">t=\cfrac{\hat\beta_j-a_j}{\text{se}(\hat\beta_j)}</script><br>拒绝法则（p值）</p>
+<ul>
+<li>p值越小，越拒绝原假设；p值越大，越接受原假设</li>
+<li>一般把p值和显著性水平比较：若$p\textless\alpha$，则拒绝原假设</li>
+</ul>
+<h4 id="置信区间"><a href="#置信区间" class="headerlink" title="置信区间"></a>置信区间</h4><p>若$a_j\notin \text{interval}\Rightarrow 拒绝H_0:\beta_j=a_j    接受H_1:\beta_j\neq a_j$</p>
+<script type="math/tex; mode=display">P(\hat\beta_j-c_\alpha\cdot\text{se}(\hat\beta_j)\leq\beta_j\leq\hat\beta_j+c_\alpha\cdot\text{se}(\hat\beta_j))=1-\alpha</script><ul>
+<li>$P(\hat\beta_j-c_{0.01}\cdot\text{se}(\hat\beta_j)\leq\beta_j\leq\hat\beta_j+c_{0.01}\cdot\text{se}(\hat\beta_j))=0.99,    c_{0.01}=2.576$</li>
+<li>$P(\hat\beta_j-c_{0.05}\cdot\text{se}(\hat\beta_j)\leq\beta_j\leq\hat\beta_j+c_{0.05}\cdot\text{se}(\hat\beta_j))=0.95,    c_{0.05}=1.96$</li>
+<li>$P(\hat\beta_j-c_{0.10}\cdot\text{se}(\hat\beta_j)\leq\beta_j\leq\hat\beta_j+c_{0.10}\cdot\text{se}(\hat\beta_j))=0.90,    c_{0.10}=1.645$</li>
+</ul>
+<h4 id="测测参数的单线性限制条件"><a href="#测测参数的单线性限制条件" class="headerlink" title="测测参数的单线性限制条件"></a>测测参数的单线性限制条件</h4><h5 id="t检验——直接硬刚：-beta-1-beta-2"><a href="#t检验——直接硬刚：-beta-1-beta-2" class="headerlink" title="t检验——直接硬刚：$\beta_1-\beta_2$"></a>t检验——直接硬刚：$\beta_1-\beta_2$</h5><p>原假设<script type="math/tex">H_0:\beta_1-\beta_2=0</script><br>t统计量<script type="math/tex">t=\cfrac{\hat\beta_1-\hat\beta_2}{\text{se}(\hat\beta_1-\hat\beta_2)}</script><br>问题<script type="math/tex">\text{se}(\hat\beta_1-\beta_2)=\sqrt{\widehat{\text{Var}}(\hat\beta_1-\hat\beta_2)}=\sqrt{\widehat{\text{Var}}(\hat\beta_1)+\widehat{\text{Var}}(\hat\beta_2)-2\widehat{\text{Cov}}(\hat\beta_1,\hat\beta_2)}</script>协方差没法算</p>
+<h5 id="t检验——变形金刚：-theta-1-beta-1-beta-2"><a href="#t检验——变形金刚：-theta-1-beta-1-beta-2" class="headerlink" title="t检验——变形金刚：$\theta_1=\beta_1-\beta_2$"></a>t检验——变形金刚：$\theta_1=\beta_1-\beta_2$</h5><p>原假设<script type="math/tex">\theta_1=0</script><br>方程变形<script type="math/tex">\begin{align}
+y&=\beta_0+\beta_1x_1+\beta_2x_2+u\\
+y&=\beta_0+\theta_1x_1+\beta_2(x_1+x_2)+u\\
+y&\overset{def}{=}\beta_0+\theta_1x_1+\beta_2x^*_2+u\\
+\end{align}</script><br>这个方法很强，对于单线性假设无敌</p>
+<h4 id="测测参数的多线性限制条件"><a href="#测测参数的多线性限制条件" class="headerlink" title="测测参数的多线性限制条件"></a>测测参数的多线性限制条件</h4><h5 id="F分布——多线性限制条件"><a href="#F分布——多线性限制条件" class="headerlink" title="F分布——多线性限制条件"></a>F分布——多线性限制条件</h5><ul>
+<li>有限制的模型（r）：在原假设$H_0$（多线性限制条件）下的模型，一般变量个数更少</li>
+<li>无限制的模型（ur）：参数无限制的模型（本来的模型），变量个数更多<script type="math/tex; mode=display">F=\cfrac{(SSR_r-SSR_{ur})/q}{SSR_{ur}/(n-k-1)}\sim F_{q,n-k-1}</script>其中，$q$是$H_0$中限制条件的个数，$k$是ur中自变量个数，$n-k-1$是ur的自由度</li>
+</ul>
+<p>拒绝法则</p>
+<ul>
+<li>F统计量只取正值，因为$SSR_r$永远大于$SSR_{ur}$</li>
+<li>单侧（右侧）检验，如果F统计量太大了就拒绝</li>
+</ul>
+<h2 id="OLS估计量的其他内容"><a href="#OLS估计量的其他内容" class="headerlink" title="OLS估计量的其他内容"></a>OLS估计量的其他内容</h2><p>前面已经讨论了OLS的无偏性和相合性，此处再看看OLS有什么性质可以讨论的。</p>
+<h3 id="OLS估计量性质小结"><a href="#OLS估计量性质小结" class="headerlink" title="OLS估计量性质小结"></a>OLS估计量性质小结</h3><h4 id="对于任何大小的样本"><a href="#对于任何大小的样本" class="headerlink" title="对于任何大小的样本"></a>对于任何大小的样本</h4><ul>
+<li>MLR.1-MLR.4：无偏性</li>
+<li>MLR.1-MLR.5：和方差有关的计算公式</li>
+<li>MLR.1-MLR.5：高斯马尔可夫定理（BLUE）</li>
+<li>MLR.1-MLR.6：OLS估计量的分布、统计检验</li>
+</ul>
+<h4 id="对于大样本"><a href="#对于大样本" class="headerlink" title="对于大样本"></a>对于大样本</h4><ul>
+<li>MLR.1-MLR.4：一致性<ul>
+<li>一个估计量要有意义，至少应该满足一致性</li>
+</ul>
+</li>
+<li>MLR.1-MLR.5：渐进正态性、统计检验<ul>
+<li>此时不用MLR.6（假设误差项服从正态分布）</li>
+</ul>
+</li>
+</ul>
+<h3 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a>一致性</h3><ul>
+<li>一个统计量$\hat\theta$ 是关于总体参数$\theta$ 一致的，如果<script type="math/tex">P(|\hat\theta_n-\theta|\textless\varepsilon)\rightarrow 1</script>对于任意小量$\varepsilon\textgreater 0$且$n\rightarrow\infty$ </li>
+<li>记为<script type="math/tex">\text{plim} \hat\theta_n=\theta\ \ \ \ \text{or}\ \ \ \ \hat\theta_n\overset{p}{\rightarrow}\theta</script></li>
+</ul>
+<h4 id="大数定律"><a href="#大数定律" class="headerlink" title="大数定律"></a>大数定律</h4><ul>
+<li>总体$x_1,x_2,\cdots,x_n$ 独立同分布，均值为$\mu$ ，方差有限，由大数定律，样本均值收敛于$\mu$ ，可以推出样本协方差收敛于总体协方差</li>
 </ul>
 
-      
-    </div>
-    <div class="article-footer">
-      <blockquote class="mt-2x">
-  <ul class="post-copyright list-unstyled">
-    
-    <li class="post-copyright-link hidden-xs">
-      <strong>本文链接：</strong>
-      <a href="http://hiryan23.github.io/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E8%87%AA%E6%95%91.html" title="" target="_blank" rel="external">http://hiryan23.github.io/计量经济学自救.html</a>
-    </li>
-    
-    <li class="post-copyright-license">
-      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
-</blockquote>
-
-
-<div class="panel panel-default panel-badger">
-  <div class="panel-body">
-    <figure class="media">
-      <div class="media-left">
-        <a href="" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
-        </a>
-      </div>
-      <div class="media-body">
-        <h3 class="media-heading"><a href="" target="_blank"><span class="text-dark">Ruiyang He</span><small class="ml-1x">上海交通大学 本科生</small></a></h3>
-        <div>生活不止眼前的苟且。</div>
-      </div>
-    </figure>
-  </div>
-</div>
-
-
-    </div>
-  </article>
-  
-    
-  <section id="comments">
-  	
-  </section>
-
 
   
-</div>
 
-  <nav class="bar bar-footer clearfix" data-stick-bottom>
-  <div class="bar-inner">
-    
-        
+</article>
 
-            <div class="bar-right">
-              
-                <div class="share-component" data-sites="qq,wechat"
-                  data-mobile-sites="qq,wechat"></div>
-                
+
+
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
   </div>
-</nav>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
-</main>
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-<footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
-    
-	
-    <ul class="social-links">
-    	
-        <li><a href="https://github.com/hiryan23" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
-        
-    </ul>
 
-        <div class="copyright">
-            
-                &copy; 2023
-                    Ruiyang He
-                        
-
-                            <div class="publishby">
-                                <span id="busuanzi_container_site_pv">
-                                    <!--点击<span id="busuanzi_value_site_pv" style="font-family:Courier"></span>次，
-                                    -->
-                                    访客<span id="busuanzi_value_site_uv" style="font-family:Courier"></span>人
-                                </span>
-                            </div>
-
-                            <!--
-        <div class="publishby">
-            Theme by
-            <a href="https://github.com/cofess" target="_blank"> cofess </a>
-            base on
-            <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
-        </div>
-        -->
-        </div>
-</footer>
-  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-<script>
-   window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
-</script>
-
-<script src="/js/plugin.min.js"></script>
-
-   
-<script src="/js/application.js"></script>
-
-      
-    <script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-
-<script src="/js/insight.js"></script>
+  <script  src="/js/local-search.js" ></script>
 
 
 
-         
-                  
-                           
-                                    
-                                       
-                                          
-                                             
-
-                                                
 
 
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
 
-                                                   <div id="go-top"></div>
-                                                   <style type="text/css">
-                                                      #go-top {
-                                                         width: 40px;
-                                                         height: 36px;
-                                                         background-color: #5a7db1;
-                                                         position: relative;
-                                                         border-radius: 2px;
-                                                         position: fixed;
-                                                         right: 10px;
-                                                         bottom: 60px;
-                                                         cursor: pointer;
-                                                         display: none;
-                                                      }
 
-                                                      #go-top:after {
-                                                         content: " ";
-                                                         position: absolute;
-                                                         left: 14px;
-                                                         top: 14px;
-                                                         border-top: 2px solid #fff;
-                                                         border-right: 2px solid #fff;
-                                                         width: 12px;
-                                                         height: 12px;
-                                                         transform: rotate(-45deg);
-                                                      }
+  
 
-                                                      #go-top:hover {
-                                                         background-color: #1A2433;
-                                                      }
-                                                   </style>
-                                                   <script>
-                                                      $(function () {
-                                                         var top = $("#go-top");
-                                                         $(window).scroll(function () {
-                                                            ($(window).scrollTop() > 300) ? top.show(300) : top.hide(200);
-                                                            $("#go-top").click(function () {
-                                                               $('body,html').animate({ scrollTop: 0 });
-                                                               return false();
-                                                            })
-                                                         });
-                                                      });
-                                                   </script>
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
