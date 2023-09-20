@@ -24,7 +24,7 @@
 <meta property="og:description" content="参考了可亲的助教milk的教程和网络上的相关资料。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-09-17T07:54:14.993Z">
-<meta property="article:modified_time" content="2023-09-19T15:56:00.899Z">
+<meta property="article:modified_time" content="2023-09-20T01:58:57.638Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="具有自我意识的笔记">
 <meta name="twitter:card" content="summary">
@@ -248,7 +248,7 @@
         
         
         
-          19 分钟
+          18 分钟
         
       </span>
     
@@ -298,7 +298,7 @@
         aria-expanded="true"
       >
         2023F
-        <span class="list-group-count">(3)</span>
+        <span class="list-group-count">(4)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -316,6 +316,15 @@
            class="list-group-item list-group-item-action
            active">
           <span class="category-post">PostgreSQL从删库到跑路</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2023/09/20/%E4%B8%AD%E7%BA%A7%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" title="中级微观经济学-课程笔记"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">中级微观经济学-课程笔记</span>
         </a>
       
     
@@ -360,7 +369,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：几秒前
+                    本文最后更新于：5 小时前
                   
                 
               </p>
@@ -374,7 +383,8 @@
 pgSQL中大小写无所谓，随便用。</p>
 <h2 id="准备工作">0、准备工作</h2>
 <h3 id="启动">（）（），启动！</h3>
-<p>以管理员身份运行命令行 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 启动</span><br><span class="hljs-comment"># net start postgresql-x64-&lt;version&gt;</span><br><span class="hljs-variable">$</span> net <span class="hljs-built_in">start</span> postgresql<span class="hljs-literal">-x64-</span>&lt;<span class="hljs-number">15</span>&gt;<br><span class="hljs-comment"># 关闭</span><br><span class="hljs-comment"># net stop postgresql-x64-&lt;version&gt;</span><br></code></pre></td></tr></table></figure> ### 君权神授</p>
+<p>以管理员身份运行命令行 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 启动</span><br><span class="hljs-comment"># net start postgresql-x64-&lt;version&gt;</span><br><span class="hljs-variable">$</span> net <span class="hljs-built_in">start</span> postgresql<span class="hljs-literal">-x64-</span>&lt;<span class="hljs-number">15</span>&gt;<br><span class="hljs-comment"># 关闭</span><br><span class="hljs-comment"># net stop postgresql-x64-&lt;version&gt;</span><br></code></pre></td></tr></table></figure></p>
+<h3 id="君权神授">君权神授</h3>
 <ol type="1">
 <li>使⽤<code>psql</code>命令连接到PostgreSQL作为超级⽤户（通常是postgres）：
 <figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crystal"><span class="hljs-variable">$ </span>psql -U postgres<br></code></pre></td></tr></table></figure></li>
@@ -404,7 +414,8 @@ pgSQL中大小写无所谓，随便用。</p>
 <h3 id="从某数据库退出">从某数据库退出</h3>
 <figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><span class="hljs-attribute">mydb</span><span class="hljs-operator">=</span>&gt; \q<br></code></pre></td></tr></table></figure>
 <h2 id="开导">2、开导！</h2>
-<p>先建库 <figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cos"># psql -U <span class="hljs-built_in">%name</span> -<span class="hljs-keyword">d</span> <span class="hljs-built_in">%name</span>_of_db -f <span class="hljs-string">&quot;%dir&quot;</span><br>$ psql -U hsb -<span class="hljs-keyword">d</span> mydb -f <span class="hljs-string">&quot;\..\mydb.sql&quot;</span><br></code></pre></td></tr></table></figure> 结果： <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">CREATE</span> TABLE<br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">CREATE</span> TABLE<br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">CREATE</span> TABLE<br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">CREATE</span> TABLE<br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure> ### 如果不想看运行过程</p>
+<p>先建库 <figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cos"># psql -U <span class="hljs-built_in">%name</span> -<span class="hljs-keyword">d</span> <span class="hljs-built_in">%name</span>_of_db -f <span class="hljs-string">&quot;%dir&quot;</span><br>$ psql -U hsb -<span class="hljs-keyword">d</span> mydb -f <span class="hljs-string">&quot;\..\mydb.sql&quot;</span><br></code></pre></td></tr></table></figure> 结果： <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">CREATE</span> TABLE<br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">CREATE</span> TABLE<br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">CREATE</span> TABLE<br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">CREATE</span> TABLE<br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">INSERT</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure></p>
+<h3 id="如果不想看运行过程">如果不想看运行过程</h3>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-variable">$</span> psql mydb <span class="hljs-operator">-f</span> <span class="hljs-string">&quot;\..\mydb.sql&quot;</span> <span class="hljs-number">2</span>&gt;&amp;<span class="hljs-number">1</span> | grep ERROR<br></code></pre></td></tr></table></figure>
 <h2 id="检视数据库">3、检视数据库</h2>
 <p>先导一下 <figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><span class="hljs-attribute">mydb</span><span class="hljs-operator">=</span>&gt; \d<br></code></pre></td></tr></table></figure> 结果： <figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">                 关联列表<br> 架构模式 |<span class="hljs-string">   名称    </span>|<span class="hljs-string">  类型  </span>|<span class="hljs-string">  拥有者</span><br><span class="hljs-string">----------+-----------+--------+-----------</span><br><span class="hljs-string"> public   </span>|<span class="hljs-string"> courses   </span>|<span class="hljs-string"> 数据表 </span>|<span class="hljs-string"> hsb</span><br><span class="hljs-string"> public   </span>|<span class="hljs-string"> enrolment </span>|<span class="hljs-string"> 数据表 </span>|<span class="hljs-string"> hsb</span><br><span class="hljs-string"> public   </span>|<span class="hljs-string"> staff     </span>|<span class="hljs-string"> 数据表 </span>|<span class="hljs-string"> hsb</span><br><span class="hljs-string"> public   </span>|<span class="hljs-string"> students  </span>|<span class="hljs-string"> 数据表 </span>|<span class="hljs-string"> hsb</span><br><span class="hljs-string">(4 行记录)</span><br></code></pre></td></tr></table></figure></p>
@@ -478,7 +489,7 @@ pgSQL中大小写无所谓，随便用。</p>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年9月19日</div>
+          <div>2023年9月20日</div>
         </div>
       
       
