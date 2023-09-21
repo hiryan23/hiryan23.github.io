@@ -23,11 +23,13 @@
 <meta property="og:site_name" content="Hiryan&#39;s Blog">
 <meta property="og:description" content="本笔记整理自安泰经济与管理学院2023年秋季学期课程ECON2404-07中级微观经济学，授课人是Xi Zhi &quot;RC“ Lim老师。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/20/pics_temp/6517c3ff288734acd16f1d462521932.png">
 <meta property="article:published_time" content="2023-09-20T01:56:55.123Z">
-<meta property="article:modified_time" content="2023-09-20T05:41:09.879Z">
+<meta property="article:modified_time" content="2023-09-21T12:26:49.325Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="课程笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://hiryan23.github.io/2023/09/20/pics_temp/6517c3ff288734acd16f1d462521932.png">
   
   
   
@@ -237,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.6k 字
+          9k 字
         
       </span>
     
@@ -248,7 +250,7 @@
         
         
         
-          47 分钟
+          76 分钟
         
       </span>
     
@@ -378,7 +380,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：3 小时前
+                    本文最后更新于：2 分钟前
                   
                 
               </p>
@@ -641,6 +643,159 @@ class="math inline">\(\succcurlyeq\)</span>​​ that is <strong>complete,
 transitive, continuous</strong>, and defined over a <strong><em>convex
 subset of</em></strong> <span class="math inline">\(\mathbb
 R^n\)</span>, can be represented by a (continuous) utility function.</p>
+<h2 id="lecture-3-consumer-problem-1">Lecture 3 Consumer Problem 1</h2>
+<h3 id="budget">Budget</h3>
+<ul>
+<li>If you have income <span class="math inline">\(m\)</span> and prices
+are <span class="math inline">\((p_1,p_2)\)</span>, <strong>what can you
+afford</strong>?</li>
+<li>Intuitively: affordable if <span
+class="math display">\[x_1p_1+x_2p_2\leq m\]</span> #### Budget set The
+set of all things that you can afford <img
+src="../pics_temp/b18f8fc387f99334cd2e5164f249eba.png" srcset="/img/loading.gif" lazyload /></li>
+<li>Step 1: Find <span class="math inline">\((x_1,x_2)\)</span> such
+that<span class="math display">\[x_1p_1+x_2p_2=m\]</span></li>
+<li>Step 2: Find <span class="math inline">\((x_1,x_2)\)</span> such
+that<span class="math display">\[x_1p_1+x_2p_2\textless m\]</span></li>
+<li>Write: <span class="math display">\[B(m,p_1,p_2)=\{(x_1,x_2)\in
+X|x_1p_1+x_2p_2\leq m\}\]</span> ##### Questions</li>
+<li>Does <span class="math inline">\(B(m, p_1,p_2)\)</span> depend on
+utility?
+<ul>
+<li>No.</li>
+</ul></li>
+<li>Does it depend on <span class="math inline">\(m,p_1,p_2\)</span>?
+<ul>
+<li>Yes.</li>
+</ul></li>
+<li>Does the fact that <span class="math inline">\(B\)</span> is convex
+depend on <span class="math inline">\(m,p_1,p_2\)</span>?
+<ul>
+<li>No.</li>
+</ul></li>
+<li>Is it possible that <span class="math inline">\((m,p_1,p_2)\neq
+(m^\prime,p_1^\prime,p_2^\prime)\)</span> but <span
+class="math inline">\(B(m,p_1,p_2)=B(m^\prime,p_1^\prime,
+p_2^\prime)\)</span>?
+<ul>
+<li>Yes, by doubling for example.</li>
+</ul></li>
+</ul>
+<h5 id="n2">N&gt;2?</h5>
+<p>B is still convex (no matter the number of <span
+class="math inline">\(N\)</span>)</p>
+<h5 id="distortions">Distortions</h5>
+<ul>
+<li>Tax
+<ul>
+<li>Ex: When <span class="math inline">\(x_1\geq a\)</span>, you need to
+pay <span class="math inline">\(p_1+t\)</span> for each unit of <span
+class="math inline">\(x_1\)</span> above <span
+class="math inline">\(a\)</span>. <img
+src="../pics_temp/fe2ce4fca352a9031f29587866a69fa.png" srcset="/img/loading.gif" lazyload /></li>
+</ul></li>
+</ul>
+<h4 id="relative-price-相对价格">Relative price 相对价格</h4>
+<p><span class="math display">\[-\cfrac{p_1}{p_2}\]</span> ... is the
+<strong>exchange rate</strong> between good 1 and good 2, without
+losing/gaining money, and is called the relative price</p>
+<h3 id="the-consumer-problem">The consumer problem</h3>
+<h4 id="the-general-problem">The general problem</h4>
+<p>With utility function is <span class="math inline">\(U(x_1,\cdots,
+x_n)\)</span>, income <span class="math inline">\(m\)</span>, and prices
+<span class="math inline">\(p_1,\cdots,p_n\)</span>, what is your
+<strong>problem</strong>? <span class="math display">\[\begin{align}
+\max U(x_1,\cdots,x_n)\\
+s.t. x_1p_1+\cdots+x_np_n\leq m\\
+x_1\geq 0,\cdots,x_n\geq 0
+\end{align}\]</span> ### Indifference Curves #### Brute force <img
+src="../pics_temp/3e576c432ea89107a73b1c45fc7e04d.png" srcset="/img/loading.gif" lazyload /> Find the point
+<span class="math inline">\((x_1,x_2)\)</span> in the budget set that
+achieves the highest <span class="math inline">\(U(x_1,x_2)\)</span>.
+#### Indifference curves Given a <span
+class="math inline">\(U(x_1,x_2)\)</span> , you can draw the
+indifference curves 无差异曲线 (also called iso-utility curves, because
+utility stays the same) <img
+src="../pics_temp/dc05c905c293f22e68340835f5a6a39.png" srcset="/img/loading.gif" lazyload /> #### An
+intuitive approach If <span class="math inline">\(x^*\)</span> is
+optimal bundle 最优消费束, what must be true/ what can we learn? -
+Necessary conditions 必要条件:<br />
+1. Just affordability 2. Marginal rate of substitution (MRS)
+condition</p>
+<h5 id="necessary-condition-1-just-affordable">Necessary condition 1:
+Just affordable</h5>
+<h6 id="theorem-1-1">Theorem 1</h6>
+<p>If <span class="math inline">\(U(\pmb x)\)</span> is strictly
+increasing in at least one <span class="math inline">\(x_i\)</span> ,
+then <span class="math inline">\(\pmb x^*\)</span> satisfies <span
+class="math display">\[\pmb x^*\pmb p=m\]</span><em>Proof</em>: If not,
+spend the extra money on <span class="math inline">\(x_i\)</span> for a
+strictly higher utility. <img
+src="../pics_temp/1ba93f743d976028fd9a55424290bb4.png" srcset="/img/loading.gif" lazyload /> It does not
+depend on the curves! <img
+src="../pics_temp/d9c7dbf7e3c3bd922fb0307e797ef2f.png" srcset="/img/loading.gif" lazyload /> #####
+Necessary condition 2: MRS Condition</p>
+<h6 id="marginal-utility">Marginal utility</h6>
+<ul>
+<li>Define Marginal Utility 边际效用: <span
+class="math display">\[MU_i(\pmb x):=\cfrac{\partial U}{\partial
+x_i}(\pmb z)\Bigg |_{\pmb z=\pmb x}\]</span> ###### Theorem 2a
+<strong>If</strong> <span class="math inline">\(\pmb x^*\)</span>
+satisfies <span class="math inline">\(x_i^*\textgreater 0\)</span>,
+<strong>then</strong> for all <span class="math inline">\(j\)</span>
+<span class="math display">\[\cfrac{MU_i(\pmb
+x^*)}{p_i}\geq\cfrac{MU_j(\pmb x^*)}{p_j}\]</span> <em>Proof</em>: If
+<span class="math inline">\(LHS\textless RHS\)</span>, decrease
+consumption of <span class="math inline">\(x_i\)</span> by <span
+class="math inline">\(\varepsilon \textgreater 0\)</span> and increase
+consumption of <span class="math inline">\(x_j\)</span> by <span
+class="math inline">\(\varepsilon \cfrac{p_i}{p_j}\)</span>. As <span
+class="math inline">\(\varepsilon \rightarrow 0\)</span>, gain in
+utility is arbitrarily close to <span
+class="math inline">\(\varepsilon\cfrac{p_i}{p_j}MU_j(\pmb
+x^*)\)</span>, loss in utility is arbitrarily close to <span
+class="math inline">\(\varepsilon MU_i(\pmb x^*\)</span>). Since <span
+class="math inline">\(\cfrac{MU_I(\pmb x^*)}{p_i}\textless
+\cfrac{MU_j(\pmb x^*)}{p_j}\)</span>, <span
+class="math inline">\(Gain\textgreater Loss\)</span>. So <span
+class="math inline">\(\pmb x^*\)</span> is not optimal.</li>
+</ul>
+<h6 id="theorem-2b">Theorem 2b</h6>
+<p><strong>If</strong> <span class="math inline">\(\pmb x^*\)</span>
+satisfies <span class="math inline">\(x_i^*\textgreater 0\)</span> and
+<span class="math inline">\(x_j^*\textgreater 0\)</span>
+<strong>then</strong> <span class="math display">\[\cfrac{MU_i(\pmb
+x^*)}{p_i}=\cfrac{MU_j(\pmb x^*)}{p_j}\]</span>
+边际效益越大，价格就越贵（？</p>
+<h5 id="mrs-condition">MRS Condition</h5>
+<ul>
+<li><p>A relationship, under optimality, between preference and
+budget</p></li>
+<li><p>Define the Marginal Rate of Substitution 边际替代率: <span
+class="math display">\[MRS_{ji}(\pmb x):=-\cfrac{MU_i(\pmb x)}{MU_j(\pmb
+x)}\]</span></p></li>
+<li><p>Then, <span class="math inline">\(\cfrac{MU_i(\pmb
+x^*)}{p_i}=\cfrac{MU_j(\pmb x^*)}{p_j}\Longleftrightarrow MRS_{ji}(\pmb
+x^*):=-\cfrac{p_i}{p_j}\)</span> <img
+src="../pics_temp/b82a040e0d0f6096dc036de23668f74.png" srcset="/img/loading.gif" lazyload /></p></li>
+<li><p>MRS is the slope 斜率 of the indifference curve at point <span
+class="math inline">\((x_1,x_2)\)</span></p></li>
+<li><p>It also is the marginal rate of substitution</p></li>
+<li><p>If we bring in the budget set, necessary for optimality of <span
+class="math inline">\((\bar x_1,\bar x_2)\)</span>: <span
+class="math display">\[MRS_{21}(\bar x_1,\bar
+x_2)=-\cfrac{p_1}{p_2}\]</span> ###### Example <img
+src="../pics_temp/c534f56b6f23c5a7be1f01acd5010cd.png" srcset="/img/loading.gif" lazyload /> ###### Theorem
+3 If <span class="math inline">\(U,\tilde U\)</span> represent the same
+preference (and technical conditions about differentiability 可导性),
+then for all <span class="math inline">\(i,j\)</span> and <span
+class="math inline">\(\pmb x\in X\)</span>, <span
+class="math display">\[\cfrac{MU_i(\pmb x)}{MU_j(\pmb x)}=\cfrac{M\tilde
+U_i(\pmb x)}{M\tilde U_j(\pmb x)}\]</span> ### Thinking #### As a good
+student <img src="../pics_temp/6517c3ff288734acd16f1d462521932.png" srcset="/img/loading.gif" lazyload />
+#### As a human <img
+src="../pics_temp/2596844a4c54620826eca6aacff260e.png" srcset="/img/loading.gif" lazyload /></p></li>
+</ul>
 
                 
               </div>
@@ -705,7 +860,7 @@ R^n\)</span>, can be represented by a (continuous) utility function.</p>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年9月20日</div>
+          <div>2023年9月21日</div>
         </div>
       
       
