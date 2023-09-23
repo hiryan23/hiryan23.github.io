@@ -23,17 +23,17 @@
 <meta property="og:site_name" content="Hiryan&#39;s Blog">
 <meta property="og:description" content="本笔记整理自安泰经济与管理学院2022年春季学期课程ECON2402-01计量经济学，授课人是瞿茜老师。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://hiryan23.github.io/pic/41526cd3578e6bc4cf686e76b24d106.png">
-<meta property="og:image" content="http://hiryan23.github.io/pic/2b671b7ebbcdc3082102991378e3c06.png">
-<meta property="og:image" content="http://hiryan23.github.io/pic/5a1ae01a692552b55e0c292e8466bbe.png">
-<meta property="og:image" content="http://hiryan23.github.io/pic/922fd53b3502327f4ab8b1ed1a805e8.png">
-<meta property="og:image" content="http://hiryan23.github.io/pic/16533ee3cf529008cd4aa06d490890f.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/02/16/Econometrics/41526cd3578e6bc4cf686e76b24d106.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/02/16/Econometrics/2b671b7ebbcdc3082102991378e3c06.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/02/16/Econometrics/5a1ae01a692552b55e0c292e8466bbe.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/02/16/Econometrics/922fd53b3502327f4ab8b1ed1a805e8.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/02/16/Econometrics/16533ee3cf529008cd4aa06d490890f.png">
 <meta property="article:published_time" content="2023-02-16T12:46:38.494Z">
 <meta property="article:modified_time" content="2023-05-31T16:00:00.000Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="课程笔记">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://hiryan23.github.io/pic/41526cd3578e6bc4cf686e76b24d106.png">
+<meta name="twitter:image" content="http://hiryan23.github.io/2023/02/16/Econometrics/41526cd3578e6bc4cf686e76b24d106.png">
   
   
   
@@ -254,7 +254,7 @@
         
         
         
-          146 分钟
+          145 分钟
         
       </span>
     
@@ -1117,7 +1117,7 @@ S&amp;P 500.</li>
 <li>For any specific asset or portfolio, find enough observations at
 different time periods. (Shanghai Stock Exchange)</li>
 <li>Then, we can draw the scatter plot of its return vs the market
-return. (SSE Index) <img src="/pic/41526cd3578e6bc4cf686e76b24d106.png" srcset="/img/loading.gif" lazyload></li>
+return. (SSE Index) <img src="/2023/02/16/Econometrics/41526cd3578e6bc4cf686e76b24d106.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 <h4 id="the-simple-regression-model">The Simple Regression Model</h4>
 <ul>
@@ -1192,11 +1192,30 @@ requires <span class="math inline">\(E(intellegence|edu)=0\)</span>.</li>
 <h6 id="an-illustration-example-conditional-vs-unconditional-mean">An
 illustration example (conditional vs unconditional mean)</h6>
 <ul>
-<li><p>Consider a college with half male and half female.</p></li>
-<li><p><span class="math inline">\(X\)</span> is the gender, <span class="math inline">\(X=female\ \text{or}\ male\)</span></p></li>
-<li><p><span class="math inline">\(u\)</span> is the height.</p></li>
-<li><p>Suppose the average height is listed. | Gender | Height |
-|---|---| | female | 1.60m | | male | 1.72m |</p></li>
+<li>Consider a college with half male and half female.</li>
+<li><span class="math inline">\(X\)</span> is the gender, <span class="math inline">\(X=female\ \text{or}\ male\)</span></li>
+<li><span class="math inline">\(u\)</span> is the height.</li>
+<li>Suppose the average height is listed.</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Gender</th>
+<th>Height</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>female</td>
+<td>1.60m</td>
+</tr>
+<tr class="even">
+<td>male</td>
+<td>1.72m</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><p><span class="math inline">\(E(u|X=female)=\)</span></p></li>
 <li><p><span class="math inline">\(E(u|X=male)=\)</span></p></li>
 <li><p><span class="math inline">\(E(u)=\)</span></p></li>
@@ -1209,15 +1228,36 @@ same.</p></li>
 </ul>
 <h6 id="the-example-continued">The example continued</h6>
 <ul>
-<li><p><span class="math inline">\(X\)</span> is the school grade/year,
-<span class="math inline">\(X=1,2\)</span></p></li>
-<li><p><span class="math inline">\(u\)</span> is the height. | Grade |
-College | Primary school | |---|---|---| | 1 | 1.66m | 1.15m | | 2 |
-1.66m | 1.20m |</p></li>
-<li><p><span class="math inline">\(E(u|X=1)=E(u|X=2)=E(u)\)</span> in
-college.</p></li>
-<li><p>But not the same in the primary school. What happens if we change
-<span class="math inline">\(X\)</span> back to gender?</p></li>
+<li><span class="math inline">\(X\)</span> is the school grade/year,
+<span class="math inline">\(X=1,2\)</span></li>
+<li><span class="math inline">\(u\)</span> is the height.</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Grade</th>
+<th>College</th>
+<th>Primary school</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1.66m</td>
+<td>1.15m</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1.66m</td>
+<td>1.20m</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><span class="math inline">\(E(u|X=1)=E(u|X=2)=E(u)\)</span> in
+college.</li>
+<li>But not the same in the primary school. What happens if we change
+<span class="math inline">\(X\)</span> back to gender?</li>
 </ul>
 <h5 id="examples">Examples</h5>
 <ul>
@@ -1250,7 +1290,7 @@ E(y|x)&amp;=E(\beta_0+\beta_1x+u|x)\\
 <li>This means that the average value of the dependent variable can be
 expressed as a linear function of the explanatory variable</li>
 <li>Formally, (compare to the ideal case) <span class="math display">\[\beta_1=\cfrac{\text dE(y|x)}{\text dx}\ \ \ \
-\text{and}\ \ \ \ \beta_0=E(y|x=0)\]</span> <img src="/pic/2b671b7ebbcdc3082102991378e3c06.png" srcset="/img/loading.gif" lazyload></li>
+\text{and}\ \ \ \ \beta_0=E(y|x=0)\]</span> <img src="/2023/02/16/Econometrics/2b671b7ebbcdc3082102991378e3c06.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 <h3 id="derive-the-ols-estimator">Derive the OLS estimator</h3>
 <h4 id="a-random-sample">A random sample</h4>
@@ -1267,7 +1307,7 @@ observations <span class="math display">\[\{(x_i,y_i):i=1,2,\cdots,n\}
 \end{cases}
 \]</span></li>
 <li>Fit as good as possible a regression line through the data points:
-<img src="/pic/5a1ae01a692552b55e0c292e8466bbe.png" srcset="/img/loading.gif" lazyload></li>
+<img src="/2023/02/16/Econometrics/5a1ae01a692552b55e0c292e8466bbe.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 <h4 id="as-good-as-possible">As good as possible</h4>
 <ul>
@@ -1380,14 +1420,15 @@ wages) and years of education holds</li>
 because one does not know beforehand which worker is drawn</li>
 <li>Throw back worker into population; repeat random draw <span class="math inline">\(n\)</span> times</li>
 <li>The wages and years of education of the sampled workers are used to
-estimate the linear relationship between wages and education <img src="/pic/922fd53b3502327f4ab8b1ed1a805e8.png" srcset="/img/loading.gif" lazyload></li>
+estimate the linear relationship between wages and education <img src="/2023/02/16/Econometrics/922fd53b3502327f4ab8b1ed1a805e8.png" srcset="/img/loading.gif" lazyload></li>
 </ul></li>
 </ul>
 <h5 id="assumption-slr.3-sample-variation-in-explanatory-variable">Assumption
 SLR.3 (Sample variation in explanatory variable)</h5>
-<p><span class="math display">\[\sum_{i=1}^n(x_i-\bar
-x)^2\textgreater0\]</span> - The values of <span class="math inline">\(x\)</span>'s are not all the same (otherwise it
-would be impossible to study how different values of <span class="math inline">\(x\)</span> lead to different values of <span class="math inline">\(y\)</span> )</p>
+<p><span class="math display">\[\sum_{i=1}^n(x_i-\bar x)^2&gt;0\]</span>
+- The values of <span class="math inline">\(x\)</span>'s are not all the
+same (otherwise it would be impossible to study how different values of
+<span class="math inline">\(x\)</span> lead to different values of <span class="math inline">\(y\)</span> )</p>
 <h5 id="assumption-slr.4-zero-conditional-mean">Assumption SLR.4 (Zero
 conditional mean)</h5>
 <p><span class="math display">\[ E(u_i|x_i)=0\]</span> - The value of
@@ -1426,16 +1467,46 @@ population values on average (=sampling variability)?</li>
 about the <u>variability</u> of the unobserved factors</p>
 <h6 id="graphical-illustration-of-homoskedasticity">Graphical
 illustration of homoskedasticity</h6>
-<p><img src="/pic/16533ee3cf529008cd4aa06d490890f.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2023/02/16/Econometrics/16533ee3cf529008cd4aa06d490890f.png" srcset="/img/loading.gif" lazyload></p>
 <h6 id="an-illustrating-example">An illustrating example</h6>
 <ul>
 <li><span class="math inline">\(X\)</span> is the education, <span class="math inline">\(X=college\)</span> or not.</li>
 <li><span class="math inline">\(u\)</span> is the monthly wage.</li>
 <li>Suppose there are only 4 people in the population with 2 having the
-college diploma. | wage | College | Non-college | |---|---|---| | |
-10,000$ | 3000$ | | | 10,000$ | 17000$ | | E(wage|Edu) | 10,000$ |
-10,000$ | | V(wage|Edu) | 0<span class="math inline">\(\$^2\)</span> |
-2*7000^2 <span class="math inline">\(\$^2\)</span> |</li>
+college diploma.</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>wage</th>
+<th>College</th>
+<th>Non-college</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>10,000$</td>
+<td>3000$</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>10,000$</td>
+<td>17000$</td>
+</tr>
+<tr class="odd">
+<td>E(wage|Edu)</td>
+<td>10,000$</td>
+<td>10,000$</td>
+</tr>
+<tr class="even">
+<td>V(wage|Edu)</td>
+<td>0<span class="math inline">\(\$^2\)</span></td>
+<td>2*7000^2 <span class="math inline">\(\$^2\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li>Heteroskedasticity means that <span class="math inline">\(X\)</span>
 does not affect the mean value of <span class="math inline">\(u\)</span>
 , but does affect its variation.</li>

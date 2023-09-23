@@ -248,7 +248,7 @@
         
         
         
-          99 分钟
+          98 分钟
         
       </span>
     
@@ -565,7 +565,7 @@ sampling)</h4>
 样本是随机抽的<del>（不是的话可以remake了）</del></p>
 <h4 id="assumption-slr.3-sample-variation-in-explanatory-variable">Assumption
 SLR.3 (Sample variation in explanatory variable)</h4>
-<p><span class="math display">\[ \sum_{i=1}^n(x_i-\bar x)^2\textgreater
+<p><span class="math display">\[ \sum_{i=1}^n(x_i-\bar x)^2&gt;
 0\]</span> x的值别都是一样的<del>（都是一样的还拟合个锤子）</del></p>
 <h4 id="assumption-slr.4-zero-conditional-mean">Assumption SLR.4 (Zero
 conditional mean)</h4>
@@ -798,8 +798,8 @@ t_{n-k-1}\]</span> - 此处的<span class="math inline">\(\text{se}(\hat\beta_j)
 <h5 id="t检验">t检验</h5>
 <p>原假设<span class="math display">\[H_0:\beta_j=0\]</span>
 t统计量<span class="math display">\[t_{\hat\beta_j}=\cfrac{\hat\beta_j}{\text{se}(\hat\beta_j)}\]</span>
-拒绝法则 - 单侧（右侧）检验（vs <span class="math inline">\(H_1:\beta_j\textgreater
-0\)</span>），如果t统计量太大了就拒绝 - 单侧（左侧）检验（vs <span class="math inline">\(H_1:\beta_j\textless
+拒绝法则 - 单侧（右侧）检验（vs <span class="math inline">\(H_1:\beta_j&gt;
+0\)</span>），如果t统计量太大了就拒绝 - 单侧（左侧）检验（vs <span class="math inline">\(H_1:\beta_j&lt;
 0\)</span>），如果t统计量太小了就拒绝 - 双侧检验（vs <span class="math inline">\(H_1:\beta_j\neq 0\)</span>），
 如果t统计量过大或过小就拒绝</p>
 <h4 id="显著性">显著性</h4>
@@ -807,12 +807,12 @@ t统计量<span class="math display">\[t_{\hat\beta_j}=\cfrac{\hat\beta_j}{\text
 <ul>
 <li>如果自由度够大，正态性假设满足，则有下列数据：
 <ul>
-<li><span class="math inline">\(|t-ratio| \textgreater
-1.645\rightarrow\)</span> 10%显著性水平</li>
-<li><span class="math inline">\(|t-ratio| \textgreater
-1.96\rightarrow\)</span> 5%显著性水平</li>
-<li><span class="math inline">\(|t-ratio| \textgreater
-2.576\rightarrow\)</span> 1%显著性水平</li>
+<li><span class="math inline">\(|t-ratio| &gt; 1.645\rightarrow\)</span>
+10%显著性水平</li>
+<li><span class="math inline">\(|t-ratio| &gt; 1.96\rightarrow\)</span>
+5%显著性水平</li>
+<li><span class="math inline">\(|t-ratio| &gt; 2.576\rightarrow\)</span>
+1%显著性水平</li>
 </ul></li>
 <li>如果一个变量是统计学显著的，那么讨论它系数的大小具有意义</li>
 <li>事实上，统计学显著不一定意味着经济学显著或实际显著</li>
@@ -822,7 +822,7 @@ t统计量<span class="math display">\[t_{\hat\beta_j}=\cfrac{\hat\beta_j}{\text
 <p>原假设<span class="math display">\[H_0:\beta_j=a_j\]</span>
 t统计量<span class="math display">\[t=\cfrac{\hat\beta_j-a_j}{\text{se}(\hat\beta_j)}\]</span>
 拒绝法则（p值） - p值越小，越拒绝原假设；p值越大，越接受原假设 -
-一般把p值和显著性水平比较：若<span class="math inline">\(p\textless\alpha\)</span>，则拒绝原假设</p>
+一般把p值和显著性水平比较：若<span class="math inline">\(p&lt;\alpha\)</span>，则拒绝原假设</p>
 <h4 id="置信区间">置信区间</h4>
 <p>若<span class="math inline">\(a_j\notin \text{interval}\Rightarrow
 拒绝H_0:\beta_j=a_j\ \ \ \ 接受H_1:\beta_j\neq a_j\)</span> <span class="math display">\[P(\hat\beta_j-c_\alpha\cdot\text{se}(\hat\beta_j)\leq\beta_j\leq\hat\beta_j+c_\alpha\cdot\text{se}(\hat\beta_j))=1-\alpha\]</span>
@@ -876,8 +876,9 @@ F_{q,n-k-1}\]</span> 其中，<span class="math inline">\(q\)</span>是<span cla
 <ul>
 <li>一个统计量<span class="math inline">\(\hat\theta\)</span>
 是关于总体参数<span class="math inline">\(\theta\)</span>
-一致的，如果<span class="math display">\[P(|\hat\theta_n-\theta|\textless\varepsilon)\rightarrow
-1\]</span>对于任意小量<span class="math inline">\(\varepsilon\textgreater 0\)</span>且<span class="math inline">\(n\rightarrow\infty\)</span></li>
+一致的，如果<span class="math display">\[P(|\hat\theta_n-\theta|&lt;\varepsilon)\rightarrow
+1\]</span>对于任意小量<span class="math inline">\(\varepsilon&gt;
+0\)</span>且<span class="math inline">\(n\rightarrow\infty\)</span></li>
 <li>记为<span class="math display">\[\text{plim} \hat\theta_n=\theta\ \
 \ \ \text{or}\ \ \ \
 \hat\theta_n\overset{p}{\rightarrow}\theta\]</span></li>
