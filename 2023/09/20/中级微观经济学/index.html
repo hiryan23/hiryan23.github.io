@@ -48,7 +48,7 @@
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/20/%E4%B8%AD%E7%BA%A7%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/2ed7e6fcec158b239f4df81a40d7081.png">
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/20/%E4%B8%AD%E7%BA%A7%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/a4a516d63a05efbf3fbbea6704b471b.png">
 <meta property="article:published_time" content="2023-09-20T01:56:55.123Z">
-<meta property="article:modified_time" content="2023-09-27T03:56:45.550Z">
+<meta property="article:modified_time" content="2023-09-27T08:49:09.334Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="课程笔记">
 <meta name="twitter:card" content="summary">
@@ -262,7 +262,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          17k 字
+          23k 字
         
       </span>
     
@@ -273,7 +273,7 @@
         
         
         
-          146 分钟
+          191 分钟
         
       </span>
     
@@ -403,7 +403,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：1 小时前
+                    本文最后更新于：1 分钟前
                   
                 
               </p>
@@ -1073,6 +1073,195 @@ x_2^*&amp;=\left(\cfrac{m}{p_1+2p_2}\right)
 <p><img src="/2023/09/20/%E4%B8%AD%E7%BA%A7%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/a4a516d63a05efbf3fbbea6704b471b.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="lecture-5-revealed-preference-1">Lecture 5 Revealed Preference
 1</h2>
+<h3 id="preference-vs-choice">Preference vs Choice</h3>
+<p>Suppose we observe, from one individual, a dataset of choice sets and
+choices - When are they <strong>consistent</strong> with the
+maximization of some preference？ - Throughout, we focus on the case
+without indifference</p>
+<h4 id="primitive">Primitive</h4>
+<ul>
+<li>"<span class="math inline">\(c(B)=x\)</span>" means choosing <span class="math inline">\(x\)</span> from the choice set <span class="math inline">\(B\subset X\)</span></li>
+<li>"<span class="math inline">\(c(\{x,y,z\})=x\)</span>" means choosing
+<span class="math inline">\(x\)</span> from <span class="math inline">\(x,y,z\)</span></li>
+<li>Each is a decision</li>
+<li>A dataset is a collection of decisions made by an individual</li>
+</ul>
+<h4 id="example-3">Example #3</h4>
+<p>A dataset: <span class="math inline">\(c(\{x,y\})=x,c(\{y,z\})=y,c(\{x,z\})=z\)</span> -
+Q1: Could he be maximizing a preference? - Yes. - Q2: Could he be
+maximizing a rational preference? - No.</p>
+<h4 id="the-emphasis">The emphasis</h4>
+<ul>
+<li>We start with a dataset of choices (of one individual)</li>
+<li>And then ask if it could come from a rational preference</li>
+</ul>
+<p>Choices are real, preferences are theories (stories) that attempt to
+explain something real. - Some choices <strong>could not have
+come</strong> from a rational preference - So choices that could come
+from a rational preference will need to satisfy some properties</p>
+<h3 id="warp-and-sarp-显示偏好弱强公理">WARP and SARP
+显示偏好弱（强）公理</h3>
+<h4 id="primitive-1">Primitive</h4>
+<ul>
+<li><span class="math inline">\(X\)</span>: a set of alternatives</li>
+<li><span class="math inline">\(A\)</span>: a choice set, nonempty
+subset of <span class="math inline">\(X\)</span></li>
+<li><span class="math inline">\(\mathcal A\)</span>: a collection of
+choice sets</li>
+<li><span class="math inline">\(c: \mathcal A\rightarrow X\)</span> such
+that <span class="math inline">\(c(A)\in A\)</span>: a choice function /
+dataset</li>
+</ul>
+<h4 id="model">Model</h4>
+<p>Definition: <span class="math inline">\(c\)</span> is rationalized
+理性化 by a (strict) preference relation <span class="math inline">\(\succ\)</span> if <span class="math display">\[
+c(A)\equiv\{x\in A: x\succ y\ for\ all\ y\in A\backslash\{x\}\}\ for\
+all\ A\]</span> - Q1: Is there a <span class="math inline">\(c\)</span>
+that can be rationalized by a <span class="math inline">\(\succ\)</span>, but not by any rational <span class="math inline">\(\succ\)</span>? - <span class="math inline">\(c(\{x,y,z_1\})=x,c(\{x,y,z_2\})=y\)</span>. It's
+not rational. - Q2: Is there a <span class="math inline">\(c\)</span>
+that cannot be rationalized by any <span class="math inline">\(\succ\)</span>? - <span class="math inline">\(c(\{x,y,z\})=x,c(\{x,y\})=y\)</span></p>
+<h5 id="可理性化的定义">可理性化的定义</h5>
+<p>We say <span class="math inline">\(C\)</span> is <strong>rationalizable</strong> if
+it satisfies:<br>
+(Condition <span class="math inline">\(\alpha\)</span>​​​): If <span class="math inline">\(x\in A\subset B\)</span>​​ and <span class="math inline">\(x\in C(B)\)</span>​​, then <span class="math inline">\(x\in C(A)\)</span>​​​.<br>
+(Condition <span class="math inline">\(\beta\)</span>): If <span class="math inline">\(x,y\in C(A)\)</span>, <span class="math inline">\(A\subset B\)</span> and <span class="math inline">\(y\in C(B)\)</span>, then <span class="math inline">\(x\in C(B)\)</span>.</p>
+<ul>
+<li>Sen 对于 Condition <span class="math inline">\(\alpha\)</span> 的解释:
+如果某场世界级比赛的冠军是一个巴基斯坦人，那么这个人也是巴基斯坦的冠军。</li>
+<li>Sen 对于 Condition <span class="math inline">\(\beta\)</span> 的解释:
+如果某场世界级比赛的冠军是（几个）巴基斯坦人，那么所有这场比赛中的巴基斯坦人都是世界冠军。</li>
+</ul>
+<h4 id="preference-revelation">Preference Revelation</h4>
+<p>Definition: If <span class="math inline">\(c(A)=x\)</span> and <span class="math inline">\(y\in A\backslash\{x\}\)</span>,
+<strong>let</strong> <span class="math inline">\(xR_Dy\)</span>.</p>
+<ul>
+<li>"<span class="math inline">\(x\)</span> is directly revealed
+preferred 直接显示偏好 to <span class="math inline">\(y\)</span>"</li>
+<li><span class="math inline">\(R_D\)</span> is derived from choice
+data</li>
+<li>Therefore, it does not (yet) guarantee a rational preference</li>
+</ul>
+<h5 id="theorem-1-2">Theorem 1</h5>
+<p><strong>If</strong> <span class="math inline">\(c\)</span> is
+rationalized by a rational <span class="math inline">\(\succ\)</span> ,
+<strong>then</strong> <span class="math inline">\(xR_Dy\Rightarrow\neg(yR_Dx)\)</span>.</p>
+<h4 id="weak-axiom-of-revealed-preferences-warp-显示偏好弱公理">Weak
+Axiom of Revealed Preferences (WARP) 显示偏好弱公理</h4>
+<p><span class="math display">\[\text{If}\ xR_Dy,\ \text{then not}\
+yR_Dx\]</span> - A property of a dataset - If a dataset violates WARP,
+then it cannot come from the maximization of a rational preference.</p>
+<p>但是，由于有<a href="#example%203">Example
+#3</a>这种偏好，满足WARP，但仍不是理性的。所以还需要更多。</p>
+<h5 id="indirect-preference-revelation">Indirect Preference
+Revelation</h5>
+<p>Definition: <span class="math display">\[\text{If}\ xR_Dx\
+\text{and}\ zR_Dy,\ \text{then let}\ xR_Iy\]</span></p>
+<ul>
+<li>"<span class="math inline">\(x\)</span> indirectly is revealed
+preferred 间接显示偏好 to <span class="math inline">\(y\)</span>"</li>
+<li>We (may) never see <span class="math inline">\(x\)</span> chosen in
+the presence of <span class="math inline">\(y\)</span>
+<ul>
+<li>But we see <span class="math inline">\(x\)</span> chosen over <span class="math inline">\(z\)</span> and <span class="math inline">\(z\)</span> chosen over <span class="math inline">\(y\)</span></li>
+<li>So we conclude, indirectly, that the 𝑥 is preferred to 𝑦</li>
+</ul></li>
+</ul>
+<h5 id="theorem-2-1">Theorem 2</h5>
+<p><strong>If</strong> <span class="math inline">\(c\)</span> is
+rationalized by a rational <span class="math inline">\(\succ\)</span>,
+<strong>then</strong> <span class="math inline">\(xR_Dy\)</span> or
+<span class="math inline">\(xR_Iy\Rightarrow\neg(yR_Dx)\)</span> and
+<span class="math inline">\(\neg(yR_Ix)\)</span>.</p>
+<h4 id="strong-axiom-of-revealed-preferences-sarp-显示偏好强公理">Strong
+Axiom of Revealed Preferences (SARP) 显示偏好强公理</h4>
+<p><span class="math display">\[\text{If}\ xR_Dy\ \text{or}\ xR_Iy,\
+\text{then neither}\ yR_Dx\ \text{nor}\ yR_Ix\]</span> - Again, it is a
+property of a dataset</p>
+<h5 id="back-to-example-3">Back to <a href="#Example%203">Example
+#3</a></h5>
+<ol type="1">
+<li>If a guy has <span class="math inline">\(c(\{x,y\})=x,c(\{y,z\})=y,c(\{x,z\})=z\)</span></li>
+<li>This gives <span class="math inline">\(xR_Dy,yR_Dz\)</span>, and
+<span class="math inline">\(zR_Dx\)</span></li>
+<li>And therefore <strong>WARP is satisfied</strong></li>
+<li>But since <span class="math inline">\(xR_Dy\)</span> and <span class="math inline">\(yR_Dz\)</span>, we set <span class="math inline">\(xR_Iz\)</span></li>
+<li>But then <span class="math inline">\(zR_Ix\)</span> and <span class="math inline">\(xR_Iz\)</span>, so <strong>SARP is
+falsified</strong></li>
+</ol>
+<ul>
+<li>Q1: Can a dataset satisfy WARP but not SARP?
+<ul>
+<li>Yes.</li>
+</ul></li>
+<li>Q2: Can a dataset satisfy SARP but not WARP?
+<ul>
+<li>No.</li>
+</ul></li>
+<li>Found two necessary conditions 必要条件</li>
+<li>A dataset come from rational preference must satisfies SARP &amp;
+WARP</li>
+</ul>
+<h3 id="representation-theorem-表示定理">Representation Theorem
+表示定理</h3>
+<h4 id="theorem-3-3">Theorem 3</h4>
+<p>An <em>exhaustive</em> dataset of choices can be rationalized by a
+rational preference relation <strong>if and only if</strong> it
+satisfies WARP. <em>exhaustive</em>: Every (nonempty) <span class="math inline">\(A\subset X\)</span> is in <span class="math inline">\(\mathcal A\)</span></p>
+<ul>
+<li>"Only if" part is Theorem 1</li>
+<li>Proof (If)
+<ol type="1">
+<li>Construction: Given <span class="math inline">\(c\)</span>, let
+<span class="math inline">\(x\succ y\)</span> if there exists <span class="math inline">\(A\)</span> such that <span class="math inline">\(c(A)=x\)</span></li>
+<li>Show complete: From <span class="math inline">\(A=\{x\}\)</span> ,
+we have <span class="math inline">\(x\succ x\)</span>. From <span class="math inline">\(A=\{x,y\}\)</span>, we have <span class="math inline">\(x\succ y\)</span> or <span class="math inline">\(y\succ x\)</span>.</li>
+<li>Show transitive: Knowing <span class="math inline">\(\succ\)</span>
+is complete, suppose for contradiction <span class="math inline">\(x\succ y\)</span>, <span class="math inline">\(y\succ z\)</span>, and <span class="math inline">\(z\succ x\)</span>. Consider <span class="math inline">\(A^*=\{x,y,z\}\)</span>, which is in <span class="math inline">\(\mathcal A\)</span> since it is exhaustive.
+Suppose WLOG <span class="math inline">\(c(A^*)=x\)</span>, then <span class="math inline">\(xR_Dz\)</span>, which contradicts WARP.</li>
+<li>Show <span class="math inline">\(\succ\)</span> rationalizes <span class="math inline">\(c\)</span>: Consider <span class="math inline">\(A\in\mathcal A\)</span>. By construction, <span class="math inline">\(c(A)\succ y\)</span> for all <span class="math inline">\(y\in A\backslash\{c(A)\}\)</span>, so we just need
+to make sure there is no <span class="math inline">\(y\in
+A\backslash\{c(A)\}\)</span> such that <span class="math inline">\(y\succ z\)</span> for all <span class="math inline">\(z\in A\backslash\{y\}\)</span> . Suppose for
+contradiction there is, then in particular we have <span class="math inline">\(y\succ c(A)\)</span> , which means there is a
+choice set <span class="math inline">\(B\)</span> such that <span class="math inline">\(c(B)=y\)</span> and <span class="math inline">\(c(A)\in B\)</span>. But this implies <span class="math inline">\(yR_Dc(A)\)</span> , which contradicts WARP.</li>
+</ol></li>
+<li>If an exhaustive dataset of choices satisfies WARP, then it is as-if
+the individual makes decision by maximizing a rational preference.</li>
+<li>WARP is sufficient and necessary for rationalization</li>
+</ul>
+<h4 id="theorem-4-2">Theorem 4</h4>
+<p>A dataset of choices can be rationalized by a rational preference
+relation if and only if it satisfies SARP.</p>
+<ul>
+<li>"Only if" part is Theorem 2</li>
+<li>The proof is more involved.
+<ol type="1">
+<li>We build <span class="math inline">\(R_D\)</span> and <span class="math inline">\(R_I\)</span> using the dataset of choices.</li>
+<li>We write <span class="math inline">\(xR_Cy\)</span> if either <span class="math inline">\(xR_Dy\)</span> or <span class="math inline">\(xR_Iy\)</span> or both.</li>
+<li>Note that at this point, <span class="math inline">\(R_C\)</span> is
+neither guaranteed <strong>complete</strong> nor guaranteed
+<strong>transitive</strong>.</li>
+<li>By SARP, <span class="math inline">\(R_C\)</span> is
+<strong>acyclic</strong> (if <span class="math inline">\(x_1R_Cx_2,x_2R_Cx_3\cdots,x_{n-1}R_Cx_n\)</span>
+where <span class="math inline">\(x_i\neq x_j\)</span> , then not <span class="math inline">\(x_nR_Cx_1\)</span>).</li>
+<li>Then, it is well-known that a transitive closure of <span class="math inline">\(R_C\)</span> exists, denoted by <span class="math inline">\(R_C^\prime\)</span> .</li>
+<li>Now we arbitrarily "join" the chains in <span class="math inline">\(R_C^\prime\)</span> and let <span class="math inline">\(\succ\)</span> be the output, which is complete
+and transitive.</li>
+<li>Finally, we need to show that <span class="math inline">\(\succ\)</span> rationalizes the dataset of choices
+(for example, by arguments of contradictions).</li>
+</ol></li>
+</ul>
+<h3 id="comments" lazyload>Comments</h3>
+<ul>
+<li>Theorem 3 (and 4) is a watered-down version of the “2nd Theorem” in
+a field in economics called decision theory</li>
+<li>It captures rationalizable choice if and only if rational
+preference.</li>
+<li>The “1st Theorem” is “utility representation if and only if rational
+preference”, which you saw in Lecture 2</li>
+<li>Together, they link choice and utility, fact and intuitions,
+falsifiable and thought-exercise, <strong>reality and
+models</strong></li>
+</ul>
 
                 
               </div>
