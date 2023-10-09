@@ -26,8 +26,11 @@
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/20230920165635.png">
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/20230920170115.png">
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/20230920170246.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/13872b84302cca2691f73993a836e5e.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/f313f4e17546de01209d4e5bd201895.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/4eabc10ee7794c845e13d056d9c2ffd.png">
 <meta property="article:published_time" content="2023-09-17T07:52:50.968Z">
-<meta property="article:modified_time" content="2023-09-27T02:46:46.750Z">
+<meta property="article:modified_time" content="2023-10-07T12:11:19.567Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="课程笔记">
 <meta name="twitter:card" content="summary">
@@ -241,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.7k 字
+          10k 字
         
       </span>
     
@@ -252,7 +255,7 @@
         
         
         
-          31 分钟
+          85 分钟
         
       </span>
     
@@ -382,7 +385,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：6 小时前
+                    本文最后更新于：2 天前
                   
                 
               </p>
@@ -394,6 +397,9 @@
 <p><em>本笔记整理自安泰经济与管理学院2023年秋季学期课程MGTS3501-01数据库原理与系统，授课人是林学民老师。</em></p>
 </blockquote>
 <span id="more"></span>
+<blockquote>
+<p><em>：感觉课程笔记有点乱，回头自己整理</em></p>
+</blockquote>
 <h2 id="lecture-1-introduction">Lecture 1 Introduction</h2>
 <p>Database很有用</p>
 <h3 id="data">Data</h3>
@@ -493,7 +499,8 @@ keys</strong>.</p>
 attributes, - How many super keys can it have most? - <span class="math inline">\(2^n-1\)</span> - How many candidate keys can it
 have most? - <span class="math inline">\(n\choose \frac{n}{2}\)</span>
 ### Weak Entity A weak entity doesn't have any primary key but does have
-a partial key (discriminator).</p>
+a partial key (discriminator). <em>：似乎，一对一的weak
+entity可以没有partial key</em></p>
 <h4 id="partial-keydiscriminator">Partial key/discriminator</h4>
 <p>a key that is partially unique. i.e., only a subset of the attributes
 can be identified using it</p>
@@ -516,7 +523,7 @@ entity.</li>
 <ul>
 <li>1:1, N:M</li>
 <li><strong>Total Participation</strong>: each entity instance must
-patriciate in at least one relationship instance.</li>
+participate in at least one relationship instance.</li>
 <li><strong>Partial Participation</strong>: not necessarily total.</li>
 </ul>
 <h4 id="attributes-1">Attributes</h4>
@@ -524,11 +531,16 @@ patriciate in at least one relationship instance.</li>
 <li>Relationship has attributes too</li>
 </ul>
 <h4 id="超类和子类">超类和子类</h4>
+<ul>
+<li>单线vs双线</li>
+<li>d（子类不相交）vs o（子类有交集）</li>
+</ul>
 <h4 id="more-on-relationships">More on Relationships</h4>
 <ul>
 <li><strong>Binary relationship</strong>: relationship of degree 2</li>
 <li><strong>Degree</strong> (of a relationship): number of participating
 entity types.</li>
+<li>多元关系，一般是多对多对多，但是也不一定</li>
 </ul>
 <h3 id="er-diagram">ER-Diagram</h3>
 <h4 id="notations">Notations</h4>
@@ -541,6 +553,336 @@ entity types.</li>
 <img src="/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/20230920170246.png" srcset="/img/loading.gif" lazyload alt="Example">
 <figcaption aria-hidden="true">Example</figcaption>
 </figure>
+<h2 id="lecture-3-relational-data-model">Lecture 3 Relational Data
+Model</h2>
+<p>Edgar F.Codd, 1970</p>
+<h3 id="structure">Structure</h3>
+<p>In the relational model, everything is described using relations. A
+relation can be thought of as a named table. - column:
+<strong>attribute</strong> - row: <strong>tuple</strong> -
+<strong>unordered as set</strong>: expresses membership - allowed values
+for an attribute: <strong>domain</strong> - Composite and multivalued
+attributes are not allowed!</p>
+<h3 id="why-relational-model">Why relational model?</h3>
+<ul>
+<li>Very simple model</li>
+<li>Often a good match for the way we think about our data</li>
+<li>Foundations in logic and set theory</li>
+</ul>
+<h3 id="keys">Keys</h3>
+<p>Same as <a href="#key">key in ER-model</a> - super key - candidate
+key - primary key - designated candidate key - Foreign key - an
+attribute that keeps the value of a primary key of another relation.</p>
+<h3 id="relational-integrity-constraints">Relational Integrity
+Constraints</h3>
+<p>To keep relational database valid:</p>
+<h4 id="key-constraint">Key constraint</h4>
+<p>candidate key values must be unique for every relation instance.</p>
+<h4 id="entity-integrity">Entity integrity</h4>
+<p>an attribute that is part of a primary key cannot be NULL.</p>
+<h4 id="referential-integrity">Referential integrity</h4>
+<p>The value of foreign key must occur in the other relation or be
+entirely NULL.</p>
+<h3 id="insertion">Insertion</h3>
+<p>When inserting, we need to check - that the candidate keys are not
+already present, - that the value of each foreign key either  - is all
+NULL, or - is all non-NULL and occurs in the referenced relation.</p>
+<h3 id="deletion">Deletion</h3>
+<p>When deleting, we need to check <strong>referential
+integrity</strong> - check whether the primary key occurs in another
+relation.</p>
+<h3 id="er-to-relational-data-model-mapping">ER to Relational Data Model
+Mapping</h3>
+<p>7 steps</p>
+<h4 id="注意事项">注意事项</h4>
+<ul>
+<li>derived attribute 不用画在RDM中</li>
+<li>关系存在n：m的就要重新画表，只有关系中全为1：1或1：n不用重新画表
+<ul>
+<li>要重新画表的例如: 1:n:m, n:m:q, ...</li>
+</ul></li>
+</ul>
+<p><img src="/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/13872b84302cca2691f73993a836e5e.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="step-1-mapping-strong-entity-types">Step 1 Mapping Strong Entity
+Types</h4>
+<p>For each <strong>strong entity</strong> (not weak entity) type E,
+create a new relation R with - Attributes: - all simple attributes (and
+simple components of composite attributes) of E. - Key: - key of E as
+the primary key for the relation.</p>
+<p>强实体，正常搞 - Attributes：正常搞，复合的就拆开来 -
+Key：该强实体的Key</p>
+<p>Employee</p>
+<table>
+<thead>
+<tr class="header">
+<th><u>SSN</u></th>
+<th>Fname</th>
+<th>Lname</th>
+<th>Birdate</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>Department</p>
+<table>
+<thead>
+<tr class="header">
+<th><u>Name</u></th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>Project</p>
+<table>
+<thead>
+<tr class="header">
+<th><u>Pnumber</u></th>
+<th>Pname</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<h4 id="step-2-mapping-weak-entity-types">Step 2 Mapping Weak Entity
+Types</h4>
+<p>For each <strong>weak entity type</strong> W with the owner entity
+type E, create a new relation R with - Attributes: - all simple
+attributes (and simple components of composite attributes) of W, - and
+include the primary key attributes of the relation derived from E as the
+foreign key. - Key of R: - foreign key to E and partial key of W.</p>
+<p>弱实体，也正常搞，加上依赖实体的key -
+Attributes：正常搞，加上依赖的实体的primary key，作为foreign key -
+Key：Foreign key+partial key</p>
+<p>Dependent</p>
+<table>
+<thead>
+<tr class="header">
+<th><u>SSN</u></th>
+<th><u>Fname </u></th>
+<th>Birdate</th>
+<th>Relation</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><em>：上面SSN和Fname下划线是连一起的，作为一整个新的key</em></p>
+<h4 id="step-3-mapping-11-relationship-types">Step 3 Mapping 1:1
+Relationship Types</h4>
+<p>For each 1:1 <strong>relationship type</strong> B. Let E and F be the
+participating entity types. Let S and T be the corresponding relations.
+- Choose one of S and T (let S be the one that participates totally if
+there is one). - Add attributes from the primary key of T to S as a
+foreign key. - Add all simple attributes (and simple components of
+composite attributes) of B as attributes of S.</p>
+<p><em>：有三种添加方式，copy A to B, copy B to A, Combine A and B into
+C</em></p>
+<p>1对1关系，两种方式，只要copy，不要combine -
+Attributes：正常搞，加上发生关系的实体的key 作为attribute -
+Key：一个primary key+foreign key（不用下划线）</p>
+<p><em>：如果total
+participation的话，把不total的add到total的table中去，好使</em></p>
+<p>Manager</p>
+<table>
+<thead>
+<tr class="header">
+<th><u>Name</u></th>
+<th>Location</th>
+<th>MSSN</th>
+<th>Mdate</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<h4 id="step-4-mapping-1n-relationship-types">Step 4 Mapping 1:N
+Relationship Types</h4>
+<p>For each <strong>1:N relationship type</strong> B. Let E and F be the
+participating entity types. Let S and T be the corresponding relations.
+Let E be the entity on the 1 side and F on the N side.</p>
+<p>Add to the relation belonging to entity T, - the attributes from the
+primary key of S as a foreign key - any simple attributes (or simple
+components of composite attributes) from relationship B.</p>
+<p>1对n关系，把1的key copy到n的table中去，只copy不combine -
+Attributes：n的table+1的foreign key - Key：n的key</p>
+<p>Works_For</p>
+<table>
+<thead>
+<tr class="header">
+<th><u>SSN</u></th>
+<th>Birdate</th>
+<th>Fname</th>
+<th>Lname</th>
+<th>Dname</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<h4 id="step-5-mapping-mn-relationship-types">Step 5 Mapping M:N
+Relationship Types</h4>
+<p>For each <strong>N:M relationship type</strong> B. Let E and F be the
+participating entity types. Let S and T be the corresponding
+relations</p>
+<p>Create a new relation R (cross-reference) with attributes : -
+Attributes from the key of S as foreign key, and attributes from the key
+of T as foreign key, and simple attributes, and simple components of
+composite attributes of relation B. - Key : All attributes from the key
+of S and the key of T.</p>
+<p>m对n关系，乖乖重新搞 - Attributes：m和n的primary key+正常搞 -
+Key：m和n的primary key组合在一起成为key</p>
+<p>Participation</p>
+<table>
+<thead>
+<tr class="header">
+<th><u>Pnumber</u></th>
+<th><u>ESSN</u></th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<h4 id="step-6-mapping-multivalued-attributes">Step 6 Mapping
+Multivalued Attributes</h4>
+<p>For each multivalued attribute A, where A is an attribute of E,
+create a new relation R. - If A is a multivalued simple attribute, -
+Attributes of R = Simple attribute A, and key of E as a foreign key. -
+If A is a multivalued composite attribute, - Attributes of R = All
+simple components of A, and key of E as a foreign key. In both cases,
+the primary key of R is the set of all attributes in R.</p>
+<p>Multivalued Attribute，加上所属的Entity -
+Attributes：Attribute本身+Entity的key - Key：所有Simple
+attribute+Entity的key组合</p>
+<h4 id="step-7-mapping-n-ary-relationship-types">Step 7 Mapping N-ary
+Relationship Types</h4>
+<p>和Step 5差不多</p>
+<h3 id="er-vs-relational-model">ER vs Relational Model</h3>
+<table>
+
+<thead>
+<tr class="header">
+<th>ER Model</th>
+<th>Relational Model</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Entity Type</td>
+<td>Entity relation</td>
+</tr>
+<tr class="even">
+<td>1:1 or 1:N relationship type</td>
+<td>Foreign key (or relationship relation)</td>
+</tr>
+<tr class="odd">
+<td>M:N relationship type</td>
+<td>Relationship relation and two foreign key</td>
+</tr>
+<tr class="even">
+<td>n-ary relationship type</td>
+<td>Relationship relation and n foreign key</td>
+</tr>
+<tr class="odd">
+<td>Simple Attribute</td>
+<td>Attribute</td>
+</tr>
+<tr class="even">
+<td>Composite Attribute</td>
+<td>Set of simple component attributes</td>
+</tr>
+<tr class="odd">
+<td>Multivalued Attribute</td>
+<td>Relation and foreign key</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lecture-4-relational-algebra">Lecture 4 Relational Algebra</h2>
+<p>E.F.Codd(1970)</p>
+<ul>
+<li>Relational Algebra is a procedural data manipulation language
+(DML).It specifies operations on relations to define new relations:
+<ul>
+<li>Unary Relational Operations
+<ul>
+<li>Select, Project</li>
+</ul></li>
+<li>Operations from Set Theory
+<ul>
+<li>Union, Intersection, Difference, Cartesian Product</li>
+</ul></li>
+<li>Binary Relational Operations
+<ul>
+<li>Join, Divide.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="select">Select</h3>
+<p>The SELECT operation/predicate is used to select a subset of the
+tuples of a relation R, satisfying some condition. <span class="math display">\[\sigma_{&lt;selection\ condition&gt;}(R)\]</span>
+- 横切片</p>
+<h4 id="selection-condition">Selection Condition</h4>
+<ul>
+<li><p>&lt;attribute&gt; <em>operator</em> &lt;constant&gt;</p></li>
+<li><p>&lt;attribute&gt; <em>operator</em> &lt;attribute&gt; Where
+<em>operator</em> is one of <span class="math inline">\(=, &lt;, \leq,
+&gt;, \geq, \neq,\cdots\)</span></p></li>
+<li><p>&lt;expression&gt; <em>operator</em> &lt;expression&gt; With
+this, we can use Boolean connectives AND, OR, NOT as <em>operator</em> :
+<span class="math inline">\(\land,\lor,\lnot\)</span></p></li>
+</ul>
+<h4 id="properties-of-selection">Properties of Selection</h4>
+<ul>
+<li>Consecutive selects can be combined
+<ul>
+<li><span class="math inline">\(\sigma_{&lt;cond1&gt;}(\sigma_{&lt;cond2&gt;}(R))\)</span></li>
+</ul></li>
+<li>Selection is a commutative operation
+<ul>
+<li><span class="math inline">\(\sigma_{&lt;cond1&gt;}(\sigma_{&lt;cond2&gt;}(R))\)</span> is
+the same as <span class="math inline">\(\sigma_{&lt;cond2&gt;}(\sigma_{&lt;cond1&gt;}(R))\)</span></li>
+</ul></li>
+</ul>
+<h3 id="project">Project</h3>
+<p>The PROJECT operation is used to project a subset of the attributes
+(column) of a relation. <span class="math display">\[\pi_{&lt;attribute\
+list&gt;}(R)\]</span> - 纵切片 - Result: - schema: attribute list <span class="math inline">\((A_1,\cdots,A_k)\)</span> - instance: the set of
+all subtuples <span class="math inline">\(t[A_1,\cdots,A_k]\)</span>
+where <span class="math inline">\(t\in R\)</span></p>
+<h4 id="duplicates">Duplicates</h4>
+<p>Duplicate elimination:
+project会去重，结果中的tuple不可能有重复的内容</p>
+<h4 id="properties-of-project">Properties of Project</h4>
+<ul>
+<li>Consider <span class="math inline">\(\pi_{&lt;list1&gt;}(\pi_{&lt;list2&gt;}(R))\)</span>
+<ul>
+<li>If &lt;list2&gt; contains all the attributes in
+&lt;list1&gt;:  </li>
+<li>Then <span class="math inline">\(\pi_{&lt;list1&gt;}(\pi_{&lt;list2&gt;})(R))=\pi_{&lt;list1&gt;}(R)\)</span></li>
+<li>Else <u>the operation is not well defined</u>.</li>
+</ul></li>
+</ul>
+<h3 id="set-union">Set Union</h3>
+<p>UNION is the set theoretic union of the tuples of two relations.
+<span class="math display">\[ R\cup S=\{t:t\in R\ or\ t\in S\}\]</span>
+- R and S must be <strong>union compatible</strong>! - Union
+compatibility: there is a 1-1 correspondence between their attributes:
+the same name and the same <strong>domain</strong></p>
+<h3 id="set-intersection">Set Intersection</h3>
+<p>INTERSECTION is an operation that includes all tuples that are in
+present both relations. <span class="math display">\[R\cap S=\{t:t\in R\
+and\ t\in S\}\]</span> - R and S must also be <strong>union
+compatible</strong>!</p>
+<h3 id="set-difference">Set Difference</h3>
+<p>DIFFERENCE is a relation that includes all tuples that are in the
+left relation but not in the right relation <span class="math display">\[R-S=\{t:t\in R\ and\ t\not\in S\}\]</span> - R
+and S must be <strong>union compatible</strong>!</p>
+<h3 id="summary">Summary</h3>
+<p><img src="/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/f313f4e17546de01209d4e5bd201895.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/4eabc10ee7794c845e13d056d9c2ffd.png" srcset="/img/loading.gif" lazyload></p>
 
                 
               </div>
@@ -605,7 +947,7 @@ entity types.</li>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年9月27日</div>
+          <div>2023年10月7日</div>
         </div>
       
       
