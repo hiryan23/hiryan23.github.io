@@ -29,8 +29,12 @@
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/13872b84302cca2691f73993a836e5e.png">
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/f313f4e17546de01209d4e5bd201895.png">
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/4eabc10ee7794c845e13d056d9c2ffd.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/44908e2d3e61720e95af372f17cdf76.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/4f9ed5655cd7e917bcde59a835f5948.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/713a808e09ad1f381436c4b46562ec9.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/fac634d6b558d083e595cdfc69eb845.png">
 <meta property="article:published_time" content="2023-09-17T07:52:50.968Z">
-<meta property="article:modified_time" content="2023-10-07T12:11:19.567Z">
+<meta property="article:modified_time" content="2023-10-11T07:35:29.076Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="课程笔记">
 <meta name="twitter:card" content="summary">
@@ -244,7 +248,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          10k 字
+          16k 字
         
       </span>
     
@@ -255,7 +259,7 @@
         
         
         
-          85 分钟
+          132 分钟
         
       </span>
     
@@ -385,7 +389,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2 天前
+                    本文最后更新于：2 分钟前
                   
                 
               </p>
@@ -883,6 +887,261 @@ and S must be <strong>union compatible</strong>!</p>
 <h3 id="summary">Summary</h3>
 <p><img src="/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/f313f4e17546de01209d4e5bd201895.png" srcset="/img/loading.gif" lazyload></p>
 <p><img src="/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/4eabc10ee7794c845e13d056d9c2ffd.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="cartesian-product">Cartesian Product</h3>
+<p><span class="math display">\[R\times S=\{t_1||t_2:t_1\in R\ and\ t_2
+\in S\}\]</span> - R and S not required to be union compatible - The
+number of tuples in the output relation is always <span class="math inline">\(|R|*|S|\)</span> -
+一般假设R和S的attributes不交。若非如此，要区分开来</p>
+<h4 id="example-1">Example</h4>
+<p><img src="/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/44908e2d3e61720e95af372f17cdf76.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="join-theta-join">Join (<span class="math inline">\(\theta\)</span>-join)</h3>
+<p>JOIN is used to combine related tuples from two relations into single
+"longer" tuples. <span class="math display">\[R\bowtie_{&lt;join\
+condition&gt;}S=\{t_1||t_2:t_1\in R\ and\ t_2\in S\ and\ &lt;join\
+condition&gt;\}\]</span></p>
+<ul>
+<li>如果两个join的对象没有相对应的attribute，怎么办？
+<ul>
+<li>做Cartesian product</li>
+</ul></li>
+</ul>
+<h4 id="equi-join">Equi-join</h4>
+<p>A type of theta-join where the only comparison operator used is “=”
+is called an Equi-join</p>
+<h5 id="example-2">Example</h5>
+<p><span class="math display">\[ENROLMENT\bowtie_{(Superviser=Person\#)}RESEARCHER\]</span></p>
+<h5 id="等价表示">等价表示</h5>
+<p><span class="math display">\[\pi_{\{E&#39;ment\#,S&#39;ee,S&#39;or,Name,D&#39;ment,Degree\}}(\sigma_{(Supervisor=Person\#)}(ENROLMENT\times
+RESEARCHER))\]</span></p>
+<h4 id="natural-join">Natural join</h4>
+<p>理解为把两个table按照某attribute对应，然后join到一起 -
+某attribute可以是多attribute</p>
+<p>Intuitions: - Enforce equality on all attributes with same name -
+Eliminate one copy of duplicated attributes</p>
+<h3 id="divide">Divide</h3>
+<p>Return all tuples from relation R which are associated to every S’s
+tuple. <span class="math display">\[\div\]</span> <img src="/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/4f9ed5655cd7e917bcde59a835f5948.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="等价表示-1">等价表示</h4>
+<p><span class="math display">\[R\div S\Leftrightarrow
+\begin{cases}
+TEMP1&amp;\leftarrow\pi_{R-S}(R)\\
+TEMP2&amp;\leftarrow\pi_{R-S}((TEMP1\times S)-\pi_{R-S,S}(R))\\
+RESULT&amp;=TEMP1-TEMP2
+\end{cases}
+\]</span></p>
+<h3 id="rename">Rename</h3>
+<p><span class="math display">\[\rho_{&lt;new\ name&gt;}(R)\]</span></p>
+<h3 id="basic-vs-extended-operators">Basic vs Extended Operators</h3>
+<h4 id="basic-operators">Basic operators</h4>
+<p><span class="math display">\[\{\sigma,\pi,\cup,-,\times(,\rho)\}\]</span></p>
+<h4 id="extended-operators">Extended operators</h4>
+<p>Join, intersection, divide</p>
+<h3 id="aggregate-operators">Aggregate Operators</h3>
+<p>We can use an aggregation operator <span class="math inline">\(\gamma\)</span> and an function such as SUM, AVG,
+MIN, MAX, or COUNT. <img src="/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/713a808e09ad1f381436c4b46562ec9.png" srcset="/img/loading.gif" lazyload> <img src="/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/fac634d6b558d083e595cdfc69eb845.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="超级-summary">超级 Summary</h3>
+<table>
+
+<thead>
+<tr class="header">
+<th>OPERATION</th>
+<th>PURPOSE</th>
+<th>NOTATION</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SELECT</td>
+<td>Selects all tuples that satisfy the selection condition from a
+relation R</td>
+<td><span class="math inline">\(\sigma_{&lt;selection\
+condition&gt;}(R)\)</span></td>
+</tr>
+<tr class="even">
+<td>PROJECT</td>
+<td>Produces a new relation with only some of the attributes of R and
+removes duplicate tuples.</td>
+<td><span class="math inline">\(\pi_{&lt;attribute\
+list&gt;}(R)\)</span></td>
+</tr>
+<tr class="odd">
+<td>THETA-JOIN</td>
+<td>Produces all combinations of tuples from R and S that satisfy the
+join condition.</td>
+<td><span class="math inline">\(R\bowtie_{&lt;join\
+condition&gt;}S\)</span></td>
+</tr>
+<tr class="even">
+<td>EQUI-JOIN</td>
+<td>Produces all the combinations of tuples from R and S that satisfy a
+join condition with only equality comparisons.</td>
+<td><span class="math inline">\(R\bowtie_{&lt;join\
+condition&gt;}S\)</span></td>
+</tr>
+<tr class="odd">
+<td>NATURAL-JOIN</td>
+<td>Same as EQUIJOIN except that the join attributes of S are not
+included in the resulting relation; if the join attributes have the same
+names, they do not have to be specified at all.</td>
+<td><span class="math inline">\(R\bowtie_{&lt;join\
+condition&gt;}S\)</span></td>
+</tr>
+<tr class="even">
+<td>UNION</td>
+<td>Produces a relation that includes all the tuples in R or S or both R
+and S; R and S must be union compatible.</td>
+<td><span class="math inline">\(R\cup S\)</span></td>
+</tr>
+<tr class="odd">
+<td>INTERSECTION</td>
+<td>Produces a relation that includes all the tuples in both R and S; R
+and S must be union compatible.</td>
+<td><span class="math inline">\(R\cap S\)</span></td>
+</tr>
+<tr class="even">
+<td>DIFFERENCE</td>
+<td>Produces a relation that includes all the tuples in R that are not
+in S; R and S must be union compatible.</td>
+<td><span class="math inline">\(R-S\)</span></td>
+</tr>
+<tr class="odd">
+<td>CARTESIAN PRODUCT</td>
+<td>Produces a relation that has the attributes of R and S and includes
+as tuples all possible combinations of tuples from R and S.</td>
+<td><span class="math inline">\(R\times S\)</span></td>
+</tr>
+<tr class="even">
+<td>DIVISION</td>
+<td>Produces a relation T(X) that includes all tuples t[X] in R(Z) that
+appear in R in combination with every tuple from S(Y), where Z=X<span class="math inline">\(\cup\)</span>Y.</td>
+<td><span class="math inline">\(R(Z)\div S(Y)\)</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="lecture-5-sql">Lecture 5 SQL</h2>
+<ul>
+<li>SQL = <strong>Structured Query Language</strong> (pronounced
+“sequel”).</li>
+<li>Developed at IBM (San Jose Lab) during the 1970’s, and standardised
+during the 1980’s.</li>
+<li>A <strong>standard</strong> language for querying and manipulating
+relational DBMSs.</li>
+<li>Interactive via GUI or command line or embedded in programs.</li>
+<li><strong>Declarative</strong>, based on relational algebra.</li>
+</ul>
+<h3 id="乱七八糟的东西">乱七八糟的东西</h3>
+<h4 id="sql-identifiers">SQL Identifiers</h4>
+<p>Identifiers in SQL use similar conventions to common programming
+languages: - a sequence of <strong>alpha-numerics</strong>, starting
+with an alphabetic, - <strong>not</strong> case-sensitive, - reserve
+word <strong>disallowed</strong> - Whether you can use sign (@), dollar
+sign ($), number sign (#), or underscore (_) depends on the
+standard.</p>
+<h4 id="sql-keywords">SQL Keywords</h4>
+<p><a target="_blank" rel="noopener" href="https://www.postgresql.org/docs/current/sql-keywords-appendix.html">https://www.postgresql.org/docs/current/sql-keywords-appendix.html</a></p>
+<p>例如 - ALTER AND CREATE - FROM INSERT NOT OR - SELECT TABLE WHERE</p>
+<h4 id="sql-data-types">SQL Data Types</h4>
+<ul>
+<li>The NULL value is a member of all data types.
+<ul>
+<li>Comparison against NULL yields FALSE.</li>
+<li>用IS NULL或IS NOT NULL判断</li>
+</ul></li>
+</ul>
+<h5 id="numeric">Numeric</h5>
+<p>Integers - smallint (2 byte integer) - int (4 byte integer) - bigint
+(8 byte integer)</p>
+<p>Real numbers - real - double - numeric
+(&lt;precision&gt;,&lt;scale&gt;) - &lt;precision&gt;: specify
+significant digits in the whole number - &lt;scale&gt;: specify digits
+after the decimal point</p>
+<h5 id="string">String</h5>
+<h6 id="string-literal">String Literal</h6>
+<p>A string literal is a sequence of zero or more characters - case
+sensitive: 'John'!='JOHN'</p>
+<ul>
+<li>CHAR(n)
+<ul>
+<li>n length, left-justified blank-padded</li>
+</ul></li>
+<li>VARCHAR(n)
+<ul>
+<li>can be between 0 and n length, no padding</li>
+</ul></li>
+</ul>
+<h6 id="string-operators">String Operators</h6>
+<ul>
+<li>string || string … concatenate two strings</li>
+<li>LENGTH (string) ... return length of string</li>
+<li>SUBSTR (string, start, length) ... extract chars from within
+string</li>
+</ul>
+<p>Example: - 'Post'|| 'greSQL' <span class="math inline">\(\rightarrow\)</span> 'PostgreSQL' -
+substring('Thomas' from 2 for 3) <span class="math inline">\(\rightarrow\)</span> 'hom'</p>
+<h6 id="sql-like-operator">SQL Like Operator</h6>
+<p>匹配正则表达式（？）</p>
+<p>Two kinds of string pattern-matching - The symbol _ (underscore)
+matches any single characters - The symbol % (percent) matches zero or
+more characters</p>
+<ul>
+<li>Practice
+<ul>
+<li>String LIKE 'Ja%'
+<ul>
+<li>Strings beginning with 'Ja'</li>
+</ul></li>
+<li>String LIKE  '_i%'
+<ul>
+<li>Strings with 'i' as 2nd letter</li>
+</ul></li>
+<li>String LIKE '%o%o%'
+<ul>
+<li>Strings contains two ‘o’s</li>
+</ul></li>
+</ul></li>
+</ul>
+<h6 id="sql-dates">SQL Dates</h6>
+<p>Format is typically DD-Mon-YYYY, e.g., ''18-Aug-1998' Accepts other
+formats</p>
+<p>Comparison operators implement before (&lt;) and after (&gt;).</p>
+<p>(start1, end1) OVERLAPS (start2, end2) - This expression yields true
+when two time periods (defined by their endpoints) overlap, false when
+they do not overlap. - SELECT (DATE '2001-02-16', DATE '2001-12-21')
+OVERLAPS (DATE '2001-10-30', DATE '2002-10-30') - Result: true</p>
+<h3 id="basic-select-structure">Basic SELECT Structure</h3>
+<p>SELECT&lt;Attribute list&gt; FROM&lt;Table list&gt;
+WHERE&lt;Condition&gt;</p>
+<ul>
+<li>&lt;attribute list&gt;: list of attributes</li>
+<li>&lt;table list&gt;: list of relations</li>
+<li>&lt;condition&gt;: list of conditions (Boolean expression)</li>
+</ul>
+<p>Formal semantics (relational algebra): - start with relation R in
+FROM clause - apply <span class="math inline">\(\sigma\)</span> using
+Condition in WHERE clause - apply <span class="math inline">\(\pi\)</span> using Attributes in SELECT clause</p>
+<h3 id="null-in-sql">NULL in SQL</h3>
+<p>null value = unknown</p>
+<p>重点！：Result of where clause predicate is treated as
+<strong>FALSE</strong> if it evaluates as unknown</p>
+<p>Comparisons with null returns unknown - Example: 5 &lt; null, null
+&lt;&gt; null, null = null</p>
+<p>Three-valued logic using the truth value unknown - OR - (unknown or
+true)   = true - (unknown or false)  = unknown        - (unknown or
+unknown) = unknown</p>
+<ul>
+<li>AND
+<ul>
+<li>(true and unknown)  = unknown</li>
+<li>(false and unknown) = false</li>
+<li>(unknown and unknown) = unknown</li>
+</ul></li>
+<li>NOT
+<ul>
+<li>(not unknown) = unknown</li>
+</ul></li>
+</ul>
+<p>-重点特例！： "P is unknown" evaluates to true if predicate P
+evaluates as unknown</p>
 
                 
               </div>
@@ -947,7 +1206,7 @@ and S must be <strong>union compatible</strong>!</p>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年10月7日</div>
+          <div>2023年10月11日</div>
         </div>
       
       
