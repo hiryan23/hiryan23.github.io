@@ -16,15 +16,15 @@
   <meta name="author" content="Ruiyang He">
   <meta name="keywords" content="">
   
-    <meta name="description" content="TCP 192.168.31.68:56692 120.133.59.141:443 TIME_WAIT 0 TCP 192.168.31.68:56698 58.254.149.162:443 ESTABLISHED 26520 TCP 192.168.31.68:56700 202.89.233.100:443 ESTABLISHED 26520 TCP 192.168.31.68:56">
+    <meta name="description" content="Practice 1 \[\sigma_{(年龄&gt;20)}(学生)\] 结果    学号 姓名 年龄 专业     002 李四 22 物理   003 王五 21 数学    2 \[\begin{align} R&#x3D;选课\bowtie_{学号}学生\\ \pi_{课程名}(\sigma_{(姓名&#x3D;张三)\ or\ (姓名&#x3D;李四)">
 <meta property="og:type" content="website">
 <meta property="og:title" content="page.title">
-<meta property="og:url" content="http://hiryan23.github.io/dairy/2023-10-06.html">
+<meta property="og:url" content="http://hiryan23.github.io/Week5%20Practice.html">
 <meta property="og:site_name" content="Hiryan&#39;s Blog">
-<meta property="og:description" content="TCP 192.168.31.68:56692 120.133.59.141:443 TIME_WAIT 0 TCP 192.168.31.68:56698 58.254.149.162:443 ESTABLISHED 26520 TCP 192.168.31.68:56700 202.89.233.100:443 ESTABLISHED 26520 TCP 192.168.31.68:56">
+<meta property="og:description" content="Practice 1 \[\sigma_{(年龄&gt;20)}(学生)\] 结果    学号 姓名 年龄 专业     002 李四 22 物理   003 王五 21 数学    2 \[\begin{align} R&#x3D;选课\bowtie_{学号}学生\\ \pi_{课程名}(\sigma_{(姓名&#x3D;张三)\ or\ (姓名&#x3D;李四)">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-06T11:29:43.721Z">
-<meta property="article:modified_time" content="2023-10-06T11:29:43.721Z">
+<meta property="article:published_time" content="2023-10-14T07:39:27.020Z">
+<meta property="article:modified_time" content="2023-10-14T07:39:23.744Z">
 <meta property="article:author" content="Ruiyang He">
 <meta name="twitter:card" content="summary">
   
@@ -230,12 +230,115 @@
                 
 
 <article class="page-content">
-  <p>TCP 192.168.31.68:56692 120.133.59.141:443 TIME_WAIT 0 TCP
-192.168.31.68:56698 58.254.149.162:443 ESTABLISHED 26520 TCP
-192.168.31.68:56700 202.89.233.100:443 ESTABLISHED 26520 TCP
-192.168.31.68:56708 192.168.28.131:7680 SYN_SENT 13500 TCP
-192.168.31.68:63868 20.198.162.76:443 ESTABLISHED 6048 TCP
-192.168.31.68:63871 20.198.162.76:443 ESTABLISHED 6048</p>
+  <h2 id="practice">Practice</h2>
+<h3 id="section">1</h3>
+<p><span class="math display">\[\sigma_{(年龄&gt;20)}(学生)\]</span>
+结果</p>
+<table>
+<thead>
+<tr class="header">
+<th>学号</th>
+<th>姓名</th>
+<th>年龄</th>
+<th>专业</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>002</td>
+<td>李四</td>
+<td>22</td>
+<td>物理</td>
+</tr>
+<tr class="even">
+<td>003</td>
+<td>王五</td>
+<td>21</td>
+<td>数学</td>
+</tr>
+</tbody>
+</table>
+<h3 id="section-1">2</h3>
+<p><span class="math display">\[\begin{align}
+R=选课\bowtie_{学号}学生\\
+\pi_{课程名}(\sigma_{(姓名=张三)\ or\ (姓名=李四)}(R))
+\end{align}\]</span></p>
+<p>结果</p>
+<table>
+<thead>
+<tr class="header">
+<th>课程名</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>数据库</td>
+</tr>
+<tr class="even">
+<td>计算机网络</td>
+</tr>
+</tbody>
+</table>
+<h3 id="section-2">3</h3>
+<p><span class="math display">\[\begin{align}
+&amp;R=选课\bowtie_{学号}学生\\
+&amp;\pi_{课程名}(\sigma_{(姓名=张三)}(R))-\pi_{课程名}(\sigma_{(姓名=李四)}(R))
+\end{align}\]</span> 结果</p>
+<table>
+<thead>
+<tr class="header">
+<th>课程名</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>数据库</td>
+</tr>
+</tbody>
+</table>
+<h3 id="section-3">4</h3>
+<p><span class="math display">\[\begin{align}
+&amp;R=选课\bowtie_{学号}学生\\
+&amp;\pi_{姓名}(\sigma_{(课程名=数据库)}(R))
+\end{align}\]</span> 结果</p>
+<table>
+<thead>
+<tr class="header">
+<th>姓名</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>张三</td>
+</tr>
+<tr class="even">
+<td>王五</td>
+</tr>
+</tbody>
+</table>
+<h3 id="section-4">5</h3>
+<p><span class="math display">\[\begin{align}
+&amp;R=选课\bowtie_{学号}学生\\
+&amp;R\div\pi_{课程名}(选课)
+\end{align}\]</span> 结果</p>
+<table>
+<thead>
+<tr class="header">
+<th>姓名</th>
+<th>年龄</th>
+<th>专业</th>
+<th>学号</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>张三</td>
+<td>20</td>
+<td>计算机</td>
+<td>001</td>
+</tr>
+</tbody>
+</table>
 
 
   
