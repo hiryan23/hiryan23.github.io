@@ -24,7 +24,7 @@
 <meta property="og:description" content="In (1-5), which inferences are correct? Give a proof (using inference rules of PL and FOL) for each correct inference.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-13T13:35:53.209Z">
-<meta property="article:modified_time" content="2023-10-14T07:40:14.478Z">
+<meta property="article:modified_time" content="2023-10-15T03:22:03.946Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="逻辑学">
 <meta name="twitter:card" content="summary">
@@ -237,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          2.4k 字
         
       </span>
     
@@ -248,7 +248,7 @@
         
         
         
-          18 分钟
+          20 分钟
         
       </span>
     
@@ -342,7 +342,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：1 小时前
+                    本文最后更新于：11 小时前
                   
                 
               </p>
@@ -385,7 +385,7 @@ Cx),\lnot\exists x(A\land \lnot Bx)\Rightarrow\exists xCx\)</span></p>
 &amp;(1)(DME)\ \ \ \ \lnot\exists x(Bx\land\lnot
 Cx)\Leftrightarrow\forall x(\lnot Bx\lor Cx)\\
 &amp;(2)(MI)\ \ \ \ \Leftrightarrow\forall x(Bx\rightarrow Cx)\\
-&amp;(3)(UD)\ \ \ \ \Leftrightarrow\forall xBx\rightarrow\forall xCx\\
+&amp;(3)(UD)\ \ \ \ \Rightarrow\forall xBx\rightarrow\forall xCx\\
 &amp;(4)类似(2)(3)\ \ \ \ \lnot\exists x(A\land\lnot Bx)\Leftrightarrow
 A\rightarrow\forall xBx\\
 &amp;(5)(MP)\ \ \ \ A,A\rightarrow\forall xBx,\forall
@@ -396,15 +396,12 @@ xBx\rightarrow\forall xCx\Rightarrow\forall xCx\\
 <p><span class="math inline">\(\forall xAx,\lnot\exists x(\lnot Ax\land
 Bx),Bt\Rightarrow C\)</span></p>
 <p><span class="math display">\[\begin{align}
-&amp;(1)(DME)\ \ \ \ \lnot\exists x(\lnot Ax\land
-Bx)\Leftrightarrow\forall x(\lnot Ax\rightarrow\lnot Bx)\\
-&amp;(2)(UD)\ \ \ \ \Leftrightarrow\forall x\lnot Ax\rightarrow\forall
-x\lnot Bx\\
-&amp;(3)(DMU)\ \ \ \ \Leftrightarrow\exists xAx\rightarrow\exists xBx\\
-&amp;(4)(S3T3)\ \ \ \ \forall xAx\Rightarrow\exists xAx\\
-&amp;(5)(MP)根据(3)(4)\ \ \ \ \exists xAx,\exists xAx\rightarrow \exists
-xBx\Rightarrow\exists xBx\\
-&amp;(6)根据(5)\exists xBx,Bt\Rightarrow C
+&amp;(DME)\ \ \ \ \lnot\exists x(\lnot Ax\land Bx)\Leftrightarrow\forall
+x(Bx\rightarrow Ax)\\
+&amp;所以左式\Leftrightarrow\forall xAx, \forall x(Bx\rightarrow
+Ax),Bt\\
+&amp;取x=t,左式为T,而C可能为F,所以T\Rightarrow F不成立\\
+&amp;若C恒为T，则无论左式是T还是F，命题必然恒成立
 \end{align}\]</span></p>
 <h2 id="补充">补充</h2>
 <p>Material Implication (MI): <span class="math inline">\(P\rightarrow
@@ -440,6 +437,19 @@ Q\Leftrightarrow \lnot P\lor Q\)</span></p>
 </tr>
 </tbody>
 </table>
+<p><span class="math display">\[\begin{align}
+\forall x(Ax\lor\lnot Bx)\\
+\Leftrightarrow \forall x(\lnot Ax\rightarrow \lnot Bx)\\
+\textcolor{red}{\Rightarrow} \forall x\lnot Ax\rightarrow\forall x\lnot
+Bx\\
+\Leftrightarrow\exists xBx\rightarrow\exists xAx\ \ \ \ (*)\\
+\\
+\forall x(\lnot Bx\lor Ax)\\
+\Leftrightarrow\forall x(Bx\rightarrow Ax)\\
+\textcolor{red}{\Rightarrow}\forall xBx\rightarrow\forall xAx\\
+\Leftrightarrow\lnot\forall xAx\rightarrow\lnot\forall xBx\\
+\Leftrightarrow\forall xBx\rightarrow\forall xAx\ \ \ \ (**)
+\end{align}\]</span></p>
 
                 
               </div>
@@ -504,7 +514,7 @@ Q\Leftrightarrow \lnot P\lor Q\)</span></p>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年10月14日</div>
+          <div>2023年10月15日</div>
         </div>
       
       
