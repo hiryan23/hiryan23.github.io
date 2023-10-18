@@ -16,15 +16,15 @@
   <meta name="author" content="Ruiyang He">
   <meta name="keywords" content="">
   
-    <meta name="description" content="A) Question 1 \[\pi_{stude}(\sigma_{(subj&#x3D;1011\ and\ mark&gt;70)}(MARK))\] result:    stude     21333   21531    Question 2 \[\pi_{\{name,subj\}}(\sigma_{(mark&gt;70)}(STUDENT\bowt">
+    <meta name="description" content="select A as B ,db里面还是A，只是display是B select理解为遍历 count(attribute)跳过null，count(*)包括NULL 可赎回比普通更便宜，可回售比普通更贵 付息券的YTM不能用于市场上其它产品定价 NS法 beta0长期利率 beta1斜率 beta2曲度（凸度）">
 <meta property="og:type" content="website">
 <meta property="og:title" content="page.title">
-<meta property="og:url" content="http://hiryan23.github.io/Week5%20Practice.html">
+<meta property="og:url" content="http://hiryan23.github.io/dairy/2023-10-17.html">
 <meta property="og:site_name" content="Hiryan&#39;s Blog">
-<meta property="og:description" content="A) Question 1 \[\pi_{stude}(\sigma_{(subj&#x3D;1011\ and\ mark&gt;70)}(MARK))\] result:    stude     21333   21531    Question 2 \[\pi_{\{name,subj\}}(\sigma_{(mark&gt;70)}(STUDENT\bowt">
+<meta property="og:description" content="select A as B ,db里面还是A，只是display是B select理解为遍历 count(attribute)跳过null，count(*)包括NULL 可赎回比普通更便宜，可回售比普通更贵 付息券的YTM不能用于市场上其它产品定价 NS法 beta0长期利率 beta1斜率 beta2曲度（凸度）">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-15T17:14:08.325Z">
-<meta property="article:modified_time" content="2023-10-15T17:14:08.325Z">
+<meta property="article:published_time" content="2023-10-17T09:33:54.821Z">
+<meta property="article:modified_time" content="2023-10-17T09:33:54.821Z">
 <meta property="article:author" content="Ruiyang He">
 <meta name="twitter:card" content="summary">
   
@@ -230,93 +230,12 @@
                 
 
 <article class="page-content">
-  <h2 id="a">A)</h2>
-<h3 id="question-1">Question 1</h3>
-<p><span class="math display">\[\pi_{stude}(\sigma_{(subj=1011\ and\
-mark&gt;70)}(MARK))\]</span> result:</p>
-<table>
-<thead>
-<tr class="header">
-<th>stude</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>21333</td>
-</tr>
-<tr class="even">
-<td>21531</td>
-</tr>
-</tbody>
-</table>
-<h3 id="question-2">Question 2</h3>
-<p><span class="math display">\[\pi_{\{name,subj\}}(\sigma_{(mark&gt;70)}(STUDENT\bowtie_{(STUDENT.sid=MARK.stude)}MARK))\]</span>
-result:</p>
-<table>
-<thead>
-<tr class="header">
-<th>name</th>
-<th>subj</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Anne</td>
-<td>1011</td>
-</tr>
-<tr class="even">
-<td>John</td>
-<td>1011</td>
-</tr>
-<tr class="odd">
-<td>John</td>
-<td>1021</td>
-</tr>
-</tbody>
-</table>
-<h2 id="b">B)</h2>
-<h3 id="question-3">Question 3</h3>
-<p><span class="math display">\[\pi_{\{firstName,lastName\}}(book\bowtie
-author)\]</span></p>
-<h3 id="question-4">Question 4</h3>
-<p><span class="math display">\[\begin{align}
-&amp;R=\pi_{\{authorID,firstName,lastName\}}(book\bowtie author)\\
-&amp;\pi_{\{firstName,lastName\}}(author-R)\\
-\end{align}\]</span></p>
-<h3 id="question-5">Question 5</h3>
-<p><span class="math display">\[\pi_{\{firstName,lastName\}}(author\bowtie
-authorPub)\]</span></p>
-<h3 id="question-6">Question 6</h3>
-<p><span class="math display">\[\pi_{\{firstName,lastName\}}(\sigma_{(month=&#39;July&#39;)}(author\bowtie
-authorPub\bowtie pub\bowtie book))\]</span></p>
-<h3 id="question-7">Question 7</h3>
-<p><span class="math display">\[\begin{align}
-&amp;R_1=\pi_{\{authorID,firstName,lastName\}}(book\bowtie author)\\
-&amp;R_2=\pi_{\{authorID,firstName,lastName\}}(author\bowtie
-authorPub)\\
-&amp;\pi_{\{firstName,lastName\}}(R_1-R_2)\\
-\end{align}\]</span></p>
-<h2 id="c">C)</h2>
-<h3 id="question-8">Question 8</h3>
-<p><span class="math display">\[\pi_{name}(\sigma_{(job=&#39;designer&#39;and\
-gender=&#39;female&#39;)}(JobRequirement\bowtie Course\bowtie
-Enrolment\bowtie Student))\]</span></p>
-<h3 id="question-9">Question 9</h3>
-<p><span class="math display">\[\begin{align}
-&amp;R_1=\pi_{courseID}(\sigma_{(job=&#39;designer&#39;)}(JobRequirement))\\
-&amp;R_2=\pi_{studentID}(\sigma_{(faculty=&#39;law&#39;)}(Course\bowtie
-Enrolment\bowtie Student))\\
-&amp;R_3=(Enrolment\div R_1-R_2)\bowtie Student\\
-&amp;\pi_{name}(R_3)
-\end{align}\]</span></p>
-<h3 id="question-10">Question 10</h3>
-<p><span class="math display">\[\begin{align}
-&amp;R_1=\pi_{\{courseID,gender\}}(Student\bowtie Course\bowtie
-Enrolment)\\
-&amp;R_2=\pi_{gender}(Student)\\
-&amp;R_3=\pi_{courseID}(Course)-R_1\div R_2\\
-&amp;\pi_{courseName}(R_3\bowtie Course)
-\end{align}\]</span></p>
+  <p>select A as B ,db里面还是A，只是display是B</p>
+<p>select理解为遍历</p>
+<p>count(attribute)跳过null，count(*)包括NULL</p>
+<p>可赎回比普通更便宜，可回售比普通更贵
+付息券的YTM不能用于市场上其它产品定价</p>
+<p>NS法 beta0长期利率 beta1斜率 beta2曲度（凸度）</p>
 
 
   
