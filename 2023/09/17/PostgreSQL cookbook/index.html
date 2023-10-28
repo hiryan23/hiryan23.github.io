@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/PostgreSQL%20cookbook/3a81dbaecb9b26325c8177cdbebcfa0.png">
 <meta property="article:published_time" content="2023-09-17T07:54:14.993Z">
-<meta property="article:modified_time" content="2023-10-21T06:11:51.680Z">
+<meta property="article:modified_time" content="2023-10-25T05:14:07.323Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="具有自我意识的笔记">
 <meta name="twitter:card" content="summary">
@@ -380,7 +380,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：11 小时前
+                    本文最后更新于：3 天前
                   
                 
               </p>
@@ -546,7 +546,7 @@ Product</li>
 <li><p><span class="math inline">\(\sigma_{(name=&#39;hsb&#39;)}\)</span></p></li>
 </ul>
 <p>相当于关系代数里的<strong>join</strong>，连接符合条件的表格
-<figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs postgreSQL"><span class="hljs-keyword">SELECT</span> <span class="hljs-type">name</span>, course_id<br><span class="hljs-keyword">FROM</span> instructor teaches<br><span class="hljs-keyword">WHERE</span> instructor.ID=teaches.ID <span class="hljs-keyword">AND</span> year=<span class="hljs-number">2010</span><br></code></pre></td></tr></table></figure></p>
+<figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs postgreSQL"><span class="hljs-keyword">SELECT</span> <span class="hljs-type">name</span>, course_id<br><span class="hljs-keyword">FROM</span> instructor, teaches<br><span class="hljs-keyword">WHERE</span> instructor.ID=teaches.ID <span class="hljs-keyword">AND</span> year=<span class="hljs-number">2010</span><br></code></pre></td></tr></table></figure></p>
 <ul>
 <li>对instructor和teaches表格做equi-join，并选择year=2010的tuples</li>
 </ul>
@@ -820,7 +820,7 @@ people who go to the same bars as John). <figure class="highlight postgresql"><t
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年10月21日</div>
+          <div>2023年10月25日</div>
         </div>
       
       

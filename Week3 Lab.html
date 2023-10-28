@@ -16,15 +16,15 @@
   <meta name="author" content="Ruiyang He">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Bank    Code Name Addr      Account    Acct_no Balance Type code Branch_no      Loan    Loan_no Amount      Loan.Type    Loan_no Type      Customer">
+    <meta name="description" content="0 Bank    Code Name Addr      Account    Acct_no Balance Type code Branch_no      Loan    Loan_no Amount      Loan.Type    Loan_no Type      Customer">
 <meta property="og:type" content="website">
 <meta property="og:title" content="page.title">
 <meta property="og:url" content="http://hiryan23.github.io/Week3%20Lab.html">
 <meta property="og:site_name" content="Hiryan&#39;s Blog">
-<meta property="og:description" content="Bank    Code Name Addr      Account    Acct_no Balance Type code Branch_no      Loan    Loan_no Amount      Loan.Type    Loan_no Type      Customer">
+<meta property="og:description" content="0 Bank    Code Name Addr      Account    Acct_no Balance Type code Branch_no      Loan    Loan_no Amount      Loan.Type    Loan_no Type      Customer">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-09-28T03:18:56.324Z">
-<meta property="article:modified_time" content="2023-09-28T03:18:56.324Z">
+<meta property="article:published_time" content="2023-10-26T10:55:36.303Z">
+<meta property="article:modified_time" content="2023-10-26T10:55:36.303Z">
 <meta property="article:author" content="Ruiyang He">
 <meta name="twitter:card" content="summary">
   
@@ -230,7 +230,8 @@
                 
 
 <article class="page-content">
-  <p>Bank</p>
+  <h1 id="section">0</h1>
+<p>Bank</p>
 <table>
 <thead>
 <tr class="header">
@@ -325,6 +326,11 @@
 <tbody>
 </tbody>
 </table>
+<h1 id="exercise">Exercise</h1>
+<h2 id="q1">Q1</h2>
+<figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">VIEW</span> Q1 <span class="hljs-keyword">AS</span><br><span class="hljs-keyword">SELECT</span><br>    COUNT(*) <span class="hljs-keyword">AS</span> nacc<br><span class="hljs-keyword">FROM</span><br>    accesses<br><span class="hljs-keyword">WHERE</span><br>    acctime &lt; <span class="hljs-type">DATE</span> <span class="hljs-string">&#x27;2005-03-03&#x27;</span><br>    <span class="hljs-keyword">AND</span> acctime &gt;= <span class="hljs-type">DATE</span> <span class="hljs-string">&#x27;2005-03-02&#x27;</span>;<br><br><span class="hljs-keyword">SELECT</span><br>    *<br><span class="hljs-keyword">FROM</span><br>    Q1;<br></code></pre></td></tr></table></figure>
+<h2 id="q2">Q2</h2>
+<figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">VIEW</span> Q2 <span class="hljs-keyword">AS</span><br><span class="hljs-keyword">SELECT</span><br>    COUNT(*) <span class="hljs-keyword">AS</span> nsearches<br><span class="hljs-keyword">FROM</span><br>    accesses<br><span class="hljs-keyword">WHERE</span><br>    page <span class="hljs-keyword">LIKE</span> <span class="hljs-string">&#x27;%webcms%messageboard%&#x27;</span><br>    <span class="hljs-keyword">AND</span> params <span class="hljs-keyword">LIKE</span> <span class="hljs-string">&#x27;%state=search%&#x27;</span>;<br><br><span class="hljs-keyword">SELECT</span><br>    *<br><span class="hljs-keyword">FROM</span><br>    Q2;<br></code></pre></td></tr></table></figure>
 
 
   
