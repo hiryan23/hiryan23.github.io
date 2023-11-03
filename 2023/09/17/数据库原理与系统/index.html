@@ -33,8 +33,9 @@
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/4f9ed5655cd7e917bcde59a835f5948.png">
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/713a808e09ad1f381436c4b46562ec9.png">
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/fac634d6b558d083e595cdfc69eb845.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/37a1c3dd14c03888f8d49b7a256c83a.png">
 <meta property="article:published_time" content="2023-09-17T07:52:50.968Z">
-<meta property="article:modified_time" content="2023-10-26T03:13:17.296Z">
+<meta property="article:modified_time" content="2023-11-02T16:36:34.514Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="课程笔记">
 <meta name="twitter:card" content="summary">
@@ -248,7 +249,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          15k 字
+          17k 字
         
       </span>
     
@@ -259,7 +260,7 @@
         
         
         
-          128 分钟
+          138 分钟
         
       </span>
     
@@ -389,7 +390,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2 天前
+                    本文最后更新于：8 小时前
                   
                 
               </p>
@@ -1295,6 +1296,43 @@ evaluates as unknown</li>
 </ul>
 <h3 id="正经的语法">正经的语法</h3>
 <p>见<a href="PostgreSQL%20cookbook#Language">Language</a></p>
+<h2 id="lecture-6-plpgsql">Lecture 6 PLpgSQL</h2>
+<p>SQL只是declarative，菜。</p>
+<p>More <strong>extensibility</strong> and
+<strong>programmability</strong> needed.</p>
+<h3 id="database-programming">Database Programming</h3>
+<p>Database programming requires a <strong>combination</strong> of -
+manipulation of data in DB (via SQL) - conventional programming (via
+procedural code) This combination is realised in a number of ways: -
+Passing SQL commands via a "call-level" interface (PL is decoupled from
+DBMS; most flexible; e.g. Java/JDBC, Python/ODBC) - Embedding SQL into
+augmented programming languages (requires PL pre-processor; typically
+DBMS-specific; e.g. SQL/C) - ...</p>
+<h4 id="sqlpsm">SQL/PSM</h4>
+<p>SQL/PSM is a 1996 standard for SQL stored procedures. (PSM=Persistent
+Stored Modules)</p>
+<p>Syntax for PSM procedure/function dentitions: <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs postgreSQL"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">PROCEDURE</span> ProcName (&lt;ParamList&gt;)<br>[<span class="hljs-keyword">local</span> declarations]<br><span class="hljs-keyword">procedure</span> body;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">FUNCTION</span> FuncName (&lt;ParamList&gt;)<br><span class="hljs-keyword">RETURNS</span> <span class="hljs-keyword">Type</span><br>[<span class="hljs-keyword">local</span> declarations]<br><span class="hljs-keyword">function</span> body;<br></code></pre></td></tr></table></figure></p>
+<p>Parameters have three modes: IN, OUT, INOUT</p>
+<h4 id="status-of-psm-in-modern-db">Status of PSM in Modern DB</h4>
+<p>Unfortunately, the PSM standard was developed after most DBMSs had
+their own stored procedure language No DBMS implements the PSM standard
+exactly.</p>
+<ol type="1">
+<li>IBM's DB2 and MySQL implement the SQL/PSM closely (but not
+exactly)</li>
+<li>Oracle's PL/SQL is moderately close to the SQL/PSM standard</li>
+<li>PostgreSQL's PLpgSQL is close to PL/SQL (95% compatible)</li>
+</ol>
+<h3 id="名称由来">名称由来</h3>
+<p><strong>P</strong>rocedural <strong>L</strong>anguage extensions to
+<strong>P</strong>ost<strong>g</strong>re<strong>SQL</strong></p>
+<p>A <em>PostgreSQL-specific language</em> integrating features of: -
+procedural programming - SQL programming</p>
+<h3 id="一张图片">一张图片</h3>
+<p><img src="/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/37a1c3dd14c03888f8d49b7a256c83a.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="正经的内容">正经的内容</h3>
+<p>一部分见<a href="PostgreSQL%20cookbook#PLpgSQL">PLpgSQL</a>
+还有一部分见<a href="PostgreSQL%20cookbook#Functions">Functions</a></p>
 
                 
               </div>
@@ -1359,7 +1397,7 @@ evaluates as unknown</li>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年10月26日</div>
+          <div>2023年11月3日</div>
         </div>
       
       
@@ -1726,20 +1764,5 @@ evaluates as unknown</li>
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

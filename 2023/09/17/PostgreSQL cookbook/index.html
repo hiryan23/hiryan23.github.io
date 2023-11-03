@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/PostgreSQL%20cookbook/3a81dbaecb9b26325c8177cdbebcfa0.png">
 <meta property="article:published_time" content="2023-09-17T07:54:14.993Z">
-<meta property="article:modified_time" content="2023-10-25T05:14:07.323Z">
+<meta property="article:modified_time" content="2023-11-02T16:34:01.965Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="具有自我意识的笔记">
 <meta name="twitter:card" content="summary">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          9.1k 字
+          13k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          77 分钟
+          109 分钟
         
       </span>
     
@@ -380,7 +380,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：3 天前
+                    本文最后更新于：8 小时前
                   
                 
               </p>
@@ -390,7 +390,7 @@
                 
                 <p>参考了可亲的助教milk的教程和网络上的相关资料。</p>
 <span id="more"></span>
-<p><a target="_blank" rel="noopener" href="https://www.sjkjc.com/postgresql">PostgreSQL(sjkjc.com)</a></p>
+<p>神中神网站：<a target="_blank" rel="noopener" href="https://www.sjkjc.com/postgresql">PostgreSQL(sjkjc.com)</a></p>
 <p><code>$</code>表示在命令行中输入代码。 pgSQL中大小写无所谓，随便用。
 分句用逗号<span class="math inline">\(,\)</span>结尾，整句用分号<span class="math inline">\(;\)</span>结尾</p>
 <h1 id="intro">Intro</h1>
@@ -647,6 +647,95 @@ function里出现，要么在GROUP BY语句里出现</li>
 <h3 id="order-by">ORDER BY</h3>
 <p>对最后结果的表格排序，升序ASC(ascend)、降序DESC(descend)
 <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs postgreSQL"><span class="hljs-keyword">SELECT</span> column1, column2,...<br><span class="hljs-keyword">FROM</span> <span class="hljs-built_in">table_name</span><br><span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> column1, column2,... <span class="hljs-keyword">ASC</span>|<span class="hljs-keyword">DESC</span><br></code></pre></td></tr></table></figure></p>
+<h2 id="functions">Functions</h2>
+<p>可以以多种形式调用 - 在SELECT语句中调用 -
+<code>SELECT myFunction(arg1, arg2);</code> -
+<code>SELECT * FROM myTableFunction(arg1, arg2)</code> -
+直接使用，或在另一个PLpgSQL函数中调用 -
+<code>PERFORM myVoidFunction(arg1, arg2);</code> -
+<code>result:=myOtherFunction(arg1);</code> - 在Trigger中自动使用</p>
+<h3 id="基本语法">基本语法</h3>
+<h4 id="sql">SQL</h4>
+<figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">OR REPLACE</span> <span class="hljs-keyword">FUNCTION</span><br>	funcName(arg1type, arg2type, ...)<br>	<span class="hljs-keyword">RETURNS</span> rettype<br><span class="hljs-keyword">AS</span> $$<span class="language-pgsql"></span><br><span class="language-pgsql">	<span class="hljs-keyword">SQL</span> statements</span><br><span class="language-pgsql">$$</span> <span class="hljs-keyword">LANGUAGE</span> <span class="hljs-keyword">sql</span>;<br></code></pre></td></tr></table></figure>
+<ul>
+<li>RETURNS返回的是<strong>最后</strong>一个SQL语句</li>
+<li>rettype可以是一个table: RETURNS set of
+<ul>
+<li>但是好像只是用这个table的schema，因此要求列数匹配</li>
+</ul></li>
+</ul>
+<figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-comment">-- set of Bars from specified suburb</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">OR REPLACE</span> <span class="hljs-keyword">FUNCTION</span><br>	hotelsIN(<span class="hljs-type">TEXT</span>) <span class="hljs-keyword">RETURNS</span> <span class="hljs-keyword">set</span> <span class="hljs-keyword">of</span> Bars<br><span class="hljs-keyword">AS</span> $$<span class="language-pgsql"></span><br><span class="language-pgsql">	<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> Bars <span class="hljs-keyword">WHERE</span> addr=<span class="hljs-meta">$1</span>;</span><br><span class="language-pgsql">$$</span> <span class="hljs-keyword">LANGUAGE</span> <span class="hljs-keyword">sql</span>;<br><br><span class="hljs-comment">-- usage examples</span><br><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> hotelsIn(<span class="hljs-string">&#x27;The Rocks&#x27;</span>);<br></code></pre></td></tr></table></figure>
+<p>结果： <figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-section">name            | addr      | license</span><br><span class="hljs-section">----------------+-----------+---------</span><br>Australia Hotel | The Rocks | 123456<br>Lord Nelson     | The Rocks | 123888<br></code></pre></td></tr></table></figure></p>
+<h4 id="plpgsql-function">PL/pgSQL Function</h4>
+<figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">OR REPLACE</span> <span class="hljs-keyword">FUNCTION</span><br>	funcName(param1, param2, ...)<br>	<span class="hljs-keyword">RETURNS</span> rettype<br><span class="hljs-keyword">AS</span> $$<span class="language-pgsql"></span><br><span class="language-pgsql">	<span class="hljs-keyword">DECLARE</span></span><br><span class="language-pgsql">		varibale declarations</span><br><span class="language-pgsql">	<span class="hljs-keyword">BEGIN</span></span><br><span class="language-pgsql">		code <span class="hljs-keyword">for</span> <span class="hljs-keyword">function</span></span><br><span class="language-pgsql">	<span class="hljs-keyword">END</span>;</span><br><span class="language-pgsql">$$</span> <span class="hljs-keyword">LANGUAGE</span> plpgsql;<br></code></pre></td></tr></table></figure>
+<ul>
+<li>参数用位置来引用$1, $2</li>
+<li>或者用别名alias
+<ul>
+<li>在函数header中用(e.g. f(a int, b int))</li>
+<li>在declaration中用(e.g. a alias for $1; b alias for $2)</li>
+</ul></li>
+</ul>
+<p>例子1（船新写法）： <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">OR REPLACE</span> <span class="hljs-keyword">FUNCTION</span><br>	<span class="hljs-keyword">add</span>(x <span class="hljs-type">TEXT</span>, y <span class="hljs-type">TEXT</span>) <span class="hljs-keyword">RETURNS</span> <span class="hljs-type">TEXT</span><br><span class="hljs-keyword">AS</span> $$<span class="language-pgsql"></span><br><span class="language-pgsql"><span class="hljs-keyword">DECLARE</span></span><br><span class="language-pgsql">	result <span class="hljs-type">TEXT</span>; <span class="hljs-comment">--local variable</span></span><br><span class="language-pgsql"><span class="hljs-keyword">BEGIN</span></span><br><span class="language-pgsql">	result := x||&quot;&quot;||y;</span><br><span class="language-pgsql">	<span class="hljs-keyword">RETURN</span> result;</span><br><span class="language-pgsql"><span class="hljs-keyword">END</span>;</span><br><span class="language-pgsql">$$</span> <span class="hljs-keyword">LANGUAGE</span> plpgsql;<br></code></pre></td></tr></table></figure></p>
+<p>例子2（都什么年代，还在用传统写法）： <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">OR REPLACE</span> <span class="hljs-keyword">FUNCTION</span><br>	cat(<span class="hljs-type">TEXT</span>, <span class="hljs-type">TEXT</span>) <span class="hljs-keyword">RETURNS</span> <span class="hljs-type">TEXT</span><br><span class="hljs-keyword">AS</span> $$<span class="language-pgsql"></span><br><span class="language-pgsql"><span class="hljs-keyword">DECLARE</span></span><br><span class="language-pgsql">	x <span class="hljs-keyword">ALIAS</span> <span class="hljs-keyword">FOR</span> <span class="hljs-meta">$1</span>; <span class="hljs-comment">--alias for parameter</span></span><br><span class="language-pgsql">	y <span class="hljs-keyword">ALIAS</span> <span class="hljs-keyword">FOR</span> <span class="hljs-meta">$2</span>; <span class="hljs-comment">--alias for parameter</span></span><br><span class="language-pgsql">	result <span class="hljs-type">TEXT</span>; <span class="hljs-comment">--local variable</span></span><br><span class="language-pgsql"><span class="hljs-keyword">BEGIN</span></span><br><span class="language-pgsql">	result := x||&quot;&quot;&quot;&quot;||y;</span><br><span class="language-pgsql">	<span class="hljs-keyword">RETURN</span> result;</span><br><span class="language-pgsql"><span class="hljs-keyword">END</span>;</span><br><span class="language-pgsql">$$</span> <span class="hljs-keyword">LANGUAGE</span> plpgsql;<br></code></pre></td></tr></table></figure></p>
+<p>PLpgSQL允许函数重载<strong>function overloading</strong> (i.e. same
+name, different arg types) - 就是说，可以同一个函数名，不同的参数 -
+但是不能同一个函数名，相同的参数，不同的返回值 -
+这条是对应CREATE的，一般还是建议写CREATE OR REPLACE</p>
+<h3 id="声明data-types">声明Data Types</h3>
+<ul>
+<li>正常声明
+<ul>
+<li><code>quantity INTEGER</code></li>
+</ul></li>
+<li>声明为和某个变量一样
+<ul>
+<li><code>start_quantity quantity%TYPE</code></li>
+</ul></li>
+<li>声明为和某个表（包含其中所有列）一样
+<ul>
+<li><code>employee Employees%ROWTYPE</code></li>
+</ul></li>
+<li>声明为和某个表中的某个列一样
+<ul>
+<li><code>name Employees.name%TYPE</code></li>
+</ul></li>
+</ul>
+<p>用%声明像引用一样，好就好在修改的时候可以自动保持更新</p>
+<h3 id="return">RETURN</h3>
+<ul>
+<li>An atomic data type (e.g. integer, text, ...)
+<ul>
+<li><code>RETURNS INTEGER</code></li>
+</ul></li>
+<li>A tuple (e.g. table record type or tuple type)
+<ul>
+<li><code>RETURNS Employee</code></li>
+</ul></li>
+<li>A set of atomic values (like a table column)
+<ul>
+<li><code>RETURNS SETOF FLOAT</code></li>
+</ul></li>
+<li>A set of tuples (i.e. a table)
+<ul>
+<li><code>RETURNS SETOF Employee</code></li>
+<li>Similar to a view</li>
+</ul></li>
+<li><strong><em>void</em></strong> (i.e. no return value)</li>
+</ul>
+<h3 id="控制结构">控制结构</h3>
+<h4 id="条件判断">条件判断</h4>
+<ul>
+<li>IF ... THEN</li>
+<li>IF ... THEN ... ELSE</li>
+<li>IF ... THEN ... ELSIF ... THEN ... ELSE</li>
+</ul>
+<p>例子： <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">IF</span> v_user_id&gt;<span class="hljs-number">0</span> <span class="hljs-keyword">THEN</span><br><span class="hljs-keyword">UPDATE</span> users <span class="hljs-keyword">SET</span> email = v_email <span class="hljs-keyword">WHERE</span> user_id = v_user_id;<br><span class="hljs-keyword">END</span> <span class="hljs-keyword">IF</span>;<br></code></pre></td></tr></table></figure></p>
+<h4 id="迭代循环">迭代（循环）</h4>
+<p>平平无奇的LOOP <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">LOOP</span><br>	<span class="hljs-keyword">Statement</span><br><span class="hljs-keyword">END</span> <span class="hljs-keyword">LOOP</span>;<br></code></pre></td></tr></table></figure></p>
+<p>例子： <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">LOOP</span><br>	<span class="hljs-comment">-- some computations</span><br>	<span class="hljs-keyword">EXIT</span> <span class="hljs-keyword">WHEN</span> count&gt;<span class="hljs-number">0</span><br><span class="hljs-keyword">END</span> <span class="hljs-keyword">LOOP</span>;<br></code></pre></td></tr></table></figure></p>
+<p>带FOR循环的LOOP <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">FOR</span> int_var <span class="hljs-keyword">IN</span> low .. high <span class="hljs-keyword">LOOP</span><br>	<span class="hljs-keyword">Statement</span><br><span class="hljs-keyword">END</span> <span class="hljs-keyword">LOOP</span>;<br></code></pre></td></tr></table></figure></p>
+<p>例子： <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">FOR</span> i <span class="hljs-keyword">IN</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span> <span class="hljs-keyword">LOOP</span><br>	<span class="hljs-comment">-- Statement</span><br><span class="hljs-keyword">END</span> <span class="hljs-keyword">LOOP</span>;<br></code></pre></td></tr></table></figure></p>
 <h2 id="其它运算">其它运算</h2>
 <h3 id="set-operations">Set Operations</h3>
 <p>下面的运算均为集合运算，去重了。如果不要去重，在后面加ALL，比如UNION
@@ -658,8 +747,13 @@ Spring 2010 <figure class="highlight postgresql"><table><tr><td class="gutter"><
 <h4 id="except">EXCEPT</h4>
 <p>Find courses that ran in Fall 2009 <strong>but not</strong> in Spring
 2010 <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs postgreSQL">(<span class="hljs-keyword">SELECT</span> course_id <br><span class="hljs-keyword">FROM</span> section <br><span class="hljs-keyword">WHERE</span><br>sem = <span class="hljs-string">&#x27;Fall&#x27;</span> <span class="hljs-keyword">AND</span> year = <span class="hljs-number">2009</span>) <br><br><span class="hljs-keyword">EXCEPT</span><br><br>(<span class="hljs-keyword">SELECT</span> course_id <br><span class="hljs-keyword">FROM</span> section <br><span class="hljs-keyword">WHERE</span> sem = <span class="hljs-string">&#x27;Spring&#x27;</span> <span class="hljs-keyword">AND</span> year = <span class="hljs-number">2010</span>)<br></code></pre></td></tr></table></figure></p>
+<h3 id="修改数据类型">修改数据类型</h3>
+<h4 id="cast">CAST/::</h4>
+<p>用CAST修改数据类型（通用），这等价于::（仅pgsql可用）
+<figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs postgreSQL">CAST (expression <span class="hljs-keyword">AS</span> target_type)<br><br>expression :: target_type<br></code></pre></td></tr></table></figure></p>
 <h1 id="operations">Operations</h1>
 <h2 id="建表">建表</h2>
+<h3 id="create">CREATE</h3>
 <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs postgreSQL"># <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> %name_of_table (<br>	%attribute1 %datatype [%properties],<br>	%attribute2 %datatype [%properties],<br>	...<br>	[%table_property1],<br>	[%table_property2],<br>	...<br>);<br></code></pre></td></tr></table></figure>
 <h3 id="添加表约束-constraints">添加表约束 Constraints</h3>
 <h4 id="primary-key">PRIMARY KEY</h4>
@@ -756,6 +850,34 @@ people who go to the same bars as John). <figure class="highlight postgresql"><t
 <h3 id="create-index">CREATE INDEX</h3>
 <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs PostgreSQL"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> index_name<br><span class="hljs-keyword">ON</span> <span class="hljs-built_in">table_name</span> (column1, column2, ...)<br></code></pre></td></tr></table></figure>
 <p>或者 <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs PostgreSQL"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">UNIQUE</span> <span class="hljs-keyword">INDEX</span> index_name<br><span class="hljs-keyword">ON</span> <span class="hljs-built_in">table_name</span> (column1, column2, ...)<br></code></pre></td></tr></table></figure></p>
+<h1 id="plpgsql">PLpgSQL</h1>
+<h2 id="自定义data-types">自定义Data Types</h2>
+<h3 id="create-domain">CREATE DOMAIN</h3>
+<p>用来创建basic types <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs PostgreSQL"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">DOMAIN</span> DomainName [<span class="hljs-keyword">AS</span>] DataType<br>[<span class="hljs-keyword">DEFAULT</span> expression]<br>[&#123;<span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> | <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">CHECK</span> (expression)&#125;]<br></code></pre></td></tr></table></figure></p>
+<p>例子： <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">DOMAIN</span> UnswCourseCode <span class="hljs-keyword">AS</span> <span class="hljs-type">TEXT</span><br><span class="hljs-keyword">CHECK</span> (<span class="hljs-keyword">value</span> ~ <span class="hljs-string">&#x27;[A-Z]&#123;4&#125;[0-9]&#123;4&#125;&#x27;</span>)<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Course(<br>	id <span class="hljs-type">INTEGER</span>,<br>	code UnswCourseCode,<br>	...<br>)<br></code></pre></td></tr></table></figure></p>
+<h3 id="create-type">CREATE TYPE</h3>
+<p>用来创建复合类型tuple types <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TYPE</span> TypeName <span class="hljs-keyword">AS</span> <br>(AttrName <span class="hljs-number">1</span> DataType1, AttrName2 DataType2, ...)<br></code></pre></td></tr></table></figure></p>
+<p>例子： <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TYPE</span> ComplexNumber <span class="hljs-keyword">AS</span> (r <span class="hljs-type">FLOAT</span>, i <span class="hljs-type">FLOAT</span>);<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TYPE</span> CourseInfo <span class="hljs-keyword">AS</span> (<br>	course UnswCourseCode,<br>	syllabus <span class="hljs-type">TEXT</span>,<br>	lecturer <span class="hljs-type">TEXT</span><br>);<br></code></pre></td></tr></table></figure></p>
+<ul>
+<li>可以用自定义的basic type</li>
+<li>如果有约束，放在DOMAIN里 <strong><em>：还不知道CREATE
+TYPE里能不能加约束</em></strong></li>
+</ul>
+<p>另一个例子（将复杂的JSON对象转为SQL行）： <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TYPE</span> address <span class="hljs-keyword">as</span> (country <span class="hljs-type">TEXT</span>, city <span class="hljs-type">TEXT</span>);<br><br><span class="hljs-keyword">SELECT</span><br>  *<br><span class="hljs-keyword">FROM</span><br>  json_to_record(<br>    <span class="hljs-string">&#x27;&#123;&quot;name&quot;: &quot;Tom&quot;, &quot;age&quot;: 20, &quot;address&quot;: &#123;&quot;country&quot;: &quot;CN&quot;, &quot;city&quot;: &quot;BeiJing&quot;&#125;&#125;&#x27;</span><br>  ) <span class="hljs-keyword">AS</span> x(<span class="hljs-type">name</span> <span class="hljs-type">TEXT</span>, age <span class="hljs-type">INT</span>, address address);<br></code></pre></td></tr></table></figure> -
+先创建一个自定义的address类型，包括country和city两个text类型字段。</p>
+<p>结果： <figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-section"> name | age |   address</span><br><span class="hljs-section">------+-----+--------------</span><br><span class="hljs-code"> Tom  |  20 | (CN,BeiJing)</span><br>(1 row)<br></code></pre></td></tr></table></figure></p>
+<p>也可以用来创建枚举类型 <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TYPE</span> <span class="hljs-type">name</span> <span class="hljs-keyword">AS ENUM</span>(<br>	label_1<br>	[, label_2, ...]<br>);<br></code></pre></td></tr></table></figure></p>
+<p>例子： <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TYPE</span> my_color <span class="hljs-keyword">AS ENUM</span> (<br>    <span class="hljs-string">&#x27;yellow&#x27;</span>,<br>    <span class="hljs-string">&#x27;red&#x27;</span>,<br>    <span class="hljs-string">&#x27;blue&#x27;</span>,<br>    <span class="hljs-string">&#x27;green&#x27;</span>,<br>    <span class="hljs-string">&#x27;white&#x27;</span>,<br>    <span class="hljs-string">&#x27;black&#x27;</span><br>);<br><br><span class="hljs-keyword">SELECT</span> enum_first(<span class="hljs-keyword">null</span>:: my_color);<br><span class="hljs-keyword">SELECT</span> enum_last(<span class="hljs-keyword">null</span>:: my_color);<br></code></pre></td></tr></table></figure></p>
+<ul>
+<li>用enum_first()和enum_last()函数返回第一个和最后一个枚举值。
+<ul>
+<li>（函数说明：必须要传入一个数据，所以用null:: my_color；用'yellow'::
+my_color其实也行，结果一样）</li>
+</ul></li>
+</ul>
+<p>CREATE TYPE和CREATE TABLE不一样 -
+不创建新的空白表，只是定义一种数据类型 - 没有键的约束 -
+没有明确特定的域约束</p>
 
                 
               </div>
@@ -820,7 +942,7 @@ people who go to the same bars as John). <figure class="highlight postgresql"><t
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年10月25日</div>
+          <div>2023年11月3日</div>
         </div>
       
       
@@ -1187,20 +1309,5 @@ people who go to the same bars as John). <figure class="highlight postgresql"><t
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
