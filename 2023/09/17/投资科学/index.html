@@ -34,8 +34,9 @@
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/chart.png">
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/56aaca3bc06ccd47b862720645c0a95.png">
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/%E6%97%A0%E6%A0%87%E9%A2%98.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/b34d20a3f1062772b5631f8121ee7e5.png">
 <meta property="article:published_time" content="2023-09-17T05:07:23.470Z">
-<meta property="article:modified_time" content="2023-10-21T08:24:32.087Z">
+<meta property="article:modified_time" content="2023-11-05T15:34:02.579Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="课程笔记">
 <meta name="twitter:card" content="summary">
@@ -249,7 +250,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          21k 字
+          30k 字
         
       </span>
     
@@ -260,7 +261,7 @@
         
         
         
-          179 分钟
+          247 分钟
         
       </span>
     
@@ -390,7 +391,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：13 天前
+                    本文最后更新于：20 小时前
                   
                 
               </p>
@@ -1310,6 +1311,598 @@ will reproduce and the population will be the same</li>
 <li>Which years should you fish in?</li>
 </ul>
 <p>个人思路，但不会编程实现 <img src="/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/无标题.png" srcset="/img/loading.gif" lazyload></p>
+<p>解决方法（TBC） -
+画完整的二叉树（网），然后从后往前递归，做类似贪心</p>
+<h2 id="lecture-5-interest-rate-risk">Lecture 5 Interest Rate Risk</h2>
+<h3 id="interest-rate-risk">Interest Rate Risk</h3>
+<ul>
+<li>Interest rate risk refers to the potential for investment losses
+that result from a change in interest rates</li>
+<li>Interest rate risk directly affects the values of fixed-income
+securities.
+<ul>
+<li>E.g., a rise in interest rates causes bond prices to fall, and vice
+versa.</li>
+</ul></li>
+<li>期限越长，利率风险越大 <em>：已通过零息债券（初步）证明</em></li>
+</ul>
+<h4 id="price-yield-curves">Price-Yield Curves</h4>
+<p><img src="/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/../b34d20a3f1062772b5631f8121ee7e5.png" srcset="/img/loading.gif" lazyload> - Everything
+else being equal, bonds with long maturities have steeper price-yield
+curve. - Hence the prices of long bonds are more sensitive to interest
+rate changes than those of short bonds</p>
+<h4 id="measure-the-interest-rate-risk">Measure the Interest Rate
+Risk</h4>
+<ul>
+<li>When there is only a single cash flow (zero-coupon bond), maturity
+can measure the interest rate sensitivity of the bond price.</li>
+<li>For a cash flow stream, maturities itself does not give a complete
+quantitative measure of interest rate sensitivity (Why?)</li>
+<li>A more appropriate measure could be average of times that payments
+are made</li>
+</ul>
+<h3 id="duration">Duration</h3>
+<p>现值用时间加权平均 - Suppose that the amount of a cash flow occurring
+at time <span class="math inline">\(t_i\)</span> is <span class="math inline">\(c_i (i=0,1,\cdots,n)\)</span>, then the duration
+of this stream is<span class="math display">\[D=\sum_{i=0}^n\cfrac{PV_i}{PV}t_i\]</span> -
+<span class="math inline">\(PV_i\)</span> is the present value of <span class="math inline">\(c_i\)</span> at time <span class="math inline">\(t_i\)</span>, and <span class="math inline">\(PV=\sum_{i=0}^nPV_i\)</span> is the total present
+value of the stream - <span class="math inline">\(D\)</span> is a
+weighted average of cash flow times - Exercise: verify that if the
+stream includes only one cash flow at time <span class="math inline">\(t\)</span>, then the duration is <span class="math inline">\(t\)</span>.</p>
+<h4 id="macaulay-duration-continuous-compounding">Macaulay Duration:
+Continuous Compounding</h4>
+<ul>
+<li>Previous definition does not state how PV is calculated.</li>
+<li>Macaulay duration: A duration when the bond's yield is taken as
+interest rate for calculating the PV</li>
+<li>Suppose the yield <span class="math inline">\(\lambda\)</span> is
+measured with continuous compounding <span class="math display">\[D=\sum_{i=0}^n\cfrac{c_i\text e^{-\lambda
+t_i}}{P}t_i;\ \ \ \ P=\sum_{i=0}^nc_i\text e^{-\lambda
+t_i}\]</span></li>
+<li>Price sensitivity formula: <span class="math display">\[\cfrac{\text
+dP}{\text d\lambda}=-DP\]</span></li>
+</ul>
+<h4 id="macaulay-duration-periodical-compounding">Macaulay Duration:
+Periodical Compounding</h4>
+<ul>
+<li>In financial markets, yields are usually expressed periodically
+compounded</li>
+<li>Suppose a stream makes payments <span class="math inline">\(m\)</span> times a year, with the payment in
+period <span class="math inline">\(k\)</span> being <span class="math inline">\(c_k\)</span>, and there are <span class="math inline">\(n\)</span> periods remaining, then the Macaulay
+duration is <span class="math display">\[D=\cfrac{1}{P}\sum_{k=1}^n\cfrac{c_k}{[1+(\lambda/m)]^k}\times\cfrac{k}{m};\
+\ \ \ P=\sum_{k=1}^n\cfrac{c_k}{[1+(\lambda/m)]^k}\]</span></li>
+<li>Price sensitivity formula: <span class="math display">\[\cfrac{\text
+dP}{\text d\lambda}=-\cfrac{D}{1+(\lambda/m)}P=-D_MP\]</span>
+<ul>
+<li><span class="math inline">\(D_M\)</span> is called the modified
+duration</li>
+</ul></li>
+</ul>
+<h5 id="explicit-formula">Explicit Formula</h5>
+<ul>
+<li>The Macaulay duration for a bond with a coupon rate <span class="math inline">\(c\)</span> per period, yield <span class="math inline">\(y\)</span> per period, <span class="math inline">\(m\)</span> periods per year, and exactly <span class="math inline">\(n\)</span> periods remaining, is <span class="math display">\[D=\cfrac{1+y}{my}-\cfrac{1+y+n(c-y)}{mc[(1+y)^n-1]+my}\]</span></li>
+</ul>
+<h4 id="macaulay-duration-and-sensitivity">Macaulay Duration and
+Sensitivity</h4>
+<ul>
+<li>We can also write <span class="math display">\[\cfrac{1}{P}\cfrac{\text dP}{\text
+d\lambda}=-D_M\]</span></li>
+<li>Or approximately, <span class="math display">\[\cfrac{\Delta
+P}{P}\simeq-D_M\Delta\lambda\]</span></li>
+<li><span class="math inline">\(D_M\)</span> measures the relative
+change in a bond's price as <span class="math inline">\(\lambda\)</span>
+changes.</li>
+</ul>
+<h4 id="macaulay-duration-of-a-portfolio">Macaulay Duration of a
+Portfolio</h4>
+<ul>
+<li>Consider a portfolio of <span class="math inline">\(m\)</span> bonds
+with price <span class="math inline">\(P_i\)</span> and duration <span class="math inline">\(D_i\)</span>, <span class="math inline">\(i=1,2,\cdots,m\)</span>, all computed at a common
+YTM. Then the portfolio has price <span class="math inline">\(P\)</span>
+and duration <span class="math inline">\(D\)</span>, given by <span class="math display">\[P=\sum_{k=1}^mP_i,\ \ \ \
+D=\sum_{k=1}^mw_iD_i\]</span> where <span class="math inline">\(w_i=P_i/P\)</span></li>
+</ul>
+<h3 id="immunization">Immunization</h3>
+<ul>
+<li>Suppose you have a series of future expenses, and wish to invest
+money in fixed-income security market to prepare for the future
+payments.</li>
+<li>Method 1: Perfect Cash Matching.
+<ul>
+<li>Problem: May not be possible!</li>
+</ul></li>
+<li>Method 2: Match the PV of the future obligations.
+<ul>
+<li>Problem: If the yield changes, the matching may break!</li>
+<li>Idea: reduce the sensitivity of PV to the change in yield</li>
+<li>Immunization: match both PV and Duration（还可以再匹配高阶）</li>
+</ul></li>
+</ul>
+<h4 id="example-the-x-corporation">Example: The X Corporation</h4>
+<ul>
+<li>The X Corporation has an obligation to pay $1 million in 10
+years</li>
+<li>It selects 2 corporate bonds for investment</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Rate</th>
+<th>Maturity</th>
+<th>Price</th>
+<th>Yield</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bond 1</td>
+<td>6%</td>
+<td>30yr</td>
+<td>69.04</td>
+<td>9.00%</td>
+<td>11.44</td>
+</tr>
+<tr class="even">
+<td>Bond 2</td>
+<td>11%</td>
+<td>10yr</td>
+<td>113.01</td>
+<td>9.00%</td>
+<td>6.54</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>The immunized portfolio is found by solving <span class="math display">\[\begin{align}
+V_1+V_2&amp;=PV\\
+D_1\cdot V_1+D_2\cdot V_2&amp;=D\cdot PV
+\end{align}\]</span></p></li>
+<li><p>Solution: <span class="math inline">\(V_1=\$292,788.73,
+V_2=\$121,854.27\)</span></p></li>
+<li><p>The numbers of bonds to be purchased are <span class="math display">\[N_1=\cfrac{V_1}{PV_1}\simeq4,241\ \ \ \
+N_2=\cfrac{V_2}{PV_2}\simeq1,078\]</span></p></li>
+<li><p>Immunization Results</p></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Yield</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>9.0%</td>
+<td>8.0%</td>
+<td>10.0%</td>
+</tr>
+<tr class="even">
+<td><strong>Bond 1</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Price</td>
+<td>69.04</td>
+<td>77.38</td>
+<td>62.14</td>
+</tr>
+<tr class="even">
+<td>Shares</td>
+<td>4,241.00</td>
+<td>4,241.00</td>
+<td>4,241.00</td>
+</tr>
+<tr class="odd">
+<td>Value</td>
+<td>292,798.64</td>
+<td>328,168.58</td>
+<td>263,535.74</td>
+</tr>
+<tr class="even">
+<td><strong>Bond 2</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Price</td>
+<td>113.01</td>
+<td>120.39</td>
+<td>106.23</td>
+</tr>
+<tr class="even">
+<td>Shares</td>
+<td>1,078.00</td>
+<td>1,078.00</td>
+<td>1,078.00</td>
+</tr>
+<tr class="odd">
+<td>Value</td>
+<td>121,824.78</td>
+<td>129,780.42</td>
+<td>114,515.94</td>
+</tr>
+<tr class="even">
+<td><strong>Obligation</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Value</td>
+<td>414,642.86</td>
+<td>456,386.95</td>
+<td>3376,889.48</td>
+</tr>
+<tr class="even">
+<td><strong>Surplus</strong></td>
+<td>-19.44</td>
+<td>1,562.05</td>
+<td>1,162.20</td>
+</tr>
+</tbody>
+</table>
+<h3 id="convexity">Convexity</h3>
+<ul>
+<li><p>We define the convexity, <span class="math inline">\(C\)</span> ,
+of a financial security with YTM <span class="math inline">\(\lambda\)</span> to be <span class="math display">\[C=\cfrac{1}{P}\cfrac{\text d^2P}{\text
+d\lambda^2}\]</span></p></li>
+<li><p>Similarly, if <span class="math display">\[P=\sum_{k=1}^n\cfrac{c_k}{[1+(\lambda/m)]^k}\]</span>
+Then <span class="math display">\[C=\cfrac{1}{P[1+(\lambda/m)]^2}\sum_{k=1}^n\cfrac{c_k}{[1+(\lambda/m)]^k}\times\cfrac{k(k+1)}{m^2}\]</span></p></li>
+<li><p><span class="math inline">\(C\)</span> is a weighted average of
+<span class="math inline">\(t_kt_{k+1}\)</span>, modified by the
+factor<span class="math inline">\(\cfrac{1}{[1+(\lambda/m)]^2}\)</span></p></li>
+<li><p>Let <span class="math inline">\(P(\lambda)\)</span> be the price
+of a financial security with the YTM <span class="math inline">\(\lambda\)</span>. Then <span class="math display">\[\begin{align}
+P(\lambda+\Delta\lambda)&amp;\simeq P(\lambda)+\Delta\lambda\cfrac{\text
+dP(\lambda)}{\text d\lambda}+\cfrac{(\Delta\lambda)^2}{2}\cfrac{\text
+d^2P(\lambda)}{\text d\lambda^2}\\
+&amp;=P(\lambda)-D_MP(\lambda)\Delta\lambda+\cfrac{P(\lambda)C}{2}(\Delta\lambda)^2
+\end{align}\]</span></p></li>
+</ul>
+<h4 id="convexity-of-a-portfolio">Convexity of a Portfolio</h4>
+<ul>
+<li>Consider a portfolio of <span class="math inline">\(n\)</span>
+securities. Use <span class="math inline">\(P_k\)</span> , <span class="math inline">\(D_k\)</span> and <span class="math inline">\(C_k\)</span> to denote the PV, duration and
+convexity of the <span class="math inline">\(k\)</span>th security, and
+use <span class="math inline">\(P_p\)</span> , <span class="math inline">\(D_p\)</span> and <span class="math inline">\(C_p\)</span> to denote the PV, duration and
+convexity of the overall portfolio. Then <span class="math display">\[P_p=\sum_{k=1}^nP_k,\ \ \ \
+D_p=\sum_{k=1}^n\cfrac{P_k}{P_p}D_k,\ \ \ \
+C_p=\sum_{k=1}^n\cfrac{P_k}{P_p}C_k\]</span></li>
+</ul>
+<p>和上面一样，构造免疫就用三个债券三个方程算。 <span class="math display">\[\begin{align}
+P_0&amp;=P_1+P_2+P_3\\
+D_0&amp;=\cfrac{P_1}{P_0}D_1+\cfrac{P_2}{P_0}D_2+\cfrac{P_3}{P_0}D_3\\
+C_0&amp;=\cfrac{P_1}{P_0}C_1+\cfrac{P_2}{P_0}C_2+\cfrac{P_3}{P_0}C_3
+\end{align}\]</span></p>
+<h3 id="discussion">Discussion</h3>
+<ul>
+<li><p>Immunization provides protection against change in
+yields.</p></li>
+<li><p>When the yield really changes, the PV of each bond will also
+change, and hence the immunization should be repeated and the investment
+re-balanced</p></li>
+<li><p>More bonds would be used to diversify default risk</p></li>
+<li><p><strong>Shortcoming</strong>:</p>
+<ul>
+<li>All yields are assumed equal.</li>
+<li>The change on yields are assumed equal.</li>
+</ul></li>
+</ul>
+<h3 id="fisher-weil-duration">Fisher-Weil Duration</h3>
+<ul>
+<li><p>Fisher-Weil Duration measures interest rate risk in the term
+structure framework. （把YTM换成了即期利率spot rate）</p></li>
+<li><p>Suppose the interest rate term structure is specified by the spot
+curve <span class="math inline">\(s_t\)</span> (continuously
+compounded)</p></li>
+<li><p>Fisher-Weil duration of a stream <span class="math inline">\((x_{t_0},x_{t_1},\cdots,x_{t_n})\)</span> <span class="math display">\[D_{FW}=\cfrac{1}{PV}\sum_{i=0}^nt_ix_{t_i}\text
+e^{-s_{t_i}t_i};\ \ \ \ PV=\sum_{i=0}^nx_{t_i}\text
+e^{-s_{t_i}t_i}\]</span></p></li>
+<li><p>Now consider sensitivity with respect to parallel shifts in spot
+rate curve <span class="math display">\[(s_{t_0},\cdots,s_{t_n})\Rightarrow
+(s_{t_0}+\lambda,\cdots,s_{t_n}+\lambda)\]</span></p></li>
+<li><p>Price (present value) with respect to a parallel shift <span class="math inline">\(\lambda\)</span> <span class="math display">\[P(\lambda)=\sum_{i=0}^nx_{t_i}\text
+e^{-(s_{t_i}+\lambda)t_i}\]</span></p></li>
+<li><p><strong>Fisher-Weil Formulas</strong> <span class="math display">\[\cfrac{1}{P(0)}\cfrac{\text dP(0)}{\text
+d\lambda}=-D_{FW}\]</span></p></li>
+</ul>
+<h4 id="quasi-modified-duration">Quasi-Modified Duration</h4>
+<ul>
+<li>Frequent compounding is <span class="math inline">\(m\)</span> times
+a year; the spot rate in period <span class="math inline">\(k\)</span>
+is <span class="math inline">\(s_k\)</span> (expressed as a yearly rate)
+and cash flow stream is <span class="math inline">\((x_0,x_1,\cdots,x_n)\)</span></li>
+<li>Price with respect to a parallel shift <span class="math inline">\(\lambda\)</span> <span class="math display">\[P(\lambda)=\sum_{i=0}^nx_{t_i}\left(1+\cfrac{s_k+\lambda}{m}\right)^{-k}\]</span></li>
+<li>Sensitivity of the price <span class="math display">\[\cfrac{\text
+dP(0)}{\text
+d\lambda}=-\sum_{i=0}^nx_{t_i}\left(1+\cfrac{s_k}{m}\right)^{-(k+1)}\cfrac{k}{m}\]</span></li>
+<li>Define the quasi-modified duration <span class="math display">\[D_Q=-\cfrac{1}{P(0)}\cfrac{\text dP(0)}{\text
+d\lambda}=\cfrac{\sum_{i=0}^nx_{t_i}(1+s_k/m)^{-(k+1)}(k/m)}{\sum_{i=0}^nx_{t_i}(1+s_k/m)^{-k}}\]</span></li>
+<li>It is no longer the average of the cash flow times!</li>
+</ul>
+<h4 id="example-immunization-with-term-structure">Example: Immunization
+with Term Structure</h4>
+<ul>
+<li>We have a $1 million obligation to meet at the end of 5 years.</li>
+<li>The current spot curve is shown below.</li>
+<li>We decide to invest in two bonds:
+<ul>
+<li><span class="math inline">\(B_1\)</span> is a 12-year 6% bond with
+price 65.95</li>
+<li><span class="math inline">\(B_2\)</span> is a 5-year 10% bond with
+price 101.66.</li>
+</ul></li>
+<li>All rates are yearly compounded.</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Year</th>
+<th>Spot</th>
+<th>d</th>
+<th>B1</th>
+<th>PV1</th>
+<th></th>
+<th>B2</th>
+<th>PV2</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>7.67</td>
+<td>0.929</td>
+<td>6</td>
+<td>5.57</td>
+<td>5.18</td>
+<td>10</td>
+<td>9.29</td>
+<td>8.63</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>8.27</td>
+<td>0.853</td>
+<td>6</td>
+<td>5.12</td>
+<td>9.45</td>
+<td>10</td>
+<td>8.53</td>
+<td>15.76</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>8.81</td>
+<td>0.776</td>
+<td>6</td>
+<td>4.66</td>
+<td>12.84</td>
+<td>10</td>
+<td>7.76</td>
+<td>21.40</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>9.31</td>
+<td>0.700</td>
+<td>6</td>
+<td>4.20</td>
+<td>15.38</td>
+<td>10</td>
+<td>7.00</td>
+<td>25.63</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>9.75</td>
+<td>0.628</td>
+<td>6</td>
+<td>3.77</td>
+<td>17.17</td>
+<td>110</td>
+<td>69.08</td>
+<td>314.73</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>10.16</td>
+<td>0.560</td>
+<td>6</td>
+<td>3.36</td>
+<td>18.29</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>10.52</td>
+<td>0.496</td>
+<td>6</td>
+<td>2.98</td>
+<td>18.87</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>10.85</td>
+<td>0.439</td>
+<td>6</td>
+<td>2.63</td>
+<td>18.99</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>11.15</td>
+<td>0.386</td>
+<td>6</td>
+<td>2.32</td>
+<td>18.76</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>11.42</td>
+<td>0.339</td>
+<td>6</td>
+<td>2.03</td>
+<td>18.26</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>11.67</td>
+<td>0.297</td>
+<td>6</td>
+<td>1.78</td>
+<td>17.55</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>11.89</td>
+<td>0.260</td>
+<td>106</td>
+<td>27.53</td>
+<td>295.26</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td></td>
+<td></td>
+<td></td>
+<td>65.95</td>
+<td>466.00</td>
+<td></td>
+<td>101.67</td>
+<td>386.14</td>
+</tr>
+<tr class="even">
+<td>Duration</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>7.07</td>
+<td></td>
+<td></td>
+<td>3.80</td>
+</tr>
+</tbody>
+</table>
+<h5 id="immunization-procedure">Immunization Procedure</h5>
+<ul>
+<li>PV of the obligation is <span class="math inline">\(PV=1\times(1+9.75\%)^{-5}=\$627,903.01\)</span></li>
+<li>Quasi-modified duration is <span class="math inline">\(D=5\times(1+9.75\%)^{-1}=4.56\)</span></li>
+<li>Denote by <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> the number of shares on bonds 1 and
+2, respectively (each share has a face value $100)</li>
+<li>Then we have equations <span class="math display">\[\begin{align}
+P_1x_1+P_2x_2&amp;=PV\\
+D_1P_1x_1+D_2P_2x_2&amp;=D\cdot PV
+\end{align}\]</span></li>
+<li>We obtain <span class="math inline">\(x_1=2208.17\simeq 2,208,\
+x_2=4744.03\simeq4,744\)</span></li>
+</ul>
+<h5 id="immunization-results">Immunization Results</h5>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th></th>
+<th>Shift of -</th>
+<th>-Interest-</th>
+<th>-Rates</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>0</td>
+<td>1%</td>
+<td>-1%</td>
+</tr>
+<tr class="even">
+<td>Bond1</td>
+<td>Shares</td>
+<td>2208</td>
+<td>2208</td>
+<td>2208</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Price</td>
+<td>65.95</td>
+<td>61.51</td>
+<td>70.85</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Value</td>
+<td>145,620.73</td>
+<td>135,822.73</td>
+<td>156,440.60</td>
+</tr>
+<tr class="odd">
+<td>Bond2</td>
+<td>Shares</td>
+<td>4744</td>
+<td>4744</td>
+<td>4744</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Price</td>
+<td>101.67</td>
+<td>97.90</td>
+<td>105.63</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Value</td>
+<td>482,311.68</td>
+<td>464,452.27</td>
+<td>501,108.95</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Obligation</td>
+<td>628,025.61</td>
+<td>600,179.73</td>
+<td>657,436.29</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Surplus</td>
+<td>-93.21</td>
+<td>95.27</td>
+<td>113.25</td>
+</tr>
+</tbody>
+</table>
 
                 
               </div>
@@ -1374,7 +1967,7 @@ will reproduce and the population will be the same</li>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年10月21日</div>
+          <div>2023年11月5日</div>
         </div>
       
       
@@ -1741,5 +2334,20 @@ will reproduce and the population will be the same</li>
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

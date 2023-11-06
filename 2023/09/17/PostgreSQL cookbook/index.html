@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/PostgreSQL%20cookbook/3a81dbaecb9b26325c8177cdbebcfa0.png">
 <meta property="article:published_time" content="2023-09-17T07:54:14.993Z">
-<meta property="article:modified_time" content="2023-11-02T16:34:01.965Z">
+<meta property="article:modified_time" content="2023-11-05T08:38:06.373Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="具有自我意识的笔记">
 <meta name="twitter:card" content="summary">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          13k 字
+          17k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          109 分钟
+          146 分钟
         
       </span>
     
@@ -380,7 +380,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：8 小时前
+                    本文最后更新于：1 天前
                   
                 
               </p>
@@ -396,7 +396,7 @@
 <h1 id="intro">Intro</h1>
 <h2 id="准备工作">0、准备工作</h2>
 <h3 id="启动">（）（），启动！</h3>
-<p>以管理员身份运行命令行 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 启动</span><br><span class="hljs-comment"># net start postgresql-x64-&lt;version&gt;</span><br><span class="hljs-variable">$</span> net <span class="hljs-built_in">start</span> postgresql<span class="hljs-literal">-x64-</span>&lt;<span class="hljs-number">15</span>&gt;<br><span class="hljs-comment"># 关闭</span><br><span class="hljs-comment"># net stop postgresql-x64-&lt;version&gt;</span><br></code></pre></td></tr></table></figure></p>
+<p>以管理员身份运行命令行 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 启动</span><br><span class="hljs-comment"># net start postgresql-x64-&lt;version&gt;</span><br><span class="hljs-variable">$</span> net <span class="hljs-built_in">start</span> postgresql<span class="hljs-literal">-x64-15</span><br><span class="hljs-comment"># 关闭</span><br><span class="hljs-comment"># net stop postgresql-x64-&lt;version&gt;</span><br></code></pre></td></tr></table></figure></p>
 <h3 id="君权神授">君权神授</h3>
 <ol type="1">
 <li>使⽤<code>psql</code>命令连接到PostgreSQL作为超级⽤户（通常是postgres）：
@@ -517,6 +517,8 @@ attribute(s)&gt;] [<strong>HAVING</strong> &lt;group condition&gt;]
 <li>注意COUNT默认不计NULL，但是COUNT(*)计入NULL</li>
 </ul></li>
 </ul>
+<h4 id="into">INTO</h4>
+<p>表示从选择的结果中创建一个（临时的）新表 <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">SELECT</span> *<br><span class="hljs-keyword">INTO</span> [<span class="hljs-keyword">TEMP</span>] film_copy<br><span class="hljs-keyword">FROM</span> film<br></code></pre></td></tr></table></figure></p>
 <h3 id="from">FROM</h3>
 <p>表示从什么表格里select，相当于关系代数里的 <strong>()</strong>
 <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs postgreSQL"><span class="hljs-keyword">FROM</span> R1<br></code></pre></td></tr></table></figure></p>
@@ -878,6 +880,114 @@ my_color其实也行，结果一样）</li>
 <p>CREATE TYPE和CREATE TABLE不一样 -
 不创建新的空白表，只是定义一种数据类型 - 没有键的约束 -
 没有明确特定的域约束</p>
+<h2 id="exception">EXCEPTION</h2>
+<p>用来设定例外条件 <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">BEGIN</span><br>	Statements ...<br><span class="hljs-keyword">EXCEPTION</span><br>	<span class="hljs-keyword">WHEN</span> Exception1 <span class="hljs-keyword">THEN</span><br>		StatementsForHandler1<br>	<span class="hljs-keyword">WHEN</span> Exception2 <span class="hljs-keyword">THEN</span><br>		StatementsForHandler2<br>	...<br><span class="hljs-keyword">END</span>;<br></code></pre></td></tr></table></figure></p>
+<ul>
+<li>Exception的内容可以是（预设的？）一长串
+<ul>
+<li>如：division_by_zero OR floating_point_exception OR ...</li>
+</ul></li>
+</ul>
+<p>例子： <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-comment">-- table T contains one tuple (&#x27;Tom&#x27;, &#x27;Jones&#x27;)</span><br><span class="hljs-keyword">DECLARE</span><br>	x <span class="hljs-type">INTEGER</span> := <span class="hljs-number">3</span>;<br><span class="hljs-keyword">BEGIN</span><br>	<span class="hljs-keyword">UPDATE</span> T <span class="hljs-keyword">SET</span> firstname = <span class="hljs-string">&#x27;Joe&#x27;</span> <span class="hljs-keyword">WHERE</span> lastname = <span class="hljs-string">&#x27;Jones&#x27;</span>;<br>	<span class="hljs-comment">-- table T now contains (&#x27;Joe&#x27;, &#x27;Jones&#x27;)</span><br>	x := x + <span class="hljs-number">1</span>;<br>	y := x / <span class="hljs-number">0</span>;<br><span class="hljs-keyword">EXCEPTION</span><br>	<span class="hljs-keyword">WHEN</span> <span class="hljs-built_in">division_by_zero</span> <span class="hljs-keyword">THEN</span><br>	<span class="hljs-comment">-- update on T is rolled back to (&#x27;Tom&#x27;, &#x27;Jones&#x27;)</span><br>		<span class="hljs-keyword">RAISE</span> <span class="hljs-keyword">NOTICE</span> <span class="hljs-string">&#x27;Caught division_by_zero&#x27;</span>;<br>		<span class="hljs-keyword">RETURN</span> x;<br>		<span class="hljs-comment">-- value returned is 4</span><br><span class="hljs-keyword">END</span>;<br></code></pre></td></tr></table></figure></p>
+<h4 id="raise">RAISE</h4>
+<p>用来生成log信息</p>
+<p>例如 - <code>RAISE DEBUG 'Simple message';</code> -
+<code>RAISE NOTICE 'User = %', user_id;</code>（也可当作print用） -
+<code>RAISE EXCEPTION 'Fatal: value was %', value;</code></p>
+<p>RAISE后面可以跟的东西的等级： - DEBUG - LOG - INFO - NOTICE - WARNING
+- EXCEPTION</p>
+<h2 id="游标cursors">游标Cursors</h2>
+<p>可以用游标保存、修改（整行）变量。游标也可以作为函数的返回值。一般用于大结果集，内存放不下，用游标一条一条处理。</p>
+<p>使用顺序： - 声明游标 - 打开游标 - 使用游标 - 关闭游标</p>
+<p>例子：一般使用
+以下get_film_titles(integer)函数接受代表电影发行年份的参数。在函数内部，我们查询所有发行年份等于传递给该函数的发行年份的电影。我们使用光标在各行之间循环，并连接标题和标题包含ful
+单词的电影发行年份。</p>
+<figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">OR REPLACE</span> <span class="hljs-keyword">FUNCTION</span> get_film_titles(p_year <span class="hljs-type">INTEGER</span>)<br><span class="hljs-keyword">RETURNS</span> <span class="hljs-type">text</span> <span class="hljs-keyword">AS</span> $$<span class="language-pgsql"></span><br><span class="language-pgsql"><span class="hljs-comment">-- 声明游标</span></span><br><span class="language-pgsql"><span class="hljs-keyword">DECLARE</span> </span><br><span class="language-pgsql">	titles <span class="hljs-type">TEXT</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;&#x27;</span>;</span><br><span class="language-pgsql">	rec_film <span class="hljs-type">RECORD</span>;</span><br><span class="language-pgsql">	cur_films <span class="hljs-keyword">CURSOR</span>(p_year <span class="hljs-type">INTEGER</span>) <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> film <span class="hljs-keyword">WHERE</span> release_year = p_year;</span><br><span class="language-pgsql"><span class="hljs-keyword">BEGIN</span></span><br><span class="language-pgsql">	<span class="hljs-comment">-- 打开游标</span></span><br><span class="language-pgsql">	<span class="hljs-keyword">OPEN</span> cur_films(p_year);</span><br><span class="language-pgsql">	<span class="hljs-keyword">LOOP</span></span><br><span class="language-pgsql">	    <span class="hljs-comment">-- 获取记录放入film</span></span><br><span class="language-pgsql">	    <span class="hljs-keyword">FETCH</span> cur_films <span class="hljs-keyword">INTO</span> rec_film;</span><br><span class="language-pgsql">	    <span class="hljs-comment">-- exit when no more row to fetch</span></span><br><span class="language-pgsql">	    <span class="hljs-keyword">EXIT</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-keyword">NOT</span> <span class="hljs-built_in">FOUND</span>;</span><br><span class="language-pgsql">	    <span class="hljs-comment">-- 构建输出</span></span><br><span class="language-pgsql">	    <span class="hljs-keyword">IF</span> rec_film.title <span class="hljs-keyword">LIKE</span> <span class="hljs-string">&#x27;%ful%&#x27;</span> </span><br><span class="language-pgsql">	    <span class="hljs-keyword">THEN</span> titles := titles || <span class="hljs-string">&#x27;,&#x27;</span> || rec_film.title || <span class="hljs-string">&#x27;:&#x27;</span> || rec_film.release_year;</span><br><span class="language-pgsql">	    <span class="hljs-keyword">END</span> <span class="hljs-keyword">IF</span>;</span><br><span class="language-pgsql">	<span class="hljs-keyword">END</span> <span class="hljs-keyword">LOOP</span>;</span><br><span class="language-pgsql">	<span class="hljs-comment">-- 关闭游标</span></span><br><span class="language-pgsql">	<span class="hljs-keyword">CLOSE</span> cur_films;</span><br><span class="language-pgsql"><span class="hljs-keyword">RETURN</span> titles;</span><br><span class="language-pgsql"><span class="hljs-keyword">END</span>; </span><br><span class="language-pgsql">$$</span> <span class="hljs-keyword">LANGUAGE</span> plpgsql;<br><br><span class="hljs-keyword">SELECT</span> get_film_titles(<span class="hljs-number">2006</span>);<br><br><span class="hljs-comment">--返回结果 ,Grosse Wonderful:2006,Day Unfaithful:2006,Reap Unfaithful:2006,Unfaithful Kill:2006,Wonderful Drop:2006</span><br></code></pre></td></tr></table></figure>
+<p>例子：游标作为返回值返回给外层调用者，调用者可使用fetch语句获取游标内容。
+<figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">OR REPLACE</span> <span class="hljs-keyword">FUNCTION</span> tf4(<span class="hljs-type">refcursor</span>) <span class="hljs-keyword">RETURNS</span> <span class="hljs-type">refcursor</span> <span class="hljs-keyword">AS</span> <span class="hljs-string">&#x27;</span><br><span class="hljs-string">BEGIN</span><br><span class="hljs-string">	OPEN $1 FOR SELECT c4 FROM tf1;</span><br><span class="hljs-string">	RETURN $1;</span><br><span class="hljs-string">END; </span><br><span class="hljs-string">&#x27;</span> <span class="hljs-keyword">LANGUAGE</span> plpgsql;<br><br><span class="hljs-keyword">BEGIN</span>; <br><span class="hljs-keyword">SELECT</span> tf4(<span class="hljs-string">&#x27;funccursor&#x27;</span>);<br><br><span class="hljs-keyword">FETCH</span> <span class="hljs-keyword">ALL</span> <span class="hljs-keyword">IN</span> funccursor;<br><span class="hljs-comment">--  	c4 </span><br><span class="hljs-comment">-- ---------- </span><br><span class="hljs-comment">-- Dalian </span><br><span class="hljs-comment">-- Tokio </span><br><span class="hljs-comment">-- Xian </span><br><span class="hljs-comment">-- Changsha </span><br><span class="hljs-comment">-- New York </span><br><br><span class="hljs-keyword">COMMIT</span>;<br></code></pre></td></tr></table></figure></p>
+<h3 id="声明游标">声明游标</h3>
+<h4 id="record">RECORD</h4>
+<p>用RECORD（或者Table%ROWTYPE）创建（FOR循环用）游标，最普通</p>
+<p>例子： <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">FUNCTION</span> totalSalary() <span class="hljs-keyword">RETURNS</span> <span class="hljs-type">REAL</span> <span class="hljs-keyword">AS</span> $$<span class="language-pgsql"></span><br><span class="language-pgsql"><span class="hljs-keyword">DECLARE</span></span><br><span class="language-pgsql">	employee <span class="hljs-type">RECORD</span>;</span><br><span class="language-pgsql">	totalSalary <span class="hljs-type">REAL</span>:=<span class="hljs-number">0</span>;</span><br><span class="language-pgsql"><span class="hljs-keyword">BEGIN</span></span><br><span class="language-pgsql">	<span class="hljs-keyword">FOR</span> employee <span class="hljs-keyword">IN</span> <span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> Employees</span><br><span class="language-pgsql">	<span class="hljs-keyword">LOOP</span></span><br><span class="language-pgsql">		totalSalary:= totalSalary + employee.salary;</span><br><span class="language-pgsql">	<span class="hljs-keyword">END</span> <span class="hljs-keyword">LOOP</span>;</span><br><span class="language-pgsql">	<span class="hljs-keyword">RETURN</span> totalSalary;</span><br><span class="language-pgsql"><span class="hljs-keyword">END</span>;</span><br><span class="language-pgsql">$$</span> <span class="hljs-keyword">LANGUAGE</span> plpgsql;<br></code></pre></td></tr></table></figure></p>
+<h4 id="cursor-for绑定sqlquery">CURSOR FOR（绑定SQL/query）</h4>
+<p><code>&lt;cursor_name_a&gt; CURSOR [name datatype, name datatype, ...] FOR &lt;query_b&gt;;</code></p>
+<ul>
+<li>CURSOR和FOR之间可以声明游标使用的参数。</li>
+</ul>
+<h4 id="refcursor-未绑定query">REFCURSOR （未绑定query）</h4>
+<p><code>&lt;cursor_name_c&gt; REFCURSOR;</code></p>
+<ul>
+<li>未绑定query的游标可以在不同query之间用</li>
+</ul>
+<h3 id="打开游标">打开游标</h3>
+<h4 id="open">OPEN</h4>
+<p>打开绑定的游标 <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">OPEN</span> cur_films(year:=<span class="hljs-number">2005</span>);<br></code></pre></td></tr></table></figure></p>
+<p>打开未绑定的游标 <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">OPEN</span> my_cursor <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> city <span class="hljs-keyword">WHERE</span> counter = p_country;<br></code></pre></td></tr></table></figure></p>
+<p>PostgreSQL中打开游标并绑定到动态查询（有点像python的exec？）
+<figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">OPEN</span> unbound_cursor_vaariable [ [<span class="hljs-keyword">NO</span>] SCROLL ]<br><span class="hljs-keyword">FOR</span> <span class="hljs-keyword">EXECUTE</span> query_string [<span class="hljs-keyword">USING</span> expression [,...]];<br></code></pre></td></tr></table></figure></p>
+<p>例子： <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs postgresql">query := <span class="hljs-string">&#x27;SELECT * FROM city ORDER BY $1&#x27;</span><br><span class="hljs-keyword">OPEN</span> cur_city <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">EXECUTE</span> query <span class="hljs-keyword">USING</span> sort_field;<br></code></pre></td></tr></table></figure></p>
+<ul>
+<li>在这个例子中，我们构建一个动态查询，根据一个sort_field（好像就是$1）参数对行进行排序（order
+by），并打开执行该动态查询的游标。</li>
+</ul>
+<h3 id="使用游标">使用游标</h3>
+<h4 id="fetch">FETCH</h4>
+<p>获取下一行 <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">FETCH</span> [ direction &#123; <span class="hljs-keyword">FROM</span> | <span class="hljs-keyword">IN</span> &#125; ] cursor_variable <span class="hljs-keyword">INTO</span> target_variable;<br></code></pre></td></tr></table></figure></p>
+<ul>
+<li>该FETCH语句从游标中获取下一行，并为其分配一个target_variable，它可以是记录，行变量或逗号分隔的变量列表。如果找不到更多行，则将target_variable其设置为NULL（s）</li>
+<li>如果不显示指定方向，方向缺省为NEXT。可以为：
+<ul>
+<li>NEXT</li>
+<li>LAST</li>
+<li>PRIOR</li>
+<li>FIRST</li>
+<li>ABSOLUTE count</li>
+<li>RELATIVE count</li>
+<li>FORWARD（只适用于SCROLL option声明的游标）</li>
+<li>BACKWARD（只适用于SCROLL option声明的游标）</li>
+</ul></li>
+</ul>
+<p>例子： <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">FETCH</span> cur_films <span class="hljs-keyword">INTO</span> row_film;<br><span class="hljs-keyword">FETCH LAST</span> <span class="hljs-keyword">FROM</span> row_film <span class="hljs-keyword">INTO</span> title, release_year;<br></code></pre></td></tr></table></figure></p>
+<h4 id="move">MOVE</h4>
+<p>移动游标 <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">MOVE</span> [ direction &#123; <span class="hljs-keyword">FROM</span> | <span class="hljs-keyword">IN</span> &#125; ] cursor_variable;<br></code></pre></td></tr></table></figure> -
+如果只想移动游标而不检索任何行，就用MOVE，方向和FETCH一样。</p>
+<p>例子： <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">MOVE</span> cur_films2;<br><span class="hljs-keyword">MOVE LAST</span> <span class="hljs-keyword">FROM</span> cur_films;<br><span class="hljs-keyword">MOVE RELATIVE</span> <span class="hljs-number">-1</span> <span class="hljs-keyword">FROM</span> cur_films;<br><span class="hljs-keyword">MOVE FORWARD</span> <span class="hljs-number">3</span> <span class="hljs-keyword">FROM</span> cur_films;<br></code></pre></td></tr></table></figure></p>
+<h4 id="deleteupdate">DELETE/UPDATE</h4>
+<p>删除或更新 <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">table_name</span><br><span class="hljs-keyword">SET</span> column = <span class="hljs-keyword">value</span>,...<br><span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">CURRENT</span> <span class="hljs-keyword">OF</span> cursor_variable;<br><br><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> <span class="hljs-built_in">table_name</span><br><span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">CURRENT</span> <span class="hljs-keyword">OF</span> cursor_variable;<br></code></pre></td></tr></table></figure></p>
+<p>例子： <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">UPDATE</span> film <span class="hljs-keyword">SET</span> release_year=p_year<br><span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">CURRENT</span> <span class="hljs-keyword">OF</span> cur_films;<br></code></pre></td></tr></table></figure></p>
+<h3 id="关闭游标">关闭游标</h3>
+<p>关闭游标，释放资源或释放游标变量 <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">CLOSE</span> cursor_variable<br></code></pre></td></tr></table></figure></p>
+<h2 id="触发器triggers">触发器Triggers</h2>
+<h3 id="trigger">TRIGGER</h3>
+<p>触发器，在指定的数据库事件发生时自动执行/调用 <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TRIGGER</span> TriggerName<br>	[<span class="hljs-keyword">AFTER</span> | <span class="hljs-keyword">BEFORE</span> | <span class="hljs-keyword">INSTEAD</span> <span class="hljs-keyword">OF</span>] Event1 [<span class="hljs-keyword">OR</span> Event2 ...]<br>	<span class="hljs-keyword">ON</span> TableName<br>	<span class="hljs-keyword">FOR</span> <span class="hljs-keyword">EACH</span> <span class="hljs-keyword">ROW</span>/<span class="hljs-keyword">STATEMENT</span><br>	<span class="hljs-keyword">EXECUTE</span> <span class="hljs-keyword">PROCEDURE</span> FunctionName(args...);<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">OR REPLACE</span> <span class="hljs-keyword">FUNCTION</span> function_name() <span class="hljs-keyword">RETURNS</span> <span class="hljs-type">TRIGGER</span><br>...<br></code></pre></td></tr></table></figure></p>
+<h3 id="trigger作为函数返回值">Trigger作为函数返回值</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Trigger</th>
+<th>NEW</th>
+<th>OLD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Insert</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Update</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Delete</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>例子： <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs postgresql"><span class="hljs-keyword">Create</span> <span class="hljs-keyword">Function</span> checkState() <span class="hljs-keyword">returns</span> <span class="hljs-type">trigger</span> <span class="hljs-keyword">as</span> $$<span class="language-pgsql"></span><br><span class="language-pgsql"><span class="hljs-keyword">begin</span></span><br><span class="language-pgsql">  <span class="hljs-comment">-- normalise the user-supplied value</span></span><br><span class="language-pgsql">  <span class="hljs-built_in">new</span>.state = upper(trim(<span class="hljs-built_in">new</span>.state));</span><br><span class="language-pgsql">  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">new</span>.state !~ <span class="hljs-string">&#x27;^[A-Z][A-Z]$&#x27;</span>) <span class="hljs-keyword">then</span></span><br><span class="language-pgsql">  <span class="hljs-keyword">raise</span> <span class="hljs-keyword">exception</span> <span class="hljs-string">&#x27;Code Must Be Two Alpha Chars&#x27;</span>;</span><br><span class="language-pgsql">  <span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>;</span><br><span class="language-pgsql">  <span class="hljs-comment">-- implement referential integrity check</span></span><br><span class="language-pgsql">  <span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> States <span class="hljs-keyword">where</span> code=<span class="hljs-built_in">new</span>.state;</span><br><span class="language-pgsql">  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">not</span> <span class="hljs-built_in">found</span>) <span class="hljs-keyword">then</span></span><br><span class="language-pgsql">  <span class="hljs-keyword">raise</span> <span class="hljs-keyword">exception</span> <span class="hljs-string">&#x27;Invalid State Code %&#x27;</span>,<span class="hljs-built_in">new</span>.state;</span><br><span class="language-pgsql">  <span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>;</span><br><span class="language-pgsql">  <span class="hljs-keyword">return</span> <span class="hljs-built_in">new</span>;</span><br><span class="language-pgsql"><span class="hljs-keyword">end</span>;  $$</span> <span class="hljs-keyword">language</span> plpgsql;<br></code></pre></td></tr></table></figure></p>
 
                 
               </div>
@@ -942,7 +1052,7 @@ my_color其实也行，结果一样）</li>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年11月3日</div>
+          <div>2023年11月5日</div>
         </div>
       
       
@@ -1309,5 +1419,20 @@ my_color其实也行，结果一样）</li>
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
