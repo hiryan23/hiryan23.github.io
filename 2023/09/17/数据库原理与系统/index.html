@@ -34,8 +34,9 @@
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/713a808e09ad1f381436c4b46562ec9.png">
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/fac634d6b558d083e595cdfc69eb845.png">
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/37a1c3dd14c03888f8d49b7a256c83a.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/8dbdbc179d719882a9363b3ec869d9e.png">
 <meta property="article:published_time" content="2023-09-17T07:52:50.968Z">
-<meta property="article:modified_time" content="2023-11-02T16:36:34.514Z">
+<meta property="article:modified_time" content="2023-11-12T05:05:50.378Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="课程笔记">
 <meta name="twitter:card" content="summary">
@@ -249,7 +250,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          17k 字
+          27k 字
         
       </span>
     
@@ -260,7 +261,7 @@
         
         
         
-          138 分钟
+          224 分钟
         
       </span>
     
@@ -390,7 +391,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：4 天前
+                    本文最后更新于：1 分钟前
                   
                 
               </p>
@@ -1333,6 +1334,788 @@ procedural programming - SQL programming</p>
 <h3 id="正经的内容">正经的内容</h3>
 <p>一部分见<a href="PostgreSQL%20cookbook#PLpgSQL">PLpgSQL</a>
 还有一部分见<a href="PostgreSQL%20cookbook#Functions">Functions</a></p>
+<h2 id="lecture-7-functional-dependencies">Lecture 7 Functional
+Dependencies</h2>
+<h3 id="如何评价db-design好不好">如何评价DB design好不好</h3>
+<ul>
+<li>Information Preservation</li>
+<li>Minimum Redundancy
+<ul>
+<li>不要有冗余的数据</li>
+<li>更新数据的时候不要出现异常</li>
+</ul></li>
+</ul>
+<h3 id="functional-dependencies">Functional Dependencies</h3>
+<p>A functional dependency describes a <strong>relation</strong> between
+attributes</p>
+<p>Whenever any two tuples <span class="math inline">\(t_1\)</span> and
+<span class="math inline">\(t_2\)</span> of <span class="math inline">\(r\)</span> agree on one attribute <span class="math inline">\(\alpha\)</span> , they also agree on another
+attribute <span class="math inline">\(\beta\)</span> <span class="math display">\[t_1[\alpha]=t_2[\alpha]\Rightarrow
+t_1[\beta]=t_2[\beta]\]</span> This relation is denoted <span class="math inline">\(\alpha\rightarrow\beta\)</span></p>
+<h4 id="test">Test</h4>
+<table>
+<thead>
+<tr class="header">
+<th>A</th>
+<th>B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<p>On this instance, <span class="math inline">\(A\rightarrow B\)</span>
+does NOT hold, but <span class="math inline">\(B\rightarrow A\)</span>
+does hold.</p>
+<h4 id="notation-and-terminology">Notation and Terminology</h4>
+<p>Let <span class="math inline">\(X\rightarrow Y\)</span> be a
+functional dependency on relation <span class="math inline">\(R\)</span></p>
+<p>We say that - <span class="math inline">\(X\rightarrow Y\)</span>
+holds on <span class="math inline">\(R\)</span></p>
+<p>We say that - <span class="math inline">\(X\)</span> functionally
+determines <span class="math inline">\(Y\)</span> - <span class="math inline">\(Y\)</span> is functionally dependent on <span class="math inline">\(X\)</span></p>
+<p>We say that - <span class="math inline">\(X\)</span> is determinant
+of the dependency - <span class="math inline">\(Y\)</span> is dependent
+of the dependency</p>
+<p>OR - <span class="math inline">\(X\)</span> is left-hand side of the
+dependency - <span class="math inline">\(Y\)</span> is right-hand side
+of the dependency</p>
+<h4 id="dependency-diagram">Dependency Diagram</h4>
+<p>例子如图 <img src="/2023/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F/8dbdbc179d719882a9363b3ec869d9e.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="inferring-other-fds">Inferring Other FDs</h3>
+<h4 id="armstrongs-axioms">Armstrong's Axioms</h4>
+<h5 id="rule-1-reflexivity">Rule 1 (reflexivity)</h5>
+<p><span class="math display">\[\beta\subseteq\alpha\Rightarrow\alpha\rightarrow\beta\]</span></p>
+<h5 id="rule-2-augmentation">Rule 2 (augmentation)</h5>
+<p><span class="math display">\[\alpha\rightarrow\beta\Rightarrow\gamma\alpha\rightarrow\gamma\beta\]</span></p>
+<h5 id="rule-3-transitivity">Rule 3 (transitivity)</h5>
+<p><span class="math display">\[\alpha\rightarrow\beta,\beta\rightarrow\gamma\Rightarrow\alpha\rightarrow\gamma\]</span></p>
+<h5 id="rule-4-additivity">Rule 4 (additivity)</h5>
+<p><span class="math display">\[\alpha\rightarrow\beta,\alpha\rightarrow\gamma\Rightarrow\alpha\rightarrow\beta\gamma\]</span></p>
+<h5 id="rule-5-projectivity">Rule 5 (projectivity)</h5>
+<p><span class="math display">\[\alpha\rightarrow\beta\gamma\Rightarrow\alpha\rightarrow\beta,\alpha\rightarrow\gamma\]</span></p>
+<h5 id="rule-6-pseudo-transitivity">Rule 6 (pseudo-transitivity)</h5>
+<p><span class="math display">\[\alpha\rightarrow\beta,\gamma\beta\rightarrow\delta\Rightarrow\alpha\gamma\rightarrow\delta\]</span></p>
+<h4 id="closure">Closure</h4>
+<p>Definition: the set of all dependencies that can be inferred from
+<span class="math inline">\(F\)</span> is called the
+<strong>closure</strong> of <span class="math inline">\(F\)</span>.</p>
+<p><span class="math inline">\(F^+\)</span> denotes the closure of <span class="math inline">\(F\)</span>. <span class="math inline">\(F^+\)</span> includes dependencies in <span class="math inline">\(F\)</span>.</p>
+<h5 id="计算方法很简单的">计算方法（很简单的）</h5>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs oxygene">X^+ := X<span class="hljs-punctuation">;</span><br>change:= <span class="hljs-keyword">true</span><span class="hljs-punctuation">;</span><br><span class="hljs-keyword">while</span> change <span class="hljs-keyword">do</span><br>	<span class="hljs-keyword">begin</span><br>	change:= <span class="hljs-keyword">false</span><span class="hljs-punctuation">;</span><br>	<span class="hljs-keyword">for</span> <span class="hljs-keyword">each</span> FD W\rightarrow Z <span class="hljs-keyword">in</span> F <span class="hljs-keyword">do</span><br>		<span class="hljs-keyword">begin</span><br>		<span class="hljs-keyword">if</span> (W\subseteq X^+) <span class="hljs-keyword">and</span> (Z\subseteq X^+)<br>		<span class="hljs-keyword">then</span> <span class="hljs-keyword">do</span><br>			<span class="hljs-keyword">begin</span><br>			X^+ := X^+ \Cup Z<span class="hljs-punctuation">;</span><br>			change:= <span class="hljs-keyword">true</span><span class="hljs-punctuation">;</span><br>			<span class="hljs-keyword">end</span><br>		<span class="hljs-keyword">end</span><br>	<span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+<h5 id="例子">例子</h5>
+<p><span class="math inline">\(F=\{A\rightarrow B, BC\rightarrow D,
+A\rightarrow C\}\)</span>, Compute <span class="math inline">\(\{A\}^+\)</span> :</p>
+<p>1st scan of <span class="math inline">\(F\)</span> : <span class="math display">\[\begin{align}
+X^+&amp;:=\{A\}\\
+X^+&amp;=\{A,B\}\\
+X^+&amp;=\{A,B,C\}
+\end{align}\]</span></p>
+<p>2nd scan of <span class="math inline">\(F\)</span> : <span class="math display">\[X^+:=\{A,B,C,D\}\]</span></p>
+<p>3rd scan of <span class="math inline">\(F\)</span> : no change,
+therefore, the algorithm terminates. <span class="math display">\[\{A\}^+:=\{A,B,C,D\}\]</span></p>
+<h3 id="如何判断candidate-key">如何判断candidate key？</h3>
+<p>先找一个super key，然后去掉元素，算闭包，找candidate key</p>
+<h2 id="lecture-8-normal-forms">Lecture 8 Normal Forms</h2>
+<ul>
+<li>Criteria for a good database design</li>
+<li><strong>Formalized by functional (or other)
+dependencies（这个还挺关键的）</strong></li>
+</ul>
+<p>Types: - <strong>1NF, 2NF, 3NF (Codd 1972)</strong> -
+<strong>Boyce-Codd NF (3.5NF, 1974)</strong> - Multivalued dependencies
+and 4NF (Zaniolo 1976 and Fagin 1977) - Join dependencies (Rissanen
+1977) and 5NF (Fagin 1979)</p>
+<h3 id="first-normal-form-1nf">First Normal Form (1NF)</h3>
+<h4 id="definition">Definition</h4>
+<p>This simply means that attribute values are <em>atomic</em>, and is
+part of the definition of the relational model.</p>
+<p>Atomic: multivalued attributes, composite attributes, and their
+combinations are disallowed.</p>
+<h4 id="drawbacks">Drawbacks</h4>
+<ol type="1">
+<li>Repetition of data（信息冗余，占内存，改起来麻烦）
+<ul>
+<li>Fact may be repeated</li>
+<li>Can result in insertion and update anomalies</li>
+</ul></li>
+<li>Some associations aren't stored
+explicitly（有些关系没有明显体现，因为都混在一个大表里了）
+<ul>
+<li>Can lead to deletion anomalies</li>
+</ul></li>
+</ol>
+<h3 id="second-normal-form-2nf">Second Normal Form (2NF)</h3>
+<h4 id="prerequisite">Prerequisite</h4>
+<h5 id="prime-attribute">Prime attribute</h5>
+<p>An attribute of relation schema <span class="math inline">\(R\)</span> is called a prime attribute of <span class="math inline">\(R\)</span> if it is a member of some candidate key
+of <span class="math inline">\(R\)</span></p>
+<h5 id="nonprime-attribute">Nonprime attribute</h5>
+<p>An attribute is called nonprime if it is not a prime attribute—that
+is, if it is not a member of any candidate key.</p>
+<h5 id="full-functional-dependency">Full functional dependency</h5>
+<p>In an FD <span class="math inline">\(X\rightarrow Y\)</span>, <span class="math inline">\(Y\)</span> is fully functionally dependent on
+<span class="math inline">\(X\)</span> if there is no <span class="math inline">\(Z\subset X\)</span> such that <span class="math inline">\(Z\rightarrow Y\)</span>.</p>
+<h5 id="partial-functional-dependency">Partial functional
+dependency</h5>
+<p>In an FD <span class="math inline">\(X\rightarrow Y\)</span>, <span class="math inline">\(Y\)</span> is partially functionally dependent on
+<span class="math inline">\(X\)</span> if there is any <span class="math inline">\(Z\subset X\)</span> such that <span class="math inline">\(Z\rightarrow Y\)</span>.</p>
+<h4 id="definition-1">Definition</h4>
+<p>A relation schema <span class="math inline">\(R\)</span> is in second
+normal form (2NF) if every nonprime attribute <span class="math inline">\(A\)</span> in <span class="math inline">\(R\)</span> is not partially dependent on
+<em>any</em> (candidate) key of <span class="math inline">\(R\)</span>.</p>
+<h5 id="example-3">Example</h5>
+<ul>
+<li>Is this table 2NF?</li>
+<li>Yes!</li>
+</ul>
+<p>TEACHES</p>
+<table>
+<thead>
+<tr class="header">
+<th>Course</th>
+<th>Prof</th>
+<th>Room</th>
+<th>Room_Cap</th>
+<th>Enrol_l_mt</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<h4 id="drawbacks-1">Drawbacks</h4>
+<p>还是有一些1NF的问题 - 冗余 - 关系混乱（因为Transitive Relation）</p>
+<table>
+<thead>
+<tr class="header">
+<th>TEACHES</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Course</td>
+<td>Prof</td>
+<td>Room</td>
+<td>Room_Cap</td>
+<td>Enrol_l_mt</td>
+</tr>
+<tr class="even">
+<td>353</td>
+<td>Smith</td>
+<td>A532</td>
+<td>45</td>
+<td>40</td>
+</tr>
+<tr class="odd">
+<td>351</td>
+<td>Smith</td>
+<td>C320</td>
+<td>100</td>
+<td>60</td>
+</tr>
+<tr class="even">
+<td>355</td>
+<td>Clark</td>
+<td>H940</td>
+<td>400</td>
+<td>300</td>
+</tr>
+<tr class="odd">
+<td>456</td>
+<td>Turner</td>
+<td>B278</td>
+<td>50</td>
+<td>45</td>
+</tr>
+<tr class="even">
+<td>459</td>
+<td>Jamieson</td>
+<td>D110</td>
+<td>50</td>
+<td>45</td>
+</tr>
+<tr class="odd">
+<td>500</td>
+<td>Bob</td>
+<td>A532</td>
+<td>45</td>
+<td>40</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The fact that A532 has Room_Cap of 45 and Enrol_l_mt of 40 can still
+be stored twice.</li>
+<li>If course 355 is deleted, then the fact that H940 has Room_Cap of
+400 and Enrol_l_mt of 300 will be lost.</li>
+</ul>
+<h5 id="transitive-functional-dependency">Transitive Functional
+Dependency</h5>
+<p>A FD <span class="math inline">\(X\rightarrow Y\)</span> is a
+transitive dependency if there is a <span class="math inline">\(Z\)</span> that is not a subset of any key, such
+that <span class="math inline">\(X\rightarrow Z\)</span> and <span class="math inline">\(Z\rightarrow Y\)</span>. The attributes of <span class="math inline">\(Y\)</span> are transitively dependent on <span class="math inline">\(X\)</span>.</p>
+<h5 id="superkey">Superkey</h5>
+<p>A superkey of a relation schema <span class="math inline">\(R=\{A_1,
+A_2,\cdots, A_n\}\)</span> is a set of attributes <span class="math inline">\(S\rightarrow R\)</span> with the property that no
+two tuples <span class="math inline">\(t_1\)</span> and <span class="math inline">\(t_2\)</span> in any legal relation state <span class="math inline">\(r\)</span> of <span class="math inline">\(R\)</span> will have <span class="math inline">\(t_1[S]=t_2[S]\)</span>.</p>
+<p>A (candidate) key <span class="math inline">\(K\)</span> is a
+superkey with the additional property that removal of any attribute from
+<span class="math inline">\(K\)</span> will cause <span class="math inline">\(K\)</span> not to be a superkey anymore.</p>
+<h3 id="third-normal-form-3nf">Third Normal Form (3NF)</h3>
+<p>A relation scheme is in third normal form (3NF) if for all
+non-trivial FD's of the form <span class="math display">\[X\rightarrow
+A\]</span> - Either <span class="math inline">\(X\)</span> is a superkey
+- Or <span class="math inline">\(A\)</span> is a prime attribute.</p>
+<p>The 3NF disallows transitive dependencies regarding non-prime
+attribute.</p>
+<table>
+<thead>
+<tr class="header">
+<th>X</th>
+<th>A</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Superkey</td>
+<td>Prime</td>
+</tr>
+<tr class="even">
+<td>Superkey</td>
+<td>Nonprime</td>
+</tr>
+<tr class="odd">
+<td>Not Superkey</td>
+<td>Prime</td>
+</tr>
+<tr class="even">
+<td><del>Not Superkey</del></td>
+<td><del>Nonprime</del></td>
+</tr>
+</tbody>
+</table>
+<h4 id="drawbacks-2">Drawbacks</h4>
+<ul>
+<li>存在nonprime attributes 决定 prime attributes 的情况</li>
+<li>还是有redundancy，逆天</li>
+</ul>
+<p>Example of problems due to redundancy in 3NF - <span class="math inline">\(R=\{title, theater, city\}\)</span> - <span class="math inline">\(F=\{theater\rightarrow city, title\
+city\rightarrow theater\}\)</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>title</th>
+<th>theater</th>
+<th>city</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(j_1\)</span></td>
+<td><span class="math inline">\(l_1\)</span></td>
+<td><span class="math inline">\(k_1\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(j_2\)</span></td>
+<td><span class="math inline">\(l_1\)</span></td>
+<td><span class="math inline">\(k_1\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(j_3\)</span></td>
+<td><span class="math inline">\(l_1\)</span></td>
+<td><span class="math inline">\(k_1\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="boyce-codd-normal-form-bcnf">Boyce-Codd Normal Form (BCNF)</h3>
+<p>A relation scheme is in Boyce-Codd Normal Form (BCNF) if whenever
+<span class="math inline">\(X\rightarrow A\)</span> holds and <span class="math inline">\(X\rightarrow A\)</span> is non-trivial, <span class="math inline">\(X\)</span> is a superkey.</p>
+<p>BCNF is also known as 3.5NF</p>
+<table>
+<thead>
+<tr class="header">
+<th>X</th>
+<th>A</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Superkey</td>
+<td>Prime</td>
+</tr>
+<tr class="even">
+<td>Superkey</td>
+<td>Nonprime</td>
+</tr>
+<tr class="odd">
+<td><del>Not Superkey</del></td>
+<td><del>Prime</del></td>
+</tr>
+<tr class="even">
+<td><del>Not Superkey</del></td>
+<td><del>Nonprime</del></td>
+</tr>
+</tbody>
+</table>
+<h4 id="comparisons">Comparisons</h4>
+<p>BCNF implies 3NF</p>
+<table>
+<thead>
+<tr class="header">
+<th><strong>Property</strong></th>
+<th><strong>3NF</strong></th>
+<th><strong>BCNF</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Elimination of redundancy due to functional dependency</td>
+<td>Most</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Lossless join</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Dependency preservation due to functional dependency</td>
+<td>Yes</td>
+<td>Maybe</td>
+</tr>
+</tbody>
+</table>
+<p>It is not always possible to get a BCNF decomposition that is
+dependency preserving</p>
+<h2 id="lecture-9-relational-database-design">Lecture 9 Relational
+Database Design</h2>
+<p>Redundancy / Anomalies can be removed from relation designs by
+decomposing them until they are in a normal form.</p>
+<h4 id="decomposition">Decomposition</h4>
+<p>A decomposition of a relation scheme, <span class="math inline">\(R\)</span>, is a set of relation schemes <span class="math inline">\(\{R_1,\cdots,R_n\}\)</span> such that <span class="math inline">\(R_i\subseteq R\)</span> for each <span class="math inline">\(i\)</span> , and <span class="math inline">\(\cup_{i=1}^n R_i=R\)</span></p>
+<p><strong>Important:</strong> it is <strong>improper</strong> to assess
+the quality of your decompositions by independently checking to see if
+the resulting relations are in a higher form. A good decomposition
+should also have the following two properties. 1. the <strong>dependency
+preservation</strong> property 2. the <strong>nonadditive (or lossless)
+join</strong> property</p>
+<h4 id="dependency-preserving">Dependency Preserving</h4>
+<p>A decomposition <span class="math inline">\(D=\{R_1,\cdots,R_n\}\)</span> of <span class="math inline">\(R\)</span> is
+<strong>dependency-preserving</strong> w.r.t a set <span class="math inline">\(F\)</span> of FDs if: <span class="math display">\[(F_1\cup\cdots\cup F_n)^+=F^+\]</span> where
+<span class="math inline">\(F_i\)</span> means the
+<strong>projection</strong> of <span class="math inline">\(F\)</span>
+onto <span class="math inline">\(R_i\)</span>.</p>
+<p>判定：因为左边必然<span class="math inline">\(\subseteq\)</span>右边，所以只需证明右边<span class="math inline">\(\subseteq\)</span>左边，就看<span class="math inline">\(F-\sum
+F_i\)</span>的函数依赖关系是否在左边（对应LHS）的闭包中</p>
+<h5 id="projection-of-f">Projection of <span class="math inline">\(F\)</span></h5>
+<p>Given a set of initial dependencies <span class="math inline">\(F\)</span> on <span class="math inline">\(R\)</span>: Let <span class="math inline">\(R\)</span> be decomposed in to <span class="math inline">\(R_i,\cdots,R_m\)</span></p>
+<p>Definition: The <strong>projection</strong> of <span class="math inline">\(F\)</span> on <span class="math inline">\(R_i\)</span>, denoted by <span class="math inline">\(\pi_{R_i}(F)\)</span> where <span class="math inline">\(R_i\)</span> is a subset of <span class="math inline">\(R\)</span>, is the set of dependencies <span class="math inline">\(X\rightarrow Y\)</span> in <span class="math inline">\(F^+\)</span> such that the attributes in <span class="math inline">\(X\cup Y\)</span> are all contained in <span class="math inline">\(R_i\)</span>.</p>
+<h5 id="example-1-1">Example 1</h5>
+<p><span class="math inline">\(R=(A,B,C,D,E,G,M)\)</span>, Consider
+<span class="math inline">\(F=\{A\rightarrow BC, D\rightarrow EG,
+M\rightarrow A\}\)</span> Decomposed into <span class="math inline">\(R_1=(A,B,C,M)\)</span> and <span class="math inline">\(R_2=(C,D,E,G)\)</span>, <span class="math inline">\(\pi_{R_1}(F)=\{A\rightarrow BC, M\rightarrow
+A\},\pi_{R_2}(F)=\{D\rightarrow EG\}\)</span></p>
+<ul>
+<li>This decomposition is dependency preserving
+<ul>
+<li>Let <span class="math inline">\(F^\prime = \pi_{R_1}(F)\cup
+\pi_{R_2}(F)\)</span> , <span class="math inline">\({F^\prime}^+=F^+\)</span></li>
+</ul></li>
+</ul>
+<h5 id="example-2-1">Example 2</h5>
+<p><span class="math inline">\(R=(A,B,C,D,E,G,M)\)</span>, Consider
+<span class="math inline">\(F=\{A\rightarrow BC, D\rightarrow EG,
+M\rightarrow A, M\rightarrow D\}\)</span> Decomposed into <span class="math inline">\(R_1=(A,B,C,M)\)</span> and <span class="math inline">\(R_2=(C,D,E,G)\)</span>, <span class="math inline">\(\pi_{R_1}(F)=\{A\rightarrow BC, M\rightarrow
+A\},\pi_{R_2}(F)=\{D\rightarrow EG\}\)</span></p>
+<ul>
+<li>This decomposition is not dependency preserving
+<ul>
+<li>Checking <span class="math inline">\(M\rightarrow D\)</span></li>
+</ul></li>
+</ul>
+<h5 id="example-3-1">Example 3</h5>
+<p><span class="math inline">\(R=(A,B,C,D,E,G,M)\)</span>, Consider
+<span class="math inline">\(F=\{A\rightarrow BC, D\rightarrow EG,
+M\rightarrow A, M\rightarrow C, C\rightarrow D, M\rightarrow
+D\}\)</span> Decomposed into <span class="math inline">\(R_1=(A,B,C,M)\)</span> and <span class="math inline">\(R_2=(C,D,E,G)\)</span>, <span class="math inline">\(\pi_{R_1}(F)=\{A\rightarrow BC, M\rightarrow A,
+M\rightarrow C\},\pi_{R_2}(F)=\{D\rightarrow EG, C\rightarrow
+D\}\)</span></p>
+<ul>
+<li>This decomposition is dependency preserving</li>
+</ul>
+<h4 id="lossless-join">Lossless Join</h4>
+<p>A decomposition <span class="math inline">\(\{R_1,\cdots,R_n\}\)</span> of <span class="math inline">\(R\)</span> is a <strong>lossless join</strong>
+decomposition w.r.t a set of <span class="math inline">\(F\)</span> of
+FD's if for every relation instance <span class="math inline">\(r\)</span> that satisfies <span class="math inline">\(F\)</span>: <span class="math display">\[r=\pi_{R_i}(r)\bowtie\cdots\bowtie\pi_{R_n}(r)\]</span>
+If <span class="math inline">\(r\subset\pi_{R_1}(r)\bowtie\cdots\bowtie\pi_{R_n}(r)\)</span>,
+the decomposition is lossy.</p>
+<h5 id="a-lossy-join-decomposition">A lossy join decomposition</h5>
+<p>STUDENT_ADVISOR</p>
+<table>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Department</th>
+<th>Advisor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Jones</td>
+<td>Comp Sci</td>
+<td>Smith</td>
+</tr>
+<tr class="even">
+<td>Ng</td>
+<td>Chemistry</td>
+<td>Turner</td>
+</tr>
+<tr class="odd">
+<td>Martin</td>
+<td>Physics</td>
+<td>Bosky</td>
+</tr>
+<tr class="even">
+<td>Dulles</td>
+<td>Decision Sci</td>
+<td>Hall</td>
+</tr>
+<tr class="odd">
+<td>Duke</td>
+<td>Mathematics</td>
+<td>James</td>
+</tr>
+<tr class="even">
+<td>James</td>
+<td>Comp Sci</td>
+<td>Clark</td>
+</tr>
+<tr class="odd">
+<td>Evan</td>
+<td>Comp Sci</td>
+<td>Smith</td>
+</tr>
+<tr class="even">
+<td>Baxter</td>
+<td>English</td>
+<td>Bronte</td>
+</tr>
+</tbody>
+</table>
+<p>With dependencies <span class="math inline">\(\{Name\rightarrow
+Department, Name\rightarrow Advisor, Advisor\rightarrow
+Department\}\)</span>, into two relations:</p>
+<p>STUDENT_DEPARTMENT</p>
+<table>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Department</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Jones</td>
+<td>Comp Sci</td>
+</tr>
+<tr class="even">
+<td>Ng</td>
+<td>Chemistry</td>
+</tr>
+<tr class="odd">
+<td>Martin</td>
+<td>Physics</td>
+</tr>
+<tr class="even">
+<td>Duke</td>
+<td>Mathematics</td>
+</tr>
+<tr class="odd">
+<td>Dulles</td>
+<td>Decision Sci</td>
+</tr>
+<tr class="even">
+<td>James</td>
+<td>Comp Sci</td>
+</tr>
+<tr class="odd">
+<td>Evan</td>
+<td>Comp Sci</td>
+</tr>
+<tr class="even">
+<td>Baxter</td>
+<td>English</td>
+</tr>
+</tbody>
+</table>
+<p>DEPARTMENT_ADVISOR</p>
+<table>
+<thead>
+<tr class="header">
+<th>Department</th>
+<th>Advisor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Comp Sci</td>
+<td>Smith</td>
+</tr>
+<tr class="even">
+<td>Chemistry</td>
+<td>Turner</td>
+</tr>
+<tr class="odd">
+<td>Physics</td>
+<td>Bosky</td>
+</tr>
+<tr class="even">
+<td>Decision Sci</td>
+<td>Hall</td>
+</tr>
+<tr class="odd">
+<td>Mathematics</td>
+<td>James</td>
+</tr>
+<tr class="even">
+<td>Comp Sci</td>
+<td>Clark</td>
+</tr>
+<tr class="odd">
+<td>English</td>
+<td>Bronte</td>
+</tr>
+</tbody>
+</table>
+<p>After join:</p>
+<table>
+
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Department</th>
+<th>Advisor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Jones</td>
+<td>Comp Sci</td>
+<td>Smith</td>
+</tr>
+<tr class="even">
+<td><font color="red">Jones</font></td>
+<td><font color="red">Comp Sci</font></td>
+<td><font color="red">Clark*</font></td>
+</tr>
+<tr class="odd">
+<td>Ng</td>
+<td>Chemistry</td>
+<td>Turner</td>
+</tr>
+<tr class="even">
+<td>Martin</td>
+<td>Physics</td>
+<td>Bosky</td>
+</tr>
+<tr class="odd">
+<td>Dulles</td>
+<td>Decision Sci</td>
+<td>Hall</td>
+</tr>
+<tr class="even">
+<td>Duke</td>
+<td>Mathematics</td>
+<td>James</td>
+</tr>
+<tr class="odd">
+<td><font color="red">James</font></td>
+<td><font color="red">Comp Sci</font></td>
+<td><font color="red">Smith*</font></td>
+</tr>
+<tr class="even">
+<td>James</td>
+<td>Comp Sci</td>
+<td>Clark</td>
+</tr>
+<tr class="odd">
+<td>Evan</td>
+<td>Comp Sci</td>
+<td>Smith</td>
+</tr>
+<tr class="even">
+<td><font color="red">Evan</font></td>
+<td><font color="red">Comp Sci</font></td>
+<td><font color="red">Clark*</font></td>
+</tr>
+<tr class="odd">
+<td>Baxter</td>
+<td>English</td>
+<td>Bronte</td>
+</tr>
+</tbody>
+</table>
+<p>This is not the same as the original relation (the tuples marked with
+* have been added). Thus the decomposition is <u>lossy</u></p>
+<h5 id="test-binary">Test (binary)</h5>
+<p>A decomposition of <span class="math inline">\(R\)</span> into <span class="math inline">\(R_1\)</span> and <span class="math inline">\(R_2\)</span> is lossless join iff the common
+attributes <span class="math inline">\(R_1\cap R_2\)</span> form a
+superkey for either <span class="math inline">\(R_1\)</span> or <span class="math inline">\(R_2\)</span>.</p>
+<p>This only works for <strong>binary</strong> decompositions.</p>
+<h4 id="test-lossless-join-property">Test Lossless Join property</h4>
+<p>Algorithm 1. Create a matrix <span class="math inline">\(S\)</span>,
+each element <span class="math inline">\(s_{i,j}\in S\)</span>
+corresponds the relation <span class="math inline">\(R_i\)</span> and
+the attribute <span class="math inline">\(A_j\)</span>, such that: <span class="math inline">\(s_{i,j}=a\)</span> if <span class="math inline">\(A\in R_j\)</span>, otherwise <span class="math inline">\(s_{i,j}=b\)</span>. 2. Repeat the following
+process until (1) <span class="math inline">\(S\)</span> has no change
+OR (2) one row is made up entirely of <span class="math inline">\(a\)</span> symbols. 1. For each <span class="math inline">\(X\rightarrow Y\)</span>, choose the rows where the
+elements corresponding to <span class="math inline">\(X\)</span> take
+the value <span class="math inline">\(a\)</span>. 2. In those chosen
+rows (must be at least two rows), the elements corresponding to <span class="math inline">\(Y\)</span> also take the value <span class="math inline">\(a\)</span> if one of the chosen rows take the
+value <span class="math inline">\(a\)</span> on <span class="math inline">\(Y\)</span>. 3. Verdict: Decomposition is lossless
+if one row is entirely made up by <span class="math inline">\(a\)</span>
+values.</p>
+<h5 id="example-1-2">Example 1</h5>
+<p><span class="math inline">\(R=(A,B,C,D)\ F=\{A\rightarrow B,
+A\rightarrow C, C\rightarrow D\}\)</span>. Let <span class="math inline">\(R_1=(A,B,C), R_2=(C,D)\)</span>.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(R_1\)</span></td>
+<td>a</td>
+<td>a</td>
+<td>a</td>
+<td><del>b</del> a</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(R_2\)</span></td>
+<td>b</td>
+<td>b</td>
+<td>a</td>
+<td>a</td>
+</tr>
+</tbody>
+</table>
+<p>Note: row 1 and 2 of <span class="math inline">\(S\)</span> agree on
+<span class="math inline">\(\{C\}\)</span>, which is the left-hand side
+of <span class="math inline">\(C\rightarrow D\)</span>. Therefore,
+change the <span class="math inline">\(D\)</span> value on rows 1 to
+<span class="math inline">\(a\)</span>, matching the value from row
+2.</p>
+<p>Now row 1 is entirely <span class="math inline">\(a\)</span>'s, so
+the decomposition is lossless.</p>
+<h5 id="example-2-2">Example 2</h5>
+<p><span class="math inline">\(R=(A,B,C,D,E)\ F=\{AB\rightarrow CD,
+A\rightarrow E, C\rightarrow D\}\)</span>. Let <span class="math inline">\(R_1=(A,B,C), R_2=(B,C,D),R_3=(C,D,E)\)</span>.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(R_1\)</span></td>
+<td>a</td>
+<td>a</td>
+<td>a</td>
+<td><del>b</del> a</td>
+<td>b</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(R_2\)</span></td>
+<td>b</td>
+<td>a</td>
+<td>a</td>
+<td>a</td>
+<td>b</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(R_3\)</span></td>
+<td>b</td>
+<td>b</td>
+<td>a</td>
+<td>a</td>
+<td>a</td>
+</tr>
+</tbody>
+</table>
+<p>Not lossless join.</p>
+<h5 id="example-3-2">Example 3</h5>
+<p><span class="math inline">\(R=(A,B,C,D,E)\ F=\{C\rightarrow DE,
+A\rightarrow B, AB\rightarrow G\}\)</span>. Let <span class="math inline">\(R_1=(A,B), R_2=(C,D,E),R_3=(A,C,G)\)</span>.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>G</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(R_1\)</span></td>
+<td>a</td>
+<td>a</td>
+<td>b</td>
+<td>b</td>
+<td>b</td>
+<td><del>b</del> a</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(R_2\)</span></td>
+<td>b</td>
+<td>b</td>
+<td>a</td>
+<td>a</td>
+<td>a</td>
+<td>b</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(R_3\)</span></td>
+<td>a</td>
+<td><del>b</del> a</td>
+<td>a</td>
+<td><del>b</del> a</td>
+<td><del>b</del> a</td>
+<td>a</td>
+</tr>
+</tbody>
+</table>
+<p>Is lossless join.</p>
 
                 
               </div>
@@ -1397,7 +2180,7 @@ procedural programming - SQL programming</p>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年11月3日</div>
+          <div>2023年11月12日</div>
         </div>
       
       
