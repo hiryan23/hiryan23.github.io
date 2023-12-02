@@ -1,0 +1,2771 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Ruiyang He">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="acad_object_groups 描述课程的等级？（专业核心、）    栏位 类型 校对规则 可空的 预设     id integer  not null    name longname      gtype acadobjectgrouptype  not null    glogic acadobjectgroup">
+<meta property="og:type" content="website">
+<meta property="og:title" content="page.title">
+<meta property="og:url" content="http://hiryan23.github.io/dairy/2023-11-18.html">
+<meta property="og:site_name" content="Hiryan&#39;s Blog">
+<meta property="og:description" content="acad_object_groups 描述课程的等级？（专业核心、）    栏位 类型 校对规则 可空的 预设     id integer  not null    name longname      gtype acadobjectgrouptype  not null    glogic acadobjectgroup">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-19T04:25:23.119Z">
+<meta property="article:modified_time" content="2023-11-19T04:25:23.119Z">
+<meta property="article:author" content="Ruiyang He">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  <title>page.title - Hiryan&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hiryan23.github.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Hiryan&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/lungmen.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.7)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="page.title"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  <h2 id="acad_object_groups">acad_object_groups</h2>
+<p>描述课程的等级？（专业核心、）</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>name</td>
+<td>longname</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>gtype</td>
+<td>acadobjectgrouptype</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>glogic</td>
+<td>acadobjectgrouplogictype</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>gdefby</td>
+<td>acadobjectgroupdeftype</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>negated</td>
+<td>boolean</td>
+<td></td>
+<td></td>
+<td>false</td>
+</tr>
+<tr class="odd">
+<td>parent</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>definition</td>
+<td>textstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="academic_standing">academic_standing</h2>
+<p>描述你的学术表现，会不会被退学警告</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>standing</td>
+<td>shortname</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>notes</td>
+<td>textstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="affiliations">affiliations</h2>
+<p>描述员工的从属关系 要参考orgunit、role等表</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>staff</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>orgunit</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>role</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>isprimary</td>
+<td>boolean</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>starting</td>
+<td>date</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ending</td>
+<td>date</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="books">books</h2>
+<p>emm里面没数据，诡异</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>isbn</td>
+<td>character varying(20)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>title</td>
+<td>longstring</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>authors</td>
+<td>longstring</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>publisher</td>
+<td>longstring</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>edition</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>pubyear</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="buildings">buildings</h2>
+<p>描述了建筑，代号，校区</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>unswid</td>
+<td>shortstring</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>name</td>
+<td>longname</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>campus</td>
+<td>campustype</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>gridref</td>
+<td>character(4)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="class_enrolment_waitlist">class_enrolment_waitlist</h2>
+<p>没数据</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>student</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>class</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>applied</td>
+<td>timestamp without time zone</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="class_enrolments">class_enrolments</h2>
+<p>没数据</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>student</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>class</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="class_teachers">class_teachers</h2>
+<p>没数据</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>class</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>teacher</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="class_types">class_types</h2>
+<p>描述了课程种类和代号</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>unswid</td>
+<td>shortstring</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>name</td>
+<td>mediumname</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>description</td>
+<td>mediumstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="classes">classes</h2>
+<p>记录了基本课程信息</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>course</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>room</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ctype</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>dayofwk</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>starttime</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>endtime</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>startdate</td>
+<td>date</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>enddate</td>
+<td>date</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>repeats</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="countries">countries</h2>
+<p>记录了国籍和代码</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>code</td>
+<td>character(3)</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>name</td>
+<td>longname</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="course_books">course_books</h2>
+<p>空的</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>course</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>book</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>bktype</td>
+<td>character varying(10)</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="course_enrolment_waitlist">course_enrolment_waitlist</h2>
+<p>空的</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>student</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>course</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>applied</td>
+<td>timestamp without time zone</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="course_enrolments">course_enrolments</h2>
+<p>记录了学生选课、成绩、等地</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>student</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>course</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>mark</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>grade</td>
+<td>gradetype</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>stueval</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="course_quotas">course_quotas</h2>
+<p>空的</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>course</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>sgroup</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>quota</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="course_staff">course_staff</h2>
+<p>记录了课程、员工、角色</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>course</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>staff</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>role</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="courses">courses</h2>
+<p>记录了课程、学期、主页</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>subject</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>semester</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>homepage</td>
+<td>urlstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="degree_types">degree_types</h2>
+<p>记录了学历</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>unswid</td>
+<td>shortname</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>name</td>
+<td>mediumstring</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>prefix</td>
+<td>mediumstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>career</td>
+<td>careertype</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>aqf_level</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="degrees_awarded">degrees_awarded</h2>
+<p>空的</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>student</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>program</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>graduated</td>
+<td>date</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="external_subjects">external_subjects</h2>
+<p>空的</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>extsubj</td>
+<td>longname</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>institution</td>
+<td>longname</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>yearoffered</td>
+<td>courseyeartype</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>equivto</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="facilities">facilities</h2>
+<p>记录了设施清单</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>description</td>
+<td>mediumstring</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="orgunit_groups">orgunit_groups</h2>
+<p>记录了拥有者和成员，不知道是什么意思</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>owner</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>member</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="orgunit_types">orgunit_types</h2>
+<p>记录了组织的种类</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>name</td>
+<td>shortname</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="orgunits">orgunits</h2>
+<p>记录了各种组织信息</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>utype</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>name</td>
+<td>mediumstring</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>longname</td>
+<td>longstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>unswid</td>
+<td>shortstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>phone</td>
+<td>phonenumber</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>email</td>
+<td>emailstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>website</td>
+<td>urlstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>starting</td>
+<td>date</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ending</td>
+<td>date</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="people">people</h2>
+<p>记录了超级基本信息</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>unswid</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>password</td>
+<td>shortstring</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>family</td>
+<td>longname</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>given</td>
+<td>longname</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>title</td>
+<td>shortname</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>sortname</td>
+<td>longname</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>name</td>
+<td>longname</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>street</td>
+<td>longstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>city</td>
+<td>mediumstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>state</td>
+<td>mediumstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>postcode</td>
+<td>shortstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>country</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>homephone</td>
+<td>phonenumber</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>mobphone</td>
+<td>phonenumber</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>email</td>
+<td>emailstring</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>homepage</td>
+<td>urlstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>gender</td>
+<td>character(1)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>birthday</td>
+<td>date</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>origin</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="program_degrees">program_degrees</h2>
+<p>记录了项目的学位</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>program</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>dtype</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>name</td>
+<td>longstring</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>abbrev</td>
+<td>mediumstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="program_enrolments">program_enrolments</h2>
+<p>记录了学生的选项目情况</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>student</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>semester</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>program</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>wam</td>
+<td>real</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>standing</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>advisor</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>notes</td>
+<td>textstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="program_group_members">program_group_members</h2>
+<p>记录了项目和组员？</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>program</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ao_group</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="programs">programs</h2>
+<p>记录了有关项目的超级信息</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>code</td>
+<td>character(4)</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>name</td>
+<td>longname</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>uoc</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>offeredby</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>career</td>
+<td>careertype</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>duration</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>description</td>
+<td>textstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>firstoffer</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>lastoffer</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public_holidays">public_holidays</h2>
+<p>空的</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>semester</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>description</td>
+<td>mediumstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>day</td>
+<td>date</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="room_facilities">room_facilities</h2>
+<p>记录了房间和设施</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>room</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>facility</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="room_types">room_types</h2>
+<p>记录了房间类型</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>description</td>
+<td>mediumstring</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="rooms">rooms</h2>
+<p>记录了房间、名字、楼、容量</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>unswid</td>
+<td>shortstring</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>rtype</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>name</td>
+<td>shortname</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>longname</td>
+<td>longname</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>building</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>capacity</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="semesters">semesters</h2>
+<p>记录了学期名和时期</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>unswid</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>year</td>
+<td>courseyeartype</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>term</td>
+<td>character(2)</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>name</td>
+<td>shortname</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>longname</td>
+<td>longname</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>starting</td>
+<td>date</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ending</td>
+<td>date</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>startbrk</td>
+<td>date</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>endbrk</td>
+<td>date</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>endwd</td>
+<td>date</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>endenrol</td>
+<td>date</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>census</td>
+<td>date</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="staff">staff</h2>
+<p>记录了员工、办公室、手机、雇佣时间、监管者</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>office</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>phone</td>
+<td>phonenumber</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>employed</td>
+<td>date</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>supervisor</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="staff_role_classes">staff_role_classes</h2>
+<p>记录了员工所属的部门</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>character(1)</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>description</td>
+<td>shortstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="staff_role_types">staff_role_types</h2>
+<p>记录了员工身份的种类</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>character(1)</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>description</td>
+<td>shortstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="staff_roles">staff_roles</h2>
+<p>记录了员工和他们的职务</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>rtype</td>
+<td>character(1)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>rclass</td>
+<td>character(1)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>name</td>
+<td>longstring</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>description</td>
+<td>longstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="stream_enrolments">stream_enrolments</h2>
+<p>记录了stream的enrolment信息</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>partof</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>stream</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="stream_group_members">stream_group_members</h2>
+<p>记录了stream和group的信息</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>stream</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ao_group</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="stream_types">stream_types</h2>
+<p>记录了stream的类别（好像是职称）</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>career</td>
+<td>careertype</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>code</td>
+<td>character(1)</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>description</td>
+<td>shortstring</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="streams">streams</h2>
+<p>记录了课程、老师、职称、介绍？</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>code</td>
+<td>character(6)</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>name</td>
+<td>longname</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>offeredby</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>stype</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>description</td>
+<td>textstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>firstoffer</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>lastoffer</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="student_groups">student_groups</h2>
+<p>空</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>name</td>
+<td>longname</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>definition</td>
+<td>textstring</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="students">students</h2>
+<p>记录了学生名单</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>stype</td>
+<td>character varying(5)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="subject_group_members">subject_group_members</h2>
+<p>记录了组的信息</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>subject</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ao_group</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="subjects">subjects</h2>
+<p>记录了学科的超级信息</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>code</td>
+<td>character(8)</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>name</td>
+<td>mediumname</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>longname</td>
+<td>longname</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>uoc</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>offeredby</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>eftsload</td>
+<td>double precision</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>career</td>
+<td>careertype</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>syllabus</td>
+<td>textstring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>contacthpw</td>
+<td>double precision</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>_excluded</td>
+<td>text</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>excluded</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>_equivalent</td>
+<td>text</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>equivalent</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>_prereq</td>
+<td>text</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>prereq</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>replaces</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>firstoffer</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>lastoffer</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="variations">variations</h2>
+<p>空的</p>
+<table>
+<thead>
+<tr class="header">
+<th>栏位</th>
+<th>类型</th>
+<th>校对规则</th>
+<th>可空的</th>
+<th>预设</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>student</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>program</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>subject</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>vtype</td>
+<td>variationtype</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>intequiv</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>extequiv</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>yearpassed</td>
+<td>courseyeartype</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>mark</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>approver</td>
+<td>integer</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>approved</td>
+<td>date</td>
+<td></td>
+<td>not null</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+  
+
+</article>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>

@@ -35,8 +35,16 @@
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/56aaca3bc06ccd47b862720645c0a95.png">
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/%E6%97%A0%E6%A0%87%E9%A2%98.png">
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/b34d20a3f1062772b5631f8121ee7e5.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/aa7f7b514dc98df9d73b0eec266a3b9.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/7315e151821f4a0bf859d52606ef647.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/217c1d6872d86849282822241f0f20a.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/d8b0ccbd969fc07ac53e0e2d82270ac.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/c4eab69d3372539e3672f2406d75439.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/88fcf9c3c0f00fd26de7204a01d710a.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/060d32f7252b7a7b511f53335ca6ec7.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/54902c72ab0d96ef09e40eedb6b1204.png">
 <meta property="article:published_time" content="2023-09-17T05:07:23.470Z">
-<meta property="article:modified_time" content="2023-11-05T15:34:02.579Z">
+<meta property="article:modified_time" content="2023-11-25T14:21:11.662Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="课程笔记">
 <meta name="twitter:card" content="summary">
@@ -250,7 +258,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          30k 字
+          38k 字
         
       </span>
     
@@ -261,7 +269,7 @@
         
         
         
-          247 分钟
+          318 分钟
         
       </span>
     
@@ -311,7 +319,7 @@
         aria-expanded="true"
       >
         2023F
-        <span class="list-group-count">(5)</span>
+        <span class="list-group-count">(7)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -338,6 +346,24 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">中级微观经济学-课程笔记</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2023/11/12/%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/" title="公司金融好好学"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">公司金融好好学</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2023/11/28/%E6%8A%95%E8%B5%84%E5%AD%A6%E6%A8%A1%E5%9E%8B%E4%B8%80%E8%A7%88/" title="投资学模型一览"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">投资学模型一览</span>
         </a>
       
     
@@ -1620,6 +1646,7 @@ d\lambda}=-D_{FW}\]</span></p></li>
 a year; the spot rate in period <span class="math inline">\(k\)</span>
 is <span class="math inline">\(s_k\)</span> (expressed as a yearly rate)
 and cash flow stream is <span class="math inline">\((x_0,x_1,\cdots,x_n)\)</span></li>
+<li>下面（都）有点问题，指数应该是-km</li>
 <li>Price with respect to a parallel shift <span class="math inline">\(\lambda\)</span> <span class="math display">\[P(\lambda)=\sum_{i=0}^nx_{t_i}\left(1+\cfrac{s_k+\lambda}{m}\right)^{-k}\]</span></li>
 <li>Sensitivity of the price <span class="math display">\[\cfrac{\text
 dP(0)}{\text
@@ -1903,6 +1930,306 @@ x_2=4744.03\simeq4,744\)</span></li>
 </tr>
 </tbody>
 </table>
+<h2 id="lecture-6-mean-variance-portfolio-theory">Lecture 6
+Mean-Variance Portfolio Theory</h2>
+<h3 id="single-period-random-cash-flows">Single-Period Random Cash
+Flows</h3>
+<ul>
+<li>Basic Settings for Our Discussion in This Part:
+<ul>
+<li>There is only a single period for investment.</li>
+<li>Money is invested at the initial time, and payoff is attained at the
+end of the period</li>
+<li>The initial cost for each investment is known, but the amount to be
+returned is uncertain <img src="/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/aa7f7b514dc98df9d73b0eec266a3b9.png" srcset="/img/loading.gif" lazyload></li>
+</ul></li>
+</ul>
+<h4 id="asset-return">Asset Return</h4>
+<ul>
+<li>Asset: An investment instrument that can be bought and sold</li>
+<li>Total return of investing on an asset (for a single period): <span class="math display">\[R=\cfrac{X_1}{X_0}\]</span></li>
+<li>Rate of return: <span class="math display">\[r=\cfrac{X_1-X_0}{X_0}=R-1\]</span></li>
+<li>Profit/Loss (P&amp;L): <span class="math inline">\(p=X_1-X_0=rX_0\)</span></li>
+</ul>
+<h4 id="short-sales">Short Sales</h4>
+<ul>
+<li>Short selling or shorting: the process of borrowing an asset,
+selling it, and returning the asset at a later date</li>
+<li>The P&amp;L is <span class="math inline">\(p=X_0-X_1\)</span></li>
+<li>Short selling is profitable if the price declines.</li>
+<li>Question: What’s the relationship between the total return (rate of
+return) for buying and shorting the same asset?
+<ul>
+<li>应该是互为相反数</li>
+</ul></li>
+<li>Short selling is regarded very risky
+<ul>
+<li>The potential loss is unlimited</li>
+</ul></li>
+<li>In practice, short selling is supplemented by certain restrictions
+and safeguards
+<ul>
+<li>To short a stock, you are required to post a security deposit with
+the broker from whom you borrow the asset</li>
+</ul></li>
+<li>For theoretical analysis, we usually assume pure shorting is
+allowed</li>
+</ul>
+<h4 id="random-returns">Random Returns</h4>
+<ul>
+<li>When an asset is originally acquired, its rate of return is usually
+uncertain.</li>
+<li>Accordingly, we consider <span class="math inline">\(r\)</span> to
+be a random variable.</li>
+<li>Expected value or mean of <span class="math inline">\(r\)</span> is
+<span class="math display">\[\bar r=E[r]\]</span></li>
+<li>Variance of <span class="math inline">\(r\)</span> is <span class="math display">\[\sigma^2=E[(r-\bar r)^2]\]</span></li>
+<li>Standard deviation of <span class="math inline">\(r\)</span> is
+<span class="math inline">\(\sigma\)</span></li>
+</ul>
+<h3 id="mean-standard-deviation-diagram">Mean-Standard Deviation
+Diagram</h3>
+<ul>
+<li>The random rates of returns can be represented on a two-dimensional
+diagram, i.e., the <span class="math inline">\(\bar r-\sigma\)</span>
+diagram</li>
+</ul>
+<h4 id="stock-market">Stock Market</h4>
+<p><img src="/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/7315e151821f4a0bf859d52606ef647.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><p>Individual stocks’ returns and risks seem to be randomly
+distributed.</p></li>
+<li><p>There is an upward trend. – Trade-off between risk and
+return.</p></li>
+<li><p>Can we do better by combining stocks? <img src="/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/217c1d6872d86849282822241f0f20a.png" srcset="/img/loading.gif" lazyload></p></li>
+</ul>
+<h3 id="portfolio">Portfolio</h3>
+<ul>
+<li>A portfolio or a master asset: Allocation of the initial amount of
+<span class="math inline">\(X_0\)</span> to available <span class="math inline">\(n\)</span> different assets <span class="math display">\[\pi=(X_{01},X_{02},\cdots,X_{0n})\]</span>where
+<span class="math inline">\(X_{0i}\)</span> is the amount invested in
+the <span class="math inline">\(i\)</span>th asset, with <span class="math display">\[\sum_{i=1}^nX_{0i}=X_0\]</span></li>
+<li>Weight of asset <span class="math inline">\(i\)</span> in the
+portfolio: <span class="math display">\[w_i=\cfrac{X_{0i}}{X_0}\Rightarrow\sum_{i=1}^nw_i=1\]</span></li>
+</ul>
+<h4 id="portfolio-return">Portfolio Return</h4>
+<ul>
+<li>Let <span class="math inline">\(R_i\)</span> and <span class="math inline">\(r_i\)</span> be the total return and rate of
+return of asset <span class="math inline">\(i\)</span>. Then the total
+return of the portfolio is <span class="math display">\[R=\cfrac{X_1}{X_0}=\cfrac{\sum_{i=1}^nR_iX_{0i}}{X_0}=\sum_{i=1}^nw_iR_i\]</span></li>
+<li>The total rate of return of the portfolio is <span class="math display">\[r=R-1=\sum_{i=1}^nw_ir_i\]</span></li>
+</ul>
+<h4 id="portfolio-mean-and-variance">Portfolio Mean and Variance</h4>
+<ul>
+<li>Consider <span class="math inline">\(n\)</span> assets with random
+rate of return <span class="math inline">\(r_1,r_2,\cdots,r_n\)</span>,
+and a portfolio using the weights <span class="math inline">\(w_i,i=1,2,\cdots,n\)</span></li>
+<li>The mean rate of return of the portfolio is <span class="math display">\[\bar r=\sum_{i=1}^nw_i\bar r_i\]</span></li>
+<li>The variance of the return of the portfolio is <span class="math display">\[\sigma^2=\text{Var}(r)=\sum_{i,j=1}^nw_iw_j\text{Cov}(r_i,r_j)=\sum_{i,j=1}^nw_iw_j\sigma_{ij}\]</span></li>
+</ul>
+<h4 id="diagram-of-portfolios">Diagram of Portfolios</h4>
+<ul>
+<li><strong>Portfolio diagram lemma</strong>. The curve in an <span class="math inline">\(\bar r-\sigma\)</span> diagram defined by
+nonnegative mixtures of two assets 1 and 2 lies within the triangular
+region defined by the two original assets and the point on the vertical
+axis of height <span class="math inline">\(A=\cfrac{\bar
+r_1\sigma_2+\bar r_2\sigma_1}{\sigma_1+\sigma_2}\)</span></li>
+</ul>
+<p><img src="/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/d8b0ccbd969fc07ac53e0e2d82270ac.png" srcset="/img/loading.gif" lazyload> -
+如果允许做空，曲线可以两头出头</p>
+<h4 id="feasible-set">Feasible Set</h4>
+<ul>
+<li>Feasible set or feasible region: The set of points that
+corresponding to all possible portfolios forming from the <span class="math inline">\(n\)</span> basic assets</li>
+<li>If <span class="math inline">\(n=2\)</span>, the feasible set is a
+curved line</li>
+<li>If <span class="math inline">\(n\geq 3\)</span>, the feasible set
+will be a solid 2-dimensional region
+<ul>
+<li>The feasible region must be convex to the left: any line connecting
+two points in the region does not cross the left boundary of the
+region</li>
+</ul></li>
+</ul>
+<h5 id="feasible-set-ngeq-3">Feasible Set (<span class="math inline">\(n\geq 3\)</span>)</h5>
+<p><img src="/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/c4eab69d3372539e3672f2406d75439.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="minimum-variance-set">Minimum-Variance Set</h4>
+<ul>
+<li>Minimum-variance set: The left boundary of a feasible set</li>
+<li>Minimum-variance point (MVP): The point on the minimum-variance set
+that has minimum variance <img src="/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/88fcf9c3c0f00fd26de7204a01d710a.png" srcset="/img/loading.gif" lazyload></li>
+</ul>
+<h4 id="efficient-frontier">Efficient Frontier</h4>
+<ul>
+<li>The risk of a portfolio is quantified by the variance of its
+return.</li>
+<li>Risk-averse investor: An investor who, under the same rate of
+return, prefers the portfolio with the smallest standard deviation</li>
+<li>Non-satiation investor: An investor who, under the same level of
+standard deviation, selects the portfolio with the largest mean rate of
+return</li>
+<li>Efficient frontier: The upper portion of the minimum-variance set
+<ul>
+<li>Efficient frontier provides the best trade-off between return and
+risk (Pareto optimality)</li>
+</ul></li>
+</ul>
+<h3 id="mean-variance-portfolio-theory">Mean-Variance Portfolio
+Theory</h3>
+<ul>
+<li>Mean-Variance Portfolio Theory tells how to select portfolio to
+achieve the best trade-off between return and risk</li>
+<li>Originally developed by Harry Markowitz in 1950s. He was later
+awarded a Nobel Prize.</li>
+<li>A key component of the theory is diversification</li>
+</ul>
+<h3 id="the-markowitz-model">The Markowitz Model</h3>
+<ul>
+<li>Suppose there are <span class="math inline">\(n\)</span> basic
+assets. The rates of return for these assets form a random vector <span class="math inline">\(\pmb r=(r_1,r_2,\cdots,r_n)\)</span></li>
+<li>Denote <span class="math inline">\(\bar r\)</span> and <span class="math inline">\(\pmb\Sigma\)</span> to be the corresponding mean
+vector and covariance matrix. (<span class="math inline">\(\pmb\Sigma\)</span> is nonsingular)</li>
+<li>The mean-variance portfolio optimization problem is formulated as
+<span class="math display">\[\min_{\pmb w}\cfrac{1}{2}\pmb
+w^\prime\pmb\Sigma\pmb w\]</span>Subject to <span class="math display">\[\begin{align}
+\pmb w^\prime\bar{\pmb r}&amp;=p\\
+\pmb w^\prime\pmb 1&amp;=1
+\end{align}\]</span></li>
+<li>Note that <span class="math inline">\(p\)</span> is a given value
+depending on the risk aversion of the investor</li>
+</ul>
+<h4 id="solve-the-markowitz-model">Solve the Markowitz Model</h4>
+<ul>
+<li>This is a convex optimization (more precisely, quadratic
+minimization) problem.</li>
+<li>We can solve the problem using the Lagrange multipliers method.</li>
+<li>The optimal solution satisfies the Karush-Kuhn-Tucker (KKT)
+conditions. <span class="math display">\[\begin{align}
+\pmb\Sigma\pmb w^*=-\lambda^*\bar{\pmb r}-\gamma^*\pmb 1=\pmb 0,\\
+(\pmb w^*)^\prime\bar{\pmb r}=p,\\
+(\pmb w^*)^\prime\pmb 1=1.
+\end{align}\]</span></li>
+</ul>
+<h5 id="solution-to-the-markowitz-model">Solution to the Markowitz
+Model</h5>
+<ul>
+<li><p>Equations for efficient set <span class="math inline">\(\{\pmb
+w^*(p):p\geq p_{mvp}\}\)</span> <span class="math display">\[\begin{align}
+\pmb\Sigma\pmb w^*-\lambda^*\bar{\pmb r}-\gamma^*\pmb 1=\pmb 0\\
+(\pmb w^*)^\prime\bar{\pmb r}=p,\\
+(\pmb w^*)^\prime\pmb 1=1.
+\end{align}\]</span></p></li>
+<li><p>Explicit solution when <span class="math inline">\(\delta\equiv(\bar{\pmb
+r}^\prime\pmb\Sigma^{-1}\bar{\pmb r})(\pmb 1^\prime\pmb\Sigma^{-1}\pmb
+1)-(\bar{\pmb r}^\prime\pmb\Sigma^{-1}\pmb 1)^2&gt;0\)</span><span class="math display">\[\begin{align}
+\lambda^*=\delta^{-1}\pmb 1^\prime\pmb\Sigma^{-1}(p\pmb 1-\bar{\pmb
+r})\\
+\gamma^*=-\delta^{-1}\bar{\pmb r}^\prime\pmb\Sigma^{-1}(p\pmb
+1-\bar{\pmb r})\\
+\pmb w^*=\pmb\Sigma^{-1}(\lambda^*\bar{\pmb r}+\gamma^*\pmb 1)
+\end{align}\]</span> ###### Example</p></li>
+<li><p>Consider 3 assets that are mutually uncorrelated.</p></li>
+<li><p><span class="math inline">\(\sigma_1=\sigma_2=\sigma_3=1, \bar
+r_1=1,\bar r_2=2,\bar r_3=3\)</span></p></li>
+<li><p><span class="math inline">\(\pmb
+w^*=\left(\cfrac{4}{3}-\cfrac{p}{2},\cfrac{1}{3},\cfrac{p}{2}-\cfrac{2}{3}\right)^\prime=(7-3p)\left(\cfrac{1}{3},\cfrac{1}{3},\cfrac{1}{3}\right)^\prime+(3p-6)\left(\cfrac{1}{6},\cfrac{1}{3},\cfrac{1}{2}\right)^\prime\)</span></p></li>
+<li><p>The efficient set is given by <span class="math display">\[\sigma=\sqrt{\cfrac{7}{3}-2p+\cfrac{p^2}{2}},\ \
+\ \ (p\geq 2)\]</span></p></li>
+</ul>
+<h4 id="the-two-fund-theorem">The Two-Fund Theorem</h4>
+<ul>
+<li>Two efficient funds (portfolios) can be established so that any
+efficient portfolio can be duplicated, in terms of mean and variance, as
+a combination of these two. (Why?)</li>
+<li>In other words, all investors seeking efficient portfolios need only
+invest in combinations of these two funds.</li>
+<li>Implications:
+<ul>
+<li>Two mutual funds could provide a complete investment service</li>
+<li>Individuals do not need to purchase individual stocks
+separately</li>
+</ul></li>
+</ul>
+<h4 id="the-markowitz-model-with-no-shorting">The Markowitz Model with
+No Shorting</h4>
+<ul>
+<li>A modified Markowitz's mean-variance selection problem with shorting
+prohibited: <span class="math display">\[\min_{\pmb w}\cfrac{1}{2}\pmb
+w^\prime\pmb\Sigma\pmb w\]</span>Subject to <span class="math display">\[\begin{align}
+\pmb w^\prime\bar{\pmb r}=p\\
+\pmb w^\prime\pmb 1=1\\
+\pmb w^\prime \geq \pmb 0
+\end{align}\]</span></li>
+</ul>
+<h4 id="inclusion-of-a-risk-free-asset">Inclusion of a Risk-Free
+Asset</h4>
+<ul>
+<li>We now assume that there is a risk-free security available with
+risk-free rate equal to <span class="math inline">\(r_f\)</span></li>
+<li>It indicate the investor can lend or borrow cash at <span class="math inline">\(r_f\)</span></li>
+<li>The portfolios of a risk-free asset and a risky asset form a
+straight line in the <span class="math inline">\(\bar r-\sigma\)</span>
+diagram</li>
+<li>By inclusion of a risk-free asset, the feasible region becomes an
+infinite triangle.</li>
+</ul>
+<p><img src="/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/060d32f7252b7a7b511f53335ca6ec7.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>We now assume that there is a risk-free security available with
+risk-free rate equal to <span class="math inline">\(r_f\)</span></li>
+<li>The mean-variance portfolio optimization problem is formulated as
+min <span class="math display">\[\min_{\pmb w}\cfrac{1}{2}\pmb
+w^\prime\pmb\Sigma\pmb w\]</span>Subject to <span class="math inline">\((1-\pmb w^\prime\pmb 1)r_f+\pmb w^\prime\bar{\pmb
+r}=p\)</span></li>
+<li>Here <span class="math inline">\(\bar{\pmb r}\)</span> and <span class="math inline">\(\pmb\Sigma\)</span> are the corresponding mean
+vector and covariance matrix for the risky assets.</li>
+</ul>
+<h5 id="solution">Solution</h5>
+<ul>
+<li><p>Equations for efficient set <span class="math inline">\(\{\pmb
+w^*(p):p\geq r_f\}\)</span> <span class="math display">\[\begin{align}
+\pmb\Sigma\pmb w^*+\lambda^*(r_f\pmb 1-\bar{\pmb r})=\pmb 0\\
+(1-(\pmb w^*)^\prime\pmb 1)r_f+(\pmb w^*)^\prime\bar{\pmb r}=p
+\end{align}\]</span></p></li>
+<li><p>Explicit solution when <span class="math inline">\(\bar{\pmb
+r}\neq r_f\pmb 1\)</span>. <span class="math display">\[\begin{align}
+\lambda^*=\cfrac{p-r_f}{(\bar{\pmb r}-r_f\pmb
+1)^\prime\Sigma^{-1}(\bar{\pmb r}-r_f\pmb 1)},\\
+\pmb w^*=(p-r_f)\cfrac{\Sigma^{-1}(\bar{\pmb r}-r_f\pmb 1)}{(\bar{\pmb
+r}-r_f\pmb 1)^\prime\Sigma^{-1}(\bar{\pmb r}-r_f\pmb 1)}
+\end{align}\]</span></p></li>
+<li><p>Write <span class="math inline">\(H=(\bar{\pmb r}-r_f\pmb
+1)^\prime\Sigma^{-1}(\bar{\pmb r}-r_f\pmb 1)\)</span> , then <span class="math display">\[\pmb w^*=\cfrac{p-r_f}{H}\Sigma^{-1}(\bar{\pmb
+r}-r_f\pmb 1)\]</span></p></li>
+<li><p>The resulting minimum variance <span class="math display">\[\sigma^2=\cfrac{1}{H}(p-r_f)^2\]</span></p></li>
+<li><p>And the Sharpe ratio is given by <span class="math inline">\(\cfrac{p-r_f}{\sigma}=\sqrt{H}\)</span></p></li>
+</ul>
+<h4 id="tangent-portfolio">Tangent Portfolio</h4>
+<ul>
+<li>When riskless borrowing and lending are available, the efficient set
+becomes a single straight line</li>
+<li>This line is tangent to the original feasible set of risky assets
+from the riskless point</li>
+<li>Tangent portfolio: The portfolio that corresponds to the point <span class="math inline">\(F\)</span> in the original feasible set that is on
+the line segment defining the efficient set</li>
+</ul>
+<p><img src="/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/54902c72ab0d96ef09e40eedb6b1204.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="one-fund-theorem">One-Fund Theorem</h4>
+<ul>
+<li>There is a single fund <span class="math inline">\(F\)</span> of
+risky assets such that any efficient portfolio can be constructed as a
+combination of the fund <span class="math inline">\(F\)</span> and the
+risk-free asset</li>
+</ul>
+<h3 id="limitations">Limitations</h3>
+<ul>
+<li><p>Outputs are only as good as inputs</p></li>
+<li><p>Standard deviation of return is not the only measure of
+risk</p></li>
+<li><p>Beware tail risk</p></li>
+<li><p>Therefore, it is only a tool, not an oracle (as any model-based
+construction).</p></li>
+</ul>
 
                 
               </div>
@@ -1967,7 +2294,7 @@ x_2=4744.03\simeq4,744\)</span></li>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年11月5日</div>
+          <div>2023年11月25日</div>
         </div>
       
       

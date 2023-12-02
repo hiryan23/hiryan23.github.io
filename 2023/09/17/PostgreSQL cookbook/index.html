@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/PostgreSQL%20cookbook/3a81dbaecb9b26325c8177cdbebcfa0.png">
 <meta property="article:published_time" content="2023-09-17T07:54:14.993Z">
-<meta property="article:modified_time" content="2023-11-05T08:38:06.373Z">
+<meta property="article:modified_time" content="2023-11-19T12:28:02.896Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="具有自我意识的笔记">
 <meta name="twitter:card" content="summary">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          17k 字
+          18k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          146 分钟
+          147 分钟
         
       </span>
     
@@ -300,7 +300,7 @@
         aria-expanded="true"
       >
         2023F
-        <span class="list-group-count">(5)</span>
+        <span class="list-group-count">(7)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -327,6 +327,24 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">中级微观经济学-课程笔记</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2023/11/12/%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/" title="公司金融好好学"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">公司金融好好学</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2023/11/28/%E6%8A%95%E8%B5%84%E5%AD%A6%E6%A8%A1%E5%9E%8B%E4%B8%80%E8%A7%88/" title="投资学模型一览"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">投资学模型一览</span>
         </a>
       
     
@@ -380,7 +398,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：7 天前
+                    本文最后更新于：13 天前
                   
                 
               </p>
@@ -753,6 +771,10 @@ Spring 2010 <figure class="highlight postgresql"><table><tr><td class="gutter"><
 <h4 id="cast">CAST/::</h4>
 <p>用CAST修改数据类型（通用），这等价于::（仅pgsql可用）
 <figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs postgreSQL">CAST (expression <span class="hljs-keyword">AS</span> target_type)<br><br>expression :: target_type<br></code></pre></td></tr></table></figure></p>
+<h2 id="窗口函数">窗口函数</h2>
+<h3 id="rank">RANK</h3>
+<figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs postgreSQL"><span class="hljs-keyword">SELECT</span><br>	rank()<br>	<span class="hljs-keyword">over</span>(<br>		[<span class="hljs-keyword">PARTITION</span> <span class="hljs-keyword">BY</span> partition_column_list]<br>		[<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> order_column_list]<br>	)<br></code></pre></td></tr></table></figure>
+<p>正常的排序，PARTITION里面是类似于分组别比较，ORDER是决定rank的顺序，输出为一列rank</p>
 <h1 id="operations">Operations</h1>
 <h2 id="建表">建表</h2>
 <h3 id="create">CREATE</h3>
@@ -1052,7 +1074,7 @@ by），并打开执行该动态查询的游标。</li>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年11月5日</div>
+          <div>2023年11月19日</div>
         </div>
       
       
