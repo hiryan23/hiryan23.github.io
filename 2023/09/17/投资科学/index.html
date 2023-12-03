@@ -43,8 +43,13 @@
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/88fcf9c3c0f00fd26de7204a01d710a.png">
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/060d32f7252b7a7b511f53335ca6ec7.png">
 <meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/54902c72ab0d96ef09e40eedb6b1204.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/dbe1fb6de3ec76e411ea03bf949dfe8.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/371360fdca8b7460c8986c4d846eb50.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/91fd2536652c8c06e6e701cd8c17632.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/6249a3ab03d90dfa4fca7258e477fdb.png">
+<meta property="og:image" content="http://hiryan23.github.io/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/3da17597f54dc68a207ae08295f4d4e.png">
 <meta property="article:published_time" content="2023-09-17T05:07:23.470Z">
-<meta property="article:modified_time" content="2023-11-25T14:21:11.662Z">
+<meta property="article:modified_time" content="2023-12-03T15:55:01.400Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="课程笔记">
 <meta name="twitter:card" content="summary">
@@ -262,7 +267,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          38k 字
+          46k 字
         
       </span>
     
@@ -273,7 +278,7 @@
         
         
         
-          318 分钟
+          385 分钟
         
       </span>
     
@@ -421,7 +426,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：7 天前
+                    本文最后更新于：3 分钟前
                   
                 
               </p>
@@ -2234,6 +2239,285 @@ risk</p></li>
 <li><p>Therefore, it is only a tool, not an oracle (as any model-based
 construction).</p></li>
 </ul>
+<h2 id="lecture-7-capm">Lecture 7 CAPM</h2>
+<h3 id="motivating-questions">Motivating Questions</h3>
+<ul>
+<li>By portfolio selection theory, we know that
+<ul>
+<li>Risk is inevitable in investment. Higher expected return means
+higher risk.</li>
+<li>Some risk is not worth taken. It can be reduced by
+divarication.</li>
+</ul></li>
+<li>Question:
+<ul>
+<li>How to identify the two different types of risk in an
+investment?</li>
+<li>How to valuate a risky investment?</li>
+</ul></li>
+</ul>
+<h3 id="assumptions-of-capm">Assumptions of CAPM</h3>
+<ul>
+<li>Pricing of a risky asset within the mean-variance setting</li>
+<li>Established by Sharpe, Lintner, and Mossin (1964–66) independently;
+Nobel prize (Sharpe 1990)</li>
+<li>Assumptions
+<ul>
+<li>Everyone is a mean-variance optimizer</li>
+<li>Every individual investor agrees on the probability structure of
+assets</li>
+<li>There is a unique risk-free rate of borrowing and lending available
+to all</li>
+<li>There are no transaction costs</li>
+</ul></li>
+</ul>
+<h3 id="market-portfolio">Market Portfolio</h3>
+<h4 id="review-of-mean-variance-portfolio-theory">Review of
+Mean-Variance Portfolio Theory</h4>
+<p>Any mean-variance optimizer will allocate to the securities by a
+certain proportion.</p>
+<p><img src="/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/dbe1fb6de3ec76e411ea03bf949dfe8.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>Market portfolio: The summation of all risky assets in the
+market</li>
+<li>Capitalization weight of an asset: The proportion of the asset’s
+total capital value to the total market capital value</li>
+</ul>
+<h4 id="market-equilibrium">Market Equilibrium</h4>
+<ul>
+<li><p>In the situation where everyone follows the mean-variance
+framework with the same estimates of parameters, the efficient fund of
+risky assets will be the market portfolio. (Why?)</p></li>
+<li><p>How does this happen?</p></li>
+<li><p>Market equilibrium: The point where demand exactly matches supply
+in assets</p></li>
+<li><p>In a market where every investor is a mean-variance investor,
+prices of assets adjust to drive the market to the equilibrium
+point</p></li>
+</ul>
+<h4 id="capital-market-line">Capital Market Line</h4>
+<ul>
+<li>Capital market line: The single straight line on the <span class="math inline">\(\bar r-\sigma\)</span> diagram originating from
+the risk-free point and passing through the market portfolio (efficient
+fund)</li>
+<li>Mathematically,<span class="math display">\[\bar r=r_f+\cfrac{\bar
+r_M-r_f}{\sigma_M}\sigma\]</span>where
+<ul>
+<li><span class="math inline">\(\bar r_M\)</span>: mean market rate of
+return</li>
+<li><span class="math inline">\(\sigma_M\)</span>: standard deviation of
+market portfolio</li>
+<li><span class="math inline">\(\bar r\)</span>: mean rate of return of
+an efficient asset</li>
+<li><span class="math inline">\(\sigma\)</span>: standard deviation of
+an efficient asset</li>
+</ul></li>
+</ul>
+<p><img src="/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/371360fdca8b7460c8986c4d846eb50.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="price-of-risk">Price of Risk</h4>
+<ul>
+<li>Any efficient portfolio should fall on the capital market line</li>
+<li>Price of risk or risk premium: <span class="math inline">\(K=\cfrac{\bar r_M-r_f}{\sigma_M}\)</span></li>
+<li>It indicates how much the expected rate of return of a portfolio
+must increase if the standard deviation of that rate increases by one
+unit</li>
+</ul>
+<h3 id="capm">CAPM</h3>
+<ul>
+<li><p>(Capital Asset Pricing Model, CAPM) If the market portfolio <span class="math inline">\(M\)</span> is efficient, then the expected return
+<span class="math inline">\(\bar r_i\)</span> of any individual asset
+<span class="math inline">\(i\)</span> satisfies <span class="math display">\[\bar r_i-r_f=\beta_i(\bar r_M-r_f),\]</span>where
+the beta of asset <span class="math inline">\(i\)</span> <span class="math display">\[\beta_i=\cfrac{\sigma_{iM}}{\sigma_M^2}\]</span></p></li>
+<li><p>CAPM relates the expected return rate of an individual asset to
+its individual risk, in terms of the market portfolio</p></li>
+</ul>
+<h4 id="proof-of-capm">Proof of CAPM</h4>
+<h5 id="proof-1">Proof 1</h5>
+<p>Consider a portfolio of any asset <span class="math inline">\(i\)</span> and the market portfolio <span class="math inline">\(M\)</span>, 用CML和EF切点斜率相等证明</p>
+<h5 id="proof-2">Proof 2</h5>
+<p>We have showed in last lecture that <span class="math display">\[\pmb\omega^*=(\text
+E[r^*]-r_f)\cfrac{\Sigma^{-1}(\bar{\pmb r}-r_f\pmb 1)}{(\bar{\pmb
+r}-r_f\pmb 1)^\prime\Sigma^{-1}(\bar{\pmb r}-r_f\pmb 1)}\]</span>
+代入剥蒜</p>
+<h4 id="implications-of-capm">Implications of CAPM</h4>
+<ul>
+<li><p>The expected excess rate of return of an asset is proportional to
+that of the market portfolio, and the proportionality factor is the beta
+of the asset</p></li>
+<li><p>In another word, the expected excess rate of return of an asset
+is proportional to its covariance with the market</p></li>
+<li><p>The concept of risk of an asset is changed from that of <span class="math inline">\(\sigma\)</span> to that of <span class="math inline">\(\beta\)</span></p></li>
+<li><p>Question: Does the CAPM result contradict the mean-variance
+problem formulation where investors do measure a portfolio's risk by its
+variance?</p>
+<ul>
+<li>CAPM的beta刻画的是相对风险，方差刻画的是绝对风险</li>
+</ul></li>
+</ul>
+<h4 id="two-extreme-cases">Two Extreme Cases</h4>
+<ul>
+<li>Case 1. <span class="math inline">\(\beta=0\)</span>: The asset is
+uncorrelated to the market
+<ul>
+<li>In this case <span class="math inline">\(\bar r=r_f\)</span>: There
+is no risk premium (even when it is a very risky asset)</li>
+<li>The risk associated with an asset that is uncorrelated to the market
+can be diversified away</li>
+</ul></li>
+<li>Case 2. <span class="math inline">\(\beta&lt;0\)</span>: The asset
+is negatively correlated to the market
+<ul>
+<li>In this case <span class="math inline">\(\bar r&lt;r_f\)</span>: its
+expected return rate is smaller than the risk-free rate (even when it is
+a very risky asset)</li>
+<li>Such assets serve as insurance in a portfolio and reduce the overall
+portfolio risk</li>
+</ul></li>
+</ul>
+<h4 id="betas-in-the-market">Betas in the Market</h4>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.abg-analytics.com/stock-betas.shtml">Stock
+Betas List for S&amp;P 100 Large-Cap Stocks (abg-analytics.com)</a></li>
+</ul>
+<h4 id="beta-of-a-portfolio">Beta of a Portfolio</h4>
+<ul>
+<li>The portfolio beta is just the weighted average of the betas of the
+individual assets in the portfolio <span class="math display">\[\begin{align}
+\beta_p&amp;=\cfrac{\text{Cov}(r_p,r_M)}{\sigma_M^2}=\cfrac{\text{Cov}(\sum_{i=1}^nw_ir_i,r_M)}{\sigma_M^2}=\sum_{i=1}^n\cfrac{w_i\text{Cov}(r_i,r_M)}{\sigma_M^2}\\
+&amp;=\sum_{i=1}^nw_i\beta_i
+\end{align}\]</span></li>
+</ul>
+<h3 id="security-market-line">Security Market Line</h3>
+<p>注意横轴坐标 <span class="math display">\[\bar r=r_f+\cfrac{\bar
+r_M-r_f}{\sigma_M^2}\text{Cov}(r,r_M)\]</span></p>
+<p><img src="/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/91fd2536652c8c06e6e701cd8c17632.png" srcset="/img/loading.gif" lazyload></p>
+<p><span class="math display">\[\bar r=r_f+(\bar
+r_M-r_f)\beta\]</span></p>
+<p><img src="/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/6249a3ab03d90dfa4fca7258e477fdb.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="systematic-risk">Systematic Risk</h4>
+<ul>
+<li><p>The CAPM implies a special structure for the return of an
+asset</p></li>
+<li><p>An arbitrary equation for the (random) rate of return of asset
+<span class="math inline">\(i\)</span>:<span class="math display">\[r_i=r_f+\beta_i(r_M-r_f)+\epsilon_i\]</span></p></li>
+<li><p>CAPM <span class="math inline">\(\Rightarrow \text
+E[\epsilon_i]=0\)</span></p></li>
+<li><p>Definition of <span class="math inline">\(\beta_i\Rightarrow\text{Cov}(\epsilon_i,r_M)=0\)</span></p></li>
+<li><p>Therefore we have risk decomposition <span class="math display">\[\sigma_i^2=\beta_i^2\sigma_M^2+\text{Var}(\epsilon_i)\]</span></p></li>
+<li><p><span class="math inline">\(\beta_i^2\sigma_M^2\)</span> is
+termed the systematic risk, and <span class="math inline">\(\text{Var}(\epsilon_i)\)</span> is termed
+nonsystematic, idiosyncratic or specific risk.</p></li>
+<li><p>The systematic risk is associated with the market as a
+whole.</p></li>
+<li><p>This risk cannot be reduced by diversification as every asset
+with nonzero beta contains this risk</p></li>
+<li><p>The nonsystematic risk is uncorrelated with the market and can be
+reduced by diversification</p></li>
+<li><p>Question. When we have <span class="math inline">\(\text{Var}(\epsilon_i)=0\)</span>?</p>
+<ul>
+<li>当选择的资产在EF上时</li>
+</ul></li>
+</ul>
+<h3 id="a-case-study-abc-fund">A case study: ABC Fund</h3>
+<ul>
+<li><p>The ABC fund has the 10-year record of rates of return shown in
+the table (see ABC.xlsx). Evaluate this fund’s performance in the
+framework of mean-variance portfolio theory and CAPM.</p>
+<ul>
+<li>Estimated average rate of return: <span class="math inline">\(\hat{\bar
+r}=\cfrac{1}{n}\sum_{i=1}^nr_i\)</span></li>
+<li>Estimated variance: <span class="math inline">\(s^2=\cfrac{1}{n-1}\sum_{i=1}^n(r_i-\hat{\bar
+r})^2\)</span></li>
+<li>Geometric mean rate of return: <span class="math inline">\(\mu=[\prod_{i=1}^n(1+r_i)]^{\cfrac{1}{n}}-1\)</span></li>
+<li>Estimated covariance: <span class="math inline">\(\text{Cov}(r,r_M)\simeq\cfrac{1}{n-1}\sum_{i=1}^n(r_i-\hat{\bar
+r})(r_{Mi}-\hat{\bar r_M})\)</span></li>
+<li>Estimated beta: <span class="math inline">\(\beta=\text{Cov}(r,r_M)/\text{Var}(r_M)\)</span></li>
+</ul></li>
+<li><p>Writing a formula similar to the CAPM pricing formula, except
+replacing the expected rates of return by estimated average returns and
+adding an error term <span class="math inline">\(J\)</span>: <span class="math display">\[\hat{\bar r}-r_f=J+\beta(\hat{\bar
+r_M}-r_f)\]</span>where <span class="math inline">\(J\)</span> is the
+Jensen’s index, or often called <strong>alpha</strong></p></li>
+<li><p>To measure the efficiency of an asset, we check where the <span class="math inline">\(\bar r-\sigma\)</span> point of the asset falls
+relative to the capital market line <span class="math display">\[\hat{\bar r}-r_f=S\hat\sigma\]</span>where <span class="math inline">\(S\)</span> is the <strong>Sharpe’s
+index</strong>.</p></li>
+<li><p><span class="math inline">\(J\)</span> = 0.00104 &gt; 0: the fund
+did better than the CAPM prediction</p></li>
+<li><p><span class="math inline">\(S\)</span> = 0.43577 &lt; <span class="math inline">\(S_M\)</span> = 0.46669: the fund itself is not
+efficient</p></li>
+<li><p>Assessment: ABC fund is a good asset in a portfolio, but by
+itself it is not efficient. One should supplement this fund with other
+funds to achieve efficiency</p></li>
+</ul>
+<h3 id="pricing-formula">Pricing Formula</h3>
+<ul>
+<li><p>Suppose an asset is purchased at price <span class="math inline">\(P\)</span> and later sold at price <span class="math inline">\(Q\)</span> with a mean <span class="math inline">\(\bar Q\)</span></p></li>
+<li><p>The expected rate of return is <span class="math inline">\(\bar
+r=\cfrac{\bar Q-P}{P}\)</span></p></li>
+<li><p>Putting in the CAPM formula <span class="math display">\[\cfrac{\bar Q-P}{P}=\bar
+r=r_f+\beta(r_M-r_f)\]</span></p></li>
+<li><p>Solving for <span class="math inline">\(P\)</span>, we get the
+following theorem</p></li>
+<li><p><strong>Theorem</strong>. The price of an asset with payoff <span class="math inline">\(Q\)</span> is <span class="math display">\[P=\cfrac{\bar Q}{1+r_f+\beta(\bar
+r_M-r_f)}\]</span></p></li>
+<li><p>A generalization of the discounting formula in deterministic
+situations</p></li>
+<li><p>Risk-adjusted interest rate: The equivalent interest rate in the
+random case <span class="math inline">\(r_f+\beta(\bar
+r_M-r_f)\)</span></p></li>
+<li><p>Higher beta leads to heavier discounting and hence lower price
+(assuming <span class="math inline">\(r_M&gt;r_f\)</span>)</p></li>
+</ul>
+<h4 id="linearity-of-pricing">Linearity of Pricing</h4>
+<ul>
+<li>Linearity of pricing: The price of the sum of two assets is the sum
+of their prices, and the price of a multiple of an asset is the same
+multiple of the price.</li>
+<li>Given <span class="math inline">\(P_1=\cfrac{\bar
+Q_1}{1+r_f+\beta_1(\bar r_M-r_f)}\)</span>, and <span class="math inline">\(P_2=\cfrac{\bar Q_2}{1+r_f+\beta_2(\bar
+r_M-r_f)}\)</span></li>
+<li>It does not seem obvious at all that <span class="math display">\[P_1+P_2=\cfrac{\bar Q_1+\bar
+Q_2}{1+r_f+\beta_{1+2}(\bar r_M-r_f)}\]</span>where <span class="math inline">\(\beta_{1+2}\)</span> is the beta of the asset from
+summing up asset 1 and 2.</li>
+</ul>
+<h4 id="certainty-equivalent-form-of-capm">Certainty Equivalent Form of
+CAPM</h4>
+<ul>
+<li>Suppose that an asset is purchased at price <span class="math inline">\(P\)</span> and later sold at price <span class="math inline">\(Q\)</span> with a mean <span class="math inline">\(\bar Q\)</span></li>
+<li><span class="math inline">\(\beta=\cfrac{\text{Cov}(r,r_M)}{\sigma_M^2}=\cfrac{\text{Cov}(\cfrac{Q}{P}-1,r_M)}{\sigma_M^2}=\cfrac{\text{Cov}(Q,r_M}{P\sigma_M^2}\)</span></li>
+<li>Putting this into the pricing formula and then solving for <span class="math inline">\(P\)</span>, we get the following theorem</li>
+<li><strong>Theorem</strong>. The price of an asset with payoff <span class="math inline">\(Q\)</span> is <span class="math display">\[P=\cfrac{1}{1+r_f}\left[\bar
+Q-\cfrac{\text{Cov}(Q,r_M)(\bar
+r_M-r_f)}{\sigma_M^2}\right]\]</span></li>
+</ul>
+<h4 id="evaluation-of-projects">Evaluation of Projects</h4>
+<ul>
+<li><p>A firm can use the CAPM for deciding which investment projects to
+carry out.</p></li>
+<li><p>The net present value (NPV) of a project with an initial outlay
+of <span class="math inline">\(P\)</span> and a payoff <span class="math inline">\(Q\)</span> after one year is <span class="math display">\[NPV=-P+\cfrac{1}{1+r_f}\left[\bar
+Q-\cfrac{\text{Cov}(Q,r_M)(\bar
+r_M-r_f)}{\sigma_M^2}\right]\]</span></p></li>
+<li><p>The firm should select the project that maximizes <span class="math inline">\(NPV\)</span></p></li>
+</ul>
+<h3 id="related-issues">Related Issues</h3>
+<ul>
+<li><p>How to Test CAPM?</p></li>
+<li><p>An Empirical Test (Fama and French 2004)</p>
+<ul>
+<li>Estimate CAPM each December (using 2-5 years of monthly data)</li>
+<li>Form 10 portfolios based on magnitude of beta:
+<ul>
+<li>Portfolio #1 (#10) has 10% of stocks with lowest (highest)
+betas</li>
+<li>Compute the returns for the next year</li>
+<li>Repeat for each year from 1928-2003</li>
+<li>Measure how actual realized excess returns vary across the
+portfolios</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><img src="/2023/09/17/%E6%8A%95%E8%B5%84%E7%A7%91%E5%AD%A6/3da17597f54dc68a207ae08295f4d4e.png" srcset="/img/loading.gif" lazyload></p>
 
                 
               </div>
@@ -2298,7 +2582,7 @@ construction).</p></li>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年11月25日</div>
+          <div>2023年12月3日</div>
         </div>
       
       
