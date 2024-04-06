@@ -1,0 +1,504 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Ruiyang He">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="本笔记整理自安泰经济与管理学院2024年春季学期课程BUSS3523-01预测分析与方法，授课人是李成璋老师。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="预测分析与方法">
+<meta property="og:url" content="http://hiryan23.github.io/%E9%A2%84%E6%B5%8B%E5%88%86%E6%9E%90%E4%B8%8E%E6%96%B9%E6%B3%95.html">
+<meta property="og:site_name" content="Hiryan&#39;s Blog">
+<meta property="og:description" content="本笔记整理自安泰经济与管理学院2024年春季学期课程BUSS3523-01预测分析与方法，授课人是李成璋老师。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-03-24T15:21:06.942Z">
+<meta property="article:modified_time" content="2024-03-24T15:21:06.942Z">
+<meta property="article:author" content="Ruiyang He">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  <title>预测分析与方法 - Hiryan&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hiryan23.github.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Hiryan&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/lungmen.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.7)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="预测分析与方法"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  <blockquote>
+<p><em>本笔记整理自安泰经济与管理学院2024年春季学期课程BUSS3523-01预测分析与方法，授课人是李成璋老师。</em></p>
+</blockquote>
+<span id="more"></span>
+<h2 id="总纲要">总纲要</h2>
+<h3 id="预测分析基本过程">预测分析基本过程</h3>
+<ul>
+<li>Problem definition
+<ul>
+<li>Define the forecasting problem</li>
+<li>Understand the way the forecasts will be used</li>
+</ul></li>
+<li>Data collection
+<ul>
+<li>Statistical data</li>
+<li>Domain knowledge</li>
+</ul></li>
+<li>Exploratory analysis
+<ul>
+<li>Patterns: trend, seasonality, cycles</li>
+<li>Outliers, relationships among the variables</li>
+</ul></li>
+<li>Model selection and estimation
+<ul>
+<li>Exponential smoothing</li>
+<li>ARIMA</li>
+<li>Neural networks</li>
+</ul></li>
+<li>Implementing and evaluating the forecasting model
+<ul>
+<li>Assess the accuracy of forecasts</li>
+<li>Handle some practical issues</li>
+</ul></li>
+</ul>
+<h3 id="话题">话题</h3>
+<ul>
+<li>Basics in forecasting</li>
+<li>Exponential smoothing</li>
+<li>ARIMA models</li>
+<li>Advanced methods</li>
+</ul>
+<h2 id="时间序列基础">时间序列基础</h2>
+<p>A sequence of random variables <span class="math inline">\(\{Y_t:t=1,2,3\cdots\}\)</span> is called a
+stochastic process - It can serve as a model for an observed time
+series</p>
+<h3 id="特征">特征</h3>
+<p>完整描述要用联合分布函数 <span class="math display">\[F_{t_1,t_2,\cdots,
+t_n}(y_1,y_2,\cdots,y_n)=P(Y_{t_1}\leq y_1,Y_{t_2}\leq y_2,\cdots,
+Y_{t_n}\leq y_n)\]</span></p>
+<p>随机过程的均值函数 <span class="math display">\[\mu_t=\text
+E[Y(t)],\text{ for }t= 1,2,3,\cdots\]</span> 自协方差函数 <span class="math display">\[\gamma(t,s)=\text{Cov}[Y_t,Y_s]=\text
+E[(Y_t-\mu_t)(Y_s-\mu_s)]=E[Y_tY_s]-\mu_t\mu_s,\text{ for
+}t,s=1,2,3,\cdots\]</span></p>
+<p>自相关函数 <span class="math display">\[\rho(t,s)=\text{Corr}[Y_t,Y_s]=\cfrac{\text{Cov}[Y_t,Y_s]}{\sqrt{\text{Var}[Y_t]\text{Var}[Y_s]}}=\cfrac{\gamma(t,s)}{\sqrt{\gamma(t,t)\gamma(s,s)}}\
+\text{ for }t,s=1,2,3,\cdots\]</span></p>
+<h3 id="常见模型">常见模型</h3>
+<h4 id="白噪音">白噪音</h4>
+<p>A sequence of uncorrelated random variables <span class="math inline">\(\{w_t,t=1,2,3\cdots\}\)</span> with mean 0 and
+finite variance <span class="math inline">\(\sigma_w^2\)</span> - i.i.d.
+white noise: <span class="math inline">\(w_t\sim i.i.d
+(0,\sigma_w^2)\)</span> - Gaussian white noise: <span class="math inline">\(w_t\sim N(0,\sigma_w^2)\)</span></p>
+<p><span class="math display">\[\mu_t=\text E[w_t]=0\]</span> <span class="math display">\[\gamma(t+h,t)=\text{Cov}[w_{t+h},w_t]=\begin{cases}
+\sigma_w^2&amp;h=0\\
+0&amp;h\neq 0
+\end{cases}\]</span> <span class="math display">\[\rho(t+h,t)=\begin{cases}
+1 &amp;\text{ if }h=0\\
+0&amp;\text{ if }h\neq 0
+\end{cases}\]</span></p>
+<h4 id="随机游走">随机游走</h4>
+<p>Let <span class="math inline">\(e_1,e_2,\cdots\)</span> be a sequence
+of independent, identically distributed random variables each with zero
+mean and variance <span class="math inline">\(\sigma_e^2\)</span> The
+observed time series, <span class="math inline">\(\{Y_t,t=1,2,\cdots\}\)</span> is constructed as
+follows: <span class="math display">\[\begin{align}
+Y_1&amp;=e_1\\
+Y_2&amp;=e_1+e_2\\
+\vdots\\
+Y_t&amp;=e_1+e_2+\cdots+e_t\\
+Y_t&amp;=Y_{t-1}+e_t
+\end{align}\]</span></p>
+<p><span class="math display">\[\mu_t=\text E[Y_t]=0\]</span> <span class="math display">\[\gamma(t,s)=\text{Cov}(Y_t,Y_s)=t\sigma_e^2\]</span>
+<span class="math display">\[\rho(t,s)=\cfrac{\gamma(t,s)}{\sqrt{\gamma(t,t)\gamma(s,s)}}=\sqrt{\cfrac{t}{s}}\]</span></p>
+<h4 id="移动平均">移动平均</h4>
+<h5 id="两点移动平均">两点移动平均</h5>
+<p><span class="math display">\[Y_t=\cfrac{e_t+e_{t-1}}{2}\]</span>
+<span class="math display">\[\mu_t=\text E[Y_t]=0\]</span> <span class="math display">\[\gamma(h)=\begin{cases}
+0.5\sigma_e^2&amp;|h|=0\\
+0.25\sigma_e^2&amp;|h|=1\\
+0&amp;|h|&gt;1
+\end{cases}\]</span> <span class="math display">\[\rho(h)=\begin{cases}
+1&amp;|h|=0\\
+0.5&amp;|h|=1\\
+0&amp;|h|&gt;1
+\end{cases}\]</span></p>
+<h5 id="三点移动平均">三点移动平均</h5>
+<p><span class="math display">\[Y_t=\cfrac{e_{t+1}+e_t+e_{t-1}}{3}\]</span> <span class="math display">\[\mu_t=0\]</span> <span class="math display">\[\gamma(h)=\begin{cases}
+\cfrac{3}{9}\sigma_e^2&amp;h=0\\
+\cfrac{2}{9}\sigma_e^2&amp;|h|=1\\
+\cfrac{1}{9}\sigma_e^2&amp;|h|=2\\
+0&amp;|h|&gt;2
+\end{cases}\]</span> <span class="math display">\[\rho(h)=\begin{cases}
+1&amp;h=0\\
+\cfrac{2}{3}&amp;|h|=1\\
+\cfrac{1}{3}&amp;|h|=2\\
+0&amp;|h|&gt;2
+\end{cases}\]</span></p>
+<h3 id="平稳性">平稳性</h3>
+<h4 id="严平稳时间序列">严平稳时间序列</h4>
+<p>The probabilistic behaviors of every collection of values <span class="math inline">\(\{Y_{t_1},Y_{t_2},\cdots, Y_{t_k}\}\)</span> is
+identical to that of the time shifted set <span class="math inline">\(\{Y_{t_1+h},Y_{t_2+h},\cdots,Y_{t_k+h}\}\)</span>.
+That is<span class="math display">\[P\{Y_{t_1}\leq y_1,Y_{t_2}\leq
+y_2,\cdots,Y_{t_k}\leq y_k\}=P\{Y_{t_1+h}\leq y_1,Y_{t_2+h}\leq
+y_2,\cdots,Y_{t_k+h}\leq y_k\}\]</span>for all <span class="math inline">\(k=1,2,\cdots\)</span>, all time points <span class="math inline">\(t_1,t_2,\cdots,t_k\)</span> all numbers <span class="math inline">\(y_1,y_2,\cdots,y_k\)</span>, and all time shifts
+<span class="math inline">\(h=0,\pm1,\pm2,\cdots\)</span></p>
+<h4 id="弱平稳时间序列">弱平稳时间序列</h4>
+<ul>
+<li>The mean function <span class="math inline">\(\mu_t\)</span> is
+constant and does not depend on time <span class="math inline">\(t\)</span></li>
+<li>The autocovariance function <span class="math inline">\(\gamma(s,t)\)</span> depends on <span class="math inline">\(s\)</span> and <span class="math inline">\(t\)</span> only through their difference <span class="math inline">\(|s-t|\)</span></li>
+</ul>
+<p><span class="math display">\[\mu_t=\mu\]</span> <span class="math display">\[\gamma(h)=\gamma(t+h,t)=\text{Cov}(x_{t+h},x_t)=\text
+E[(x_{t+h}-\mu)(x_t-\mu)]\]</span> <span class="math display">\[\rho(h)=\cfrac{\gamma(t+h,t)}{\sqrt{\gamma(t+h,t+h)\gamma(t,t)}}=\cfrac{\gamma(h)}{\gamma(0)}\]</span></p>
+<h3 id="参数估计">参数估计</h3>
+<p><span class="math display">\[\bar y
+=\cfrac{1}{n}\sum_{t=1}^ny_t\]</span> <span class="math display">\[\hat\gamma(h)=\cfrac{1}{n}\sum_{t=1}^{n-h}(y_{t+h}-\bar
+y)(y_t-\bar y)\]</span> <span class="math display">\[\hat\rho(h)=\cfrac{\hat\gamma(h)}{\hat\gamma(0)}=\cfrac{\sum_{t=1}^{n-h}(y_{t+h}-\bar
+y)(y_t-\bar y)}{\sum_{t=1}^n(y_t-\bar y)(y_t-\bar y)}\]</span> ####
+证明</p>
+
+
+  
+
+</article>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
