@@ -23,8 +23,8 @@
 <meta property="og:site_name" content="Hiryan&#39;s Blog">
 <meta property="og:description" content="本笔记整理自安泰经济与管理学院2024年春季学期课程BUSS3523-01预测分析与方法，授课人是李成璋老师。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-24T15:21:06.942Z">
-<meta property="article:modified_time" content="2024-03-24T15:21:06.942Z">
+<meta property="article:published_time" content="2024-04-06T16:06:22.839Z">
+<meta property="article:modified_time" content="2024-04-06T16:06:22.839Z">
 <meta property="article:author" content="Ruiyang He">
 <meta name="twitter:card" content="summary">
   
@@ -362,6 +362,177 @@ E[(x_{t+h}-\mu)(x_t-\mu)]\]</span> <span class="math display">\[\rho(h)=\cfrac{\
 y)(y_t-\bar y)\]</span> <span class="math display">\[\hat\rho(h)=\cfrac{\hat\gamma(h)}{\hat\gamma(0)}=\cfrac{\sum_{t=1}^{n-h}(y_{t+h}-\bar
 y)(y_t-\bar y)}{\sum_{t=1}^n(y_t-\bar y)(y_t-\bar y)}\]</span> ####
 证明</p>
+<h2 id="时间序列作图">时间序列作图</h2>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs R">library<span class="hljs-punctuation">(</span>fpp3<span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure>
+<p>搞tsibble对象，包括key、index和measured
+variables，多用<code>&lt;-</code>和<code>%&lt;%</code></p>
+<h3 id="基本操作">基本操作</h3>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs R">filter<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span> <span class="hljs-comment"># 选择行</span><br><br>select<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span> <span class="hljs-comment"># 选择列</span><br><br>summarise<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span> <span class="hljs-comment"># 类似groupby</span><br><br>mutate<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span> <span class="hljs-comment"># 创建新变量</span><br></code></pre></td></tr></table></figure>
+<p>例子： <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs R">PBS <span class="hljs-operator">%&gt;%</span><br>	filter<span class="hljs-punctuation">(</span>ATC2 <span class="hljs-operator">==</span> <span class="hljs-string">&quot;A18&quot;</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">%&gt;%</span><br>	select<span class="hljs-punctuation">(</span>Month<span class="hljs-punctuation">,</span> Concession<span class="hljs-punctuation">,</span> Type<span class="hljs-punctuation">,</span> Cost<span class="hljs-punctuation">)</span> <span class="hljs-operator">%&gt;%</span><br>	summarise<span class="hljs-punctuation">(</span>total_cost <span class="hljs-operator">=</span> <span class="hljs-built_in">sum</span><span class="hljs-punctuation">(</span>Cost<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">%&gt;%</span><br>	mutate<span class="hljs-punctuation">(</span>total_cost <span class="hljs-operator">=</span> total_cost <span class="hljs-operator">/</span> <span class="hljs-number">1e6</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">-&gt;</span> a10<br></code></pre></td></tr></table></figure></p>
+<h3 id="创建对象">创建对象</h3>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs R">t <span class="hljs-operator">&lt;-</span> tibble<span class="hljs-punctuation">(</span><br><span class="hljs-comment"># 创建tibble对象</span><br><span class="hljs-punctuation">)</span><br><br>t <span class="hljs-operator">%&gt;%</span><br>	as_tsibble<span class="hljs-punctuation">(</span>index<span class="hljs-operator">=</span>Month<span class="hljs-punctuation">)</span> <span class="hljs-comment"># 用as_tsibble将tibble对象转化为tsibble对象</span><br><br>ts <span class="hljs-operator">&lt;-</span> tsibble<span class="hljs-punctuation">(</span><br><span class="hljs-comment"># 直接创建tsibble对象</span><br><span class="hljs-punctuation">)</span><br><br>e <span class="hljs-operator">&lt;-</span> readxl<span class="hljs-operator">::</span>read_excel<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;tourism.xlsx&quot;</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">%&gt;%</span><br>	as_tsibble<span class="hljs-punctuation">(</span><br>		index <span class="hljs-operator">=</span> Quarter<span class="hljs-punctuation">,</span><br>		key <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span>Region<span class="hljs-punctuation">,</span> State<span class="hljs-punctuation">,</span> Purpose<span class="hljs-punctuation">)</span><br>	<span class="hljs-punctuation">)</span><br><span class="hljs-comment"># 从excel创建tsibble对象</span><br><br></code></pre></td></tr></table></figure>
+<h3 id="画图">画图</h3>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs R">a10 <span class="hljs-operator">%&gt;%</span><br>	autoplot<span class="hljs-punctuation">(</span>total_cost<span class="hljs-punctuation">)</span> <span class="hljs-comment"># 画最普通的自回归图</span><br><br>	gg_season<span class="hljs-punctuation">(</span> <span class="hljs-punctuation">,</span>period <span class="hljs-operator">=</span> <span class="hljs-string">&quot;week&quot;</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> <span class="hljs-comment"># 季节图</span><br>	theme<span class="hljs-punctuation">(</span>legend.position <span class="hljs-operator">=</span> <span class="hljs-string">&quot;none&quot;</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span><br>	labs<span class="hljs-punctuation">(</span>y<span class="hljs-operator">=</span><span class="hljs-string">&quot;MW&quot;</span><span class="hljs-punctuation">,</span> title <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Electricity demand: Victoria&quot;</span><span class="hljs-punctuation">)</span><br><br>	gg_subseries<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span> <span class="hljs-comment"># 季节子序列图</span><br><br></code></pre></td></tr></table></figure>
+<h2 id="时间序列分解">时间序列分解</h2>
+<p>目的： - 消除已有的方差来源 - 使时间序列更加具有一致性</p>
+<h3 id="时间序列调整">时间序列调整</h3>
+<p>类型 - 日期调整 - 总数调整 - 通货膨胀调整 - 数学变换调整</p>
+<h4 id="calendar-adjustments">Calendar adjustments</h4>
+<p>调整统计时间长短不一致导致的偏误</p>
+<p>方法：平滑一下</p>
+<p>例如： <span class="math display">\[W_t=Y_t\times\cfrac{所有月份天数的平均数}{当月天数}\]</span>
+<span class="math display">\[W_t=Y_t\times\cfrac{所有月份交易日的平均数}{当月交易日数目}\]</span></p>
+<h4 id="population-adjustments">Population adjustments</h4>
+<p>调整总数不一导致的偏误</p>
+<p>方法：除以总量，算单位量</p>
+<p>例如：人均GDP</p>
+<h4 id="inflation-adjustments">Inflation adjustments</h4>
+<p>调整通货膨胀带来的偏误</p>
+<p>方法：以某年的CPI为参考</p>
+<p>例如： <span class="math display">\[x_t=y_t\times\cfrac{z_{2000}}{z_t}\]</span></p>
+<h4 id="mathematical-transformation">Mathematical transformation</h4>
+<p>调整因规模变化带来的偏误，协整波动性</p>
+<p>方法：取对数、取指数、Box-Cox</p>
+<p>例如： <span class="math display">\[w_t=\begin{cases}
+\log(y_t)&amp;\text{if }\lambda = 0\\
+(\text{sign}(y_t)|y_t|^\lambda-1)/\lambda &amp;\text{otherwise}
+\end{cases}\]</span></p>
+<h3 id="时间序列分解-1">时间序列分解</h3>
+<ul>
+<li>A <strong>trend</strong> pattern exists when there is a long-term
+increase or trend decrease in the data.</li>
+<li>A <strong>seasonal</strong> pattern exists when a series is
+influenced by seasonal factors.</li>
+<li>A <strong>cyclical</strong> pattern exists when the data exhibit
+rises and cyclical falls that are <em>not of a fixed period</em>.</li>
+</ul>
+<p><span class="math display">\[Y_t=f(S_t,T_t,R_t)\]</span> - <span class="math inline">\(Y_t\)</span>: Time series data at time <span class="math inline">\(t\)</span> - <span class="math inline">\(T_t\)</span>: Trend-cycle
+component（趋势周期项）at period <span class="math inline">\(t\)</span>
+- <span class="math inline">\(S_t\)</span>: Seasonal
+component（季节项）at period <span class="math inline">\(t\)</span> -
+<span class="math inline">\(R_t\)</span>: Remainder
+component（残差项）at period <span class="math inline">\(t\)</span></p>
+<p>加法分解：<span class="math inline">\(Y_t=S_t+T_t+R_t\)</span>
+乘法分解：<span class="math inline">\(Y_t=S_t\times T_t\times
+R_t\)</span> （可以通过取对数转化为加法分解）</p>
+<p>例子： ![[预测分析与方法/e709d03989f319be7c872f47875c3eb.png]]</p>
+<h3 id="移动平均和loess回归">移动平均和Loess回归</h3>
+<p>用来平滑趋势周期项，减小随机方差</p>
+<h4 id="普通移动平均">普通移动平均</h4>
+<p><span class="math display">\[\hat
+T_t=\cfrac{1}{m}\sum_{j=-k}^ky_{t+j}\]</span> 其中，<span class="math inline">\(m=2k+1\)</span>，叫做m-MA smoother</p>
+<ul>
+<li>要求m为奇数</li>
+<li>会出现首尾缺少数据的情况</li>
+</ul>
+<p>例子： ![[预测分析与方法/263b98ce10159ba2bc8b09b61cd5c37.png]]</p>
+<h4 id="双重移动平均">双重移动平均</h4>
+<p>做两次移动平均</p>
+<p>2-point moving average of 4-point moving average (2 <span class="math inline">\(\times\)</span> 4 MA) <span class="math display">\[\begin{align}
+\hat T_{2.5}=\cfrac{y_1+y_2+y_3+y_4}{4}\\
+\hat T_{3.5}=\cfrac{y_2+y_3+y_4+y_5}{4}
+\end{align}\]</span></p>
+<ul>
+<li>Averaging these two 4 MA smoothers gives <span class="math display">\[\hat
+T_3=\cfrac{1}{8}(y_1+2y_2+2y_3+2y_4+y_5)\]</span></li>
+<li>2<span class="math inline">\(\times\)</span> 4 MA smoother is
+equivalent to a weighted moving average of order 5</li>
+</ul>
+<p>也可以有其它阶数，反正就是两次移动平均</p>
+<h4 id="加权移动平均">加权移动平均</h4>
+<p><span class="math display">\[\hat
+T_t=\sum_{j=-k}^ka_jY_{t+j}\]</span> - <span class="math inline">\(m=2k+1,\sum_{j=-k}^ka_j=1,a_j=a_{-j}\)</span></p>
+<p>Henderson's 5-, 7-, 9-, 13-, and 23-point weighted moving averages. -
+The greater the randomness, the larger the number of terms needed in the
+average. - The weights were calculated using the quadratic function</p>
+<p><span class="math display">\[Q(j,m)=\begin{cases}
+(1-(\cfrac{j}{m})^2)^2&amp;\text{for }-m&lt;j&lt;m\\
+0&amp;\text{otherwise}
+\end{cases}\]</span> <span class="math display">\[a_j=\cfrac{Q(j,m)}{\sum_{i=-m}^mQ(i,m)}\]</span></p>
+<h4 id="local-regression-smoothing局部回归平滑">Local regression
+smoothing（局部回归平滑）</h4>
+<p>回归局部趋势周期项</p>
+<ul>
+<li>假设这个观测区间内，趋势周期项为<span class="math inline">\(\hat
+T_t=a+b\cdot t\)</span></li>
+<li><span class="math inline">\(a\)</span>和<span class="math inline">\(b\)</span>是为了最小化加权平方和<span class="math display">\[\sum_{j=-m}^ma_j(Y_{t+j}-a-b(t+j))^2\]</span></li>
+</ul>
+<ol type="1">
+<li>Set the number of points to be used in the weighted regression.</li>
+<li>Weights are assigned to those data points.</li>
+<li>A line is fitted to the data with the values of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> chosen to minimize the weighted sum of
+square.</li>
+<li>Repeat steps 1 to 3 for each observation.</li>
+</ol>
+<h4 id="loess-局部加权回归平滑">Loess 局部加权回归平滑</h4>
+<p>上面的局部回归平滑的改良版，相当于根据残差调整权重，进行优化</p>
+<p><strong>Lo</strong>cally W<strong>e</strong>ighted
+<strong>S</strong>catterplot <strong>S</strong>moothing (Loess) 1. An
+initial local regression is calculated, and the remainder component is
+calculated using <span class="math display">\[\hat E_t=y_t-\hat
+T_t\]</span> 2. The weights are adjusted so that observations with large
+errors receive smaller weights 3. Repeat steps 1 and 2 for several
+iterations to obtain the final estimate <span class="math inline">\(\hat
+T_t\)</span></p>
+<h3 id="分解方法">分解方法</h3>
+<h4 id="加法分解">加法分解</h4>
+<p>For a time series with seasonal period <span class="math inline">\(m\)</span> - 4 for quarterly data, 12 for monthly
+data, 7 for weekly data</p>
+<ol type="1">
+<li><ul>
+<li>If <span class="math inline">\(m\)</span> is an even number, compute
+the trend-cycle component <span class="math inline">\(T_t\)</span> using
+a <span class="math inline">\(2\times m\)</span>–MA</li>
+<li>If <span class="math inline">\(m\)</span> is an odd number, compute
+the trend-cycle component <span class="math inline">\(T_t\)</span> using
+a <span class="math inline">\(m\)</span>–MA</li>
+</ul></li>
+<li><ul>
+<li>Calculate the de-trended series (去趋势序列): <span class="math display">\[y_t=\hat T_t\]</span></li>
+</ul></li>
+<li><ul>
+<li>Average the de-trended values for that season to estimate the
+seasonal component for each season <span class="math inline">\(\hat
+S_t\)</span></li>
+</ul></li>
+<li><ul>
+<li>The remainder component is calculated by subtracting the estimated
+seasonal and trend-cycle components: <span class="math display">\[\hat
+R_t=y_t-\hat T_t-\hat S_t\]</span></li>
+</ul></li>
+</ol>
+<p>例子： ![[预测分析与方法/cb0f33745cf865d0f863d793aaa8757.png]]</p>
+<h4 id="乘法分解">乘法分解</h4>
+<p>For a time series with seasonal period <span class="math inline">\(m\)</span> - 4 for quarterly data, 12 for monthly
+data, 7 for weekly data</p>
+<ol type="1">
+<li><ul>
+<li>If <span class="math inline">\(m\)</span> is an even number, compute
+the trend-cycle component <span class="math inline">\(T_t\)</span> using
+a <span class="math inline">\(2\times m\)</span>–MA</li>
+<li>If <span class="math inline">\(m\)</span> is an odd number, compute
+the trend-cycle component <span class="math inline">\(T_t\)</span> using
+a <span class="math inline">\(m\)</span>–MA</li>
+</ul></li>
+<li><ul>
+<li>Calculate the de-trended series (去趋势序列): <span class="math display">\[y_t/\hat T_t\]</span></li>
+</ul></li>
+<li><ul>
+<li>Average the de-trended values for that season to estimate the
+seasonal component for each season <span class="math inline">\(\hat
+S_t\)</span></li>
+</ul></li>
+<li><ul>
+<li>The remainder component is calculated by subtracting the estimated
+seasonal and trend-cycle components: <span class="math display">\[\hat
+R_t=y_t/(\hat T_t\hat S_t)\]</span></li>
+</ul></li>
+</ol>
+<h4 id="stl-分解">STL 分解</h4>
+<p>Seasonal and Trend decomposition using Loess (STL)</p>
+<p>While # of Outer loop &lt; max iteration: Inner loop: Seasonal and
+trend-cycle components are updated Identification of extreme values
+Downweights the extreme values</p>
 
 
   

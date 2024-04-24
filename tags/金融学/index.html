@@ -16,22 +16,19 @@
   <meta name="author" content="Ruiyang He">
   <meta name="keywords" content="">
   
-    <meta name="description" content="股票的除权与复权几乎是最基础的数据处理方法。但是考虑到分红、配股、送股、拆细等行为，计算有一定的复杂性。遂写此文，以明晰之。 CSMAR数据库—分配文件 股票市场交易 数据库说明书 (csmar.com) 基础介绍 本数据库配股率、送股率、送红利和拆细率计算，举例说明如下： - 配股率：若股东每100股可获配30股，此配股率为0.3 - 送股率：若股东每100股可获得20股的送股，此">
+    <meta name="description" content="这是Hiryan的个人博客">
 <meta property="og:type" content="website">
-<meta property="og:title" content="复权详解">
-<meta property="og:url" content="http://hiryan23.github.io/%E5%A4%8D%E6%9D%83%E8%AF%A6%E8%A7%A3.html">
+<meta property="og:title" content="标签 - 金融学">
+<meta property="og:url" content="http://hiryan23.github.io/tags/%E9%87%91%E8%9E%8D%E5%AD%A6/index.html">
 <meta property="og:site_name" content="Hiryan&#39;s Blog">
-<meta property="og:description" content="股票的除权与复权几乎是最基础的数据处理方法。但是考虑到分红、配股、送股、拆细等行为，计算有一定的复杂性。遂写此文，以明晰之。 CSMAR数据库—分配文件 股票市场交易 数据库说明书 (csmar.com) 基础介绍 本数据库配股率、送股率、送红利和拆细率计算，举例说明如下： - 配股率：若股东每100股可获配30股，此配股率为0.3 - 送股率：若股东每100股可获得20股的送股，此">
+<meta property="og:description" content="这是Hiryan的个人博客">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-10T07:50:46.080Z">
-<meta property="article:modified_time" content="2024-03-10T07:50:46.080Z">
 <meta property="article:author" content="Ruiyang He">
-<meta property="article:tag" content="专题整理">
 <meta name="twitter:card" content="summary">
   
   
   
-  <title>复权详解 - Hiryan&#39;s Blog</title>
+  <title>标签 - 金融学 - Hiryan&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -89,7 +86,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 80vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -207,13 +204,17 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="复权详解"></span>
+            <span id="subtitle" data-typed-text="标签 - 金融学"></span>
           
         </div>
 
         
       </div>
 
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
       
     </div>
   </div>
@@ -234,60 +235,23 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-<article class="page-content">
-  <p>股票的除权与复权几乎是最基础的数据处理方法。但是考虑到分红、配股、送股、拆细等行为，计算有一定的复杂性。遂写此文，以明晰之。</p>
-<h2 id="csmar数据库分配文件">CSMAR数据库—分配文件</h2>
-<p><a target="_blank" rel="noopener" href="https://data.csmar.com/lib/pdfjs/web/viewer.html?file=group1%2FM00%2FAA%2F99%2FCuIKV2XAnKiABeLbAB4nDGC5Ano840.pdf&amp;fname=%E8%82%A1%E7%A5%A8%E5%B8%82%E5%9C%BA%E4%BA%A4%E6%98%93%20%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%B4%E6%98%8E%E4%B9%A6">股票市场交易
-数据库说明书 (csmar.com)</a></p>
-<h3 id="基础介绍">基础介绍</h3>
-<p>本数据库配股率、送股率、送红利和拆细率计算，举例说明如下： -
-配股率：若股东每100股可获配30股，此配股率为0.3 -
-送股率：若股东每100股可获得20股的送股，此送股率为0.2 -
-红利率：若股东每一股获送0.5元，此红利率为0.5 -
-拆细率：若股票每一股被拆成100股，则拆细率为100 -
-股权分置率：若股票每10股送2股，则股权分置率为0.2；若股票每10股缩为8股，则股权分置率为-0.2。</p>
-<ul>
-<li>分配比率为正值代表送股，为负值代表缩股。
-<ul>
-<li>股权分置公式为：10*（1+分配比率）=分配结果。</li>
-<li>对有送红股同时又有转增股票的，统一为送股类型，即实际送股率为送股率与转增率之和。如股东每100股可获得20股的送股，同时股东每100股获转增30股则在本数据库内送股率为0.5。</li>
-</ul></li>
-</ul>
-<h3 id="符号说明">符号说明</h3>
-<p>CA=现金红利，SD=送红股，RO=配股，DS=拆细，GQ=股权分置，SN=公开增发。</p>
-<h2 id="一些常识">一些常识</h2>
-<ul>
-<li>除权日那天开盘时，股价已经除权了。</li>
-<li>分红是给已有的股东权益，因此先分红，然后再其它操作。</li>
-</ul>
-<h2 id="后复权">后复权</h2>
-<h3 id="原理">原理</h3>
-<p>以除权前的价格为基准，修改除权后的价格。</p>
-<h3 id="目的">目的</h3>
-<p>看在历史某个时刻投入的资金，到今天能够有多少收益。</p>
-<h3 id="核心思想">核心思想</h3>
-<p>交易所展示的价格是每<strong>一股</strong>的价格。</p>
-<h3 id="一个例子">一个例子</h3>
-<p>假设A公司股票将在<span class="math inline">\(T\)</span>日进行分配操作。每一股分红<span class="math inline">\(D\)</span>；每一股送红股<span class="math inline">\(S\)</span>；每一股以<span class="math inline">\(P_R\)</span>价格进行配<span class="math inline">\(R\)</span>股；以<span class="math inline">\(P_O\)</span>价格共公开增发<span class="math inline">\(O\)</span>股；每一股拆细为<span class="math inline">\(K\)</span>股。（不考虑股权分置）</p>
-<p>假设原来的总股本为<span class="math inline">\(N\)</span>，<span class="math inline">\(P^*_T\)</span>为后复权价，<span class="math inline">\(P_T\)</span>为除权价。 <span class="math display">\[\begin{align}
-&amp;P^*_T\times N - D\times N + P_R\times R+P_O\times O= P_T\times
-(N(K+S+R)+O)\\
-&amp;\Rightarrow P_T^*=\cfrac{P_T(N(K+S+R)+O)+DN-P_RR-P_OO}{N}\\
-&amp;\Leftrightarrow
-P_T^*=P_T(K+S+R+\cfrac{O}{N})+D-\cfrac{P_RR}{N}-\cfrac{P_OO}{N}\\
-&amp;\Leftrightarrow
-P_T^*=P_T(K+S+R+\cfrac{O}{N})+D-P_R\cfrac{R}{N}-P_O\cfrac{O}{N}
-\end{align}\]</span></p>
-<p>假设原来的股东持有<span class="math inline">\(n\)</span>股，分红用来再投资，但不进行额外投资（配股、增发）
-<span class="math display">\[n^*=n\times
-(K+S)+\cfrac{nD}{P_T}\]</span></p>
-<h3 id="细节">细节</h3>
-<p>算收益率的时候，要考虑分红是否再投资，如果再投资，除权后的“一股”价格可能就不是除权前“持有的一股”，因此要进行修正。</p>
-
-
+<div class="list-group">
+  <p class="h4">共计 1 篇文章</p>
+  <hr>
   
+  
+    
+      
+      <p class="h5">2024</p>
+    
+    <a href="/2024/03/31/%E5%85%B3%E4%BA%8E%E8%82%A1%E6%8C%87%E6%9C%9F%E8%B4%A7%E5%AF%B9%E5%86%B2%E7%9A%84%E6%80%9D%E8%80%83/" class="list-group-item list-group-item-action">
+      <time>03-31</time>
+      <div class="list-group-item-title">关于股指期货对冲的思考</div>
+    </a>
+  
+</div>
 
-</article>
+
 
 
 

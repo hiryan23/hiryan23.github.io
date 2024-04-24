@@ -16,22 +16,22 @@
   <meta name="author" content="Ruiyang He">
   <meta name="keywords" content="">
   
-    <meta name="description" content="本文整理自网络资料。">
+    <meta name="description" content="*本笔记整理自安泰经济与管理学院2024年春季学期课程BUSS3627-01随机过程及应用，授课人是罗俊老师。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="期权交易常见对冲策略">
-<meta property="og:url" content="http://hiryan23.github.io/%E6%9C%9F%E6%9D%83%E4%BA%A4%E6%98%93%E5%B8%B8%E8%A7%81%E5%AF%B9%E5%86%B2%E7%AD%96%E7%95%A5.html">
+<meta property="og:title" content="随机过程及应用">
+<meta property="og:url" content="http://hiryan23.github.io/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E5%8F%8A%E5%BA%94%E7%94%A8.html">
 <meta property="og:site_name" content="Hiryan&#39;s Blog">
-<meta property="og:description" content="本文整理自网络资料。">
+<meta property="og:description" content="*本笔记整理自安泰经济与管理学院2024年春季学期课程BUSS3627-01随机过程及应用，授课人是罗俊老师。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-02T08:19:12.157Z">
-<meta property="article:modified_time" content="2024-03-02T08:19:12.157Z">
+<meta property="article:published_time" content="2024-04-06T13:25:54.606Z">
+<meta property="article:modified_time" content="2024-03-17T06:30:56.146Z">
 <meta property="article:author" content="Ruiyang He">
-<meta property="article:tag" content="专题整理">
+<meta property="article:tag" content="课程笔记">
 <meta name="twitter:card" content="summary">
   
   
   
-  <title>期权交易常见对冲策略 - Hiryan&#39;s Blog</title>
+  <title>随机过程及应用 - Hiryan&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -207,7 +207,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="期权交易常见对冲策略"></span>
+            <span id="subtitle" data-typed-text="随机过程及应用"></span>
           
         </div>
 
@@ -235,245 +235,83 @@
                 
 
 <article class="page-content">
-  <p>本文整理自网络资料。</p>
+  <blockquote>
+<p>*本笔记整理自安泰经济与管理学院2024年春季学期课程BUSS3627-01随机过程及应用，授课人是罗俊老师。</p>
+</blockquote>
 <span id="more"></span>
-<h2 id="说明">说明</h2>
-<p>标的资产与期权的对冲策略。</p>
-<h3 id="参数表">参数表</h3>
-<table>
-<thead>
-<tr class="header">
-<th>符号</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(S\)</span></td>
-<td>单位标的物价值</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(U\)</span></td>
-<td>单位标的物成本价值</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(K\)</span></td>
-<td>行权价</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(C\)</span></td>
-<td>单位期权成本价值</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(N_U\)</span></td>
-<td>头寸标的物数量</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(N_O\)</span></td>
-<td>头寸期权数量</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(R\)</span></td>
-<td>策略收益</td>
-</tr>
-</tbody>
-</table>
-<h2 id="protective-put">Protective Put</h2>
-<h3 id="原理">原理</h3>
-<p>为了防止标的物资产价格变动，<strong>做多（Long）</strong>
-相应的期权进行保护。主C是标的物资产。</p>
-<table>
-
-<thead>
-<tr class="header">
-<th></th>
-<th>正</th>
-<th>异</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>赚</td>
-<td>无上限。当标的物价格狂涨。</td>
-<td>无上限。当标的物价格狂跌（可以为负数时，否则有限）。</td>
-</tr>
-<tr class="even">
-<td>亏</td>
-<td>有上限。当标的物价格狂跌。</td>
-<td>有上限。当标的物价格狂涨。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="一图流">一图流</h3>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th>正</th>
-<th>异</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Direction(Underlying)</td>
-<td>Long</td>
-<td>Short</td>
-</tr>
-<tr class="even">
-<td>Direction(Option)</td>
-<td>Long</td>
-<td>Long</td>
-</tr>
-<tr class="odd">
-<td>Type(Option)</td>
-<td>Put</td>
-<td>Call</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th>正</th>
-<th>异</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>标的物初始贡献</td>
-<td><span class="math inline">\(-UN_U\)</span></td>
-<td><span class="math inline">\(+UN_U\)</span></td>
-</tr>
-<tr class="even">
-<td>标的物未来贡献</td>
-<td><span class="math inline">\(+\max\{S,K\}N_U\)</span></td>
-<td><span class="math inline">\(-\min\{S,K\}N_U\)</span></td>
-</tr>
-<tr class="odd">
-<td>期权初始贡献</td>
-<td><span class="math inline">\(-CN_O\)</span></td>
-<td><span class="math inline">\(-CN_O\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>![[期权交易常见对冲策略/3ff226d547a4fbe9bab92323d14efc4.png|
-正Protective(Married) Put策略收益矩阵]]</p>
-<h3 id="收益分析">收益分析</h3>
-<p><span class="math display">\[\begin{align}
-R&amp;=-UN_U+\max\{S,K\}N_U-CN_O\\
-&amp;=\begin{cases}
-(-U+S)\times N_U-CN_O,S&gt;K\\
-(-U+K)\times N_U-CN_O,S&lt;K,行权\\
-\end{cases}
-\end{align}\]</span></p>
-<p><span class="math display">\[\begin{align}
-R^\prime&amp;=UN_U-\min\{S,K\}N_U-CN_O\\
-&amp;=\begin{cases}
-(U-K)\times N_U-CN_O,S&gt;K,行权\\
-(U-S)\times N_U-CN_O,S&lt;K
-\end{cases}
-\end{align}\]</span></p>
-<h2 id="covered-call">Covered Call</h2>
-<h3 id="原理-1">原理</h3>
-<p><strong>做空（Short）</strong>
-期权，用标的物资产掩护。主C是期权。</p>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th>正</th>
-<th>异</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>赚</td>
-<td>有上限。当标的物价格狂涨。</td>
-<td>有上限。当标的物价格狂跌。</td>
-</tr>
-<tr class="even">
-<td>亏</td>
-<td>无上限，当标的物价格狂跌。</td>
-<td>无上限，当标的物价格狂涨。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="一图流-1">一图流</h3>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th>正</th>
-<th>异</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Direction(Underlying)</td>
-<td>Long</td>
-<td>Short</td>
-</tr>
-<tr class="even">
-<td>Direction(Option)</td>
-<td>Short</td>
-<td>Short</td>
-</tr>
-<tr class="odd">
-<td>Type(Option)</td>
-<td>Call</td>
-<td>Put</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th>正</th>
-<th>异</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>标的物初始贡献</td>
-<td><span class="math inline">\(-UN_U\)</span></td>
-<td><span class="math inline">\(+UN_U\)</span></td>
-</tr>
-<tr class="even">
-<td>标的物未来贡献</td>
-<td><span class="math inline">\(+\min\{S,K\}N_U\)</span></td>
-<td><span class="math inline">\(-\max\{S,K\}N_U\)</span></td>
-</tr>
-<tr class="odd">
-<td>期权初始贡献</td>
-<td><span class="math inline">\(+CN_O\)</span></td>
-<td><span class="math inline">\(+CN_O\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>![[期权交易常见对冲策略/52a1dd784a2ae7eab9507a43fe4d8ed.png |
-正Covered Call策略收益矩阵]]</p>
-<h3 id="收益分析-1">收益分析</h3>
-<p><span class="math display">\[\begin{align}
-R&amp;=-UN_U+\min\{S,K\}N_U+CN_O\\
-&amp;=\begin{cases}
-(-U+K)N_U+CN_O,S&gt;K,行权\\
-(-U+S)N_U+CN_O,S&lt;K
-\end{cases}
-\end{align}\]</span></p>
-<p><span class="math display">\[\begin{align}
-R^\prime&amp;=UN_U-\max\{S,K\}N_U+CN_O\\
-&amp;=\begin{cases}
-(U-S)N_U+CN_O,S&gt;K\\
-(U-K)N_U+CN_O,S&lt;K,行权
-\end{cases}
-\end{align}\]</span></p>
-<h2 id="参考资料">参考资料</h2>
-<p><a target="_blank" rel="noopener" href="https://xueqiu.com/1039527614/170024434">期权交易的8种常见组合 - 雪球
-(xueqiu.com)</a> <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/548799512">期权策略(一) - Covered
-Call - 知乎 (zhihu.com)</a> <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/549632635">期权策略(二）- Protective
-Put - 知乎 (zhihu.com)</a></p>
+<h2 id="问题列表">问题列表</h2>
+<ul>
+<li>几何分布的矩母函数，那个几何级数为什么默认收敛</li>
+<li>指数分布的矩母函数，怎么也默认收敛</li>
+</ul>
+<h2 id="review-of-probabilities">Review of probabilities</h2>
+<h3 id="kolmogorov-axioms">Kolmogorov Axioms</h3>
+<ul>
+<li><span class="math inline">\(0\leq P(E)\leq 1\)</span></li>
+<li><span class="math inline">\(P(S)=1\)</span></li>
+<li>For any sequence of events <span class="math inline">\(E_1,E_2,\cdots\)</span> that are mutually
+exclusive, then<span class="math display">\[P(\cup_{i=1}^\infty
+E_i)=\sum_{i=1}^\infty P(E_i)\]</span></li>
+</ul>
+<h3 id="inequalities">Inequalities</h3>
+<h5 id="bonferronis-inequality">Bonferroni's Inequality</h5>
+<p><span class="math display">\[P(E\cap F)\geq P(E)+P(F)-1\]</span></p>
+<h5 id="booles-inequality">Boole's Inequality</h5>
+<p><span class="math display">\[P(\cup_{i=1}^{\infty}E_i)\leq\sum_{i=1}^\infty
+P(E_i)\]</span></p>
+<h3 id="formulae">Formulae</h3>
+<h3 id="distributions">Distributions</h3>
+<h4 id="discrete-random-variables">Discrete Random Variables</h4>
+<p>Assumptions: 1. Independent trials: a specific event <span class="math inline">\(E\)</span> in an experiment with probability <span class="math inline">\(p\)</span> in a given trial 2. Repeating many
+times (<span class="math inline">\(n\)</span> trials): success with
+probability <span class="math inline">\(p\)</span>, failure with
+probability <span class="math inline">\(1-p\)</span></p>
+<h5 id="bernoulli-distribution-bp">Bernoulli distribution <span class="math inline">\(B(p)\)</span></h5>
+<ul>
+<li>Success: <span class="math inline">\(X=1\)</span> or failure <span class="math inline">\(X=0\)</span></li>
+<li>Probability mass function <span class="math display">\[
+p(0)=P\{X=0\}=1-p;\ p(1)=P\{X=1\}=p\ (0&lt;p&lt;1)\]</span></li>
+</ul>
+<h5 id="binomial-distribution-binnp">Binomial distribution <span class="math inline">\(Bin(n,p)\)</span></h5>
+<ul>
+<li><span class="math inline">\(X\)</span>: number of success in <span class="math inline">\(n\)</span> trials <span class="math display">\[p(k)=P\{X=k\}=C_n^kp^k(1-p)^{n-k},\
+k=0,1,2,\cdots,n\]</span></li>
+</ul>
+<h5 id="geometric-distribution-gp">Geometric distribution <span class="math inline">\(G(p)\)</span></h5>
+<ul>
+<li><span class="math inline">\(X\)</span>: number of trials until first
+success <span class="math display">\[p(k)=P\{X=k\}=p(1-p)^{k-1},\
+k=1,2,\cdots\]</span></li>
+</ul>
+<h5 id="poisson-distribution-plambda">Poisson distribution <span class="math inline">\(P(\lambda)\)</span></h5>
+<ul>
+<li><span class="math inline">\(X:\{0,1,2,\cdots\}\)</span> <span class="math display">\[p(k)=P\{X=k\}=e^{-\lambda}(\lambda^k/k!),\
+k=0,1,2,\cdots\]</span></li>
+</ul>
+<h5 id="finite-discrete-distribution">Finite discrete distribution</h5>
+<ul>
+<li><span class="math inline">\(X:\{1,2,\cdots,K\}\)</span> <span class="math display">\[p(k)=P\{X=k\}=N_k/N,\ k=1,2,\cdots,K,\
+(N=N_1+\cdots+N_K)\]</span></li>
+<li>Discrete uniform distribution: <span class="math display">\[N_k=1,\
+k=1,\cdots,K\]</span></li>
+</ul>
+<h4 id="continuous-random-variables">Continuous Random Variables</h4>
+<p>There is a function <span class="math inline">\(f(\cdot)\)</span>
+such that the cdf: <span class="math display">\[F(x)=\int_{-\infty}^xf(u)\text du,\ \text{for
+all}\ x\in(-\infty,+\infty)\]</span></p>
+<p>If <span class="math inline">\(F(\cdot)\)</span> is continuous and
+piecewise differentiable, then - <span class="math inline">\(f(x)=\text
+d(F(x))/\text d x=F^\prime(x)\)</span> - Probability density function:
+<span class="math inline">\(f(x)\)</span></p>
+<p><strong>Theorem</strong> A function <span class="math inline">\(f(\cdot)\)</span> is a probability density
+function (pdf) of a continuous random variable if and only if 1. <span class="math inline">\(f(x)\geq 0\ \text{for all}\ x\in(-\infty,
++\infty)\)</span> 2. <span class="math inline">\(\int_{-\infty}^{+\infty}f(u)\text
+du=1\)</span></p>
+<h5 id="uniform-distribution-uab">Uniform distribution <span class="math inline">\(U(a,b)\)</span></h5>
+<h5 id="exponential-distribution-explambda">Exponential distribution
+<span class="math inline">\(Exp(\lambda)\)</span></h5>
+<h5 id="gamma-distribution-gammaalpha-lambda">Gamma distribution <span class="math inline">\(Gamma(\alpha, \lambda)\)</span></h5>
+<h5 id="normal-distribution-nmusigma2">Normal distribution <span class="math inline">\(N(\mu,\sigma^2)\)</span></h5>
 
 
   
