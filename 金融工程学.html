@@ -23,8 +23,8 @@
 <meta property="og:site_name" content="Hiryan&#39;s Blog">
 <meta property="og:description" content="本笔记整理自安泰经济与管理学院2024年春季学期课程ECON3509-01金融工程学，授课人是宋颖达老师。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-04-06T13:25:52.633Z">
-<meta property="article:modified_time" content="2024-04-06T13:25:52.633Z">
+<meta property="article:published_time" content="2024-05-09T10:50:54.092Z">
+<meta property="article:modified_time" content="2024-05-09T10:50:54.092Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="课程笔记">
 <meta name="twitter:card" content="summary">
@@ -798,6 +798,7 @@ e^{qT}\)</span></p>
 <p><span class="math display">\[F_0=S_0e^{(r-q)T}\]</span></p>
 <h4 id="价值确定">价值确定</h4>
 <p>谈判的时候，根据无套利原则，远期合约的价值为0，但是随着时间的推移，它可能有正或负价值</p>
+<p>理解：相当于原来的远期价格为K，重新算的远期价格为F_0，价格差再折现</p>
 <table>
 <thead>
 <tr class="header">
@@ -841,6 +842,99 @@ e^{qT}\)</span></p>
 存在买多（现货）套利，不卖空（现货）套利的原因： - Ability to profit
 from temporary shortages - Ability to keep a production process
 going</p>
+<h4 id="利率期货">利率期货</h4>
+<p>用利率挂钩的资产作为标的的期货，投机或者对冲利率变动。</p>
+<h5 id="利息按日结算">利息按日结算</h5>
+<h6 id="原理-1">原理</h6>
+<p>![[金融工程学/704085016f1dcb6395c9d417381614c.png]]</p>
+<p>应计利息： <span class="math display">\[\cfrac{\text{\# of days
+between dates}}{\text{\# of days in reference period}}\times
+\text{interest earned in reference period}\]</span>
+用线性计算方式算利息区间内的应计利息</p>
+<h6 id="种类">种类</h6>
+<ul>
+<li>actual/actual: treasury bonds</li>
+<li>30/360: corporate bonds</li>
+<li>actual/360: money market instruments</li>
+<li>actual/365, 30/365, ...</li>
+</ul>
+<h5 id="净价报价全价结算">净价报价、全价结算</h5>
+<p>全价=净价+应计利息</p>
+<p>净价(quoted price)用32分位报价 - 90-05, or 90:05, or 90'05, or
+90<span class="math inline">\(\cfrac{5}{32}\)</span></p>
+<h5 id="利率期货-1">利率期货</h5>
+<ul>
+<li>合约大小</li>
+<li>交割债券等级（几年期国债）</li>
+<li>交割价
+<ul>
+<li><span class="math inline">\((\text{Most recent settlement price}
+\times \text{Convension factor})+\text{Accrued interest}\)</span></li>
+</ul></li>
+<li>小细节：
+<ul>
+<li>交割的债券可以为很多种</li>
+<li>报价是32分位制</li>
+<li>转换因子把债券转化为等价的债券</li>
+<li>必须要加上应计利息</li>
+</ul></li>
+</ul>
+<h6 id="最优交割债券">最优交割债券</h6>
+<p>假设立即购买债券交割，最划算的购买的债券就是最优交割债券。</p>
+<h6 id="期货价格计算公式">期货价格计算公式</h6>
+<p><span class="math display">\[F_0=(S_0-I)e^{rT}\]</span></p>
+<h5 id="久期对冲">久期对冲</h5>
+<h6 id="原理-2">原理</h6>
+<p><span class="math display">\[\Delta P = -PD_P\Delta y,\ \ \ \ \Delta
+V_F=-V_FD_F\Delta y\]</span>，保证<span class="math inline">\(\Delta
+y\)</span>对冲掉即可</p>
+<h6 id="局限性">局限性</h6>
+<ul>
+<li>假设利率平行移动</li>
+<li>假设y小幅变化，否则无法这么近似（</li>
+<li>假设了交割国债不发生变化（使用最优交割债券）</li>
+</ul>
+<h5 id="中国的10年期国债期货例子">中国的10年期国债期货例子</h5>
+<p>http://www.cffex.com.cn/10tf</p>
+<p>![[金融工程学/f6e078ff0b297285188bd7f2f4c75ba.png]]</p>
+<h2 id="互换">互换</h2>
+<h3 id="利率互换">利率互换</h3>
+<h4 id="定义-3">定义</h4>
+<p>利率互换就是浮动利率换固定利率</p>
+<h4 id="用途">用途</h4>
+<ul>
+<li>Converting a liability from
+<ul>
+<li>fixed rate to floating rate</li>
+<li>floating rate to fixed rate</li>
+</ul></li>
+<li>Converting an investment from
+<ul>
+<li>fixed rate to floating rate</li>
+<li>floating rate to fixed rate</li>
+</ul></li>
+</ul>
+<h4 id="做市商">做市商</h4>
+<p>提供流动性 - Market makers quote bid &amp; offer for fixed rate they
+will exchange for floating for different maturities. - Bid: fixed rate
+in swap where market maker will pay fixed &amp; receive floating -
+Offer: fixed rate in swap where market maker will received fixed &amp;
+pay floating - Swap Rate: average of bid and offer fixed rates.</p>
+<ul>
+<li>Market makers hedge interest rate risk (with bonds, FRA, futures,
+etc.) for its overall exposure.</li>
+</ul>
+<h4 id="计算">计算</h4>
+<ul>
+<li>和FRA计算类似</li>
+</ul>
+<p>现金流折现。</p>
+<h3 id="货币互换">货币互换</h3>
+<h4 id="定义-4">定义</h4>
+<p>不同货币之间的互换协议</p>
+<h4 id="应用-1">应用</h4>
+<p>比较优势。如果某一国的借款利率有比较优势，那就用这国货币借款，用另一国货币还款。如果是收益率也是类似。</p>
+<h4 id="一个例子">一个例子</h4>
 
 
   

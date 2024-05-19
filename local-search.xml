@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>Arboricity and Subgraph Listing Algorithms</title>
+    <link href="/2024/04/29/%E5%AF%BB%E6%89%BE%E5%9B%BE%E4%B8%ADclique%E7%9A%84%E7%AE%97%E6%B3%95/"/>
+    <url>/2024/04/29/%E5%AF%BB%E6%89%BE%E5%9B%BE%E4%B8%ADclique%E7%9A%84%E7%AE%97%E6%B3%95/</url>
+    
+    <content type="html"><![CDATA[<p>Arboricity and Subgraph Listing Algorithms (Norishige Chiba and TakaoNishizeki, 1985)</p><span id="more"></span><p>![[Arboricity and Subgraph ListingAlgorithms/Chiba-1985-arboricity.pdf]]</p><h2 id="abstract">Abstract</h2><p>In this paper we introduce a new simple strategy into edge-searchingof a graph, which is useful to the various subgraph listing problems.Applying the strategy, we obtain the following four algorithms. - Thefirst one lists all the triangles in a graph <span class="math inline">\(G\)</span> in <span class="math inline">\(O(a(G)m)\)</span> time, where <span class="math inline">\(m\)</span> is the number of edges of <span class="math inline">\(G\)</span> and <span class="math inline">\(a(\textG)\)</span> the arboricity of <span class="math inline">\(G\)</span>. -The second finds all the quadrangles in <span class="math inline">\(O(a(G)m)\)</span> time. Since <span class="math inline">\(a(G)\)</span> is at most three for a planar graph<span class="math inline">\(G\)</span>, both run in linear time for aplanar graph. - The third lists all the complete subgraphs <span class="math inline">\(K_l\)</span> of order <span class="math inline">\(l\)</span> in <span class="math inline">\(O(la(G)^{l-2}m)\)</span> time. - The fourth listsall the cliques in <span class="math inline">\(O(a(G)m)\)</span> timeper clique. All the algorithms require linear space. We also establishan upper bound on <span class="math inline">\(a(G)\)</span> for a graph<span class="math inline">\(G\)</span>: <span class="math inline">\(a(G)\leq [(2m+n)^{1/2}/2]\)</span>, where <span class="math inline">\(n\)</span> is the number of vertices in <span class="math inline">\(G\)</span>.</p><p>总结四个算法： - 找三角形 - 找四点形 - 找l阶完全子图 -找所有clique</p><h2 id="main">Main</h2><h3 id="introduction">1. Introduction</h3><p>主要策略：在图中找点，然后在这个点诱导子图中找符合要求的包含该点的东西。具体而言，根据点的非增的度数找（从最大度数往最小度数点找），找过了就删，避免重复。</p><p>参数解释：<span class="math inline">\(a(G)\)</span>是指图的荫度</p><blockquote><p>The <strong>arboricity</strong> of an undirected graph is the minimumnumber of forests into which its edges can be partitioned. Equivalentlyit is the minimum number of spanning forest needed to cover all theedges of the graph. The <a href="https://en.wikipedia.org/wiki/Nash-Williams_theorem" title="Nash-Williams theorem">Nash-Williams theorem</a> providesnecessary and sufficient conditions for when a graphis <em>k</em>-arboric.</p></blockquote><p>其余参数都是正常参数。</p><p>复杂度估计：略</p><h3 id="preliminaries">2. Preliminaries</h3><p>一些计算，略</p><h3 id="algorithm-for-listing-triangles">3. Algorithm for listingtriangles</h3><p>代码见附录</p><h3 id="algorithm-for-listing-quadrangles">4. Algorithm for listingquadrangles</h3><p>代码见附录</p><h3 id="algorithm-for-listing-complete-subgraphs">5. Algorithm forlisting complete subgraphs</h3><p>代码见附录</p><h2 id="appendix">Appendix</h2><p>![[寻找图中clique的算法/chiba.py]]</p><h2 id="问题">问题</h2><p>我的优化的算法比老算法还慢。感觉问题可能出现在inlist的搜索上。或许用dict+SortedList更快。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>2024S</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>图数据库</tag>
+      
+      <tag>文献研究</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2024.04.23 写在安泰春令营之后</title>
     <link href="/2024/04/23/%E5%86%99%E5%9C%A8%E5%AE%89%E6%B3%B0%E6%98%A5%E4%BB%A4%E8%90%A5%E4%B9%8B%E5%90%8E/"/>
     <url>/2024/04/23/%E5%86%99%E5%9C%A8%E5%AE%89%E6%B3%B0%E6%98%A5%E4%BB%A4%E8%90%A5%E4%B9%8B%E5%90%8E/</url>
