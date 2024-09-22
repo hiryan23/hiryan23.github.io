@@ -1,0 +1,675 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Ruiyang He">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="本文整理自网络资料。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="期权交易常见对冲策略">
+<meta property="og:url" content="http://hiryan23.github.io/%E6%9C%9F%E6%9D%83%E4%BA%A4%E6%98%93%E5%B8%B8%E8%A7%81%E5%AF%B9%E5%86%B2%E7%AD%96%E7%95%A5.html">
+<meta property="og:site_name" content="Hiryan&#39;s Blog">
+<meta property="og:description" content="本文整理自网络资料。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://hiryan23.github.io/58113043dd54082b6d63b9e5db2a701.png">
+<meta property="og:image" content="http://hiryan23.github.io/b9fd4d7bee874f87013e00b2323303c.png">
+<meta property="og:image" content="http://hiryan23.github.io/c7da281c275ba7f3d9c90e3dadeb463.png">
+<meta property="og:image" content="http://hiryan23.github.io/b8ea203ebfe7a50e61b55182ca6f3ca.png">
+<meta property="og:image" content="http://hiryan23.github.io/3c4f4cce0cd6d31b80e8b1f577d9db8.png">
+<meta property="og:image" content="http://hiryan23.github.io/793686c00b06100d7750fa3f77a4f80.png">
+<meta property="og:image" content="http://hiryan23.github.io/1cb1052d14f9e4b37bc628b8439ed19.png">
+<meta property="og:image" content="http://hiryan23.github.io/215ce70717bddeda1379f850349339c.png">
+<meta property="article:published_time" content="2024-07-05T13:52:53.858Z">
+<meta property="article:modified_time" content="2024-07-05T13:52:53.858Z">
+<meta property="article:author" content="Ruiyang He">
+<meta property="article:tag" content="专题整理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://hiryan23.github.io/58113043dd54082b6d63b9e5db2a701.png">
+  
+  
+  
+  <title>期权交易常见对冲策略 - Hiryan&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hiryan23.github.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Hiryan&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/lungmen.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.7)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="期权交易常见对冲策略"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  <p>本文整理自网络资料。</p>
+<span id="more"></span>
+<h2 id="裸期权的情况">裸期权的情况</h2>
+<p><img src="/58113043dd54082b6d63b9e5db2a701.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="思考">思考</h2>
+<ul>
+<li>期权对冲的核心是降低风险而非获得收益，这个好像比较关键
+<ul>
+<li>如何看待套利？</li>
+</ul></li>
+</ul>
+<h3 id="参数表">参数表</h3>
+<table>
+<thead>
+<tr class="header">
+<th>符号</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(S\)</span></td>
+<td>单位标的物价值</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(K\)</span></td>
+<td>行权价</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(C\)</span></td>
+<td>看涨期权价格</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(P\)</span></td>
+<td>看跌期权价格</td>
+</tr>
+</tbody>
+</table>
+<h2 id="protective-put-保护看跌期权">Protective Put 保护看跌期权</h2>
+<p>多标的、多认沽期权</p>
+<h3 id="原理">原理</h3>
+<p>为了防止标的物价格下行，<strong>做多</strong>看跌期权进行保护。
+主C是标的物，标的物越涨，收益越高，无上限。</p>
+<h3 id="一图流">一图流</h3>
+<p><img src="/b9fd4d7bee874f87013e00b2323303c.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="covered-call-备保看涨期权">Covered Call 备保看涨期权</h2>
+<p>多标的、空认购期权</p>
+<h3 id="原理-1">原理</h3>
+<p>为了防止标的物价格下行，<strong>做空</strong>看涨期权进行保护。
+主T是标的物，标的物越跌，收益越低，有下限。</p>
+<h3 id="一图流-1">一图流</h3>
+<p><img src="/c7da281c275ba7f3d9c90e3dadeb463.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="bull-call-spread-牛市看涨期权差价">Bull Call Spread
+牛市看涨期权差价</h2>
+<p>多行权价低的认购期权、空行权价高的认购期权</p>
+<h3 id="原理-2">原理</h3>
+<p>仍然是希望标的上行逻辑，但是不用实际交易标的，且收益有界。
+主C是两个合约的行权价差。价差越大，<strong>牛市</strong>赚得越多。</p>
+<h4 id="收益表">收益表</h4>
+<p><span class="math display">\[K_1&lt;K_2\Rightarrow
+C_1&gt;C_2\]</span></p>
+<table>
+
+<thead>
+<tr class="header">
+<th>S</th>
+<th>Long call</th>
+<th>Short call</th>
+<th>Total Payoff</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(S_T \leq K_1\)</span></td>
+<td><span class="math inline">\(-C_1\)</span></td>
+<td><span class="math inline">\(C_2\)</span></td>
+<td><span class="math inline">\(-(C_1-C_2)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(K_1&lt;S_T&lt;K_2\)</span></td>
+<td><span class="math inline">\(S_T-K_1-C_1\)</span></td>
+<td><span class="math inline">\(C_2\)</span></td>
+<td><span class="math inline">\(S_T-K_1-(C_1-C_2)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(K_2\leq S_T\)</span></td>
+<td><span class="math inline">\(S_T-K_1-C_1\)</span></td>
+<td><span class="math inline">\(-(S_T-K_2)+C_2\)</span></td>
+<td><span class="math inline">\(K_2-K_1-(C_1-C_2)\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="一图流-2">一图流</h3>
+<p><img src="/b8ea203ebfe7a50e61b55182ca6f3ca.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="bull-put-spread-牛市看跌期权差价">Bull Put Spread
+牛市看跌期权差价</h2>
+<p>多行权价低的认沽期权、空行权价高的认沽期权</p>
+<h3 id="原理-3">原理</h3>
+<p>和上面类似。希望标的上行，不用实际交易标的，且收益有界。
+主T是两个合约的行权价差。价差越大，<strong>熊市</strong>亏得越多。收益确定。</p>
+<h4 id="收益表-1">收益表</h4>
+<p><span class="math display">\[K_1&lt;K_2\Rightarrow
+P_1&lt;P_2\]</span></p>
+<table>
+
+<thead>
+<tr class="header">
+<th>S</th>
+<th>Long put</th>
+<th>Short put</th>
+<th>Total Payoff</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(S_T \leq K_1\)</span></td>
+<td><span class="math inline">\(K_1-S_T-P_1\)</span></td>
+<td><span class="math inline">\(-(K_2-S_T)+P_2\)</span></td>
+<td><span class="math inline">\(K_1-K_2+P_2-P_1\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(K_1&lt;S_T&lt;K_2\)</span></td>
+<td><span class="math inline">\(-P_1\)</span></td>
+<td><span class="math inline">\(-(K_2-S_T)+P_2\)</span></td>
+<td><span class="math inline">\(S_T-K_2+P_2-P_1\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(K_2\leq S_T\)</span></td>
+<td><span class="math inline">\(-P_1\)</span></td>
+<td><span class="math inline">\(P_2\)</span></td>
+<td><span class="math inline">\(P_2-P_1\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="一图流-3">一图流</h3>
+<p><img src="/3c4f4cce0cd6d31b80e8b1f577d9db8.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="bear-call-spread-熊市看涨期权差价">Bear Call Spread
+熊市看涨期权差价</h2>
+<p>多行权价高的认购期权、空行权价低的认购期权</p>
+<h3 id="原理-4">原理</h3>
+<p>和上面类似，但是希望标的下行。
+主T是两个合约的行权价差。价差越大，<strong>牛市</strong>亏得越多。收益确定。</p>
+<h4 id="收益表-2">收益表</h4>
+<p><span class="math display">\[K_1&lt;K_2\Rightarrow
+C_1&gt;C_2\]</span></p>
+<table>
+
+<thead>
+<tr class="header">
+<th>S</th>
+<th>Short call</th>
+<th>Long call</th>
+<th>Total Payoff</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(S_T \leq K_1\)</span></td>
+<td><span class="math inline">\(C_1\)</span></td>
+<td><span class="math inline">\(-C_2\)</span></td>
+<td><span class="math inline">\(C_1-C_2\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(K_1&lt;S_T&lt;K_2\)</span></td>
+<td><span class="math inline">\(C_1-(S_T-K_1)\)</span></td>
+<td><span class="math inline">\(-C_2\)</span></td>
+<td><span class="math inline">\(K_1-S_T+C_1-C_2\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(K_2\leq S_T\)</span></td>
+<td><span class="math inline">\(C_1-(S_T-K_1)\)</span></td>
+<td><span class="math inline">\(-C_2+(S_T-K_2)\)</span></td>
+<td><span class="math inline">\(K_1-K_2+C_1-C_2\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="一图流-4">一图流</h3>
+<p><img src="/793686c00b06100d7750fa3f77a4f80.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="bear-put-spread-熊市看跌期权差价">Bear Put Spread
+熊市看跌期权差价</h2>
+<p>多行权价高的认沽期权、空行权价低的认沽期权</p>
+<h3 id="原理-5">原理</h3>
+<p>和上面类似，但是希望标的下行。
+主C是两个合约的行权价差。价差越大，<strong>熊市</strong>赚得越多。</p>
+<h4 id="收益表-3">收益表</h4>
+<p><span class="math display">\[K_1&lt;K_2\Rightarrow
+P_1&lt;P_2\]</span></p>
+<table>
+
+<thead>
+<tr class="header">
+<th>S</th>
+<th>Short put</th>
+<th>Long put</th>
+<th>Total Payoff</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(S_T \leq K_1\)</span></td>
+<td><span class="math inline">\(P_1-(K_1-S_T)\)</span></td>
+<td><span class="math inline">\(K_2-S_T-P_2\)</span></td>
+<td><span class="math inline">\(K_2-K_1-(P_2-P_1)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(K_1&lt;S_T&lt;K_2\)</span></td>
+<td><span class="math inline">\(P_1\)</span></td>
+<td><span class="math inline">\(K_2-S_T-P_2\)</span></td>
+<td><span class="math inline">\(K_2-S_T-(P_2-P_1)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(K_2\leq S_T\)</span></td>
+<td><span class="math inline">\(P_1\)</span></td>
+<td><span class="math inline">\(-P_2\)</span></td>
+<td><span class="math inline">\(-(P_2-P_1)\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="一图流-5">一图流</h3>
+<p><img src="/1cb1052d14f9e4b37bc628b8439ed19.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="butterfly-spread-蝶式差价put">Butterfly Spread
+蝶式差价（Put）</h2>
+<p>（以认沽期权为例，认购期权也是一样，从图片上看左右颠倒一下）
+多两头认沽期权，空两份中间认沽期权</p>
+<h3 id="原理-6">原理</h3>
+<p>希望标的物价格保持在中间行权价附近，从而获利。亏损有限。
+两头行权价差越大，<strong>中间行权价</strong>时赚得越多。</p>
+<h4 id="收益表-4">收益表</h4>
+<p><span class="math display">\[K_1&lt;K_2=\cfrac{K_1+K_3}{2}&lt;K_3\Rightarrow
+P_1&lt;P_2&lt;P_3\]</span></p>
+<table>
+
+<thead>
+<tr class="header">
+<th>S</th>
+<th>1 Long put</th>
+<th>2 Short put</th>
+<th>1 Long put</th>
+<th>Total Payoff</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(S_T\leq K_1\)</span></td>
+<td><span class="math inline">\(K_1-S_T-P_1\)</span></td>
+<td><span class="math inline">\(2(P_2-(K_2-S_T))\)</span></td>
+<td><span class="math inline">\(K_3-S_T-P_3\)</span></td>
+<td><span class="math inline">\(2P_2-P_1-P_3\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(K_1&lt;S_T&lt;K_2\)</span></td>
+<td><span class="math inline">\(-P_1\)</span></td>
+<td><span class="math inline">\(2(P_2-(K_2-S_T))\)</span></td>
+<td><span class="math inline">\(K_3-S_T-P_3\)</span></td>
+<td><span class="math inline">\(-(K_1-S_T)+(2P_2-P_1-P_3)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(S_T=K_2\)</span></td>
+<td><span class="math inline">\(-P_1\)</span></td>
+<td><span class="math inline">\(2P_2\)</span></td>
+<td><span class="math inline">\(K_3-S_T-P_3\)</span></td>
+<td><span class="math inline">\(\cfrac{K_3-K_1}{2}+(2P_2-P_1-P_3)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(K_2&lt;S_T&lt;K_3\)</span></td>
+<td><span class="math inline">\(-P_1\)</span></td>
+<td><span class="math inline">\(2P_2\)</span></td>
+<td><span class="math inline">\(K_3-S_T-P_3\)</span></td>
+<td><span class="math inline">\((K_3-S_T)+(2P_2-P_1-P_3)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(K_3\leq S_T\)</span></td>
+<td><span class="math inline">\(-P_1\)</span></td>
+<td><span class="math inline">\(2P_2\)</span></td>
+<td><span class="math inline">\(-P_3\)</span></td>
+<td><span class="math inline">\(2P_2-P_1-P_3\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="一图流-6">一图流</h3>
+<p>图片上书写错误，应该不是Call而是Put <img src="/215ce70717bddeda1379f850349339c.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="calendar-spread-日历差价call">Calendar Spread
+日历差价（Call）</h2>
+<p>多长期限认购期权、空短期限相同参数认购期权</p>
+<h3 id="原理-7">原理</h3>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li>ECON3509-01金融工程学课程讲义，授课人是宋颖达老师</li>
+</ul>
+
+
+  
+
+</article>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
