@@ -16,12 +16,12 @@
   <meta name="author" content="Ruiyang He">
   <meta name="keywords" content="">
   
-    <meta name="description" content="线性规划（Linear Programming） 一般形式 \[\begin{align} \max(\min)\ \ \ \  &amp;Z&#x3D;c_1x_1+c_2x_2+\cdots+c_nx_n\\ s.t.\ \ \ \ &amp;a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n&amp;\leq(&#x3D;,\geq)\ b_1\\ &amp;a_{21}x_1">
+    <meta name="description" content="本笔记整理自安泰经济与管理学院2024年秋季学期课程BUSS2402-03金融工程学，授课人是孙海龙老师。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="管理科学">
 <meta property="og:url" content="http://hiryan23.github.io/2024/10/12/%E7%AE%A1%E7%90%86%E7%A7%91%E5%AD%A6/index.html">
 <meta property="og:site_name" content="Hiryan&#39;s Blog">
-<meta property="og:description" content="线性规划（Linear Programming） 一般形式 \[\begin{align} \max(\min)\ \ \ \  &amp;Z&#x3D;c_1x_1+c_2x_2+\cdots+c_nx_n\\ s.t.\ \ \ \ &amp;a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n&amp;\leq(&#x3D;,\geq)\ b_1\\ &amp;a_{21}x_1">
+<meta property="og:description" content="本笔记整理自安泰经济与管理学院2024年秋季学期课程BUSS2402-03金融工程学，授课人是孙海龙老师。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://hiryan23.github.io/2024/10/12/%E7%AE%A1%E7%90%86%E7%A7%91%E5%AD%A6/source/_posts/%E7%AE%A1%E7%90%86%E7%A7%91%E5%AD%A6/4a7d05ddddd86dab50847511acbb90a.png">
 <meta property="og:image" content="http://hiryan23.github.io/2024/10/12/%E7%AE%A1%E7%90%86%E7%A7%91%E5%AD%A6/source/_posts/%E7%AE%A1%E7%90%86%E7%A7%91%E5%AD%A6/7f6463e5f8d700ce89227ba41043699.png">
@@ -37,7 +37,7 @@
 <meta property="og:image" content="http://hiryan23.github.io/2024/10/12/%E7%AE%A1%E7%90%86%E7%A7%91%E5%AD%A6/source/_posts/%E7%AE%A1%E7%90%86%E7%A7%91%E5%AD%A6/0117c97e18555bf4b809e0bd2c6d990.png">
 <meta property="og:image" content="http://hiryan23.github.io/2024/10/12/%E7%AE%A1%E7%90%86%E7%A7%91%E5%AD%A6/source/_posts/%E7%AE%A1%E7%90%86%E7%A7%91%E5%AD%A6/553a8544a595eb7ac1be762668a95d2.png">
 <meta property="article:published_time" content="2024-10-12T00:50:03.167Z">
-<meta property="article:modified_time" content="2025-01-15T07:56:37.654Z">
+<meta property="article:modified_time" content="2025-01-15T08:01:13.912Z">
 <meta property="article:author" content="Ruiyang He">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://hiryan23.github.io/2024/10/12/%E7%AE%A1%E7%90%86%E7%A7%91%E5%AD%A6/source/_posts/%E7%AE%A1%E7%90%86%E7%A7%91%E5%AD%A6/4a7d05ddddd86dab50847511acbb90a.png">
@@ -359,7 +359,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：1 分钟前
+                    本文最后更新于：几秒前
                   
                 
               </p>
@@ -367,7 +367,11 @@
             
               <div class="markdown-body">
                 
-                <h2 id="线性规划linear-programming">线性规划（Linear Programming）</h2>
+                <blockquote>
+<p><em>本笔记整理自安泰经济与管理学院2024年秋季学期课程BUSS2402-03金融工程学，授课人是孙海龙老师。</em></p>
+</blockquote>
+<span id="more"></span>
+<h2 id="线性规划linear-programming">线性规划（Linear Programming）</h2>
 <h3 id="一般形式">一般形式</h3>
 <p><span class="math display">\[\begin{align}
 \max(\min)\ \ \ \  &amp;Z=c_1x_1+c_2x_2+\cdots+c_nx_n\\
