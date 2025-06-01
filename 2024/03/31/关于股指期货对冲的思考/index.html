@@ -24,9 +24,11 @@
 <meta property="og:description" content="股指期货对冲是为了降低风险。具体来说，是为了降低未来操作（出售资产）时有效价格的不确定性，即有效价格的方差。 接下来均以一个单位股权资产为例，假设用\(h\)单位股指期货做空对冲 不同时期的价格如下：    不对冲 \(T_1\) \(T_2\)     \(1\) Portfolio \(S\) \(S(1+R_P)\)       对冲 \(T_1">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-31T02:44:00.561Z">
-<meta property="article:modified_time" content="2024-11-05T03:14:40.946Z">
+<meta property="article:modified_time" content="2024-03-30T16:00:00.000Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="金融工程">
+<meta property="article:tag" content="2024S">
+<meta property="article:tag" content="奇思">
 <meta name="twitter:card" content="summary">
   
   
@@ -241,7 +243,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          2.1k 字
         
       </span>
     
@@ -252,7 +254,7 @@
         
         
         
-          15 分钟
+          18 分钟
         
       </span>
     
@@ -297,31 +299,22 @@
     
     <div class="category row nomargin-x">
       <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="2024S"
-        id="heading-8250178ba15ec7f40890510922b2eb43" role="tab" data-toggle="collapse" href="#collapse-8250178ba15ec7f40890510922b2eb43"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="金融学"
+        id="heading-0fbc8d2bfc564fd96cea880c7eb5ad3b" role="tab" data-toggle="collapse" href="#collapse-0fbc8d2bfc564fd96cea880c7eb5ad3b"
         aria-expanded="true"
       >
-        2024S
-        <span class="list-group-count">(4)</span>
+        金融学
+        <span class="list-group-count">(5)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-8250178ba15ec7f40890510922b2eb43"
-           role="tabpanel" aria-labelledby="heading-8250178ba15ec7f40890510922b2eb43">
+      <div class="category-collapse collapse show" id="collapse-0fbc8d2bfc564fd96cea880c7eb5ad3b"
+           role="tabpanel" aria-labelledby="heading-0fbc8d2bfc564fd96cea880c7eb5ad3b">
         
         
           
   <div class="category-post-list">
     
-    
-      
-      
-        <a href="/2024/04/29/%E5%AF%BB%E6%89%BE%E5%9B%BE%E4%B8%ADclique%E7%9A%84%E7%AE%97%E6%B3%95/" title="Arboricity and Subgraph Listing Algorithms"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Arboricity and Subgraph Listing Algorithms</span>
-        </a>
-      
     
       
       
@@ -343,10 +336,28 @@
     
       
       
+        <a href="/2025/02/19/%E6%9C%9B%E8%BF%9C%E7%B0%BF/" title="望远簿"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">望远簿</span>
+        </a>
+      
+    
+      
+      
         <a href="/2024/02/26/%E6%9C%9F%E6%9D%83%E4%BA%A4%E6%98%93%E5%B8%B8%E8%A7%81%E5%AF%B9%E5%86%B2%E7%AD%96%E7%95%A5/" title="期权交易常见对冲策略"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">期权交易常见对冲策略</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2024/11/03/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%88%9D%E6%8E%A2/" title="量化交易初探"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">量化交易初探</span>
         </a>
       
     
@@ -373,7 +384,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：7 个月前
+                    本文最后更新于：1 年前
                   
                 
               </p>
@@ -436,31 +447,35 @@
 \end{align}
 \]</span></p>
 <p>所以 <span class="math display">\[h^*=\beta\cfrac{S}{F}\tag{3}\]</span></p>
-<table style="width:6%;">
-
-<thead>
-<tr class="header">
-<th>考虑有效价格的具体值，由(1)得 <span class="math display">\[\begin{align}
+<hr>
+<p>考虑有效价格的具体值，由(1)得 <span class="math display">\[\begin{align}
 E&amp;=S(1+R_P)+hF-hF(1+R_M)\\
 &amp;=S+SR_P-hFR_M\\
 &amp;=S+S(r_f+\beta(R_M-r_f+\varepsilon))-hFR_M\\
 &amp;=S(1+r_f)-S\beta r_f+(S\beta-hF)R_M+S\beta\varepsilon\tag{4}
-\end{align}\]</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>最后爆算一下Sharpe ratio： %% <span class="math display">\[\max S =
+\end{align}\]</span></p>
+<p>完全对冲情况下，最终价格为 <span class="math display">\[E^*=S(1+r_f)-S\beta
+r_f+S\beta\varepsilon\tag{5}\]</span></p>
+<p>而不对冲情况下，最终价格为 <span class="math display">\[\begin{align}
+E_0&amp;=S(1+R_P)\\
+&amp;=S(1+r_f)-S\beta r_f+S\beta R_M+S\beta\varepsilon\tag{6}
+\end{align}\]</span></p>
+<p>由(4)，假设最终要保留的市场风险敞口比例为<span class="math inline">\(\beta^\prime\)</span>，则<span class="math inline">\(h^\prime=(\beta-\beta^\prime)\cfrac{S}{F}\)</span>
+<span class="math display">\[E^\prime=S(1+r_f)-S\beta r_f+S\beta^\prime
+R_M+S\beta\varepsilon\tag{7}\]</span> 相比于不对冲，放弃了价格<span class="math inline">\(S(\beta-\beta^\prime)R_M\)</span>，根据(2)，规避了部分风险</p>
+<hr>
+<p>最后爆算一下Sharpe ratio： <span class="math display">\[\max S =
 \sqrt{\cfrac{\text{Var}(R_M)(1+r_f-\beta r_f)^2+\text
 E^2(R_M)\text{Var}(\varepsilon)}{2\text{Var}(R_M)\text{Var}(\varepsilon)}}\tag{8}\]</span>
-%% 此时， <span class="math display">\[h=\cfrac{S}{F}\left(\beta-\cfrac{\text{Var}(\varepsilon)\text
+此时， <span class="math display">\[h=\cfrac{S}{F}\left(\beta-\cfrac{\text{Var}(\varepsilon)\text
 E(R_M)}{(1+r_f-\beta r_f)\text{Var}(R_M)}\right)\tag{9}\]</span>
-在没算错的情况下，<span class="math inline">\(h\)</span>似乎始终大于<span class="math inline">\(h^*\)</span>，即完全对冲并不是最好的选择。</td>
-</tr>
-</tbody>
-</table>
-<p>总结两个结论： 1. 由(5)可得，在完全对冲情况下，<span class="math inline">\(\beta\)</span>较高的股票最终的有效价格反而越低 2.
-由(9)可得，考虑Sharpe Ratio，则完全对冲始终不是最好的选择。</p>
+在没算错的情况下，<span class="math inline">\(h\)</span>似乎始终大于<span class="math inline">\(h^*\)</span>，即完全对冲并不是最好的选择。</p>
+<hr>
+<p>总结两个结论：</p>
+<ol type="1">
+<li>由(5)可得，在完全对冲情况下，<span class="math inline">\(\beta\)</span>较高的股票最终的有效价格反而越低</li>
+<li>由(9)可得，考虑Sharpe Ratio，则完全对冲始终不是最好的选择。</li>
+</ol>
 
                 
               </div>
@@ -479,7 +494,7 @@ E(R_M)}{(1+r_f-\beta r_f)\text{Var}(R_M)}\right)\tag{9}\]</span>
     
       <span class="category-chain">
         
-  <a href="/categories/2024S/" class="category-chain-item">2024S</a>
+  <a href="/categories/%E9%87%91%E8%9E%8D%E5%AD%A6/" class="category-chain-item">金融学</a>
   
   
 
@@ -495,6 +510,10 @@ E(R_M)}{(1+r_f-\beta r_f)\text{Var}(R_M)}\right)\tag{9}\]</span>
       <i class="iconfont icon-tags"></i>
       
         <a href="/tags/%E9%87%91%E8%9E%8D%E5%B7%A5%E7%A8%8B/" class="print-no-link">#金融工程</a>
+      
+        <a href="/tags/2024S/" class="print-no-link">#2024S</a>
+      
+        <a href="/tags/%E5%A5%87%E6%80%9D/" class="print-no-link">#奇思</a>
       
     </div>
   
@@ -525,7 +544,7 @@ E(R_M)}{(1+r_f-\beta r_f)\text{Var}(R_M)}\right)\tag{9}\]</span>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年11月5日</div>
+          <div>2024年3月31日</div>
         </div>
       
       
