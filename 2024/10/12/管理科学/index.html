@@ -541,9 +541,14 @@ number of nodes in the network <span class="math inline">\(c_{ij}\)</span>: the 
 </ul>
 <h4 id="性质">性质</h4>
 <h5 id="可行解性质">可行解性质</h5>
-<p>当且仅当供给点所提供的流量总和等于需求点所需流量总和时，最小费用流问题具有可行解
-- 当存在额外供给（供给需求大于等于需求总和）时 - 采用小于等于约束条件 -
-<strong><em>引入“虚拟需求节点”，并从每个供给点向虚拟需求节点添加单位流量成本为零的弧</em></strong></p>
+<p>当且仅当供给点所提供的流量总和等于需求点所需流量总和时，最小费用流问题具有可行解</p>
+<ul>
+<li>当存在额外供给（供给需求大于等于需求总和）时
+<ul>
+<li>采用小于等于约束条件</li>
+<li><strong><em>引入“虚拟需求节点”，并从每个供给点向虚拟需求节点添加单位流量成本为零的弧</em></strong></li>
+</ul></li>
+</ul>
 <h5 id="整数解性质">整数解性质</h5>
 <p>如果所有的供给、需求和弧的容量都是整数值，那么只要最小费用流问题有可行解，对于任何流量值都一定存在整数最优解</p>
 <h4 id="常见子问题概述">常见子问题概述</h4>
@@ -635,8 +640,11 @@ i=1,\cdots,m\)</span>，其中<span class="math inline">\(\pmb a_i\geq
 <p>决策变量：令<span class="math inline">\(x_{ij}=1\)</span>表示从城市<span class="math inline">\(i\)</span>出发前往城市<span class="math inline">\(j\)</span>，否则为0 <img src="/2024/10/12/%E7%AE%A1%E7%90%86%E7%A7%91%E5%AD%A6/9a32c4102f2719757025b4b519bfc3c.png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="求解算法">求解算法</h4>
 <h5 id="一个直接但不可行的思路">一个直接但不可行的思路</h5>
-<p>先线性规划松弛，去掉整数解条件，再将最优解取整 -
-取整之后的解可能是不可行解 - 即使是可行解，可能也与最优解相差甚远</p>
+<p>先线性规划松弛，去掉整数解条件，再将最优解取整</p>
+<ul>
+<li>取整之后的解可能是不可行解</li>
+<li>即使是可行解，可能也与最优解相差甚远</li>
+</ul>
 <h5 id="分支定界法">分支定界法</h5>
 <ul>
 <li><p>分支（branching）</p>
@@ -865,18 +873,19 @@ system）和多服务台系统（multiple-server system）</li>
 </ul></li>
 </ul>
 <h3 id="符号表示">符号表示</h3>
-<p><span class="math display">\[DIT/DST/NS\]</span> - DIT: Distribution
-of interarrival times - DST: Distribution of service times - NS: Number
-of servers</p>
+<p><span class="math display">\[DIT/DST/NS\]</span></p>
 <ul>
-<li>分布符号
+<li><p>DIT: Distribution of interarrival times</p></li>
+<li><p>DST: Distribution of service times</p></li>
+<li><p>NS: Number of servers</p></li>
+<li><p>分布符号</p>
 <ul>
 <li>M=指数分布（Markovian）</li>
 <li>D=退化分布（constant times）</li>
 <li>GI=到达间隔时间服从相互独立的一般分布（允许任意类型的分布）</li>
 <li>G=服务时间的一般分布（允许任意类型的分布）</li>
 </ul></li>
-<li>例如：
+<li><p>例如：</p>
 <ul>
 <li>M/M/1表示单服务台，且到达间隔时间和服务时间服从指数分布</li>
 <li>GI/M/s表示允许任意的到达间隔时间分布（到达间隔时间相互独立），服务时间服从指数分布，共<span class="math inline">\(s\)</span>个服务台</li>
@@ -1030,27 +1039,40 @@ W=\lambda(W_q+\cfrac{1}{\mu})=L_q+\cfrac{\lambda}{\mu}\)</span></li>
 </ul></li>
 </ul>
 <h3 id="案例分析">案例分析</h3>
-<p>Dupit公司案例 - 目前制度 -
-每名技术服务代表所负责的区域内应该有足够多的设备，使得他们大约75%的时间在从事维修工作（或在前往维修地点的路上）
--
-连续工作时，每名技术代表平均一天应当能够维修4台设备（平均每台设备2小时，包括路上的时间）
-- 为了使顾客的等待时间最短，技术代表每工作日应平均接到3个维修电话 -
-设备每50个工作日就要进行一次维修，因此要为每名技术代表负责的区域指定大约150
-台设备 - 共10000名技术代表，年支付工资6亿美元（包括奖金） - 问题及建议 -
-公司的一款新产品——彩色打印复印一体机成为了购买者办公室的重要工具，因此需要更高水平的服务来减少设备的故障时间
-- 建议的新服务标准：顾客的平均等待时间从6小时降低到2小时 -
-可供选择的解决方案 -
-约翰的建议：每个代表负责较小的区域（负责更少的机器），从而降低每个代表期望工作时间所占百分比
-- 工程副总裁建议：为技术代表提供新的设备，缩短维修时间 -
-首席财务官建议：将现在由一个人负责的小区域变成几个人负责的大区域，在忙碌时间段通过团队支持可以大幅缩短平均维修等待时间，而不需要雇佣新代表
--
-营销副总裁建议：给新打印机客户优先维修的权利，因为服务不及时的抱怨主要来自于这类客户</p>
-<p>让我们说中文： - 顾客：需要维修的设备（新旧打印机） -
-顾客到达：打给每名技术代表的保修电话 - 队列：顾客所在地等待修理的设备 -
-服务者：技术代表 -
-服务时间：技术代表花在一台设备上的总时间，包括维修时间和路上的时间（当技术代表开始前往这台设备所在地时，即视为该设备进入服务系统）
-- <span class="math inline">\(\mu=4,
-\rho=0.75\Rightarrow\lambda=3\)</span></p>
+<p>Dupit公司案例</p>
+<ul>
+<li>目前制度
+<ul>
+<li>每名技术服务代表所负责的区域内应该有足够多的设备，使得他们大约75%的时间在从事维修工作（或在前往维修地点的路上）</li>
+<li>连续工作时，每名技术代表平均一天应当能够维修4台设备（平均每台设备2小时，包括路上的时间）</li>
+<li>为了使顾客的等待时间最短，技术代表每工作日应平均接到3个维修电话</li>
+<li>设备每50个工作日就要进行一次维修，因此要为每名技术代表负责的区域指定大约150
+台设备</li>
+<li>共10000名技术代表，年支付工资6亿美元（包括奖金）</li>
+</ul></li>
+<li>问题及建议
+<ul>
+<li>公司的一款新产品——彩色打印复印一体机成为了购买者办公室的重要工具，因此需要更高水平的服务来减少设备的故障时间</li>
+<li>建议的新服务标准：顾客的平均等待时间从6小时降低到2小时</li>
+<li>可供选择的解决方案
+<ul>
+<li>约翰的建议：每个代表负责较小的区域（负责更少的机器），从而降低每个代表期望工作时间所占百分比</li>
+<li>工程副总裁建议：为技术代表提供新的设备，缩短维修时间</li>
+<li>首席财务官建议：将现在由一个人负责的小区域变成几个人负责的大区域，在忙碌时间段通过团队支持可以大幅缩短平均维修等待时间，而不需要雇佣新代表</li>
+<li>营销副总裁建议：给新打印机客户优先维修的权利，因为服务不及时的抱怨主要来自于这类客户</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>让我们说中文：</p>
+<ul>
+<li>顾客：需要维修的设备（新旧打印机）</li>
+<li>顾客到达：打给每名技术代表的保修电话</li>
+<li>队列：顾客所在地等待修理的设备</li>
+<li>服务者：技术代表</li>
+<li>服务时间：技术代表花在一台设备上的总时间，包括维修时间和路上的时间（当技术代表开始前往这台设备所在地时，即视为该设备进入服务系统）</li>
+<li><span class="math inline">\(\mu=4,
+\rho=0.75\Rightarrow\lambda=3\)</span></li>
+</ul>
 <h4 id="约翰建议的制度">约翰建议的制度</h4>
 <ul>
 <li>新服务标准要求 <span class="math inline">\(W_q\leq\cfrac{1}{4}\text{
@@ -1126,18 +1148,20 @@ printer-copies for repairs</td>
 <p>如果一个离散随机变量<span class="math inline">\(X\)</span>（可能取值为非负整数）服从泊松分布，那么其概率密度函数为<span class="math display">\[f(k;\lambda)=\text{Pr}(X=k)=\cfrac{\lambda^k\text
 e^{-\lambda}}{k!}\]</span>其中，<span class="math inline">\(k\)</span>为事件出现的次数（<span class="math inline">\(X\)</span>的取值），<span class="math inline">\(\lambda=\text E(X)=\text{Var}(X)\)</span></p>
 <h4 id="泊松到达">泊松到达</h4>
-<p>排队系统中，如果单位时间内顾客到达服从参数为<span class="math inline">\(\lambda\)</span>的泊松分布，则称顾客随时间的到达过程为泊松到达
-- <span class="math inline">\(N(0)=0\)</span> -
-独立增长（任何不相交的时间段内到达的顾客数量相互独立） - 任何长度为<span class="math inline">\(t\)</span>的时间段内顾客到达的数量服从参数为<span class="math inline">\(\lambda t\)</span>的泊松分布。即对于任何<span class="math inline">\(s,t\geq 0\)</span>，有<span class="math display">\[\text{Pr}[N(t+s))-N(s)=n]=\cfrac{(\lambda
-t)^n}{n!}\text e^{-\lambda t}, \ \ \ \ n=0,1,\cdots\]</span> - 时间<span class="math inline">\(t\)</span>内的平均到达数量为<span class="math inline">\(\text E[N(t)]=\lambda t\)</span> -
-单位时间内的平均到达率为<span class="math inline">\(\lambda\)</span></p>
+<p>排队系统中，如果单位时间内顾客到达服从参数为<span class="math inline">\(\lambda\)</span>的泊松分布，则称顾客随时间的到达过程为泊松到达</p>
 <ul>
-<li>对于泊松过程，至少一个顾客在<span class="math inline">\([0,t)\)</span>到达的概率为：<span class="math display">\[\text{Pr}[N(t)\geq 1]=1-\text{Pr}[N(t)=0]=1-\text
-e^{-\lambda t}\]</span></li>
-<li>至少一个顾客在<span class="math inline">\([0,t)\)</span>到达，等价于顾客到达时间间隔<span class="math inline">\(\leq t\)</span></li>
-<li>排队系统中，如果顾客的到达时间间隔服从（负）指数分布，则单位时间内顾客的到达数量服从参数为<span class="math inline">\(\lambda\)</span>的泊松分布，到达率为<span class="math inline">\(\lambda\)</span>；反之亦然。</li>
-<li>泊松分布中两个连续到达的顾客的到达时间间隔是（负）指数分布的。</li>
-<li>M/M/s的顾客到达是泊松过程</li>
+<li><p><span class="math inline">\(N(0)=0\)</span></p></li>
+<li><p>独立增长（任何不相交的时间段内到达的顾客数量相互独立）</p></li>
+<li><p>任何长度为<span class="math inline">\(t\)</span>的时间段内顾客到达的数量服从参数为<span class="math inline">\(\lambda t\)</span>的泊松分布。即对于任何<span class="math inline">\(s,t\geq 0\)</span>，有<span class="math display">\[\text{Pr}[N(t+s))-N(s)=n]=\cfrac{(\lambda
+t)^n}{n!}\text e^{-\lambda t}, \ \ \ \ n=0,1,\cdots\]</span></p></li>
+<li><p>时间<span class="math inline">\(t\)</span>内的平均到达数量为<span class="math inline">\(\text E[N(t)]=\lambda t\)</span></p></li>
+<li><p>单位时间内的平均到达率为<span class="math inline">\(\lambda\)</span></p></li>
+<li><p>对于泊松过程，至少一个顾客在<span class="math inline">\([0,t)\)</span>到达的概率为：<span class="math display">\[\text{Pr}[N(t)\geq 1]=1-\text{Pr}[N(t)=0]=1-\text
+e^{-\lambda t}\]</span></p></li>
+<li><p>至少一个顾客在<span class="math inline">\([0,t)\)</span>到达，等价于顾客到达时间间隔<span class="math inline">\(\leq t\)</span></p></li>
+<li><p>排队系统中，如果顾客的到达时间间隔服从（负）指数分布，则单位时间内顾客的到达数量服从参数为<span class="math inline">\(\lambda\)</span>的泊松分布，到达率为<span class="math inline">\(\lambda\)</span>；反之亦然。</p></li>
+<li><p>泊松分布中两个连续到达的顾客的到达时间间隔是（负）指数分布的。</p></li>
+<li><p>M/M/s的顾客到达是泊松过程</p></li>
 </ul>
 <h3 id="生灭过程">生灭过程</h3>
 <ul>
@@ -1208,12 +1232,19 @@ P_{n+1}&amp;=\cfrac{\lambda_n}{\mu_{n+1}P_n}+\cfrac{\mu_nP_n-\lambda_{n-1}P_{n-1
 &amp;\vdots
 \end{align}\]</span></p>
 <h4 id="系统度量指标">系统度量指标</h4>
-<p>令<span class="math inline">\(C_n=\cfrac{\lambda_n\lambda_{n-1}\cdots\lambda_0}{\mu_{n+1}\mu_{n}\cdots\mu_1}\)</span>，<span class="math inline">\(C_0=1\)</span> 则<span class="math inline">\(P_n=C_nP_0\)</span>，因此<span class="math display">\[P_0=\cfrac{1}{\sum_{n=0}^\infty C_n}\]</span> -
-系统长度：<span class="math inline">\(\displaystyle L=\sum_{n=0}^\infty
-nP_n\)</span>，排队长度<span class="math inline">\(\displaystyle
-L_q=\sum_{n=s}^\infty(n-s)P_n\)</span> - 系统等待时间：<span class="math inline">\(W=\cfrac{L}{\bar\lambda}\)</span>，<span class="math inline">\(W_q=\cfrac{L_q}{\bar\lambda}\)</span>，其中，<span class="math inline">\(\displaystyle\bar\lambda=\sum_{n=0}^\infty\lambda_nP_n\)</span>
-- 在M/M/1中 - <span class="math inline">\(C_n=(\cfrac{\lambda}{\mu})^n=\rho^n\)</span> -
-<span class="math inline">\(P_0=1-\rho\)</span> - <span class="math inline">\(P_n=(1-\rho)\rho^n\)</span></p>
+<p>令<span class="math inline">\(C_n=\cfrac{\lambda_n\lambda_{n-1}\cdots\lambda_0}{\mu_{n+1}\mu_{n}\cdots\mu_1}\)</span>，<span class="math inline">\(C_0=1\)</span> 则<span class="math inline">\(P_n=C_nP_0\)</span>，因此<span class="math display">\[P_0=\cfrac{1}{\sum_{n=0}^\infty C_n}\]</span></p>
+<ul>
+<li><p>系统长度：<span class="math inline">\(\displaystyle
+L=\sum_{n=0}^\infty nP_n\)</span>，排队长度<span class="math inline">\(\displaystyle
+L_q=\sum_{n=s}^\infty(n-s)P_n\)</span></p></li>
+<li><p>系统等待时间：<span class="math inline">\(W=\cfrac{L}{\bar\lambda}\)</span>，<span class="math inline">\(W_q=\cfrac{L_q}{\bar\lambda}\)</span>，其中，<span class="math inline">\(\displaystyle\bar\lambda=\sum_{n=0}^\infty\lambda_nP_n\)</span></p></li>
+<li><p>在M/M/1中</p>
+<ul>
+<li><span class="math inline">\(C_n=(\cfrac{\lambda}{\mu})^n=\rho^n\)</span></li>
+<li><span class="math inline">\(P_0=1-\rho\)</span></li>
+<li><span class="math inline">\(P_n=(1-\rho)\rho^n\)</span></li>
+</ul></li>
+</ul>
 
                 
               </div>
