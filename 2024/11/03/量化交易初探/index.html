@@ -27,6 +27,7 @@
 <meta property="article:modified_time" content="2024-11-04T16:00:00.000Z">
 <meta property="article:author" content="Ruiyang He">
 <meta property="article:tag" content="量化金融">
+<meta property="article:tag" content="讲座笔记">
 <meta name="twitter:card" content="summary">
   
   
@@ -302,7 +303,7 @@
         aria-expanded="true"
       >
         金融学
-        <span class="list-group-count">(5)</span>
+        <span class="list-group-count">(7)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -313,6 +314,15 @@
           
   <div class="category-post-list">
     
+    
+      
+      
+        <a href="/2025/07/24/DDB%E5%8A%A9%E5%8A%9B%E9%87%8F%E5%8C%96%E5%9B%9E%E6%B5%8B%E2%80%94%E2%80%94%E4%B8%9A%E5%8A%A1%E6%95%88%E7%8E%87%E7%9A%84%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/" title="DDB助力量化回测——业务效率的进阶之路（raw）"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">DDB助力量化回测——业务效率的进阶之路（raw）</span>
+        </a>
+      
     
       
       
@@ -359,6 +369,15 @@
         </a>
       
     
+      
+      
+        <a href="/2025/07/24/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B5%84%E5%89%8D%E6%B2%BF%E5%88%86%E6%9E%90/" title="量化投资前沿分析"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">量化投资前沿分析</span>
+        </a>
+      
+    
   </div>
 
         
@@ -382,7 +401,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：8 个月前
+                    本文最后更新于：9 个月前
                   
                 
               </p>
@@ -420,10 +439,26 @@
 <li>算法交易成交额占比75%</li>
 </ul></li>
 </ul>
-<p>国内量化发展 - 量化1.0（2010—2015） - 市场风格明显 - 股指期货对冲 -
-量化2.0（2016—2019） - 高频涌现 - 量价为主，复杂模型登场 - 量化四大金刚
-- 量化3.0（2020—2023） - 策略体系逐渐成熟 - 行业竞争升温 -
-23年达到万亿，24年下降</p>
+<p>国内量化发展</p>
+<ul>
+<li>量化1.0（2010—2015）
+<ul>
+<li>市场风格明显</li>
+<li>股指期货对冲</li>
+</ul></li>
+<li>量化2.0（2016—2019）
+<ul>
+<li>高频涌现</li>
+<li>量价为主，复杂模型登场</li>
+<li>量化四大金刚</li>
+</ul></li>
+<li>量化3.0（2020—2023）
+<ul>
+<li>策略体系逐渐成熟</li>
+<li>行业竞争升温</li>
+<li>23年达到万亿，24年下降</li>
+</ul></li>
+</ul>
 <h3 id="量化-vs-主观">量化 vs 主观</h3>
 <ul>
 <li><p>计算机决策 vs 投资经理</p></li>
@@ -471,10 +506,16 @@
 <li>HRT、Jump Trading、Citadel Securities</li>
 </ul></li>
 </ul>
-<p>低频 vs 高频 - 样本点少 vs 多 - 使用各类量价和另类数据 vs
-（基本）只使用高频量价数据 - 更依赖于预测模型 vs 更依赖于 IT infra -
-收益低、不稳定 vs 收益高、稳定 - 容量大 vs 容量小 - 适用于资管资金 vs
-适用于自营资金 - 监管风险小 vs 监管风险大</p>
+<p>低频 vs 高频</p>
+<ul>
+<li>样本点少 vs 多</li>
+<li>使用各类量价和另类数据 vs （基本）只使用高频量价数据</li>
+<li>更依赖于预测模型 vs 更依赖于 IT infra</li>
+<li>收益低、不稳定 vs 收益高、稳定</li>
+<li>容量大 vs 容量小</li>
+<li>适用于资管资金 vs 适用于自营资金</li>
+<li>监管风险小 vs 监管风险大</li>
+</ul>
 <h3 id="股票量化产品分类">股票量化产品分类</h3>
 <ul>
 <li>指数增强
@@ -524,10 +565,13 @@ Z^n\)</span>：优化器把连续的向量变成离散的向量（为了交易�
 <li>人力密集型</li>
 </ul>
 <h5 id="机器学习因子">机器学习因子</h5>
-<p>ML因子、非线性因子（针对特征而言） 通过机器学习模型预测回报率 -
-线性模型 - 神经网络 - 树模型 - 统计模型</p>
+<p>ML因子、非线性因子（针对特征而言） 通过机器学习模型预测回报率</p>
 <ul>
-<li>分类
+<li><p>线性模型</p></li>
+<li><p>神经网络</p></li>
+<li><p>树模型</p></li>
+<li><p>统计模型</p></li>
+<li><p>分类</p>
 <ul>
 <li>原始输入：模型输入为原始数据（端到端），如开高低收</li>
 <li>特征输入：模型输入为特征，如MA、std等</li>
@@ -536,10 +580,10 @@ Z^n\)</span>：优化器把连续的向量变成离散的向量（为了交易�
 <li>vs 常见AI场景：信噪比高</li>
 </ul></li>
 </ul></li>
-<li>容易过拟合</li>
-<li>不直观、难以理解</li>
-<li>预测能力更强</li>
-<li>智力密集型</li>
+<li><p>容易过拟合</p></li>
+<li><p>不直观、难以理解</p></li>
+<li><p>预测能力更强</p></li>
+<li><p>智力密集型</p></li>
 </ul>
 <h5 id="另类因子">另类因子</h5>
 <ul>
@@ -585,9 +629,19 @@ Z^n\)</span>：优化器把连续的向量变成离散的向量（为了交易�
 </ul></li>
 </ul>
 <h4 id="combine">combine</h4>
-<p>因子组合（基金经理） - 把多个因子（预测）组合成一个聚合因子 -
-idea聚合 - 理想情况下idea不相关 - 聚合因子 - 预测能力更强，更稳定 -
-线性、非线性</p>
+<p>因子组合（基金经理）</p>
+<ul>
+<li>把多个因子（预测）组合成一个聚合因子</li>
+<li>idea聚合
+<ul>
+<li>理想情况下idea不相关</li>
+</ul></li>
+<li>聚合因子
+<ul>
+<li>预测能力更强，更稳定</li>
+</ul></li>
+<li>线性、非线性</li>
+</ul>
 <h4 id="optimizer">optimizer</h4>
 <p>最重要！</p>
 <h5 id="优化器基础">优化器基础</h5>
@@ -615,8 +669,12 @@ p)\]</span> - p是仓位，Δp是仓位变化 - alpha是收益率，<span class=
 中间的二次型：收益的方差 - TC是Market impact model -
 印花税、交易佣金等，是Δp的线性函数 - 冲击成本（market
 impact）Δp的1.5次或2次函数</p>
-<p>s.t. - position limit - trading volume constraints - factor
-exposure</p>
+<p>s.t.</p>
+<ul>
+<li>position limit</li>
+<li>trading volume constraints</li>
+<li>factor exposure</li>
+</ul>
 <h6 id="协方差矩阵sigma">协方差矩阵<span class="math inline">\(\Sigma\)</span></h6>
 <ul>
 <li>对角线：股票回报率的方差</li>
@@ -674,14 +732,36 @@ idiosyncratic_return</li>
 <p><span class="math inline">\(R=LR^{fac}+\alpha\)</span> <span class="math inline">\(\Sigma=Cov(r)=L^T HL+D\)</span></p>
 <p>人为对协方差矩阵降维</p>
 <h6 id="交易成本">交易成本</h6>
-<p>固定成本 - Δp的线性函数 - 印花税 - 证管费、经手费</p>
-<p>市场冲击 - 交易使价格向不利的方向变动 - 原因？ - 微观：吃掉对手单 -
-宏观：供需改变</p>
-<p>如何估计market impact？ - 假设：Market impact is reverting - 市场有效
-- 一次交易行为，本质没有真实改变公司的基本面 -
-推高价格后，会触发隐藏的流动性（需求） - 多次交易 -
-像脉冲一样，价格被抬高后，会慢慢回去 - RMI、decay kernel，可以算出MI -
-只能估计，通过理论模型，因为根本无法观测</p>
+<p>固定成本</p>
+<ul>
+<li>Δp的线性函数</li>
+<li>印花税</li>
+<li>证管费、经手费</li>
+</ul>
+<p>市场冲击</p>
+<ul>
+<li>交易使价格向不利的方向变动</li>
+<li>原因？
+<ul>
+<li>微观：吃掉对手单</li>
+<li>宏观：供需改变</li>
+</ul></li>
+</ul>
+<p>如何估计market impact？</p>
+<ul>
+<li>假设：Market impact is reverting
+<ul>
+<li>市场有效</li>
+<li>一次交易行为，本质没有真实改变公司的基本面</li>
+<li>推高价格后，会触发隐藏的流动性（需求）</li>
+</ul></li>
+<li>多次交易
+<ul>
+<li>像脉冲一样，价格被抬高后，会慢慢回去</li>
+<li>RMI、decay kernel，可以算出MI</li>
+</ul></li>
+<li>只能估计，通过理论模型，因为根本无法观测</li>
+</ul>
 <h5 id="优化器求解">优化器求解</h5>
 <ul>
 <li>二次、整数、凸优化</li>
@@ -700,18 +780,40 @@ idiosyncratic_return</li>
 </ul></li>
 </ul>
 <h6 id="优化器回顾">优化器回顾</h6>
-<p>优化器做了什么？ - 平衡三者 - 收益（return） - 风险（risk） -
-成本（cost） - 风险项<span class="math inline">\(\lambda\)</span> -
-控制收益维度 - 例如：赌小盘股、半导体 - 成本项<span class="math inline">\(\mu\)</span> - 控制收益的实现（速度） -
-交易太快：滑点MI太大 - 交易太慢：return decay -
-风险项和成本项不是给定的，是实证、回测或者估出来的</p>
+<p>优化器做了什么？</p>
+<ul>
+<li>平衡三者
+<ul>
+<li>收益（return）</li>
+<li>风险（risk）</li>
+<li>成本（cost）</li>
+</ul></li>
+<li>风险项<span class="math inline">\(\lambda\)</span>
+<ul>
+<li>控制收益维度</li>
+<li>例如：赌小盘股、半导体</li>
+</ul></li>
+<li>成本项<span class="math inline">\(\mu\)</span>
+<ul>
+<li>控制收益的实现（速度）</li>
+<li>交易太快：滑点MI太大</li>
+<li>交易太慢：return decay</li>
+</ul></li>
+<li>风险项和成本项不是给定的，是实证、回测或者估出来的</li>
+</ul>
 <h4 id="executor">executor</h4>
-<p>算出来Δp后，用execution拆单 - TWAP 按照时间平均拆单 - VWAP
-按照交易量平均拆单 - IS(implementation shortfall)
-优化相比下单时的价格</p>
+<p>算出来Δp后，用execution拆单</p>
+<ul>
+<li>TWAP 按照时间平均拆单</li>
+<li>VWAP 按照交易量平均拆单</li>
+<li>IS(implementation shortfall) 优化相比下单时的价格</li>
+</ul>
 <h4 id="多因子模型回顾">多因子模型回顾</h4>
-<p>什么是多因子？ 两个含义： - alpha，聚合因子 -
-风险里的因子（barra）</p>
+<p>什么是多因子？ 两个含义：</p>
+<ul>
+<li>alpha，聚合因子</li>
+<li>风险里的因子（barra）</li>
+</ul>
 <h5 id="多因子模型优点">多因子模型优点</h5>
 <ul>
 <li>策略层面
@@ -843,13 +945,28 @@ idiosyncratic_return</li>
 </ul></li>
 </ul>
 <h3 id="团队选择">团队选择</h3>
-<p>大团队 vs 小团队 - 管理模式不一样 - 大团队：部门化 -
-小团队：研究员+基金经理模式</p>
-<p>大团队 - 方法论和框架完整有效 - 部分有培养体系 -
-生存压力、业绩压力较小，年薪百万 -
-流水线细化、知识面狭窄、容易成为螺丝钉 - 晋升困难</p>
-<p>小团队 - 方法论和框架有待验证 - 有较大生存压力、业绩压力 -
-全面接触各个流程、知识面广 - 取决于老板、领导的水平 - 有晋升空间</p>
+<p>大团队 vs 小团队</p>
+<ul>
+<li>管理模式不一样</li>
+<li>大团队：部门化</li>
+<li>小团队：研究员+基金经理模式</li>
+</ul>
+<p>大团队</p>
+<ul>
+<li>方法论和框架完整有效</li>
+<li>部分有培养体系</li>
+<li>生存压力、业绩压力较小，年薪百万</li>
+<li>流水线细化、知识面狭窄、容易成为螺丝钉</li>
+<li>晋升困难</li>
+</ul>
+<p>小团队</p>
+<ul>
+<li>方法论和框架有待验证</li>
+<li>有较大生存压力、业绩压力</li>
+<li>全面接触各个流程、知识面广</li>
+<li>取决于老板、领导的水平</li>
+<li>有晋升空间</li>
+</ul>
 <h3 id="学习建议">学习建议</h3>
 <p>向老板学习</p>
 
@@ -886,6 +1003,8 @@ idiosyncratic_return</li>
       <i class="iconfont icon-tags"></i>
       
         <a href="/tags/%E9%87%8F%E5%8C%96%E9%87%91%E8%9E%8D/" class="print-no-link">#量化金融</a>
+      
+        <a href="/tags/%E8%AE%B2%E5%BA%A7%E7%AC%94%E8%AE%B0/" class="print-no-link">#讲座笔记</a>
       
     </div>
   
